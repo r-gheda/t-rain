@@ -1,0 +1,83 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+/* Header and Navigation Styles */
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    position: fixed; /* Make header fixed */
+    top: 0; /* Stick to the top */
+    width: 100%; /* Full width */
+    z-index: 1000; /* Ensure it's above other elements */
+}
+
+nav a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+/* Adjust body padding to account for fixed header */
+body {
+    padding-top: 60px; /* Adjust this value based on header height */
+}
+
+/* Title Slide Styles */
+.title-slide {
+    background: #005f73;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-slide h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.title-slide h2 {
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+/* Section Styles */
+section {
+    min-height: 100vh;
+    padding: 20px;
+    text-align: center;
+}
+
+#section1 { background: #f9f9f9; }
+#section2 { background: #ddd; }
+#section3 { background: #bbb; }
+#section4 { background: #999; }
+#section5 { background: #777; }
+#section6 { background: #555; }
+
+/* Footer Styles */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Style for Line Chart */
+.line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 2px;
+}
+
