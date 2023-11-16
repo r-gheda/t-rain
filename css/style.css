@@ -1,12 +1,16 @@
 /* General Styles */
+
 body, html {
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+    color: #003082;
+    font-family: Verdana, sans-serif;
 }
 
 /* Header and Navigation Styles */
 header {
+  
     background: #333;
     color: #fff;
     padding: 10px;
@@ -30,8 +34,9 @@ body {
 
 /* Title Slide Styles */
 .title-slide {
-    background: #005f73;
-    color: #fff;
+    background-color: #FFC917;
+    color: #003082;
+    font-family: 'Verdana', sans-serif;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -56,12 +61,12 @@ section {
     text-align: center;
 }
 
-#section1 { background: #f9f9f9; }
-#section2 { background: #ddd; }
-#section3 { background: #bbb; }
-#section4 { background: #999; }
-#section5 { background: #777; }
-#section6 { background: #555; }
+#section1 { background: #FFC917; }
+#section2 { background: #FFC917; }
+#section3 { background: #FFC917; }
+#section4 { background: #FFC917; }
+#section5 { background: #FFC917; }
+#section6 { background: #FFC917; }
 
 /* Footer Styles */
 footer {
@@ -198,3 +203,4 @@ footer {
     -webkit-mask: url("../imgs/cd-arrow-bottom.svg") no-repeat center;
     mask: url(logo.svg) no-repeat center;
 }
+
