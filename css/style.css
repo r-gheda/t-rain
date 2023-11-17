@@ -1,16 +1,18 @@
 /* General Styles */
 
 html {
-    
-    scroll-behavior: smooth;
+    overflow-x: hidden;
+    scroll-behavior: smooth;  
     color: #003082;
     font-family: Verdana, sans-serif;
-    
+    width: 100%;
+
 }
 
 body {
-    scroll-behavior: smooth;
-    margin: 0;
+    
+    margin:0;
+    padding: 0;
 } 
 
 /* Header and Navigation Styles */
@@ -38,7 +40,7 @@ nav a {
     color: #003082;
     font-family: 'Verdana', sans-serif;
     min-height: 100vh;
-    display: flex;
+    display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -61,6 +63,7 @@ section {
     position: relative;
     min-height: 100vh;
     padding: 1.5%;
+    width: inherit;
 }
 
 #section0 { 
@@ -100,9 +103,10 @@ footer {
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
+
     position: relative;
     bottom: 0;
-    width: 100%;
+    
 }
 
 /* Style for Line Chart */
