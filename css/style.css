@@ -242,6 +242,7 @@ footer {
 .slideshow {
     position: absolute;
     overflow: hidden;
+    top: 3.5%;
     /* Here is where you set a size so it will be visible. */
     width: 100%;
     height: 100%;
