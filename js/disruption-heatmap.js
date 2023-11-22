@@ -1,10 +1,10 @@
 // set the dimensions and margins of the graph
-const margin = {top: 10, right: 30, bottom: 30, left: 100},
+let margin = {top: 10, right: 30, bottom: 30, left: 100},
 width = 460 - margin.left - margin.right,
 height = 400 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
-const svg = d3.select("#disr-heatmap")
+let svg = d3.select("#disr-heatmap")
 .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
@@ -31,7 +31,7 @@ svg.select(".domain")
     .attr("opacity",".0");
 
 // Add Y axis
-const y = d3.scaleLinear()
+let y = d3.scaleLinear()
     .domain([276165, 609034])
     .range([ height - margin.bottom, margin.top ]);
 
@@ -41,12 +41,12 @@ svg.append("g")
 
 
 // Prepare a color palette
-const color = d3.scaleLinear()
+let color = d3.scaleLinear()
     .domain([0, 1]) // Points per square pixel.
     .range(["white", "#69b3a2"])
 
 // compute the density data
-const densityData = d3.contourDensity()
+let densityData = d3.contourDensity()
     .x(function(d) { return x(d.x); })
     .y(function(d) { return y(d.y); })
     .size([width, height])
@@ -55,8 +55,8 @@ const densityData = d3.contourDensity()
     
 svg.append("image")
     .attr("xlink:href", "../imgs/netherlands-contours.png") // Replace with the path to your image
-    .attr("width", 300) // Match the SVG width
-    .attr("height", 300); // Match the SVG height
+    .attr("width", 300) // Match the svg width
+    .attr("height", 300); // Match the svg height
 
 // show the shape!
 svg.insert("g", "g")
