@@ -43,7 +43,7 @@ svg.append("g")
 // Prepare a color palette
 let color = d3.scaleLinear()
     .domain([0, 1]) // Points per square pixel.
-    .range(["white", "#69b3a2"])
+    .range(["white", "#FF6600"])
 
 // compute the density data
 let densityData = d3.contourDensity()
