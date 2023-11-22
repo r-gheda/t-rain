@@ -53,11 +53,6 @@ let densityData = d3.contourDensity()
     .bandwidth(20)
     (data)
     
-svg.append("image")
-    .attr("xlink:href", "../imgs/netherlands-contours.png") // Replace with the path to your image
-    .attr("width", 300) // Match the svg width
-    .attr("height", 300); // Match the svg height
-
 // show the shape!
 svg.insert("g", "g")
     .selectAll("path")
