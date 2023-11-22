@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
 
 html {
+    
     overflow-x: hidden;
     scroll-behavior: smooth;  
     color: #003082;
@@ -39,7 +40,8 @@ nav a {
 
 /* Title Slide Styles */
 .title-slide {
-    background-color: #FFC917;
+    
+    background-color: #f7c82d;
     color: #003082;
     min-height: 100vh;
     display:flex;
@@ -69,32 +71,37 @@ section {
 }
 
 #section0 { 
-    background: #FFC917;
+    background: #f7c82d;
     
 }
 
 #section1 { 
-    background: #FFC917;
+    background: #f7c82d;
     
 }
 
-#section2 { background: #FFC917;
+#section2 { 
+    background: #f7c82d;
     text-align: center;
  }
 
-#section3 { background: #FFC917;
+#section3 { 
+    background: #f7c82d;
     text-align: center;
  }
 
-#section4 { background: #FFC917;
+#section4 { 
+    background: #f7c82d;
     text-align: center;
  }
 
-#section5 { background: #FFC917;
+#section5 { 
+    background: #f7c82d;
     text-align: center;
  }
 
-#section6 { background: #FFC917;
+#section6 { 
+    background: #f7c82d;
     text-align: center;
  }
 
@@ -265,4 +272,14 @@ footer {
     position:relative;
     text-align: center;
 
+  }
+
+  #selectButton {
+    font-family: 'Fredericka the Great', cursive;
+    color: #003082;
+    background-color: lightyellow;
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer; /
   }

@@ -46,7 +46,7 @@ const population = {
     "Mexico": 128932753,
     "North Macedonia": 2083374,
     "Malta": 441543,
-    "Montenegro": 628066,
+    "Montenegro, Republic of": 628066,
     "Netherlands": 17134872,
     "Norway": 5421241,
     "New Zealand": 4822233,
@@ -186,5 +186,23 @@ d3.csv("data/world_train_usage.csv").then(function(data) {
         const selectedOption = d3.select(this).property("value");
         update(selectedOption);
     });
+
+    svg.append("text")
+    .attr("text-anchor", "end")
+    .attr("x", width)
+    .attr("y", height + margin.top + 20) // Adjust this value to position the label correctly
+    .text("Year")
+    .style("font-size", "12px")
+    .style("fill", "#003082");
+
+    svg.append("text")
+    .attr("text-anchor", "end")
+    .attr("transform", "rotate(-90)")
+    .attr("y", -margin.left + 20) // Adjust these values to position the label correctly
+    .attr("x", -margin.top)
+    .text("Kilometers per Passenger (Millions)")
+    .style("font-size", "12px")
+    .style("fill", "#003082");
+
 
 });
