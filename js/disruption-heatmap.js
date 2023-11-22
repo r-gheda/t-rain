@@ -54,7 +54,7 @@ let densityData = d3.contourDensity()
     (data)
     
 svg.append("image")
-    .attr("xlink:href", "../imgs/netherlands-contours.png") // Replace with the path to your image
+    .attr("xlink:href", "imgs/netherlands-contours.png") // Replace with the path to your image
     .attr("width", 300) // Match the svg width
     .attr("height", 300); // Match the svg height
 
