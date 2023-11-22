@@ -90,7 +90,7 @@ d3.csv("data/world_train_usage.csv").then(function(data) {
 
     // Normalize the data by population
     data.forEach(function(d) {
-        d.NormalizedValue = d.Value / population[d.Country];
+        d.NormalizedValue = d.Value * 1000000 / population[d.Country];
     });
 
     // List of groups (one group per column)
@@ -115,7 +115,7 @@ d3.csv("data/world_train_usage.csv").then(function(data) {
     const x = d3.scaleLinear()
       .domain(d3.extent(data, function(d) { return d.Year; }))
       .range([0, width]);
-    const xAxis = d3.axisBottom(x).ticks(7);
+    const xAxis = d3.axisBottom(x).ticks(7).tickFormat(d3.format("d"));
     svg.append("g")
       .attr("transform", `translate(0, ${height})`)
       .call(xAxis)
@@ -145,7 +145,7 @@ d3.csv("data/world_train_usage.csv").then(function(data) {
           .x(function(d) { return x(d.Year) })
           .y(function(d) { return y(+d.NormalizedValue) })
         )
-        .attr("stroke", function(d){ return myColor("valueA") })
+        .attr("stroke", "#003082" )
         .style("stroke-width", 4)
         .style("fill", "none");
 
@@ -158,7 +158,7 @@ d3.csv("data/world_train_usage.csv").then(function(data) {
           .x(function(d) { return x(d.Year) })
           .y(function(d) { return y(+d.NormalizedValue) })
         )
-        .attr("stroke", "orange") // Orange color for the Netherlands
+        .attr("stroke", "#FF6600") // Orange color for the Netherlands
         .style("stroke-width", 4)
         .style("fill", "none");
 
@@ -178,7 +178,7 @@ d3.csv("data/world_train_usage.csv").then(function(data) {
             .x(function(d) { return x(d.Year) })
             .y(function(d) { return y(+d.NormalizedValue) })
           )
-          .attr("stroke", function(d){ return myColor(selectedGroup) })
+          .attr("stroke", "#003082" )
     }
 
     // When the button is changed, run the update function
