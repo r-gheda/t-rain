@@ -1,10 +1,13 @@
+
+/* @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P'); */
 /* General Styles */
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
 
 html {
     overflow-x: hidden;
     scroll-behavior: smooth;  
     color: #003082;
-    font-family: Verdana, sans-serif;
+    font-family: 'Fredericka the Great', cursive;
     width: 100%;
 
 }
@@ -38,7 +41,6 @@ nav a {
 .title-slide {
     background-color: #FFC917;
     color: #003082;
-    font-family: 'Verdana', sans-serif;
     min-height: 100vh;
     display:flex;
     flex-direction: column;
@@ -68,12 +70,12 @@ section {
 
 #section0 { 
     background: #FFC917;
-    /*text-align: center; */
+    
 }
 
 #section1 { 
     background: #FFC917;
-    text-align: center; 
+    
 }
 
 #section2 { background: #FFC917;
@@ -106,15 +108,6 @@ footer {
 
     position: relative;
     bottom: 0;
-    
-}
-
-/* Style for Line Chart */
-.line {
-    
-    fill: none;
-    stroke: red;
-    stroke-width: 2px;
     
 }
 
@@ -266,4 +259,10 @@ footer {
     100% {
       left: 0%;
     }
+  }
+
+  #vis-world-trains {
+    position:relative;
+    text-align: center;
+
   }

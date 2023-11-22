@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="script.js"></script> 
+    <script src="https://d3js.org/d3.v6.js"></script>
+    
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 
@@ -34,7 +34,7 @@
             </li>
             <li>
                 <a href="#section1"><span class="cd-dot"></span>
-                    <span class="cd-label">Section 1</span>
+                    <span class="cd-label">Trains all over the world</span>
                 </a>
         </li>
         <li>
@@ -116,9 +116,25 @@
     
 </section>
 
+<!-- TRAINS COMPARISON -->
 <section id="section1">
-    <h1>Trains all over the world</h1>
-    <p>How much does the number of train stations increase every year?</p>
+    <h1 style="position: relative; left: 10%; top: 20%; font-size: 50px;"
+         data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+        Trains across the world!
+    </h1>
+    <h2 style="position: relative;left: 10%; top: 100%; font-size: 30px;"
+        data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+        Below you can see the train usage in the Netherlands compared <br>
+        to other countries
+    </h2>
+    <div id="vis-world-trains"> 
+    <!-- Initialize a select button -->
+    <select id="selectButton" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000"></select>
+
+    <!-- Create a div where the graph will take place -->
+    <div id="my_dataviz" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000" ></div>
+    </div>
+
     <a href="#section2" class="cd-scroll-down"></a>
 </section>
 
@@ -150,6 +166,6 @@
     <p>© 2023 ProRails A Dutch Story</p>
 </footer>
 
-
+<script src="js/script_world_train_usage.js"></script> 
 </body>
 </html>
