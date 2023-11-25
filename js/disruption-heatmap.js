@@ -1,71 +1,13 @@
+
 let x_domain_bottom = 30429;
 let x_domain_top = 309128;
-let y_domain_bottom = 276165;
+let y_domain_bottom = 275165;
 let y_domain_top = 609034;
 
 // set the dimensions and margins of the graph
 let margin = {top: 0, right: 0, bottom: 0, left: 0},
 width = 550 - margin.left - margin.right,
 height = (width * (y_domain_top - y_domain_bottom) / (x_domain_top - x_domain_bottom)) - margin.top - margin.bottom;
-
-// append the svg object to the body of the page
-let svg = d3.select("#disr-heatmap")
-.append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-.append("g")
-    .attr("transform", `translate(${margin.left},${margin.top})`);
-
-// read data
-d3.csv("data/disruptions-2022-geo.csv").then( function(data) {
-
-// Add X axis
-let x = d3.scaleLinear()
-    .domain([x_domain_bottom, x_domain_top])
-    .range([ margin.left, width - margin.right ]);
-
-let xgen = d3.axisBottom(x)
-    .ticks(0);
-
-    
-svg.append("g")
-    .attr("transform", `translate(0, ${height})`)
-    .call(xgen);
-    
-svg.select(".domain")
-    .attr("opacity",".0");
-
-// Add Y axis
-let y = d3.scaleLinear()
-    .domain([y_domain_bottom, y_domain_top])
-    .range([ height - margin.bottom, margin.top ]);
-
-svg.append("g")
-    .call(d3.axisLeft(y))
-    .attr("opacity", ".0");
-
-
-// Prepare a color palette
-let color = d3.scaleLinear()
-    .domain([0, 1]) // Points per square pixel.
-    .range(["white", "#FF6600"])
-
-// compute the density data
-let densityData = d3.contourDensity()
-    .x(function(d) { return x(d.x); })
-    .y(function(d) { return y(d.y); })
-    .size([width, height])
-    .bandwidth(20)
-    (data)
-    
-// show the shape!
-svg.insert("g", "g")
-    .selectAll("path")
-    .data(densityData)
-    .enter().append("path")
-    .attr("d", d3.geoPath())
-    .attr("fill", function(d) { return color(d.value); })
-})
 
 function normalize_coordinates_x(x)
 {
@@ -107,27 +49,135 @@ const locations = [
     normalize_coordinates(190416.24799999967,552862.4840000011, 'Heerenveen'),
     normalize_coordinates(111185.65500000119,516904.6090000011, 'Alkmaar')
     // Add more data points as needed
-  ];
-  
-const labelsGroup = svg.append('g');
+];
 
-  // Add location labels
-labelsGroup.selectAll('text')
-    .data(locations)
-    .enter().append('text')
-    .attr('x', d => d.x)
-    .attr('y', d => d.y - 6)
-    .text(d => d.name)
-    .attr('font-size', '10px')
-    .attr('fill', 'black')
-    .attr('text-anchor', 'middle');
+// append the svg object to the body of the page
+let svg = d3.select("#disr-heatmap-2022")
+.append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+.append("g")
+    .attr("transform", `translate(${margin.left},${margin.top})`);
 
-const pointsGroup = svg.append('g');
+// read data
+d3.csv("data/disruptions-2022-geo.csv").then( function(data) 
+{
+    // Add X axis
+    let x = d3.scaleLinear()
+        .domain([x_domain_bottom, x_domain_top])
+        .range([ margin.left, width - margin.right ]);
 
-pointsGroup.selectAll('circle')
-    .data(locations)
-    .enter().append('circle')
-    .attr('cx', d => d.x)
-    .attr('cy', d => d.y)
-    .attr('r', 2) // Adjust the radius as needed
-    .attr('fill', 'black'); // Adjust the fill color as needed
+    let xgen = d3.axisBottom(x)
+        .ticks(0);
+        
+    svg.append("g")
+        .attr("transform", `translate(0, ${height})`)
+        .call(xgen);
+        
+    svg.select(".domain")
+        .attr("opacity",".0");
+
+    // Add Y axis
+    let y = d3.scaleLinear()
+        .domain([y_domain_bottom, y_domain_top])
+        .range([ height - margin.bottom, margin.top ]);
+
+    svg.append("g")
+        .call(d3.axisLeft(y))
+        .attr("opacity", ".0");
+
+
+    // Prepare a color palette
+    let color = d3.scaleLinear()
+        .domain([0, 1]) // Points per square pixel.
+        .range(["white", "#FF6600"])
+
+    const allGroup = new Set(data.map(d => d.group))
+    allGroup.add("All")
+
+    // Add the options to the button
+    d3.select("#causeSelectButton")
+        .selectAll('myOptions')
+        .data(allGroup)
+        .enter()
+        .append('option')
+        .text(function (d) { return d; }) // text showed in the menu
+        .attr("value", function (d) { return d; }) // corresponding value returned by the button
+
+    // compute the density data
+    let densityData = d3.contourDensity()
+        .x(function(d) { return x(d.x); })
+        .y(function(d) { return y(d.y); })
+        .size([width, height])
+        .bandwidth(20)
+        (data)
+        
+    // show the shape!
+    let densityMap = svg.insert("g", "g")
+        .selectAll("path")
+        .data(densityData)
+        .enter().append("path")
+        .attr("d", d3.geoPath())
+        .attr("fill", function(d) { return color(d.value); })
+        
+    function updateDensityMap(selectedGroup) 
+    {
+        // update density map by filtering data with group === selectedGroup
+        let filteredData = data.filter(function(d) { return d.group === selectedGroup; });
+    
+        if (selectedGroup === "All") 
+        {
+            filteredData = data;
+        }
+        
+        // Recompute density data
+        let updatedDensityData = d3.contourDensity()
+            .x(function(d) { return x(d.x); })
+            .y(function(d) { return y(d.y); })
+            .size([width, height])
+            .bandwidth(20)
+            (filteredData);
+    
+        // Update the existing paths using the D3 update pattern
+        densityMap = svg.selectAll("path")
+            .data(updatedDensityData);
+    
+        densityMap.exit().remove();  // Remove paths that are no longer needed
+    
+        densityMap.enter().append("path")
+            .merge(densityMap)
+            .attr("d", d3.geoPath())
+            .attr("fill", function(d) { return color(d.value); });
+    }
+    
+    // Listen to the slider?
+    d3.select("#causeSelectButton").on("change", function(event, d){
+        let selectedGroup = this.value
+        updateDensityMap(selectedGroup)
+    })
+
+    const labelsGroup = svg.append('g');
+    
+      // Add location labels
+    labelsGroup.selectAll('text')
+        .data(locations)
+        .enter().append('text')
+        .attr('x', d => d.x)
+        .attr('y', d => d.y - 6)
+        .text(d => d.name)
+        .attr('font-size', '10px')
+        .attr('fill', 'black')
+        .attr('text-anchor', 'middle')
+        .raise();
+    
+    const pointsGroup = svg.append('g');
+    
+    pointsGroup.selectAll('circle')
+        .data(locations)
+        .enter().append('circle')
+        .attr('cx', d => d.x)
+        .attr('cy', d => d.y)
+        .attr('r', 2) // Adjust the radius as needed
+        .attr('fill', 'black') // Adjust the fill color as needed
+        .raise();
+})
