@@ -52,7 +52,7 @@ const locations = [
 ];
 
 // append the svg object to the body of the page
-let svg = d3.select("#disr-heatmap-2022")
+let svg = d3.select("#disruption-heatmap")
 .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
@@ -86,7 +86,6 @@ d3.csv("data/disruptions-2022-geo.csv").then( function(data)
         .call(d3.axisLeft(y))
         .attr("opacity", ".0");
 
-
     // Prepare a color palette
     let color = d3.scaleLinear()
         .domain([0, 1]) // Points per square pixel.
@@ -96,7 +95,7 @@ d3.csv("data/disruptions-2022-geo.csv").then( function(data)
     allGroup.add("All")
 
     // Add the options to the button
-    d3.select("#causeSelectButton")
+    d3.select("#cause-select-button")
         .selectAll('myOptions')
         .data(allGroup)
         .enter()
@@ -154,7 +153,7 @@ d3.csv("data/disruptions-2022-geo.csv").then( function(data)
     }
     
     // Listen to the slider?
-    d3.select("#causeSelectButton").on("change", function(event, d){
+    d3.select("#cause-select-button").on("change", function(event, d){
         let selectedGroup = this.value
         updateDensityMap(selectedGroup)
     })

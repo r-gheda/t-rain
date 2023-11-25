@@ -128,10 +128,10 @@
     </h2>
     <div id="vis-world-trains"> 
     <!-- Initialize a select button -->
-    <select id="selectButton" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000"></select>
+    <select id="country-select-button" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000"></select>
 
     <!-- Create a div where the graph will take place -->
-    <div id="my_dataviz" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000" ></div>
+    <div id="train-usage-line-chart" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000" ></div>
     </div>
 
     <a href="#section2" class="cd-scroll-down"></a>
@@ -143,17 +143,18 @@
     <a href="#section3" class="cd-scroll-down"></a>
 </section>
 
+<!-- DISRUPTIONS HEATMAP -->
 <section id="section3">
-    <div id="tmp">Disruptions</h1>
+    <h1>Disruptions</h1>
     <div style="display: flex;">
-        <div style="width: 50%"
+        <div style="width: 40%"
             data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
             In 2022, there have been 24523 disruptions.
         </div>
-        <div style="width: 50%"
+        <div style="width: 60%"
             data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-            <select id="causeSelectButton"></select>
-            <div id="disr-heatmap-2022"></div>
+            <select id="cause-select-button"></select>
+            <div id="disruption-heatmap"></div>
         </div>
     </div>
 
@@ -177,7 +178,7 @@
 </footer>
 
 <script type="module" src="js/disruption-heatmap.js"></script>
-<script type="module" src="js/script_world_train_usage.js"></script> 
+<script type="module" src="js/script-world-train-usage.js"></script> 
 
 </body>
 </html>
