@@ -148,6 +148,9 @@ d3.csv("data/disruptions-2022-geo.csv").then( function(data)
             .merge(densityMap)
             .attr("d", d3.geoPath())
             .attr("fill", function(d) { return color(d.value); });
+        
+        labelsGroup.raise();
+        pointsGroup.raise();
     }
     
     // Listen to the slider?
