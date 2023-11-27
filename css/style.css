@@ -283,3 +283,10 @@ footer {
     border-radius: 5px;
     cursor: pointer; /
   }
+
+  #stacked {
+    position:relative;
+    text-align: center;
+
+  }
+

@@ -45,7 +45,7 @@ d3.csv("data/Modes_of_transport.csv").then( function(data) {
     .range([ 0, width ]);
   const xAxis = svg.append("g")
     .attr("transform", `translate(0, ${height})`)
-    .call(d3.axisBottom(x).ticks(5))
+    .call(d3.axisBottom(x).ticks(5).tickFormat(d3.format("d")));
 
   // Add X axis label:
   svg.append("text")
