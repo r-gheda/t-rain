@@ -1,4 +1,4 @@
-﻿Year,Bike,Bus/tram/metro,Other,Passenger car (driver),Passenger car (passenger),Train,Walking
+﻿Year,Bike,Bus_tram_metro,Other,Car_driver,Car_passenger,Train,Walking
 2018,18.5,6.5,17.6,108.8,38.7,22.8,5.2
 2019,17.8,6.5,17.9,108.5,39,24.1,5.2
 2020,15.5,2.9,12.1,79.4,25.8,9.6,6.6
