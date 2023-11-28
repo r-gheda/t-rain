@@ -10,6 +10,18 @@ const key_to_label = {
   "Walking": "Walking",
 }
 
+// dictionary to convert key to color
+const key_to_color = {
+  "Year": "#000000",
+  "Bike": "#e41a1c",
+  "Bus_tram_metro": "#377eb8",
+  "Other": "#4daf4a",
+  "Car_driver": "#984ea3",
+  "Car_passenger": "#ff7f00",
+  "Train": "#ffff33",
+  "Walking": "#a65628",
+}
+
 // set the dimensions and margins of the graph
 const margin = {top: 60, right: 230, bottom: 50, left: 50},
     width = 660 - margin.left - margin.right,
@@ -33,11 +45,6 @@ d3.csv("data/Modes_of_transport.csv").then( function(data) {
 
   // List of groups = header of the csv files
   const keys = data.columns.slice(1)
-
-  // color palette
-  const color = d3.scaleOrdinal()
-    .domain(keys)
-    .range(d3.schemeSet2);
 
   //stack the data?
   const stackedData = d3.stack()
@@ -110,7 +117,7 @@ d3.csv("data/Modes_of_transport.csv").then( function(data) {
     .data(stackedData)
     .join("path")
       .attr("class", function(d) { return "myArea " + d.key })
-      .style("fill", function(d) { return color(d.key); })
+      .style("fill", function(d) { return key_to_color[d.key]; })
       .attr("d", area)
 
   // Add the brushing
@@ -178,7 +185,7 @@ d3.csv("data/Modes_of_transport.csv").then( function(data) {
         .attr("y", function(d,i){ return 10 + i*(size+5)}) // 100 is where the first dot appears. 25 is the distance between dots
         .attr("width", size)
         .attr("height", size)
-        .style("fill", function(d){ return color(d)})
+        .style("fill", function(d){ return key_to_color[d]})
         .on("mouseover", highlight)
         .on("mouseleave", noHighlight)
 
@@ -188,7 +195,7 @@ d3.csv("data/Modes_of_transport.csv").then( function(data) {
       .join("text")
         .attr("x", 400 + size*1.2)
         .attr("y", function(d,i){ return 10 + i*(size+5) + (size/2)}) // 100 is where the first dot appears. 25 is the distance between dots
-        .style("fill", function(d){ return color(d)})
+        .style("fill", function(d){ return key_to_color[d]})
         .text(function(d) { return key_to_label[d] })
         .attr("text-anchor", "left")
         .style("alignment-baseline", "middle")
