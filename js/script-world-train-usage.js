@@ -57,14 +57,15 @@ const population = {
     "Türkiye": 84339067,
     "Ukraine": 43733762,
     "United States": 331002651,
-    "Uzbekistan": 33469203
-
+    "Uzbekistan": 33469203,
+    //create a new element "average" with the average population across all countries
+  
 }
 
 // set the dimensions and margins of the graph
 const margin = {top: 20, right: 40, bottom: 40, left: 80},
-    width = 700 - margin.left - margin.right,  // Increased from 460
-    height = 500 - margin.top - margin.bottom; // Increased from 400
+    width = 700 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
 
 // Append the SVG object to the body of the page
 const svg = d3.select("#train-usage-line-chart")
@@ -75,32 +76,47 @@ const svg = d3.select("#train-usage-line-chart")
     .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
 // Read the data
-d3.csv("data/world-train-usage.csv").then(function(data) 
-{
+d3.csv("data/world-train-usage.csv").then(function(data) {
     data = data.filter(function(d) { return d.Variable === "Rail passenger transport"; })
-
-    //sort the data by country
-    data.sort(function(a, b) {
-        return a.Country.localeCompare(b.Country);
-    });
 
     // Normalize the data by population
     data.forEach(function(d) {
         d.NormalizedValue = d.Value * 1000000 / population[d.Country];
     });
 
+    // Calculate total population
+    const totalPopulation = Object.values(population).reduce((a, b) => a + b, 0);
+
+    let worldAverageData = {};
+    data.forEach(function(d) {
+        if (!isNaN(+d.Value)) { // Check if the value is a number
+            if (!worldAverageData[d.Year]) {
+                worldAverageData[d.Year] = { Year: +d.Year, TotalUsage: 0 };
+            }
+            worldAverageData[d.Year].TotalUsage += +d.Value;
+        }
+    });
+    for (let year in worldAverageData) {
+        worldAverageData[year].NormalizedValue = worldAverageData[year].TotalUsage * 1000000 / totalPopulation;
+    }
+    worldAverageData = Object.values(worldAverageData);
+
+
     // List of groups (one group per column)
     const allGroup = new Set(data.map(d => d.Country))
+    allGroup.add("World Average"); // Add "World Average" to the list of groups
 
     // Add the options to the button
     d3.select("#country-select-button")
       .selectAll('myOptions')
-      .data(allGroup)
+      .data([...allGroup]) // Ensure the data is an array
       .enter()
       .append('option')
-      .text(function (d) { return d; }) // Text showed in the menu
-      .attr("value", function (d) { return d; }) // Corresponding value returned by the button
-      .style("font-family", "Verdana, sans-serif"); // Set font for options
+      .text(function (d) { return d; })
+      .attr("value", function (d) { return d; })
+      .style("font-family", "Verdana, sans-serif")
+      .property("selected", function(d) { return d === "World Average"; }); // Set "World Average" as default
+
 
     // A color scale: one color for each group
     const myColor = d3.scaleOrdinal()
@@ -138,16 +154,16 @@ d3.csv("data/world-train-usage.csv").then(function(data)
 
     // Initialize line for the first selected country (e.g., Korea)
     const selectedLine = svg
-      .append('g')
-      .append("path")
-        .datum(data.filter(function(d){return d.Country=="Korea"}))
-        .attr("d", d3.line()
-          .x(function(d) { return x(d.Year) })
-          .y(function(d) { return y(+d.NormalizedValue) })
-        )
-        .attr("stroke", "#003082" )
-        .style("stroke-width", 4)
-        .style("fill", "none");
+    .append('g')
+    .append("path")
+      .datum(worldAverageData) // Use worldAverageData here
+      .attr("d", d3.line()
+        .x(function(d) { return x(d.Year) })
+        .y(function(d) { return y(+d.NormalizedValue) })
+      )
+      .attr("stroke", "#003082" ) // You can choose a color for the World Average line
+      .style("stroke-width", 4)
+      .style("fill", "none");
 
     // Initialize permanent line for the Netherlands
     const netherlandsLine = svg
@@ -162,29 +178,31 @@ d3.csv("data/world-train-usage.csv").then(function(data)
         .style("stroke-width", 4)
         .style("fill", "none");
 
-    // A function that updates the chart for the selected country
-    function update(selectedGroup) 
-    {
-      // Create new data with the selection and normalize
-      const dataFilter = data.filter(function(d){
-          return d.Country == selectedGroup && d.Variable === "Rail passenger transport"
-      });
+    // A function that updates the chart for the selected country or World Average
+    function update(selectedGroup) {
+        let dataFilter;
+        if (selectedGroup === "World Average") {
+            dataFilter = worldAverageData;
+        } else {
+            dataFilter = data.filter(function(d){
+                return d.Country == selectedGroup && d.Variable === "Rail passenger transport";
+            });
+        }
 
-      // Update line for the selected country
-      selectedLine
-          .datum(dataFilter)
-          .transition()
-          .duration(1000)
-          .attr("d", d3.line()
-            .x(function(d) { return x(d.Year) })
-            .y(function(d) { return y(+d.NormalizedValue) })
-          )
-          .attr("stroke", "#003082" )
+        // Update line for the selected country or World Average
+        selectedLine
+            .datum(dataFilter)
+            .transition()
+            .duration(1000)
+            .attr("d", d3.line()
+              .x(function(d) { return x(d.Year) })
+              .y(function(d) { return y(+d.NormalizedValue) })
+            )
+            //.attr("stroke", selectedGroup === "World Average" ? "#FF6600" : "#003082");
     }
 
     // When the button is changed, run the update function
-    d3.select("#country-select-button").on("change", function(event, d) 
-    {
+    d3.select("#country-select-button").on("change", function(event, d) {
         const selectedOption = d3.select(this).property("value");
         update(selectedOption);
     });
