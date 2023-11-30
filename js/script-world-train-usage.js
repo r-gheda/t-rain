@@ -199,6 +199,10 @@ d3.csv("data/world-train-usage.csv").then(function(data) {
               .y(function(d) { return y(+d.NormalizedValue) })
             )
             //.attr("stroke", selectedGroup === "World Average" ? "#FF6600" : "#003082");
+        
+        // Update legend text
+        svg.select("#selected-country-legend-text")
+            .text(selectedGroup);
     }
 
     // When the button is changed, run the update function
@@ -223,4 +227,32 @@ d3.csv("data/world-train-usage.csv").then(function(data) {
       .text("Kilometers per Passenger (Millions)")
       .style("font-size", "12px")
       .style("fill", "#003082");
+
+      // Add a legend with a rectangle and a fixed text
+      svg.append("rect")
+        .attr("x", 20)
+        .attr("y", 20)
+        .attr("width", 20)
+        .attr("height", 20)
+        .style("fill", "#FF6600");
+
+      svg.append("text")
+        .attr("x", 50)
+        .attr("y", 35)
+        .text("The Netherlands")
+        .style("font-size", "12px")
+      
+      svg.append("rect")
+        .attr("x", 20)
+        .attr("y", 50)
+        .attr("width", 20)
+        .attr("height", 20)
+        .style("fill", "#003082");
+
+      svg.append("text")
+        .attr("x", 50)
+        .attr("y", 65)
+        .text("World Average")
+        .style("font-size", "12px")
+        .attr('id', "selected-country-legend-text");
 });
