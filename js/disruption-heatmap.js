@@ -102,6 +102,7 @@ d3.csv("data/disruptions-2022-geo.csv").then( function(data)
         .append('option')
         .text(function (d) { return d; }) // text showed in the menu
         .attr("value", function (d) { return d; }) // corresponding value returned by the button
+        .property("selected", function(d){ return d === "All" })
 
     // compute the density data
     let densityData = d3.contourDensity()
