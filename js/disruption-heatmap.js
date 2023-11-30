@@ -19,6 +19,16 @@ function normalize_coordinates_y(y)
     return height - (height * (y - y_domain_bottom) / (y_domain_top - y_domain_bottom));
 }
 
+function denormalize_coordinates_x(x)
+{
+    return x_domain_bottom + x * (x_domain_top - x_domain_bottom) / width;
+}
+
+function denormalize_coordinates_y(y)
+{
+    return y_domain_bottom + (height - y) * (y_domain_top - y_domain_bottom) / height;
+}
+
 function normalize_coordinates(x, y, name_var)
 {
     return { x: normalize_coordinates_x(x), y: normalize_coordinates_y(y), name: name_var };
@@ -62,6 +72,8 @@ let svg = d3.select("#disruption-heatmap")
 // read data
 d3.csv("data/disruptions-2022-geo.csv").then( function(data) 
 {
+    let selectedGroup = "All";
+
     // Add X axis
     let x = d3.scaleLinear()
         .domain([x_domain_bottom, x_domain_top])
@@ -155,9 +167,21 @@ d3.csv("data/disruptions-2022-geo.csv").then( function(data)
     
     // Listen to the slider?
     d3.select("#cause-select-button").on("change", function(event, d){
-        let selectedGroup = this.value
+        selectedGroup = this.value
         updateDensityMap(selectedGroup)
     })
+
+    function loc_id(x, y)
+    {
+        for (let i = 0; i < locations.length; i++)
+        {
+            if (locations[i].x === x && locations[i].y === y)
+            {
+                console.log(i);
+                return i;
+            }
+        }
+    }
 
     const labelsGroup = svg.append('g');
     
@@ -171,7 +195,90 @@ d3.csv("data/disruptions-2022-geo.csv").then( function(data)
         .attr('font-size', '10px')
         .attr('fill', 'black')
         .attr('text-anchor', 'middle')
-        .raise();
+        .raise()
+        .on('mouseover',function(event,d){
+            // make all labels transparent
+            d3.selectAll('text')
+                .transition()
+                .duration(250)
+                .attr("opacity",function(){
+                    return 0.1;
+                });
+
+            d3.selectAll('circle')
+                .transition()
+                .duration(250)
+                .attr("opacity",function(){
+                    return 0.1;
+                });
+
+            d3.select(this)
+                .transition()
+                .duration(250)
+                .attr("font-size",function(){
+                    return '16px';
+                })
+                .attr("opacity",function(){
+                    return 1.0;
+                })
+                .attr("cursor","pointer")
+                .attr("font-weight",700);
+            
+            // Add a text label that shows the number of disruptions
+            let filteredData = data.filter(function(e) {
+                if (selectedGroup === "All")
+                {
+                    return denormalize_coordinates_x(d.x) === Number(e.x) && denormalize_coordinates_y(d.y) === Number(e.y);
+                }
+                return denormalize_coordinates_x(d.x) === Number(e.x) && denormalize_coordinates_y(d.y) === Number(e.y) && e.group === selectedGroup; 
+            });
+            let numDisruptions = filteredData.length / 4;
+            
+            svg.append('text')
+                .attr('x', d.x)
+                .attr('y', d.y + 15)
+                .text(numDisruptions)
+                .attr('font-size', '16px')
+                .attr('fill', 'black')
+                .attr('text-anchor', 'middle')
+                .attr('id', 'num-disruptions')
+                .raise();
+
+        })
+        .on('mouseout',function(event,d){
+            d3.selectAll('text')
+                .transition()
+                .duration(250)
+                .attr("opacity",function(){
+                    return 1.0;
+                })
+                .attr("font-size",function(){
+                    return '10px';
+                })
+                .attr("font-weight",700);
+            
+            d3.selectAll('circle')
+                .transition()
+                .duration(250)
+                .attr("opacity",function(){
+                    return 1.0;
+                });
+            
+            d3.select(this)
+                .transition()
+                .duration(250)
+                .attr("font-size",function(){
+                    return '10px';
+                })
+                .attr("font-weight",400)
+                .attr("opacity",function(){
+                    return 1.0;
+                });
+            
+                // Remove the text label that shows the number of disruptions
+                svg.select('#num-disruptions').remove();
+            
+        });
     
     const pointsGroup = svg.append('g');
     
