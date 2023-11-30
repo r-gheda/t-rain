@@ -58,8 +58,8 @@
         // })
         
         // set the dimensions and margins of the graph
-        const width = 780
-        const height = 780
+        const width = 700
+        const height = 700
         const radius = width / 2 // radius of the dendrogram
         
         // append the svg object to the body of the page
