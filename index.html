@@ -159,16 +159,16 @@
 <section id="section4">
     <h1>Train stations' features</h1>
     <div style="display: flex;">
-        <div style="width: 40%"
-            data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
-            In the Netherlands there are a lot of train stations.
-        </div>
+        <input type="text" id="stationSearch" placeholder="Enter Station Code" >
+        <button id="clearStations">Clear</button>
         <div style="width: 60%"  
             data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
             
-            <div id="stations-spider-chart"></div>
+            <div id="stations-spider-chart" data-aos="fade-left" data-aos-duration="1000"></div>
         </div>
-    </div>    <a href="#section5" class="cd-scroll-down"></a>
+    </div>
+    
+    <a href="#section5" class="cd-scroll-down"></a>
 </section>
 <!-- END SPIDER CHART -->
 
@@ -182,10 +182,10 @@
 
     <label for="yFeature">Feature Y:</label>
     <select id="yFeature"></select>
-
+    
     <div id="station-features-scatter"></div>
 
-    <script src="your_script.js"></script>
+    
 
     <div id="station-features-scatter">
 
@@ -204,6 +204,7 @@
 <script type="module" src="js/disruption-heatmap.js"></script>
 <script type="module" src="js/script-world-train-usage.js"></script> 
 <script type="module" src="js/train-stations-spider-chart.js"></script>
+<script type="module" src="js/script-features-comparison.js"></script>
 
 </body>
 </html>

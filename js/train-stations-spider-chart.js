@@ -1,113 +1,265 @@
+
+
 let width = 700;
-let height = 700;
+let height =700;
+let selectedStations = [];
 
-d3.csv("data/disruptions-2022-geo.csv").then( function(data) 
-{
-    data = [];
-    let features = [
-        "N of Platforms",
-        "N of Trains",
-        "Avg. Delay",
-        "N of Disruptions",
-        "E"
-    ];
-
-    for (var i = 0; i < 3; i++){
-        var point = {}
-        //each feature will be a random number from 1-9
-        features.forEach(f => point[f] = 1 + Math.random() * 8);
-        data.push(point);
-    }
+// Load the specific dataset
+d3.csv("data/station_features/station_service_disruption_delays_cancel_counts.csv").then(function(dataset) 
+{   
     
+    if (dataset.length === 0) return;
+    let legendData = [dataset[0]];
+    // Select the first row of the dataset
+
+    // Define the features to be used
+    let features = ["Number of Services", "Disruption Count", "Delay Count", "Cancel Count"];
+
+    let features_nosc = features.filter(f => f !== "Station Code");
+
+        // Initialize objects to store the min and max values for each feature
+        let featureMinMax = features_nosc.reduce((acc, feature) => {
+            acc[feature] = {min: Number.MAX_VALUE, max: Number.MIN_VALUE};
+            return acc;
+        }, {});
+    
+        // Iterate through the dataset to find the min and max values for each feature
+        dataset.forEach(function(row) {
+            features.forEach(function(feature) {
+                //ignore the station code
+                if (feature === "Station Code") return;
+                let value = parseFloat(row[feature]) || 0;
+                featureMinMax[feature].min = Math.min(featureMinMax[feature].min, value);
+                featureMinMax[feature].max = Math.max(featureMinMax[feature].max, value);
+            });
+        });
+    
+        // Normalize the data
+        dataset = dataset.map(row => {
+            let normalizedRow = {};
+            normalizedRow["Station Code"] = row["Station Code"];
+            features.forEach(feature => {
+                //leave the station code as it is
+                
+                normalizedRow[feature] = (parseFloat(row[feature]) - featureMinMax[feature].min) / 
+                                        (featureMinMax[feature].max - featureMinMax[feature].min);
+            });
+            return normalizedRow;
+        });
+
+
+    // Initialize variables to store the min and max values
+    let minValue = 0;
+    let maxValue = 1;
+
+
+    //print the min and max values
+    console.log("minValue: " + minValue);
+    console.log("maxValue: " + maxValue);
+
+    let data = [dataset[0]]
+
+    let legendX = 50; // X position of the legend
+    let legendY = 50; // Y position of the legend
+    let legendRectSize = 20; // Size of the legend color boxes
+    let legendSpacing = 5; // Spacing between boxes
+
+    // Select the first four rows of the dataset for the legend
+   
     let svg = d3.select("#stations-spider-chart").append("svg")
         .attr("width", width)
         .attr("height", height);
-    
+
+    // Now minValue and maxValue hold the minimum and maximum values across all features
+
+    // Adjust the radial scale domain based on the min and max values
     let radialScale = d3.scaleLinear()
-        .domain([0,10])
-        .range([0,250]);
+        .domain([0, maxValue])
+        .range([0, 250]);
 
-    let ticks = [2,4,6,8,10];
+    let colors = ["darkorange", "gray", "navy", "red", "green", "purple", "lightblue"];
 
-    svg.selectAll("circle")
-        .data(ticks)
-        .join(
-            enter => enter.append("circle")
-                .attr("cx", width / 2)
-                .attr("cy", height / 2)
-                .attr("fill", "none")
-                .attr("stroke", "gray")
-                .attr("r", d => radialScale(d))
-        );
-
-    function angleToCoordinate(angle, value)
-    {
-        let x = Math.cos(angle) * radialScale(value);
-        let y = Math.sin(angle) * radialScale(value);
-        return {"x": width / 2 + x, "y": height / 2 - y};
-    }
-    
-    let featureData = features.map((f, i) => {
-        let angle = (Math.PI / 2) + (2 * Math.PI * i / features.length);
-        return {
-            "name": f,
-            "angle": angle,
-            "line_coord": angleToCoordinate(angle, 10),
-            "label_coord": angleToCoordinate(angle, 10.5)
-        };
+    let legend = svg.selectAll('.legend')
+    .data(legendData)
+    .enter()
+    .append('g')
+    .attr('class', 'legend')
+    .attr('transform', function(_, i) {
+        let height = legendRectSize + legendSpacing;
+        let offset = height * legendData.length / 2;
+        let horz = legendX;
+        let vert = legendY + i * height - offset;
+        return 'translate(' + horz + ',' + vert + ')';
     });
 
-    // draw axis line
-    svg.selectAll("line")
-    .data(featureData)
+    // Create colored rectangles
+    legend.append('rect')
+        .attr('width', legendRectSize)
+        .attr('height', legendRectSize)
+        .style('fill', (_, i) => colors[i])
+        .style('stroke', (_, i) => colors[i]);
+
+    // Create text labels
+    //print the station code
+
+    console.log(legendData);
+    legend.append('text')
+        .attr('x', legendRectSize + legendSpacing)
+        .attr('y', legendRectSize - legendSpacing)
+        .text(function(d) {
+            return d['Station Code']; // Replace 'Station Code' with the actual attribute name for station codes
+        });
+
+    // Calculate ticks based on the maxValue
+    let numberOfTicks = 7; // for example, you can change this
+    let tickStep = maxValue / numberOfTicks;
+    let ticks = d3.range(0, maxValue + tickStep, tickStep); // Generate tick values
+
+    svg.selectAll("circle")
+    .data(ticks)
     .join(
-        enter => enter.append("line")
-            .attr("x1", width / 2)
-            .attr("y1", height / 2)
-            .attr("x2", d => d.line_coord.x)
-            .attr("y2", d => d.line_coord.y)
-            .attr("stroke","black")
+        enter => enter.append("circle")
+            .attr("cx", width / 2)
+            .attr("cy", height / 2)
+            .attr("fill", "none")
+            .attr("stroke", "gray")
+            .attr("r", d => radialScale(d))
     );
 
-    // draw axis label
-    svg.selectAll(".axislabel")
-    .data(featureData)
-    .join(
-        enter => enter.append("text")
-            .attr("x", d => d.label_coord.x)
-            .attr("y", d => d.label_coord.y)
-            .text(d => d.name)
-    );    
+function angleToCoordinate(angle, value)
+{
+    let x = Math.cos(angle) * radialScale(value);
+    let y = Math.sin(angle) * radialScale(value);
+    return {"x": width / 2 + x, "y": height / 2 - y};
+}
 
-    let line = d3.line()
-        .x(d => d.x)
-        .y(d => d.y);
 
-    let colors = ["darkorange", "gray", "navy"];
 
-    function getPathCoordinates(data_point)
-    {
+let featureData = features.map((f, i) => {
+    let angle = (Math.PI / 2) + (2 * Math.PI * i / features.length);
+    let labelCoord = angleToCoordinate(angle, maxValue + 0.1); // A little bit further than maxValue
+
+    // Adjust the x-coordinate of the label based on the angle
+    // The adjustment factor (e.g., 5, 10, etc.) can be changed as needed
+    let adjustmentFactor = 50; // Adjust this value as needed
+    labelCoord.x -= adjustmentFactor;
+
+    return {
+        "name": f,
+        "angle": angle,
+        "line_coord": angleToCoordinate(angle, maxValue),
+        "label_coord": labelCoord
+    };
+});
+
+// draw axis line
+svg.selectAll("line")
+.data(featureData)
+.join(
+    enter => enter.append("line")
+        .attr("x1", width / 2)
+        .attr("y1", height / 2)
+        .attr("x2", d => d.line_coord.x)
+        .attr("y2", d => d.line_coord.y)
+        .attr("stroke","black")
+);
+
+// draw axis label
+svg.selectAll(".axislabel")
+.data(featureData)
+.join(
+    enter => enter.append("text")
+        .attr("x", d => d.label_coord.x)
+        .attr("y", d => d.label_coord.y)
+        .text(d => d.name)
+);    
+
+let line = d3.line()
+    .x(d => d.x)
+    .y(d => d.y);
+    
+//UPDATE CHART
+function updateChart(){
+
+    let filteredData = dataset.filter(d => selectedStations.includes(d['Station Code']));
+
+    // Update the path (chart)
+    let paths = svg.selectAll("path")
+        .data(filteredData);
+
+    paths.enter()
+        .append("path")
+        .merge(paths)
+        .transition()
+        .duration(1000) // Transition duration
+        .attr("d", d => getPathCoordinates(d))
+        .attr("stroke-width", 3)
+        .attr("stroke", (_, i) => colors[i])
+        .attr("fill", (_, i) => colors[i])
+        .attr("stroke-opacity", 1)
+        .attr("opacity", 0.5);
+
+    paths.exit().remove();
+
+    //let legendData = [dataPoint];
+    let legend = svg.selectAll('.legend').data(filteredData);
+
+    let legendEnter = legend.enter().append('g').attr('class', 'legend');
+
+    legendEnter.merge(legend)
+        .attr('transform', (_, i) => 'translate(50,' + (50 + i * 25) + ')');
+
+    legendEnter.append('rect')
+        .merge(legend.select('rect'))
+        .attr('width', 20)
+        .attr('height', 20)
+        .style('fill', (_, i) => colors[i])
+        .style('stroke', (_, i) => colors[i]);
+
+    legendEnter.append('text')
+        .merge(legend.select('text'))
+        .attr('x', 25)
+        .attr('y', 15)
+        .text(d => d['Station Code']);
+
+    legend.exit().remove();
+
+}
+    //UPDATE CHART END
+
+    // Adjust the getPathCoordinates function as earlier
+    function getPathCoordinates(data_point) {
         let coordinates = [];
-        for (var i = 0; i < features.length; i++){
+        for (var i = 0; i < features.length; i++) {
             let ft_name = features[i];
             let angle = (Math.PI / 2) + (2 * Math.PI * i / features.length);
-            coordinates.push(angleToCoordinate(angle, data_point[ft_name]));
+            let value = parseFloat(data_point[ft_name]) || 0;
+            coordinates.push(angleToCoordinate(angle, value));
         }
-        return coordinates;
+        return line(coordinates);  // Convert coordinates to SVG path string
     }
 
-    // draw the path element
-    svg.selectAll("path")
-    .data(data)
-    .join(
-        enter => enter.append("path")
-            .datum(d => getPathCoordinates(d))
-            .attr("d", line)
-            .attr("stroke-width", 3)
-            .attr("stroke", (_, i) => colors[i])
-            .attr("fill", (_, i) => colors[i])
-            .attr("stroke-opacity", 1)
-            .attr("opacity", 0.5)
-    );
+    d3.select('#stationSearch').on('keydown', function(e) {
+        if (e.key === 'Enter'){
+        let searchValue = this.value.toUpperCase();
+        console.log(searchValue);
+       
+        if (!selectedStations.includes(searchValue)) {
+            selectedStations.push(searchValue);
+            updateChart();
+        }
+        }
+    });
+
+    d3.select('#clearStations').on('click', function() {
+        selectedStations = [];
+        updateChart();
+    });
+
+    updateChart();
+
+
+
 
 });
+
