@@ -255,7 +255,7 @@ d3.csv("data/disruptions-2022-geo.csv").then( function(data)
                 .attr("font-size",function(){
                     return '10px';
                 })
-                .attr("font-weight",700);
+                .attr("font-weight",400);
             
             d3.selectAll('circle')
                 .transition()

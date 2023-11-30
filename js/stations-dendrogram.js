@@ -1,6 +1,6 @@
 // set the dimensions and margins of the graph
-const width = 700
-const height = 700
+const width = 680
+const height = 680
 const radius = width / 2 // radius of the dendrogram
 
 // append the svg object to the body of the page
