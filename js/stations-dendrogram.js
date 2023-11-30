@@ -58,8 +58,8 @@
         // })
         
         // set the dimensions and margins of the graph
-        const width = 1000
-        const height = 1000
+        const width = 780
+        const height = 780
         const radius = width / 2 // radius of the dendrogram
         
         // append the svg object to the body of the page
@@ -70,7 +70,7 @@
           .append("g")
             .attr("transform", `translate(${radius},${radius})`);
         // read json data
-        d3.json("data/trees/AH.json").then( function(data) {
+        d3.json("data/trees/UT.json").then( function(data) {
             
             // Create the cluster layout:
             const cluster = d3.cluster()
@@ -105,7 +105,7 @@
             translate(${d.y})`;
         })
         .append("circle")
-            .attr("r", 3)
+            .attr("r", 2)
             .style("fill", "#f7c82d")
             .attr("stroke", "#003082")
             .style("stroke-width", 2)
