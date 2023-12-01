@@ -160,14 +160,20 @@ d3.csv("data/Modes_of_transport.csv").then( function(data) {
     // What to do when one group is hovered
     const highlight = function(event,d){
       // reduce opacity of all groups
-      d3.selectAll(".myArea").style("opacity", .1)
+      d3.selectAll(".myArea")
+      .transition().duration(200)
+      .style("opacity", .1)
       // expect the one that is hovered
-      d3.select("."+d).style("opacity", 1)
+      d3.select("."+d)
+      .transition().duration(200)
+      .style("opacity", 1)
     }
 
     // And when it is not hovered anymore
     const noHighlight = function(event,d){
-      d3.selectAll(".myArea").style("opacity", 1)
+      d3.selectAll(".myArea")
+      .transition().duration(200)
+      .style("opacity", 1)
     }
 
 
