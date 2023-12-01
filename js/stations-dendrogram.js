@@ -1,3 +1,5 @@
+import { create_barplot } from "./hopcount-barplot.js";
+
 // set the dimensions and margins of the graph
 const width = 680
 const height = 680
@@ -10,6 +12,7 @@ const svg = d3.select("#stations-dendrogram")
     .append("svg")
     .attr("width", width)
     .attr("height", height)
+    .attr("id", "dendrogram-svg")
     .append("g")
     .attr("transform", `translate(${radius},${radius})`);
 
@@ -251,6 +254,7 @@ d3.select('#dendro-station-search').on('keydown', function(e) {
     {
         let searchValue = this.value.toUpperCase();
         create_dendro(searchValue);
+        create_barplot(searchValue);
     }
 });
 
