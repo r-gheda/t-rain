@@ -195,10 +195,15 @@ d3.csv("data/disruptions-2022-geo.csv").then( function(data)
         .attr('font-size', '10px')
         .attr('fill', 'black')
         .attr('text-anchor', 'middle')
+        .attr('id', d => "disruption-label-" + d.name)
         .raise()
         .on('mouseover',function(event,d){
             // make all labels transparent
             d3.selectAll('text')
+                .filter(function(d) {
+                    // returns true if d.id contains scatter-label-
+                    return this.id.includes('disruption-label-');
+                })
                 .transition()
                 .duration(250)
                 .attr("opacity",function(){
@@ -206,6 +211,10 @@ d3.csv("data/disruptions-2022-geo.csv").then( function(data)
                 });
 
             d3.selectAll('circle')
+                .filter(function(d) {
+                    // returns true if d.id contains scatter-label-
+                    return this.id.includes('disruption-circle-');
+                })
                 .transition()
                 .duration(250)
                 .attr("opacity",function(){
@@ -247,6 +256,10 @@ d3.csv("data/disruptions-2022-geo.csv").then( function(data)
         })
         .on('mouseout',function(event,d){
             d3.selectAll('text')
+                .filter(function(d) {
+                    // returns true if d.id contains scatter-label-
+                    return this.id.includes('disruption-label-');
+                })
                 .transition()
                 .duration(250)
                 .attr("opacity",function(){
@@ -258,6 +271,10 @@ d3.csv("data/disruptions-2022-geo.csv").then( function(data)
                 .attr("font-weight",400);
             
             d3.selectAll('circle')
+                .filter(function(d) {
+                    // returns true if d.id contains scatter-label-
+                    return this.id.includes('disruption-circle-');
+                })
                 .transition()
                 .duration(250)
                 .attr("opacity",function(){
@@ -289,5 +306,6 @@ d3.csv("data/disruptions-2022-geo.csv").then( function(data)
         .attr('cy', d => d.y)
         .attr('r', 2) // Adjust the radius as needed
         .attr('fill', 'black') // Adjust the fill color as needed
+        .attr('id', d => "disruption-circle-" + d.name)
         .raise();
 })
