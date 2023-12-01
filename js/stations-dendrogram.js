@@ -37,14 +37,16 @@ function create_dendro(station_code)
         svg.selectAll('path')
             .data(root.links())
             .join('path')
+            .transition()
+            .duration(1000)
             .attr("d", linksGenerator)
             .style("fill", 'none')
             .attr("stroke", '#003082')
             .attr("id", function(d) { return "link-" + d.source.data.name + "-" + d.target.data.name; });
-
-
-        // Add a circle for each node.
-        svg.selectAll("g")
+            
+            
+            // Add a circle for each node.
+            svg.selectAll("g")
             .data(root.descendants())
             .join("g")
             .attr("transform", function(d) {
@@ -52,11 +54,7 @@ function create_dendro(station_code)
                 translate(${d.y})`;
             })
             .append("circle")
-                .attr("r", 3)
-                .style("fill", "#f7c82d")
-                .attr("stroke", "#003082")
                 .style("stroke-width", 2)
-                .attr("id", function(d) { return "dendro-node-" + d.data.name; })
                 .on("mouseover", function(event, d) {
                     d3.selectAll("circle")
                         .filter(function(d) {
@@ -192,7 +190,13 @@ function create_dendro(station_code)
                         .duration(250)
                         .attr("opacity", 0)
                         .remove();
-                });
+                })
+                .transition()
+                .duration(1000)
+                .style("fill", "#f7c82d")
+                .attr("stroke", "#003082")
+                .attr("id", function(d) { return "dendro-node-" + d.data.name; })
+                .attr("r", 3);
 
         // Highlight the root node
         svg.select("#" + station_code)
