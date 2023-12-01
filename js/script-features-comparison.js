@@ -67,6 +67,7 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts.cs
         // Enter new dots
         dots.enter()
             .append("circle")
+            .attr("id", d => "scatter-node-" + d["Station Code"])
             .merge(dots) // Apply changes to all circles
             .transition()
             .duration(1000)
@@ -82,19 +83,41 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts.cs
         const labels = svg.selectAll(".label")
                           .data(data);
 
+
         // Enter new labels
         labels.enter()
-              .append("text")
-              .attr("class", "label")
-              .merge(labels)
-              .transition()
-              .duration(1000)
-              .attr("x", d => xScale(d[currentX]))
-              .attr("y", d => yScale(d[currentY]))
-              .text(d => d["Station Code"])
-              .attr("text-anchor", "middle")
-              .style("font-size", "11px");
+          .append("text")
+          .attr("class", "label")
+          .merge(labels)
+          .transition()
+          .duration(1000)
+          .attr("opacity", 0.0)
+          .attr("x", d => xScale(d[currentX]))
+          .attr("y", d => yScale(d[currentY]) - 10)
+          .text(d => d["Station Code"])
+          .attr("text-anchor", "middle")
+          .style("font-size", "11px")
+          .attr("id", d => "scatter-label-" + d["Station Code"]);
+                        
+        // get all d3 elements that whose id starts with scatter-node
+        let children = document.querySelectorAll("[id^='spider-legend-']");
+        console.log(children)
+        for (let i = 0; i < children.length; i++) {
+          let station_code = children[i]['id'].slice(14)
+          d3.select("#scatter-label-" + station_code)
+            .transition()
+            .duration(1000)
+            .attr("x", d => xScale(d[currentX]))
+            .attr("y", d => yScale(d[currentY]) - 10)
+            .attr("opacity", 1);
 
+          d3.select("#scatter-node-" + station_code)
+            .transition()
+            .duration(1000)
+            .attr("cx", d => xScale(d[currentX]))
+            .attr("cy", d => yScale(d[currentY]))
+            .style("fill", "darkred");
+        }
         // Remove old labels
         labels.exit().remove();
     }

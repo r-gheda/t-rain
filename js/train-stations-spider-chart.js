@@ -257,19 +257,77 @@ function updateChart(){
     }
 
     d3.select('#stationSearch').on('keydown', function(e) {
-        if (e.key === 'Enter'){
-        let searchValue = this.value.toUpperCase();
-        
-        if (!selectedStations.includes(searchValue)) {
-            selectedStations.push(searchValue);
-            updateChart();
-        }
+        if (e.key === 'Enter')
+        {
+            let searchValue = this.value.toUpperCase();
+            
+            if (!selectedStations.includes(searchValue)) {
+                selectedStations.push(searchValue);
+                updateChart();
+            }
+
+            d3.selectAll('text')
+                .filter(function(d) {
+                    // returns true if d.id contains scatter-label-
+                    return this.id.includes('scatter-label-');
+                })
+                .transition()
+                .duration(300)
+                .attr('opacity', 0.0);
+            
+            d3.selectAll('circle')
+                .filter(function(d) {
+                    // returns true if d.id contains station-
+                    return this.id.includes('scatter-node-');
+                })
+                .transition()
+                .duration(300)
+                .attr('opacity', 0.05);
+            
+            for (let i = 0; i < selectedStations.length; i++)
+            {
+                let label_id = '#scatter-label-' + selectedStations[i];
+                d3.select(label_id)
+                    .transition()
+                    .duration(300)
+                    .attr('opacity', 1.0)
+                    .attr('fill', 'black')
+                    .attr('font-weight', 'bold');
+
+                let node_id = '#scatter-node-' + selectedStations[i];
+                d3.select(node_id)
+                    .transition()
+                    .duration(290)
+                    .attr('opacity', 1.0)
+                    .style("fill", "darkred");
+            }
         }
     });
 
     d3.select('#clearStations').on('click', function() {
         selectedStations = [];
         updateChart();
+
+        d3.selectAll('text')
+            .filter(function(d) {
+                // returns true if d.id contains scatter-label-
+                return this.id.includes('scatter-label-');
+            })
+            .transition()
+            .duration(300)
+            .attr('opacity', 0.0)
+            .attr('fill', 'black')
+            .attr('font-weight', 'normal');
+
+        d3.selectAll('circle')
+            .filter(function(d) {
+                // returns true if d.id contains station-
+                return this.id.includes('scatter-node-');
+            })
+            .transition()
+            .duration(300)
+            .style("fill", "#69b3a2")
+            .attr('opacity', 1.0);
     });
 
     updateChart();
