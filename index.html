@@ -43,7 +43,7 @@
         </li>
         <li>
             <a href="#section2bis"><span class="cd-dot"></span>
-                <span class="cd-label">Dendogram</span>
+                <span class="cd-label">Dendrogram</span>
             </a>
         </li>
         <li>
@@ -53,12 +53,7 @@
         </li>
         <li>
             <a href="#section4"><span class="cd-dot"></span>
-                <span class="cd-label">Station Features</span>
-            </a>
-        </li>
-        <li>
-            <a href="#section5"><span class="cd-dot"></span>
-                <span class="cd-label">Pick your station!</span>
+                <span class="cd-label">Pick Your Station!</span>
             </a>
         </li>
         
@@ -160,45 +155,30 @@
 </section>
 <!-- END DISRUPTIONS HEATMAP -->
 
-<!-- TRAIN STATIONS SPIDER CHART -->
-<section id="section4">
-    <h1>Train stations' features</h1>
-    <div style="display: flex;">
-        <input type="text" id="stationSearch" placeholder="Enter Station Code" >
-        <button id="clearStations">Clear</button>
-        <div style="width: 60%"  
-            data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-            
-            <div id="stations-spider-chart" data-aos="fade-left" data-aos-duration="1000"></div>
-        </div>
-    </div>
-    
-    <a href="#section5" class="cd-scroll-down"></a>
-</section>
-<!-- END SPIDER CHART -->
-
 <!-- WHAT'S THE BEST STATION FOR YOU -->
-<section id="section5">
+<section id="section4">
     <h1>What's the best station for you</h1>
     <p>This is the content of Section 5.</p>
 
-    <label for="xFeature">Feature X:</label>
-    <select id="xFeature"></select>
+    <div style="display: flex;">
+        <div style="width: 70%">
+            <label for="xFeature">Feature X:</label>
+            <select id="xFeature"></select>
 
-    <label for="yFeature">Feature Y:</label>
-    <select id="yFeature"></select>
-    
-    <div id="station-features-scatter"></div>
-
-    
-
-    <div id="station-features-scatter">
-
-
+            <label for="yFeature">Feature Y:</label>
+            <select id="yFeature"></select>
+            
+            <div id="station-features-scatter"></div>
+        </div>
+        <div style="width: 30%">
+            <input type="text" id="stationSearch" placeholder="Enter Station Code" >
+            <button id="clearStations">Clear</button>
+            <div style="width: 60%"  
+                data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">   
+            <div id="stations-spider-chart" data-aos="fade-left" data-aos-duration="1000"></div>
+            </div>
+        </div>
     </div>
-
-
-    <a href="#section6" class="cd-scroll-down"></a>
 </section>
 <!-- END WHAT'S THE BEST STATION FOR YOU -->
 

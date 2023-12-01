@@ -1,7 +1,8 @@
 
 
-let width = 700;
-let height =700;
+let width  = 450;
+let height = 450;
+let margin = 150;
 let selectedStations = [];
 
 // Load the specific dataset
@@ -70,7 +71,7 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts.cs
     // Adjust the radial scale domain based on the min and max values
     let radialScale = d3.scaleLinear()
         .domain([0, maxValue])
-        .range([0, 250]);
+        .range([0, (width - margin) / 2]);
 
     let colors = ["darkorange", "gray", "navy", "red", "green", "purple", "lightblue"];
 
@@ -224,6 +225,13 @@ function updateChart(){
                 .transition()
                 .duration(300)
                 .attr('opacity', 0.7);
+
+            path_id = "#scatter-node-"  + i['Station Code'];
+
+            d3.select(path_id)
+                .transition()
+                .duration(300)
+                .attr('r', 10);
         })
         .on('mouseout', function(_, i)
         {
@@ -231,6 +239,13 @@ function updateChart(){
                 .transition()
                 .duration(300)
                 .attr('opacity', 0.5);
+
+            let path_id = "#scatter-node-"  + i['Station Code'];
+
+            d3.select(path_id)
+                .transition()
+                .duration(300)
+                .attr('r', 5);
         });
 
     legendEnter.append('text')
