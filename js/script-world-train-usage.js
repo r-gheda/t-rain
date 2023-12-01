@@ -64,8 +64,8 @@ const population = {
 
 // set the dimensions and margins of the graph
 const margin = {top: 20, right: 40, bottom: 40, left: 80},
-    width = 700 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+    width = 600 - margin.left - margin.right,
+    height = 400 - margin.top - margin.bottom;
 
 // Append the SVG object to the body of the page
 const svg = d3.select("#train-usage-line-chart")
@@ -148,7 +148,7 @@ d3.csv("data/world-train-usage.csv").then(function(data) {
     svg.append("g")
       .call(yAxis)
       .attr("color", "#003082") // Blue axis color
-      .style("stroke-width", "3px") // Thicker axis lines
+      .style("stroke-width", "2px") // Thicker axis lines
       .selectAll("text")
         .style("font-family", "Verdana, sans-serif"); // Verdana font for axis labels
 

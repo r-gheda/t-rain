@@ -154,10 +154,14 @@ d3.csv("data/disruptions-2022-geo.csv").then( function(data)
         densityMap = svg.selectAll("path")
             .data(updatedDensityData);
     
-        densityMap.exit().remove();  // Remove paths that are no longer needed
+        densityMap.exit().transition()
+        .duration(1200) // Set the duration of the transition
+        .ease(d3.easeCubicInOut).remove();  // Remove paths that are no longer needed
     
         densityMap.enter().append("path")
-            .merge(densityMap)
+            .merge(densityMap).transition() // Apply a transition
+            .duration(1200) // Set the duration of the transition
+            .ease(d3.easeCubicInOut)
             .attr("d", d3.geoPath())
             .attr("fill", function(d) { return color(d.value); });
         

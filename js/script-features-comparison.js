@@ -1,7 +1,7 @@
 d3.csv("data/station_features/station_service_disruption_delays_cancel_counts.csv").then(data => {
     const margin = {top: 20, right: 40, bottom: 50, left: 70},
-          width = 800 - margin.left - margin.right,
-          height = 500 - margin.top - margin.bottom;
+          width = 600 - margin.left - margin.right,
+          height = 400 - margin.top - margin.bottom;
 
     const svg = d3.select("#station-features-scatter")
                   .append("svg")
@@ -22,6 +22,7 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts.cs
       .append("option")
       .text(d => d)
       .attr("value", d => d);
+      
 
     d3.select("#yFeature")
       .selectAll("option")
@@ -43,8 +44,20 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts.cs
 
     // Axis setup
     const xAxis = svg.append("g")
-                     .attr("transform", `translate(0,${height})`);
-    const yAxis = svg.append("g");
+                     .attr("transform", `translate(0,${height})`)
+                     .call(d3.axisBottom(xScale).ticks(10)) // Initial call for creation
+                     .selectAll("path")
+                     .style("stroke-width", 2);
+                     
+    const yAxis = svg.append("g")
+                    .call(d3.axisLeft(yScale).ticks(10)) // Initial call for creation
+                    .selectAll("path")
+                    .style("stroke-width", 2);
+
+
+           
+
+  
 
     // Update function
     function updateScatterPlot() {
@@ -73,7 +86,7 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts.cs
             .duration(1000)
             .attr("cx", d => xScale(d[currentX]))
             .attr("cy", d => yScale(d[currentY]))
-            .attr("r", 5)
+            .attr("r", 3.5)
             .style("fill", "#69b3a2");
 
         // Remove old dots

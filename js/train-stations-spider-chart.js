@@ -1,7 +1,7 @@
 
 
-let width  = 450;
-let height = 450;
+let width  = 400;
+let height = 400;
 let margin = 150;
 let selectedStations = [];
 
@@ -106,7 +106,7 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts.cs
         });
 
     // Calculate ticks based on the maxValue
-    let numberOfTicks = 7; // for example, you can change this
+    let numberOfTicks = 5; // for example, you can change this
     let tickStep = maxValue / numberOfTicks;
     let ticks = d3.range(0, maxValue + tickStep, tickStep); // Generate tick values
 
@@ -132,11 +132,11 @@ function angleToCoordinate(angle, value)
 
 let featureData = features.map((f, i) => {
     let angle = (Math.PI / 2) + (2 * Math.PI * i / features.length);
-    let labelCoord = angleToCoordinate(angle, maxValue + 0.1); // A little bit further than maxValue
+    let labelCoord = angleToCoordinate(angle, maxValue + 0.2); // A little bit further than maxValue
 
     // Adjust the x-coordinate of the label based on the angle
     // The adjustment factor (e.g., 5, 10, etc.) can be changed as needed
-    let adjustmentFactor = 50; // Adjust this value as needed
+    let adjustmentFactor = 0; // Adjust this value as needed
     labelCoord.x -= adjustmentFactor;
 
     return {
@@ -167,6 +167,9 @@ svg.selectAll(".axislabel")
         .attr("x", d => d.label_coord.x)
         .attr("y", d => d.label_coord.y)
         .text(d => d.name)
+        .attr("font-size", "10px") // Adjust font size here
+        .attr("fill", "black") // Optional: Set the font color
+        .attr("text-anchor", "middle")
 );    
 
 let line = d3.line()
@@ -235,7 +238,7 @@ function updateChart(){
             d3.select(path_id)
                 .transition()
                 .duration(300)
-                .attr('r', 10);
+                .attr('r', 8);
         })
         .on('mouseout', function(_, i)
         {
@@ -253,7 +256,7 @@ function updateChart(){
             d3.select(path_id)
                 .transition()
                 .duration(300)
-                .attr('r', 5);
+                .attr('r', 3.5);
         });
 
     legendEnter.append('text')

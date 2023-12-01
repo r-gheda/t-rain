@@ -80,11 +80,13 @@
 
 <!-- STACKED -->
 <section id="section0" style="height: 100%;">
-    <h1 style="position: relative; left: 10%; top: 15%; font-size: 60px;">
+    <h1 style="position: relative; left: 10%; top: 15%; font-size: 50px;"
+    data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000">
         Which are the most used <br> modes of transport in the Netherlands?
     </h1>
 
-    <div id="stacked" data-aos="fade-up" data-aos-delay="100">
+    <div id="stacked" data-aos="fade-up" data-aos-delay="100"
+    data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000">
         <script type='module' src="js/stacked.js" ></script>
     </div>
     
@@ -99,18 +101,20 @@
          data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
         Trains around the world!
     </h1>
-    <h2 style="position: relative;left: 10%; top: 100%; font-size: 30px;"
+    <h2 style="position: relative; left: 10%; top: 100%; font-size: 30px;"
         data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
         Below you can see the train usage in the Netherlands compared <br>
         to other countries
     </h2>
+    
     <div id="vis-world-trains"> 
     <!-- Initialize a select button -->
-    <select id="country-select-button" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000"></select>
+    <select id="country-select-button" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000" style="align-self: right;" ></select>
 
     <!-- Create a div where the graph will take place -->
     <div id="train-usage-line-chart" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000" ></div>
     </div>
+    
 
     
 </section>
@@ -127,12 +131,13 @@
 <!-- DENDROGRAM -->
 <section id = "section2bis">
     <h1>Qui va il dendogram</h1>
-    
+
     <input type="text" id="dendro-station-search" placeholder="Enter Station Code" >
     <input type="text" id="dendro-station-highlight-search" placeholder="Enter Station Code To Highlight">
     <input type="button" id="dendro-highlighting-clear-button" value="Clear Highlighting">
     <div id="stations-dendrogram" 
     style="height: 100%; width:  100%"></div>
+
 </section>
 <!-- END DENDROGRAM -->
 
@@ -144,7 +149,7 @@
             data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
             In 2022, there have been 24523 disruptions.
         </div>
-        <div style="width: 60%"
+        <div style="width: 60%; position: absolute; right: 0%; top: 15%;"
             data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
             <select id="cause-select-button"></select>
             <div id="disruption-heatmap"></div>
@@ -161,7 +166,7 @@
     <p>This is the content of Section 5.</p>
 
     <div style="display: flex;">
-        <div style="width: 70%" data-aos="fade-up" data-aos-duration="1000">
+        <div style=" position: absolute; top: 30%;  width: 70%" data-aos="fade-up" data-aos-duration="1000">
             <label for="xFeature">Feature X:</label>
             <select id="xFeature"></select>
 
@@ -170,12 +175,12 @@
             
             <div id="station-features-scatter"></div>
         </div>
-        <div style="width: 30%">
+        <div style="width: 30% ; position: absolute; right: 10%; top:30%;">
             <input type="text" id="stationSearch" placeholder="Enter Station Code" >
             <button id="clearStations">Clear</button>
             <div style="width: 60%"  
                 data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">   
-            <div id="stations-spider-chart" data-aos="fade-up" data-aos-duration="1000"></div>
+            <div id="stations-spider-chart" data-aos="fade-up" data-aos-duration="1000" ></div>
             </div>
         </div>
     </div>

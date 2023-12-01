@@ -76,7 +76,9 @@ section {
 }
 
 #section1 { 
+
     background: #f7c82d;
+    
     
 }
 
@@ -274,10 +276,15 @@ footer {
   }
 
   #vis-world-trains {
-    position:relative;
+    
+    position: absolute;
+    left: 55%;
     text-align: center;
+    
+    
+}
 
-  }
+  
 
   #selectButton {
     font-family: Verdana, sans-serif;
@@ -292,7 +299,7 @@ footer {
   #stationSearch{
     font-family: Verdana, sans-serif;
     color: #003082;
-    width: 100px;
+    width: 80px;
     height: 10px;
     background-color: lightyellow;
     border: 1px solid black;
@@ -303,7 +310,7 @@ footer {
 
   #stacked {
     position:relative;
-    text-align: center;
+    text-align: right;
 
   }
 
@@ -316,7 +323,7 @@ footer {
 #clearStations{
     font-family: Verdana, sans-serif;
     color: #003082;
-    width: 90px;
+    width: 70px;
     height: 20px;
     background-color: lightyellow;
     
