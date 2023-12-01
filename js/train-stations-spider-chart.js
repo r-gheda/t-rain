@@ -1,7 +1,8 @@
 
 
-let width = 700;
-let height =700;
+let width  = 450;
+let height = 450;
+let margin = 150;
 let selectedStations = [];
 
 // Load the specific dataset
@@ -52,11 +53,6 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts.cs
     let minValue = 0;
     let maxValue = 1;
 
-
-    //print the min and max values
-    console.log("minValue: " + minValue);
-    console.log("maxValue: " + maxValue);
-
     let data = [dataset[0]]
 
     let legendX = 50; // X position of the legend
@@ -75,7 +71,7 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts.cs
     // Adjust the radial scale domain based on the min and max values
     let radialScale = d3.scaleLinear()
         .domain([0, maxValue])
-        .range([0, 250]);
+        .range([0, (width - margin) / 2]);
 
     let colors = ["darkorange", "gray", "navy", "red", "green", "purple", "lightblue"];
 
@@ -102,7 +98,6 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts.cs
     // Create text labels
     //print the station code
 
-    console.log(legendData);
     legend.append('text')
         .attr('x', legendRectSize + legendSpacing)
         .attr('y', legendRectSize - legendSpacing)
@@ -197,7 +192,8 @@ function updateChart(){
         .attr("stroke", (_, i) => colors[i])
         .attr("fill", (_, i) => colors[i])
         .attr("stroke-opacity", 1)
-        .attr("opacity", 0.5);
+        .attr("opacity", 0.5)
+        .attr('id', d => 'spider-path-' + d['Station Code'] );
 
     paths.exit().remove();
 
@@ -214,7 +210,43 @@ function updateChart(){
         .attr('width', 20)
         .attr('height', 20)
         .style('fill', (_, i) => colors[i])
-        .style('stroke', (_, i) => colors[i]);
+        .style('stroke', (_, i) => colors[i])
+        .attr('id', d => 'spider-legend-' + d['Station Code'])
+        .on('mouseover', function(event, i)
+        {
+            d3.selectAll('path')
+                .transition()
+                .duration(250)
+                .attr('opacity', 0);
+            
+            let path_id = '#spider-path-' + i['Station Code'];
+
+            d3.select(path_id)
+                .transition()
+                .duration(300)
+                .attr('opacity', 0.7);
+
+            path_id = "#scatter-node-"  + i['Station Code'];
+
+            d3.select(path_id)
+                .transition()
+                .duration(300)
+                .attr('r', 10);
+        })
+        .on('mouseout', function(_, i)
+        {
+            d3.selectAll('path')
+                .transition()
+                .duration(300)
+                .attr('opacity', 0.5);
+
+            let path_id = "#scatter-node-"  + i['Station Code'];
+
+            d3.select(path_id)
+                .transition()
+                .duration(300)
+                .attr('r', 5);
+        });
 
     legendEnter.append('text')
         .merge(legend.select('text'))
@@ -240,20 +272,77 @@ function updateChart(){
     }
 
     d3.select('#stationSearch').on('keydown', function(e) {
-        if (e.key === 'Enter'){
-        let searchValue = this.value.toUpperCase();
-        console.log(searchValue);
-       
-        if (!selectedStations.includes(searchValue)) {
-            selectedStations.push(searchValue);
-            updateChart();
-        }
+        if (e.key === 'Enter')
+        {
+            let searchValue = this.value.toUpperCase();
+            
+            if (!selectedStations.includes(searchValue)) {
+                selectedStations.push(searchValue);
+                updateChart();
+            }
+
+            d3.selectAll('text')
+                .filter(function(d) {
+                    // returns true if d.id contains scatter-label-
+                    return this.id.includes('scatter-label-');
+                })
+                .transition()
+                .duration(300)
+                .attr('opacity', 0.0);
+            
+            d3.selectAll('circle')
+                .filter(function(d) {
+                    // returns true if d.id contains station-
+                    return this.id.includes('scatter-node-');
+                })
+                .transition()
+                .duration(300)
+                .attr('opacity', 0.05);
+            
+            for (let i = 0; i < selectedStations.length; i++)
+            {
+                let label_id = '#scatter-label-' + selectedStations[i];
+                d3.select(label_id)
+                    .transition()
+                    .duration(300)
+                    .attr('opacity', 1.0)
+                    .attr('fill', 'black')
+                    .attr('font-weight', 'bold');
+
+                let node_id = '#scatter-node-' + selectedStations[i];
+                d3.select(node_id)
+                    .transition()
+                    .duration(290)
+                    .attr('opacity', 1.0)
+                    .style("fill", "darkred");
+            }
         }
     });
 
     d3.select('#clearStations').on('click', function() {
         selectedStations = [];
         updateChart();
+
+        d3.selectAll('text')
+            .filter(function(d) {
+                // returns true if d.id contains scatter-label-
+                return this.id.includes('scatter-label-');
+            })
+            .transition()
+            .duration(300)
+            .attr('opacity', 0.0)
+            .attr('fill', 'black')
+            .attr('font-weight', 'normal');
+
+        d3.selectAll('circle')
+            .filter(function(d) {
+                // returns true if d.id contains station-
+                return this.id.includes('scatter-node-');
+            })
+            .transition()
+            .duration(300)
+            .style("fill", "#69b3a2")
+            .attr('opacity', 1.0);
     });
 
     updateChart();
