@@ -1,3 +1,5 @@
+import { create_barplot } from "./hopcount-barplot.js";
+
 // set the dimensions and margins of the graph
 const width = 680
 const height = 680
@@ -10,6 +12,7 @@ const svg = d3.select("#stations-dendrogram")
     .append("svg")
     .attr("width", width)
     .attr("height", height)
+    .attr("id", "dendrogram-svg")
     .append("g")
     .attr("transform", `translate(${radius},${radius})`);
 
@@ -95,6 +98,10 @@ function create_dendro(station_code)
                         .attr("font-weight",700);
 
                     d3.selectAll("path")
+                        .filter(function(d) {
+                            // returns true if d.id contains scatter-label-
+                            return this.id.includes('link-');
+                        })
                         .transition()
                         .duration(250)
                         .style("opacity", 0.2);
@@ -176,6 +183,10 @@ function create_dendro(station_code)
                         .attr("r", 3);
 
                     d3.selectAll("path")
+                        .filter(function(d) {
+                            // returns true if d.id contains scatter-label-
+                            return this.id.includes('link-');
+                        })
                         .transition()
                         .duration(250)
                         .style("opacity", 1);
@@ -243,6 +254,7 @@ d3.select('#dendro-station-search').on('keydown', function(e) {
     {
         let searchValue = this.value.toUpperCase();
         create_dendro(searchValue);
+        create_barplot(searchValue);
     }
 });
 
