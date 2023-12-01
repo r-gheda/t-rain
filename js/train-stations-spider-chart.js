@@ -52,11 +52,6 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts.cs
     let minValue = 0;
     let maxValue = 1;
 
-
-    //print the min and max values
-    console.log("minValue: " + minValue);
-    console.log("maxValue: " + maxValue);
-
     let data = [dataset[0]]
 
     let legendX = 50; // X position of the legend
@@ -102,7 +97,6 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts.cs
     // Create text labels
     //print the station code
 
-    console.log(legendData);
     legend.append('text')
         .attr('x', legendRectSize + legendSpacing)
         .attr('y', legendRectSize - legendSpacing)
@@ -197,7 +191,8 @@ function updateChart(){
         .attr("stroke", (_, i) => colors[i])
         .attr("fill", (_, i) => colors[i])
         .attr("stroke-opacity", 1)
-        .attr("opacity", 0.5);
+        .attr("opacity", 0.5)
+        .attr('id', d => 'spider-path-' + d['Station Code'] );
 
     paths.exit().remove();
 
@@ -214,7 +209,29 @@ function updateChart(){
         .attr('width', 20)
         .attr('height', 20)
         .style('fill', (_, i) => colors[i])
-        .style('stroke', (_, i) => colors[i]);
+        .style('stroke', (_, i) => colors[i])
+        .attr('id', d => 'spider-legend-' + d['Station Code'])
+        .on('mouseover', function(event, i)
+        {
+            d3.selectAll('path')
+                .transition()
+                .duration(250)
+                .attr('opacity', 0);
+            
+            let path_id = '#spider-path-' + i['Station Code'];
+
+            d3.select(path_id)
+                .transition()
+                .duration(300)
+                .attr('opacity', 0.7);
+        })
+        .on('mouseout', function(_, i)
+        {
+            d3.selectAll('path')
+                .transition()
+                .duration(300)
+                .attr('opacity', 0.5);
+        });
 
     legendEnter.append('text')
         .merge(legend.select('text'))
@@ -242,8 +259,7 @@ function updateChart(){
     d3.select('#stationSearch').on('keydown', function(e) {
         if (e.key === 'Enter'){
         let searchValue = this.value.toUpperCase();
-        console.log(searchValue);
-       
+        
         if (!selectedStations.includes(searchValue)) {
             selectedStations.push(searchValue);
             updateChart();
