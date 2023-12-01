@@ -215,6 +215,10 @@ function updateChart(){
         .on('mouseover', function(event, i)
         {
             d3.selectAll('path')
+                .filter(function(d) {
+                    // returns true if d.id contains spider-path-
+                    return this.id.includes('spider-path-');
+                })
                 .transition()
                 .duration(250)
                 .attr('opacity', 0);
@@ -236,6 +240,10 @@ function updateChart(){
         .on('mouseout', function(_, i)
         {
             d3.selectAll('path')
+                .filter(function(d) {
+                    // returns true if d.id contains spider-path-
+                    return this.id.includes('spider-path-');
+                })
                 .transition()
                 .duration(300)
                 .attr('opacity', 0.5);
