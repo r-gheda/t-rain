@@ -95,6 +95,10 @@ function create_dendro(station_code)
                         .attr("font-weight",700);
 
                     d3.selectAll("path")
+                        .filter(function(d) {
+                            // returns true if d.id contains scatter-label-
+                            return this.id.includes('link-');
+                        })
                         .transition()
                         .duration(250)
                         .style("opacity", 0.2);
@@ -176,6 +180,10 @@ function create_dendro(station_code)
                         .attr("r", 3);
 
                     d3.selectAll("path")
+                        .filter(function(d) {
+                            // returns true if d.id contains scatter-label-
+                            return this.id.includes('link-');
+                        })
                         .transition()
                         .duration(250)
                         .style("opacity", 1);
