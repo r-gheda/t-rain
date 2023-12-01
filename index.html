@@ -132,18 +132,20 @@
 <section id = "section2bis">
     <h1>Hopcount Distribution</h1>
     <div style="display: flex;">
-        <div style="width: 50%">
-            <div style="height:40%">
-                SOME TEXT
+        <div style="width: 40%; position: relative; margin-left: 100px;">
+            <div style="height:40%; text-align: left;">
+                <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                </p> 
+                Select a station as root: <input type="text" id="dendro-station-search" placeholder="Enter Station Code" > <br>
+                Select a station to highlight: <input type="text" id="dendro-station-highlight-search" placeholder="Enter Station Code To Highlight"> <br>
+                <input type="button" id="dendro-highlighting-clear-button" value="Clear Highlighting">
             </div>
             <div style="height: 40%">
                 <div id="hopcount-barplot"></div>
             </div>
         </div>
         <div style="width: 40%">
-            <input type="text" id="dendro-station-search" placeholder="Enter Station Code" >
-            <input type="text" id="dendro-station-highlight-search" placeholder="Enter Station Code To Highlight">
-            <input type="button" id="dendro-highlighting-clear-button" value="Clear Highlighting">
             <div id="stations-dendrogram" 
             style="height: 100%; width:  100%"></div>
         </div>

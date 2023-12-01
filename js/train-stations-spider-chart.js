@@ -57,7 +57,7 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts.cs
 
     let legendX = 50; // X position of the legend
     let legendY = 50; // Y position of the legend
-    let legendRectSize = 20; // Size of the legend color boxes
+    let legendRectSize = 10; // Size of the legend color boxes
     let legendSpacing = 5; // Spacing between boxes
 
     // Select the first four rows of the dataset for the legend
@@ -206,12 +206,12 @@ function updateChart(){
     let legendEnter = legend.enter().append('g').attr('class', 'legend');
 
     legendEnter.merge(legend)
-        .attr('transform', (_, i) => 'translate(50,' + (50 + i * 25) + ')');
+        .attr('transform', (_, i) => 'translate(50,' + (30 + i * 15) + ')');
 
     legendEnter.append('rect')
         .merge(legend.select('rect'))
-        .attr('width', 20)
-        .attr('height', 20)
+        .attr('width', legendRectSize)
+        .attr('height', legendRectSize)
         .style('fill', (_, i) => colors[i])
         .style('stroke', (_, i) => colors[i])
         .attr('id', d => 'spider-legend-' + d['Station Code'])
@@ -261,8 +261,9 @@ function updateChart(){
 
     legendEnter.append('text')
         .merge(legend.select('text'))
-        .attr('x', 25)
-        .attr('y', 15)
+        .attr('x', 15)
+        .attr('y', 10)
+        .attr('font-size', '13px')
         .text(d => d['Station Code']);
 
     legend.exit().remove();
