@@ -40,106 +40,105 @@ export function create_barplot(station_id){
 
         // Bars
         svg.selectAll("mybar")
-        .data(data)
-        .join("rect")
-            .attr("x", d => x(d.hopcount))
-            .attr("y", d => y(d.size))
-            .attr("width", x.bandwidth())
-            .attr("height", d => height - y(d.size))
-            .attr("fill", "#003082")
-            .on("mouseover", function(event, d) 
-            {
-                let stations = d.stations.split(" ");
-                
-                d3.selectAll("circle")
-                    .filter(function(d) {
-                        // returns true if d.id contains scatter-label-
-                        return this.id.includes('dendro-node-');
-                    })
-                    .transition()
-                    .duration(250)
-                    .style("opacity", 0.1)
-                    // .attr("r", 3);
-                    
-                d3.selectAll("path")
-                    .filter(function(d) {
-                        // returns true if d.id contains scatter-label-
-                        return this.id.includes('link-');
-                    })
-                    .transition()
-                    .duration(250)
-                    .style("opacity", 0.1);
-
-                for (let i = 0; i < stations.length-1; i++)
+            .data(data)
+            .join("rect")
+                .attr("x", d => x(d.hopcount))
+                .attr("y", d => y(d.size))
+                .attr("width", x.bandwidth())
+                .attr("height", d => height - y(d.size))
+                .attr("fill", "#003082")
+                .on("mouseover", function(event, d) 
                 {
-                    let station_name = stations[i];
-
-                    // console.log(station_name);
-        
-                    d3.select("#dendro-node-" + station_name)
-                        .transition()
-                        .duration(300)
-                        .style("opacity", 1)
-                        // .attr("r", 3);
-
-                    d3.select("#dendrogram-svg").append("text")
-                        .text(station_name)
-                        .attr("x", 0)
-                        .attr("y", 0)
-                        .attr("text-anchor", "middle")
-                        .attr("font-size", "12px")
-                        .attr("id", "dendro-label-" + station_name)
-                        .attr("opacity", 0)
-                        .style("fill", "#003082")
-                        .attr("transform", function() { 
-                            // rotate labels to be horizontal   
-                            let d = d3.select("#dendro-node-" + station_name).datum();                         
-                            return "translate(340, 340) rotate(" + (d.x-90) + ") translate(" + d.y + ") rotate(" + (90 + (-d.x)) + ") translate(0, 25)";
-                        });
+                    let stations = d.stations.split(" ");
                     
-                    d3.select("#dendro-label-" + station_name)
-                            .transition()
-                            .duration(250)
-                            .attr("opacity", 1)
+                    d3.selectAll("circle")
+                        .filter(function(d) {
+                            // returns true if d.id contains scatter-label-
+                            return this.id.includes('dendro-node-');
+                        })
+                        // .transition()
+                        // .duration(250)
+                        .style("opacity", 0.1)
+                        // .attr("r", 3);
+                        
+                    d3.selectAll("path")
+                        .filter(function(d) {
+                            // returns true if d.id contains scatter-label-
+                            return this.id.includes('link-');
+                        })
+                        // .transition()
+                        // .duration(250)
+                        .style("opacity", 0.1);
+
+                    for (let i = 0; i < stations.length-1; i++)
+                    {
+                        let station_name = stations[i];
+
+                        // console.log(station_name);
+            
+                        d3.select("#dendro-node-" + station_name)
+                            // .transition()
+                            // .duration(300)
+                            .style("opacity", 1)
+                            // .attr("r", 3);
+
+                        d3.select("#dendrogram-svg").append("text")
+                            .text(station_name)
+                            .attr("x", 0)
+                            .attr("y", 0)
+                            .attr("text-anchor", "middle")
                             .attr("font-size", "12px")
-                            .attr("font-weight",700);
-                }
+                            .attr("id", "dendro-label-" + station_name)
+                            .attr("opacity", 0)
+                            .style("fill", "#003082")
+                            .attr("transform", function() { 
+                                // rotate labels to be horizontal   
+                                let d = d3.select("#dendro-node-" + station_name).datum();                         
+                                return "translate(340, 340) rotate(" + (d.x-90) + ") translate(" + d.y + ") rotate(" + (90 + (-d.x)) + ") translate(0, 25)";
+                            });
+                        
+                        d3.select("#dendro-label-" + station_name)
+                                // .transition()
+                                // .duration(250)
+                                .attr("opacity", 1)
+                                .attr("font-size", "12px")
+                                .attr("font-weight",700);
+                    }
 
-                d3.select(this).style("fill", "#ff0000");
-            })
-            .on("mouseout", function(d) 
-            {
-                d3.selectAll("circle")
-                    .filter(function(d) {
-                        // returns true if d.id contains scatter-label-
-                        return this.id.includes('dendro-node-');
-                    })
-                    .style("opacity", 1)
-                    .transition()
-                    .duration(250)
-                    // .attr("r", 3);
-                
-                d3.selectAll("path")
-                    .filter(function(d) {
-                        // returns true if d.id contains scatter-label-
-                        return this.id.includes('link-');
-                    })
-                    .transition()
-                    .duration(250)
-                    .style("opacity", 1);
-                
-                d3.selectAll("text")
-                    .filter(function(d) {
-                        // returns true if d.id contains scatter-label-
-                        return this.id.includes('dendro-label-');
-                    })
-                    .transition()
-                    .duration(250)
-                    .attr("opacity", 0)
-                    .remove();
+                    d3.select(this).style("fill", "#ff0000");
+                })
+                .on("mouseout", function(d) 
+                {
+                    d3.selectAll("circle")
+                        .filter(function(d) {
+                            // returns true if d.id contains scatter-label-
+                            return this.id.includes('dendro-node-');
+                        })
+                        .style("opacity", 1)
+                        // .transition()
+                        // .duration(250);
+                    
+                    d3.selectAll("path")
+                        .filter(function(d) {
+                            // returns true if d.id contains scatter-label-
+                            return this.id.includes('link-');
+                        })
+                        // .transition()
+                        // .duration(250)
+                        .style("opacity", 1);
+                    
+                    d3.selectAll("text")
+                        .filter(function(d) {
+                            // returns true if d.id contains scatter-label-
+                            return this.id.includes('dendro-label-');
+                        })
+                        // .transition()
+                        // .duration(250)
+                        .attr("opacity", 0)
+                        .remove();
 
-                d3.select(this).style("fill", "#003082");
-            });
+                    d3.select(this).style("fill", "#003082");
+                });
 
     })
 }
