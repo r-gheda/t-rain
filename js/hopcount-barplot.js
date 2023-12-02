@@ -58,8 +58,8 @@ export function create_barplot(station_id){
                     })
                     .transition()
                     .duration(250)
-                    .style("opacity", 0.2)
-                    .attr("r", 3);
+                    .style("opacity", 0.1)
+                    // .attr("r", 3);
                     
                 d3.selectAll("path")
                     .filter(function(d) {
@@ -68,7 +68,7 @@ export function create_barplot(station_id){
                     })
                     .transition()
                     .duration(250)
-                    .style("opacity", 0.2);
+                    .style("opacity", 0.1);
 
                 for (let i = 0; i < stations.length-1; i++)
                 {
@@ -80,7 +80,7 @@ export function create_barplot(station_id){
                         .transition()
                         .duration(300)
                         .style("opacity", 1)
-                        .attr("r", 5);
+                        // .attr("r", 3);
 
                     d3.select("#dendrogram-svg").append("text")
                         .text(station_name)
@@ -117,7 +117,7 @@ export function create_barplot(station_id){
                     .style("opacity", 1)
                     .transition()
                     .duration(250)
-                    .attr("r", 3);
+                    // .attr("r", 3);
                 
                 d3.selectAll("path")
                     .filter(function(d) {

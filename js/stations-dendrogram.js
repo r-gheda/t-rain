@@ -6,6 +6,7 @@ const height = 680
 const radius = width / 2 // radius of the dendrogram
 let text_labels = false;
 let selected_station = null;
+let highlighted_stations = [];
 
 // append the svg object to the body of the page
 const svg = d3.select("#stations-dendrogram")
@@ -73,15 +74,17 @@ function create_dendro(station_code)
                             // returns true if d.id contains scatter-label-
                             return this.id.includes('dendro-node-');
                         })
-                          .transition()
-                          .duration(250)
+                        //   .transition()
+                        //   .duration(250)
                         .style("opacity", 0.1)
+                        .filter(function(d) {
+                            return d.data.name !== station_code && !highlighted_stations.includes(d.data.name);
+                        })
                         .attr("r", 3);
                     
-                    console.log(d.data.name)
                     d3.select("#dendro-node-" + d.data.name)
-                          .transition()
-                          .duration(250)
+                        //   .transition()
+                        //   .duration(250)
                         .style("opacity", 1)
                         .attr("r", 5);
                     
@@ -101,8 +104,8 @@ function create_dendro(station_code)
                         });
 
                     d3.select("#dendro-label-" + d.data.name)
-                          .transition()
-                          .duration(250)
+                        //   .transition()
+                        //   .duration(250)
                         .attr("opacity", 1)
                         .attr("font-size", "14px")
                         .attr("font-weight",700);
@@ -112,8 +115,8 @@ function create_dendro(station_code)
                             // returns true if d.id contains scatter-label-
                             return this.id.includes('link-');
                         })
-                          .transition()
-                          .duration(250)
+                        //   .transition()
+                        //   .duration(250)
                         .style("opacity", 0.1);
                     
                     // select the parent node
@@ -122,15 +125,17 @@ function create_dendro(station_code)
                     while (child != null)
                     {
                         d3.select("#dendro-node-" + child.data.name)
-                              .transition()
-                              .duration(250)
+                            //   .transition()
+                            //   .duration(250)
                             .style("opacity", 1.0)
                             .attr("r", 5);
-
-                        d3.select("#link-" + parent.data.name + "-" + child.data.name)
-                              .transition()
-                              .duration(250)
-                            .style("opacity", 1);
+                        if (parent != null)
+                        {
+                            d3.select("#link-" + parent.data.name + "-" + child.data.name)
+                                // .transition()
+                                // .duration(250)
+                                .style("opacity", 1);
+                        }
 
                         svg.append("text")
                             .text(child.data.name)
@@ -148,16 +153,17 @@ function create_dendro(station_code)
                             .raise();
                         
                         d3.select("#dendro-label-" + child.data.name)
-                              .transition()
-                              .duration(250)
+                            //   .transition()
+                            //   .duration(250)
                             .attr("opacity", 1)
                             .attr("font-size", "12px")
                             .attr("font-weight",700);
 
                         
-                        
                         child = parent;
-                        parent = parent.parent;
+                        if (parent != null){
+                            parent = parent.parent;
+                        }
                     }
 
                 })
@@ -170,6 +176,9 @@ function create_dendro(station_code)
                         .style("opacity", 1)
                         //   .transition()
                         //   .duration(250)
+                        .filter(function(d) {
+                            return d.data.name !== station_code && !highlighted_stations.includes(d.data.name);
+                        })
                         .attr("r", 3);
 
                     d3.selectAll("path")
@@ -187,28 +196,30 @@ function create_dendro(station_code)
                             // returns true if d.id contains scatter-label-
                             return this.id.includes('dendro-label-');
                         })
-                          .transition()
-                          .duration(250)
+                        //   .transition()
+                        //   .duration(250)
                         .attr("opacity", 0)
                         .remove();
                 })
-                  .transition()
-                  .duration(1000)
+                .transition()
+                .duration(1000)
                 .style("fill", function(d)
                 {
                     if (d.data.name === station_code) { return "darkgreen"; };
+                    if (highlighted_stations.includes(d.data.name)) { return "darkred"; }
                     return "#f7c82d";
                 })
                 .attr("stroke", function(d)
                 {
                     if (d.data.name === station_code) { return "darkgreen"; };
+                    if (highlighted_stations.includes(d.data.name)) { return "darkred"; }
                     return "#003082";
                 })
                 .attr("id", function(d) { return "dendro-node-" + d.data.name; })
                 .attr("r", function(d) 
                 {
-                    console.log(d);
-                     if (d.data.name === station_code) { return 5; };
+                    if (d.data.name === station_code) { return 5; };
+                    if (highlighted_stations.includes(d.data.name)) { return 5; }
                     return 3;
                 });
         
@@ -235,6 +246,7 @@ d3.select('#dendro-station-highlight-search').on('keydown', function(e)
     if (e.key === 'Enter')
     {
         let highlght_value = this.value.toUpperCase();
+        highlighted_stations.push(highlght_value);
         svg.select("#dendro-node-" + highlght_value)
             .attr("r", 5)
             .style("fill", "darkred")
@@ -243,6 +255,8 @@ d3.select('#dendro-station-highlight-search').on('keydown', function(e)
 });
 
 d3.select("#dendro-highlighting-clear-button").on("click", function() {
+    highlighted_stations = [];
+
     svg.selectAll("circle")
         .filter(function(d) {
             // returns true if d.id contains scatter-label-
