@@ -7,6 +7,86 @@ const radius = width / 2 // radius of the dendrogram
 let text_labels = false;
 let selected_station = null;
 let highlighted_stations = [];
+let station_names = [];
+
+d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_with_names.csv").then(function(dataset) 
+{   
+
+for (let i = 0; i < dataset.length; i++)
+{
+    station_names.push(dataset[i]['Station Name'].toLowerCase());
+}
+
+function searchStation(inputText, id_search, id_suggestion_box) {
+    let suggestions = station_names.filter(stationName => 
+        stationName.toLowerCase().startsWith(inputText.toLowerCase())
+    );
+
+    displaySuggestions(suggestions, id_search, id_suggestion_box);
+}
+
+function selectStation(name, id_search, id_suggestion_box) {
+    console.log(name);
+    
+    if (id_search === 'dendro-station-search'){
+        let searchValue = name.toUpperCase();
+
+        console.log(searchValue);
+
+        //put in a value all the rows that have station name = searchValue
+        if (dataset.filter(d => d['Station Name'].toUpperCase() === searchValue).length === 0 ){
+        }
+
+        else{
+            let searchCode = dataset.filter(d => d['Station Name'].toUpperCase() === searchValue)[0]['Station Code'];
+            create_dendro(searchCode);
+            create_barplot(searchCode);
+        }
+    }
+
+    if (id_search === 'dendro-station-highlight-search'){
+        let highlght_value = name.toUpperCase();
+        console.log(highlght_value);
+
+        //put in a value all the rows that have station name = searchValue
+        if (dataset.filter(d => d['Station Name'].toUpperCase() === highlght_value).length === 0 ){
+        }
+
+        else{
+            let highlght_code = dataset.filter(d => d['Station Name'].toUpperCase() === highlght_value)[0]['Station Code'];
+            highlighted_stations.push(highlght_code);
+            svg.select("#dendro-node-" + highlght_code)
+                .attr("r", 5)
+                .style("fill", "darkred")
+                .attr("stroke", "darkred")
+        }
+    }
+
+
+    d3.select("#" + id_suggestion_box).selectAll("div").remove();
+    d3.select("#" + id_search).property("value", '');
+}
+
+function displaySuggestions(suggestions, id_search, id_suggestion_box) {
+    d3.select("#" + id_suggestion_box).selectAll("div").remove();
+    // Bind the suggestions to div elements
+    let suggestionDivs = d3.select("#"+ id_suggestion_box)
+        .selectAll("div")
+        .data(suggestions);
+
+    // Enter selection: Create new divs for new data
+    suggestionDivs.enter()
+        .append("div")
+        .text(d => d)
+        .on("click", function() {
+            // Using datum() to retrieve the bound data
+            let selectedStation = d3.select(this).datum();
+            selectStation(selectedStation, id_search, id_suggestion_box);
+        });
+
+    // Exit selection: Remove divs for data that no longer exists
+    suggestionDivs.exit().remove();
+}
 
 // append the svg object to the body of the page
 const svg = d3.select("#stations-dendrogram")
@@ -232,13 +312,47 @@ function create_dendro(station_code)
     });
 }
 
+d3.select('#dendro-station-search').on('input', function() {
+    let inputText = this.value;
+    if (inputText === "") {
+        d3.select("#suggestion-box-root").selectAll("div").remove();
+    } else {
+        searchStation(inputText, 'dendro-station-search', 'suggestion-box-root');
+    }
+
+});
+
 d3.select('#dendro-station-search').on('keydown', function(e) {
     if (e.key === 'Enter')
     {
         let searchValue = this.value.toUpperCase();
-        create_dendro(searchValue);
-        create_barplot(searchValue);
+        //remove the value from the dendro-station-search
+        d3.select("#dendro-station-search").property("value", '');
+        //remove the suggestions
+        d3.select("#suggestion-box-root").selectAll("div").remove();
+
+        console.log(searchValue);
+
+        //put in a value all the rows that have station name = searchValue
+        if (dataset.filter(d => d['Station Name'].toUpperCase() === searchValue).length === 0 ){
+        }
+
+        else{
+            let searchCode = dataset.filter(d => d['Station Name'].toUpperCase() === searchValue)[0]['Station Code'];
+            create_dendro(searchCode);
+            create_barplot(searchCode);
+        }
     }
+});
+
+d3.select('#dendro-station-highlight-search').on('input', function() {
+    let inputText = this.value;
+    if (inputText === "") {
+        d3.select("#suggestion-box-highlight").selectAll("div").remove();
+    } else {
+        searchStation(inputText, 'dendro-station-highlight-search', 'suggestion-box-highlight');
+    }
+
 });
 
 d3.select('#dendro-station-highlight-search').on('keydown', function(e)
@@ -246,11 +360,26 @@ d3.select('#dendro-station-highlight-search').on('keydown', function(e)
     if (e.key === 'Enter')
     {
         let highlght_value = this.value.toUpperCase();
-        highlighted_stations.push(highlght_value);
-        svg.select("#dendro-node-" + highlght_value)
-            .attr("r", 5)
-            .style("fill", "darkred")
-            .attr("stroke", "darkred")
+        //remove the value from the dendro-station-highlight-search
+        d3.select("#dendro-station-highlight-search").property("value", '');
+        //remove the suggestions
+        d3.select("#suggestion-box-highlight").selectAll("div").remove();
+
+        console.log(highlght_value);
+
+        //put in a value all the rows that have station name = searchValue
+        if (dataset.filter(d => d['Station Name'].toUpperCase() === highlght_value).length === 0 ){
+        }
+
+        else{
+            let highlght_code = dataset.filter(d => d['Station Name'].toUpperCase() === highlght_value)[0]['Station Code'];
+            highlighted_stations.push(highlght_code);
+            svg.select("#dendro-node-" + highlght_code)
+                .attr("r", 5)
+                .style("fill", "darkred")
+                .attr("stroke", "darkred")
+        }
+
     }
 });
 
@@ -266,5 +395,7 @@ d3.select("#dendro-highlighting-clear-button").on("click", function() {
         .style("fill", "#f7c82d")
         .attr("stroke", "#003082")
         .style("stroke-width", 2);
+
+});
 
 });

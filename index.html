@@ -138,7 +138,9 @@
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                 </p> 
                 Select a station as root: <input type="text" id="dendro-station-search" placeholder="Enter Station Code" > <br>
+                <div id="suggestion-box-root"></div>
                 Select a station to highlight: <input type="text" id="dendro-station-highlight-search" placeholder="Enter Station Code To Highlight"> <br>
+                <div id="suggestion-box-highlight"></div>
                 <input type="button" id="dendro-highlighting-clear-button" value="Clear Highlighting">
             </div>
             <div style="height: 40%">
@@ -188,7 +190,10 @@
             <div id="station-features-scatter"></div>
         </div>
         <div style="width: 30% ; position: absolute; right: 10%; top:30%;">
+
             <input type="text" id="stationSearch" placeholder="Enter Station Code" >
+            <div id="suggestion-box"></div>
+
             <button id="clearStations">Clear</button>
             <div style="width: 60%"  
                 data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">   

@@ -1,0 +1,394 @@
+Station Code,Number of Services,Disruption Count,Delay Count,Cancel Count,Station Name
+UT,36963,463,8850,2109,Utrecht Centraal
+ASD,34017,371,13103,2174,Amsterdam Centraal
+RTD,23555,555,9681,2537,Rotterdam Centraal
+ASS,23387,289,11734,1333,Amsterdam Sloterdijk
+SHL,23135,509,11547,1632,Schiphol Airport
+ZL,22391,185,5919,1367,Zwolle
+AH,20422,261,5612,1318,Arnhem Centraal
+LEDN,18577,303,5784,1173,Leiden Centraal
+AMF,18375,241,5841,933,Amersfoort Centraal
+GVC,17701,215,3925,899,Den Haag Centraal
+GN,17361,112,3032,244,Groningen
+HT,15708,165,5855,1268,'s-Hertogenbosch
+DDR,15008,243,4654,1513,Dordrecht
+GD,14849,183,3324,733,Gouda
+EHV,14721,149,5116,1635,Eindhoven Centraal
+ALM,14499,133,2647,1838,Almere Centrum
+WP,13341,173,3143,1682,Weesp
+NM,12959,117,4231,690,Nijmegen
+LW,12352,92,1978,690,Leeuwarden
+GV,12071,138,3435,1680,Den Haag HS
+ASDZ,11966,158,4762,608,Amsterdam Zuid
+DT,11662,135,4611,1797,Delft
+HLM,10929,168,3331,570,Haarlem
+HVS,10733,132,4210,403,Hilversum
+MT,10124,60,3049,832,Maastricht
+ZP,10021,113,2904,535,Zutphen
+STD,9585,85,3131,590,Sittard
+SDM,9580,136,3905,1484,Schiedam Centrum
+WD,9480,168,1942,525,Woerden
+HGL,9384,206,3327,732,Hengelo
+ZD,9348,87,4336,689,Zaandam
+DVD,9168,235,4101,364,Duivendrecht
+AML,9122,72,2720,520,Almelo
+RM,8977,88,2973,662,Roermond
+HRL,8905,82,3489,863,Heerlen
+ASA,8899,98,3947,614,Amsterdam Amstel
+TB,8879,130,4004,824,Tilburg
+RSD,8877,162,3390,1208,Roosendaal
+HFD,8864,214,3655,491,Hoofddorp
+UTVR,8514,141,2814,247,Utrecht Vaartsche Rijn
+BD,8404,329,4232,817,Breda
+LAA,8360,109,3192,399,Den Haag Laan v NOI
+ED,8198,112,2444,331,Ede-Wageningen
+RTB,8071,105,2549,1055,Rotterdam Blaak
+ASDM,7977,159,4723,353,Amsterdam Muiderpoort
+ASB,7975,157,3035,416,Amsterdam Bijlmer ArenA
+GDM,7753,113,3499,272,Geldermalsen
+UTO,7740,96,1904,199,Utrecht Overvecht
+ES,7709,40,1201,450,Enschede
+APN,7654,81,950,273,Alphen a/d Rijn
+DV,7579,114,3104,339,Deventer
+VL,7461,142,2154,793,Venlo
+AMPO,7304,86,1294,854,Almere Poort
+ALMM,7304,88,1432,854,Almere Muziekwijk
+APD,7253,83,1903,205,Apeldoorn
+GERP,6870,56,3305,62,Groningen Europapark
+MTR,6757,16,2221,461,Maastricht Randwyck
+HN,6646,80,1329,582,Hoorn
+AMR,6532,78,1795,471,Alkmaar
+NDB,6508,106,2587,469,Naarden-Bussum
+AMFS,6424,66,2054,346,Amersfoort Schothorst
+HM,6407,54,1882,851,Helmond
+ALMO,6393,66,834,1008,Almere Oostvaarders
+CAS,6166,54,2930,443,Castricum
+DR,6144,60,1685,705,Dieren
+UTG,6136,92,1968,369,Uitgeest
+WT,6069,56,1864,410,Weert
+HAD,5791,60,2148,337,Heemstede-Aerdenhout
+MP,5776,93,2845,176,Meppel
+DB,5774,100,1805,214,Driebergen-Zeist
+HTN,5748,86,1933,205,Houten
+CL,5747,65,2062,210,Culemborg
+HTNC,5746,68,1825,213,Houten Castellum
+UTLN,5746,73,1716,211,Utrecht Lunetten
+BKL,5401,158,1827,145,Breukelen
+RTA,5381,58,2191,286,Rotterdam Alexander
+ALMB,5351,59,849,734,Almere Buiten
+ZLW,5339,149,1566,569,Lage Zwaluwe
+ASDL,5270,198,2765,245,Amsterdam Lelylaan
+GVMW,5165,118,966,1012,Den Haag Moerwijk
+BR,5165,67,2357,362,Blerick
+RSW,5165,121,988,1015,Rijswijk
+AHP,5040,123,2186,68,Arnhem Velperpoort
+LLS,5026,57,1502,249,Lelystad Centrum
+HLO,5000,54,1741,321,Heiloo
+ALMP,4940,58,971,704,Almere Parkwijk
+DMN,4870,41,1487,238,Diemen
+ASSP,4870,42,1894,238,Amsterdam Science Park
+DN,4831,51,1508,418,Deurne
+EST,4794,113,2057,127,Elst
+GDG,4778,123,1511,207,Gouda Goverwelle
+HWZB,4740,74,1381,176,Halfweg-Zwanenburg
+HLMS,4740,74,2179,176,Haarlem Spaarnwoude
+AMRN,4642,24,1413,246,Alkmaar Noord
+HWD,4642,47,1757,285,Heerhugowaard
+BRN,4622,52,2114,67,Baarn
+ZV,4620,104,1920,175,Zevenaar
+ASN,4435,54,1627,164,Assen
+O,4318,74,2270,322,Oss
+WDN,4256,51,1624,277,Wierden
+AVAT,4253,60,1378,159,Amersfoort Vathorst
+WW,4238,19,440,55,Winterswijk
+MES,4206,20,1440,404,Meerssen
+VK,4206,25,1980,411,Valkenburg
+LDL,4145,45,2027,161,Leiden Lammenschans
+DLD,4107,84,1736,105,Den Dolder
+BHV,4105,73,1162,96,Bilthoven
+BDG,4104,28,631,185,Bodegraven
+TL,4083,34,742,123,Tiel
+HDB,4055,26,1562,102,Hardenberg
+GNN,4044,29,1487,25,Groningen Noord
+SWD,4040,35,1898,25,Sauwerd
+KW,3997,19,2246,22,Kropswolde
+HGZ,3997,18,1951,22,Hoogezand-Sappemeer
+ZB,3997,30,1947,60,Zuidbroek
+MTH,3997,19,2081,22,Martenshoek
+MRB,3913,34,1677,100,Mariënberg
+BTL,3904,116,1573,268,Boxtel
+BSMZ,3902,102,1708,101,Bussum Zuid
+HVSM,3902,89,1687,101,Hilversum Media Park
+TBU,3886,89,1470,288,Tilburg Universiteit
+HR,3859,40,1477,170,Heerenveen
+DDRS,3844,42,2404,96,Dordrecht Stadspolders
+GND,3840,32,2432,122,Hardinxveld-Giessendam
+SDT,3840,45,2252,98,Sliedrecht
+GR,3836,44,1788,126,Gorinchem
+BNZ,3835,54,1587,85,Barneveld Zuid
+BHDV,3835,29,2798,125,Boven-Hardinxveld
+BNC,3835,53,1476,85,Barneveld Centrum
+SDTB,3835,37,2041,96,Sliedrecht Baanhoek
+BNN,3834,43,1490,48,Barneveld Noord
+HVL,3834,45,648,48,Hoevelaken
+BET,3828,81,1298,176,Best
+EHS,3824,79,1326,177,Eindhoven Strijp-S
+GVM,3794,122,1330,102,Den Haag Mariahoeve
+DVNK,3793,113,986,102,De Vink
+VST,3793,114,1318,102,Voorschoten
+HNK,3790,49,779,276,Hoorn Kersenboogerd
+SSH,3778,140,1027,377,Sassenheim
+UTLR,3746,126,702,298,Utrecht Leidsche Rijn
+UTT,3746,124,1144,298,Utrecht Terwijde
+VTN,3746,132,588,318,Vleuten
+DTCP,3736,132,1432,301,Delft Campus
+DDZD,3726,106,1379,406,Dordrecht Zuid
+RAI,3671,146,1355,138,Amsterdam RAI
+FWD,3646,35,2008,23,Feanwâlden
+DMNZ,3641,75,1069,150,Diemen Zuid
+HVSP,3634,30,1923,90,Hilversum Sportpark
+SWK,3567,46,1382,147,Steenwijk
+RTZ,3561,101,1227,174,Rotterdam Zuid
+ZWD,3559,129,1554,175,Zwijndrecht
+BRD,3559,125,1141,170,Barendrecht
+RLB,3559,129,1714,170,Rotterdam Lombardijen
+NVP,3523,144,1364,281,Nieuw Vennep
+WTV,3510,83,1337,35,Westervoort
+DID,3510,27,1297,35,Didam
+DVN,3510,84,1326,35,Duiven
+WAD,3504,45,1023,54,Waddinxveen
+WADT,3504,44,597,55,Waddinxveen Triangel
+BSK,3504,51,643,64,Boskoop
+BSKS,3504,45,682,54,Boskoop Snijdelwijk
+WADN,3504,45,1072,54,Waddinxveen Noord
+DTC,3498,37,766,37,Doetinchem
+DTCH,3498,22,508,35,Doetinchem De Huet
+WL,3498,28,864,35,Wehl
+LG,3480,41,1599,203,Landgraaf
+NMGO,3419,26,1601,168,Nijmegen Goffert
+WC,3418,48,1684,161,Wijchen
+NMD,3417,26,1666,170,Nijmegen Dukenburg
+ZBM,3401,62,1402,88,Zaltbommel
+ODZ,3379,121,740,231,Oldenzaal
+AKM,3376,43,605,353,Akkrum
+BGN,3319,46,1823,530,Bergen op Zoom
+MDB,3267,27,1036,536,Middelburg
+VS,3266,19,781,521,Vlissingen
+GS,3266,40,1481,553,Goes
+WM,3255,52,1805,165,Wormerveer
+KMA,3248,42,1544,165,Krommenie-Assendelft
+KZ,3247,35,1457,141,Koog aan de Zaan
+ZZS,3247,35,2158,141,Zaandijk Zaanse Schans
+BMR,3142,29,1638,108,Boxmeer
+VRY,3142,34,1550,102,Venray
+VLB,3142,27,1504,102,Vierlingsbeek
+CK,3142,23,1872,98,Cuijk
+MMLH,3142,30,2206,100,Mook-Molenhoek
+NMH,3142,27,2019,100,Nijmegen Heyendaal
+AC,3108,127,876,96,Abcoude
+ASHD,3108,125,1381,98,Amsterdam Holendrecht
+MAS,3040,138,939,38,Maarssen
+BP,3030,40,1723,17,Buitenpost
+UTZL,3025,132,978,43,Utrecht Zuilen
+AHZ,2961,99,765,111,Arnhem Zuid
+NML,2960,71,873,111,Nijmegen Lent
+RAT,2902,23,1282,353,Raalte
+NVD,2892,24,1377,353,Nijverdal
+BNK,2795,67,961,41,Bunnik
+YPB,2788,57,1151,136,Den Haag Ypenburg
+ZTM,2787,53,1033,126,Zoetermeer
+ZTMO,2786,54,630,124,Zoetermeer Oost
+VB,2786,54,592,134,Voorburg
+LLZM,2785,49,947,124,Lansingerland-Zoetermeer
+HRT,2754,48,996,325,Horst-Sevenum
+ESK,2705,41,1025,277,Enschede Kennispark
+BN,2699,39,423,277,Borne
+ZH,2698,39,1814,16,Zuidhorn
+AMRI,2696,38,901,277,Almelo de Riet
+ODB,2661,72,820,317,Oudenbosch
+ZVB,2660,66,805,317,Zevenbergen
+AHPR,2627,38,531,268,Arnhem Presikhaaf
+VP,2627,40,478,268,Velp
+RH,2627,41,305,268,Rheden
+DL,2620,10,1422,48,Dalfsen
+CO,2615,15,1190,35,Coevorden
+OMN,2613,11,1463,30,Ommen
+VH,2575,58,571,141,Voorhout
+PMR,2573,43,671,362,Purmerend
+BV,2570,38,584,170,Beverwijk
+KLP,2551,54,647,121,Veenendaal-De Klomp
+SM,2541,42,1299,208,Swalmen
+WS,2536,20,589,203,Winschoten
+SGN,2521,17,1169,166,Schagen
+HDR,2520,11,410,171,Den Helder
+HDRZ,2520,12,741,171,Den Helder Zuid
+ANA,2519,11,1441,171,Anna Paulowna
+HKS,2516,21,422,193,Hoogkarspel
+BKG,2516,22,332,193,Bovenkarspel-Grootebroek
+BKF,2516,18,524,193,Bovenkarspel Flora
+EKZ,2516,18,205,193,Enkhuizen
+KRG,2499,47,1450,374,Kruiningen-Yerseke
+SDA,2498,19,985,59,Scheemda
+GW,2496,39,316,238,Grou-Jirnsum
+HK,2496,17,818,164,Heemskerk
+RB,2495,37,1190,355,Rilland-Bath
+KBD,2494,34,1027,354,Krabbendijke
+VSS,2488,19,1297,345,Vlissingen Souburg
+BZL,2487,31,1136,359,Kapelle-Biezelinge
+WR,2485,7,100,313,Weener
+ARN,2483,27,1154,354,Arnemuiden
+DDN,2476,33,566,192,Delden
+SPTN,2473,35,746,99,Santpoort Noord
+TG,2472,63,1273,195,Tegelen
+RV,2472,45,1439,210,Reuver
+HOR,2446,30,1084,50,Hollandsche Rading
+KPN,2438,43,282,200,Kampen
+ZLSH,2438,44,368,200,Zwolle Stadshagen
+ETN,2430,54,721,167,Etten-Leur
+PT,2425,50,1027,101,Putten
+BLL,2425,22,678,91,Bloemendaal
+SPTZ,2424,22,650,90,Santpoort Zuid
+DRH,2423,33,667,92,Driehuis
+CPS,2420,57,731,85,Capelle Schollevaar
+RTN,2420,59,1141,119,Rotterdam Noord
+NWK,2420,58,709,85,Nieuwerkerk a/d IJssel
+HIL,2405,60,1027,63,Hillegom
+KPNZ,2385,15,658,124,Kampen Zuid
+DRON,2381,21,491,136,Dronten
+ZVT,2378,28,517,20,Zandvoort aan Zee
+EMNZ,2377,21,1018,43,Emmen Zuid
+EMN,2377,16,529,42,Emmen
+SGL,2374,18,635,82,Houthem-St. Gerlach
+HRLW,2374,14,950,82,Heerlen Woonboulevard
+VDL,2374,14,857,82,Voerendaal
+KMR,2374,14,656,82,Klimmen-Ransdaal
+MTN,2374,20,899,82,Maastricht Noord
+SOG,2374,14,764,82,Schin op Geul
+EDC,2359,35,406,38,Ede Centrum
+LTN,2359,37,787,39,Lunteren
+TPSW,2345,8,858,116,Tiel Passewaaij
+OST,2336,26,1600,157,Olst
+WH,2332,17,1075,155,Wijhe
+EC,2331,32,804,95,Echt
+OVN,2328,28,1732,20,Overveen
+BDE,2327,31,617,73,Bunde
+HNO,2327,17,715,279,Heino
+LUT,2327,29,667,73,Geleen-Lutterade
+BK,2326,29,663,73,Beek-Elsloo
+NH,2325,37,1902,107,Nuth
+GLN,2325,37,1402,107,Geleen Oost
+SBK,2325,38,1578,107,Spaubeek
+SN,2325,38,1620,107,Schinnen
+HB,2325,37,1166,106,Hoensbroek
+KRD,2320,11,299,74,Kerkrade Centrum
+CVM,2320,11,354,74,Chevremont
+EGH,2320,12,412,74,Eygelshoven
+NKK,2308,42,1106,80,Nijkerk
+HD,2306,44,1059,100,Harderwijk
+GO,2303,34,764,200,Goor
+HDE,2289,34,790,98,'t Harde
+RHN,2284,11,313,31,Rhenen
+NS,2283,35,925,103,Nunspeet
+VNDW,2283,23,980,27,Veenendaal West
+MRN,2283,72,1483,27,Maarn
+VNDC,2283,31,532,33,Veenendaal Centrum
+HMBH,2281,37,620,190,Helmond Brouwhuis
+EML,2276,43,785,100,Ermelo
+WZ,2275,33,535,82,Wezep
+HLGH,2274,15,160,181,Harlingen Haven
+HLG,2274,17,184,181,Harlingen
+SRN,2267,29,961,96,Susteren
+HRN,2263,39,807,27,Haren
+HMH,2252,28,650,240,Helmond 't Hout
+HMBV,2248,30,645,238,Helmond Brandevoort
+GDR,2240,18,675,13,Gaanderen
+TBG,2240,25,357,15,Terborg
+HGLO,2232,113,502,78,Hengelo Oost
+PMO,2227,47,879,222,Purmerend Overwhere
+ZDK,2226,41,696,221,Zaandam Kogerveld
+DEI,2223,14,759,178,Deinum
+DRP,2223,15,256,178,Dronryp
+FN,2223,14,1059,178,Franeker
+LC,2197,38,528,220,Lochem
+ATN,2190,20,356,13,Aalten
+VSV,2190,15,228,8,Varsseveld
+BL,2190,24,935,24,Beilen
+HGV,2190,20,560,23,Hoogeveen
+PMW,2185,40,577,200,Purmerend Weidevenne
+HGLG,2136,31,1578,62,Hengelo Gezondheidspark
+SK,2127,24,278,149,Sneek
+WFM,2118,21,943,43,Warffum
+WSM,2118,19,1463,19,Winsum
+BF,2117,19,1150,23,Baflo
+OBD,2117,17,947,116,Obdam
+RD,2114,24,277,55,Roodeschool
+UHM,2113,19,793,50,Uithuizermeeden
+UST,2113,19,819,50,Usquert
+UHZ,2113,18,449,50,Uithuizen
+BDPB,2105,54,803,113,Breda-Prinsenbeek
+BMN,2102,42,317,80,Brummen
+HBZM,2059,29,1378,25,Hardinxveld Blauwe Zoom
+VD,2048,12,842,67,Vorden
+RL,2048,10,919,41,Ruurlo
+LTV,2048,12,595,48,Lichtenvoorde-Groenlo
+WWW,2048,9,405,43,Winterswijk West
+WV,2046,42,647,76,Wolvega
+LDM,2001,19,947,25,Leerdam
+BSD,2001,8,990,30,Beesd
+AKL,2000,18,1078,24,Arkel
+VDM,1984,8,160,8,Veendam
+HDG,1961,40,1425,20,Hurdegaryp
+VG,1957,26,1023,119,Vught
+HTO,1951,46,829,130,'s-Hertogenbosch Oost
+RS,1951,45,550,130,Rosmalen
+OW,1951,45,1199,130,Oss West
+LWC,1950,38,1419,19,Leeuwarden Camminghaburen
+GK,1950,33,992,9,Grijpskerk
+DWE,1950,34,1277,9,De Westereen
+GZ,1943,91,974,130,Gilze-Rijen
+TBR,1943,77,619,130,Tilburg Reeshof
+OT,1942,36,822,91,Oisterwijk
+RSN,1938,56,827,8,Rijssen
+HON,1935,46,536,8,Holten
+DVC,1935,46,567,8,Deventer Colmschate
+SKND,1929,23,795,80,Sneek Noord
+LP,1926,17,629,8,Loppersum
+DZ,1926,17,365,18,Delfzijl
+APG,1926,18,1076,18,Appingedam
+STM,1926,19,782,8,Stedum
+DZW,1926,17,393,18,Delfzijl West
+BDM,1926,22,914,6,Bedum
+RVS,1915,38,1288,104,Ravenstein
+MG,1883,27,849,80,Mantgum
+ST,1883,16,691,17,Soest
+SD,1882,6,1041,17,Soestdijk
+STZ,1882,15,1471,15,Soest Zuid
+HZE,1830,45,597,50,Heeze
+MZ,1829,42,488,49,Maarheeze
+GP,1829,43,561,50,Geldrop
+TWL,1818,41,331,38,Twello
+APDO,1818,39,447,38,Apeldoorn Osseveld
+WF,1784,49,450,60,Wolfheze
+OTB,1783,39,675,29,Oosterbeek
+NSCH,1751,12,505,507,Bad Nieuweschans
+HMN,1738,24,446,7,Hemmen-Dodewaard
+OP,1738,24,337,7,Opheusden
+KTR,1738,27,426,7,Kesteren
+ZA,1738,24,542,7,Zetten-Andelst
+VEM,1714,15,767,14,Voorst-Empe
+APDM,1714,13,292,18,Apeldoorn De Maten
+KBK,1714,15,263,17,Klarenbeek
+DA,1572,19,356,28,Daarlerveen
+VZ,1572,19,578,28,Vriezenveen
+VHP,1572,21,517,28,Vroomshoop
+GBG,1401,10,742,16,Gramsbergen
+DLN,1398,11,934,16,Dalen
+IJT,1373,7,442,75,IJlst
+WK,1373,9,371,78,Workum
+HNP,1373,8,492,77,Hindeloopen
+KMW,1373,8,360,77,Koudum-Molkwerum
+STV,1373,12,154,77,Stavoren
+EGHM,1160,30,744,129,Eygelshoven Markt
+EDN,1094,11,812,39,Eijsden
+EEM,422,8,68,16,Eemshaven
+RTST,61,93,31,10,Rotterdam Stadion

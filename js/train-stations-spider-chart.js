@@ -4,10 +4,112 @@ let width  = 400;
 let height = 400;
 let margin = 150;
 let selectedStations = [];
+let station_names = [];
 
 // Load the specific dataset
-d3.csv("data/station_features/station_service_disruption_delays_cancel_counts.csv").then(function(dataset) 
+d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_with_names.csv").then(function(dataset) 
 {   
+    //fill the station_names array with all the "Station Name"
+    for (let i = 0; i < dataset.length; i++)
+    {
+        station_names.push(dataset[i]['Station Name'].toLowerCase());
+    }
+
+    function searchStation(inputText) {
+        let suggestions = station_names.filter(stationName => 
+            stationName.toLowerCase().startsWith(inputText.toLowerCase())
+        );
+        console.log(suggestions);
+        displaySuggestions(suggestions);
+    }
+
+    function selectStation(name) {
+        console.log(name);
+        
+        let searchValue = name.toUpperCase();
+
+        //remove the text from the search bar
+        d3.select('#stationSearch').property('value', '');
+
+        //strip searchValue of whitespace
+        console.log(searchValue);
+
+        //put in a value all the rows that have station name = searchValue
+        if (dataset.filter(d => d['Station Name'].toUpperCase() === searchValue).length === 0 ){
+
+        }
+        else{
+        let searchCode = dataset.filter(d => d['Station Name'].toUpperCase() === searchValue)[0]['Station Code'];
+        
+        console.log(searchCode);
+        if (!selectedStations.includes(searchCode)) {
+            selectedStations.push(searchCode);
+            updateChart();
+        }
+        d3.selectAll('text')
+        .filter(function(d) {
+            // returns true if d.id contains scatter-label-
+            return this.id.includes('scatter-label-');
+        })
+        .transition()
+        .duration(300)
+        .attr('opacity', 0.0);
+    
+    d3.selectAll('circle')
+        .filter(function(d) {
+            // returns true if d.id contains station-
+            return this.id.includes('scatter-node-');
+        })
+        .transition()
+        .duration(300)
+        .attr('opacity', 0.05);
+    
+        for (let i = 0; i < selectedStations.length; i++)
+        {
+            let label_id = '#scatter-label-' + selectedStations[i];
+            d3.select(label_id)
+                .transition()
+                .duration(300)
+                .attr('opacity', 1.0)
+                .attr('fill', 'black')
+                .attr('font-weight', 'bold');
+
+            let node_id = '#scatter-node-' + selectedStations[i];
+            d3.select(node_id)
+                .transition()
+                .duration(290)
+                .attr('opacity', 1.0)
+                .style("fill", "darkred");
+        }
+    }
+
+
+        d3.select("#suggestion-box").selectAll("div").remove();
+    }
+    
+    function displaySuggestions(suggestions) {
+
+        // Remove all existing suggestions
+        d3.select("#suggestion-box").selectAll("div").remove();
+        // Bind the suggestions to div elements
+        let suggestionDivs = d3.select("#suggestion-box")
+            .selectAll("div")
+            .data(suggestions);
+        
+        // Enter selection: Create new divs for new data
+        suggestionDivs.enter()
+            .append("div")
+            .text(d => d)
+            .on("click", function() {
+                // Using datum() to retrieve the bound data
+                let selectedStation = d3.select(this).datum();
+                selectStation(selectedStation);
+            });
+    
+        // Exit selection: Remove divs for data that no longer exists
+        suggestionDivs.exit().remove();
+    }
+    
     
     if (dataset.length === 0) return;
     let legendData = [dataset[0]];
@@ -16,7 +118,7 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts.cs
     // Define the features to be used
     let features = ["Number of Services", "Disruption Count", "Delay Count", "Cancel Count"];
 
-    let features_nosc = features.filter(f => f !== "Station Code");
+    let features_nosc = features.filter(f => f !== "Station Code" && f !== "Station Name");
 
         // Initialize objects to store the min and max values for each feature
         let featureMinMax = features_nosc.reduce((acc, feature) => {
@@ -28,7 +130,7 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts.cs
         dataset.forEach(function(row) {
             features.forEach(function(feature) {
                 //ignore the station code
-                if (feature === "Station Code") return;
+                if (feature === "Station Code" || feature === "Station Name") return;
                 let value = parseFloat(row[feature]) || 0;
                 featureMinMax[feature].min = Math.min(featureMinMax[feature].min, value);
                 featureMinMax[feature].max = Math.max(featureMinMax[feature].max, value);
@@ -39,6 +141,7 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts.cs
         dataset = dataset.map(row => {
             let normalizedRow = {};
             normalizedRow["Station Code"] = row["Station Code"];
+            normalizedRow["Station Name"] = row["Station Name"];
             features.forEach(feature => {
                 //leave the station code as it is
                 
@@ -283,34 +386,59 @@ function updateChart(){
         return line(coordinates);  // Convert coordinates to SVG path string
     }
 
+    d3.select('#stationSearch').on('input', function() {
+        let inputText = this.value;
+        console.log(inputText);
+        if (inputText === "") {
+            d3.select("#suggestion-box").selectAll("div").remove();
+        } else {
+            searchStation(inputText);
+        }
+
+    });
+
     d3.select('#stationSearch').on('keydown', function(e) {
         if (e.key === 'Enter')
-        {
-            let searchValue = this.value.toUpperCase();
+        {   
             
-            if (!selectedStations.includes(searchValue)) {
-                selectedStations.push(searchValue);
+            let searchValue = this.value.toUpperCase();
+            //remove the text from the search bar
+            d3.select('#stationSearch').property('value', '');
+            //remove all suggestionDivs
+            d3.select("#suggestion-box").selectAll("div").remove();
+            //strip searchValue of whitespace
+            console.log(searchValue);
+
+            //put in a value all the rows that have station name = searchValue
+            if (dataset.filter(d => d['Station Name'].toUpperCase() === searchValue).length === 0 ){
+
+            }
+            else{
+            let searchCode = dataset.filter(d => d['Station Name'].toUpperCase() === searchValue)[0]['Station Code'];
+            
+            console.log(searchCode);
+            if (!selectedStations.includes(searchCode)) {
+                selectedStations.push(searchCode);
                 updateChart();
             }
-
             d3.selectAll('text')
-                .filter(function(d) {
-                    // returns true if d.id contains scatter-label-
-                    return this.id.includes('scatter-label-');
-                })
-                .transition()
-                .duration(300)
-                .attr('opacity', 0.0);
-            
-            d3.selectAll('circle')
-                .filter(function(d) {
-                    // returns true if d.id contains station-
-                    return this.id.includes('scatter-node-');
-                })
-                .transition()
-                .duration(300)
-                .attr('opacity', 0.05);
-            
+            .filter(function(d) {
+                // returns true if d.id contains scatter-label-
+                return this.id.includes('scatter-label-');
+            })
+            .transition()
+            .duration(300)
+            .attr('opacity', 0.0);
+        
+        d3.selectAll('circle')
+            .filter(function(d) {
+                // returns true if d.id contains station-
+                return this.id.includes('scatter-node-');
+            })
+            .transition()
+            .duration(300)
+            .attr('opacity', 0.05);
+        
             for (let i = 0; i < selectedStations.length; i++)
             {
                 let label_id = '#scatter-label-' + selectedStations[i];
@@ -328,6 +456,8 @@ function updateChart(){
                     .attr('opacity', 1.0)
                     .style("fill", "darkred");
             }
+        }
+
         }
     });
 
