@@ -7,10 +7,56 @@ const radius = width / 2 // radius of the dendrogram
 let text_labels = false;
 let selected_station = null;
 let highlighted_stations = [];
+let station_color_mapping = {};
 let station_names = [];
+
+let legendRectSize = 10; // Size of the legend color boxes
+let colors = ["darkorange", "gray", "blue", "red", "green", "purple", "lightblue", "pink", "brown"];
+let available_colors = colors.slice();
 
 d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_with_names.csv").then(function(dataset) 
 {   
+
+function updateLegend() { 
+
+    let filteredData = dataset.filter(d => highlighted_stations.includes(d['Station Code']));
+    filteredData.forEach((d, i) => {
+        if (!station_color_mapping[d['Station Code']]){
+            station_color_mapping[d['Station Code']] = available_colors[i % colors.length];
+            //remove the color from available_colors
+            available_colors.splice(i % colors.length, 1);
+        }
+    });
+
+    svg.selectAll('.legend').remove();
+    
+    let legend = svg.selectAll('.legend').data(filteredData);
+
+    let legendEnter = legend.enter().append('g').attr('class', 'legend');
+    
+    //to move the legend
+    legendEnter.merge(legend)
+        .attr('transform', (_, i) => 'translate(-340,' + (i * 15) + ')');
+
+    legendEnter.append('rect')
+        .merge(legend.select('rect'))
+        .attr('width', legendRectSize)
+        .attr('height', legendRectSize)
+        .style('fill', d => station_color_mapping[d['Station Code']])
+        .style('stroke', d => station_color_mapping[d['Station Code']])
+        .attr('id', d => 'dendro-legend-' + d['Station Code']);
+        
+
+    legendEnter.append('text')
+        .merge(legend.select('text'))
+        .attr('x', 15)
+        .attr('y', 10)
+        .attr('font-size', '13px')
+        .text(d => d['Station Code']);
+
+    legend.exit().remove();
+
+}
 
 for (let i = 0; i < dataset.length; i++)
 {
@@ -39,7 +85,12 @@ function selectStation(name, id_search, id_suggestion_box) {
 
         else{
             let searchCode = dataset.filter(d => d['Station Name'].toUpperCase() === searchValue)[0]['Station Code'];
+            //highlighted_stations.push(searchCode);
+
             create_dendro(searchCode);
+
+            
+
             create_barplot(searchCode);
         }
     }
@@ -53,12 +104,16 @@ function selectStation(name, id_search, id_suggestion_box) {
         }
 
         else{
+
             let highlght_code = dataset.filter(d => d['Station Name'].toUpperCase() === highlght_value)[0]['Station Code'];
             highlighted_stations.push(highlght_code);
+            updateLegend();
             svg.select("#dendro-node-" + highlght_code)
                 .attr("r", 5)
-                .style("fill", "darkred")
-                .attr("stroke", "darkred")
+                .style("fill", station_color_mapping[highlght_code])
+                .attr("stroke", station_color_mapping[highlght_code])
+        
+
         }
     }
 
@@ -99,8 +154,10 @@ const svg = d3.select("#stations-dendrogram")
 
 // read json data
 function create_dendro(station_code)
-{
+{   
+    
     d3.json("data/trees/" + station_code + ".json").then( function(data) {
+
         // remove the nodes that are not part of the current tree
         svg.selectAll("circle")
             .filter(function(d) {
@@ -110,6 +167,7 @@ function create_dendro(station_code)
             .remove();
             
         selected_station = station_code;
+        
         // Create the cluster layout:
         const cluster = d3.cluster()
         .size([360, radius - 60]);  // 360 means whole circle. radius - 60 means 60 px of margin around dendrogram
@@ -158,7 +216,7 @@ function create_dendro(station_code)
                         //   .duration(250)
                         .style("opacity", 0.1)
                         .filter(function(d) {
-                            return d.data.name !== station_code && !highlighted_stations.includes(d.data.name);
+                            return !highlighted_stations.includes(d.data.name);
                         })
                         .attr("r", 3);
                     
@@ -167,6 +225,7 @@ function create_dendro(station_code)
                         //   .duration(250)
                         .style("opacity", 1)
                         .attr("r", 5);
+                    
                     
                     // create a text label for the station
                     svg.append("text")
@@ -257,7 +316,7 @@ function create_dendro(station_code)
                         //   .transition()
                         //   .duration(250)
                         .filter(function(d) {
-                            return d.data.name !== station_code && !highlighted_stations.includes(d.data.name);
+                            return !highlighted_stations.includes(d.data.name);
                         })
                         .attr("r", 3);
 
@@ -285,31 +344,35 @@ function create_dendro(station_code)
                 .duration(1000)
                 .style("fill", function(d)
                 {
-                    if (d.data.name === station_code) { return "darkgreen"; };
-                    if (highlighted_stations.includes(d.data.name)) { return "darkred"; }
+                    //if (d.data.name === station_code) { return "darkgreen"; };
+                    if (highlighted_stations.includes(d.data.name)) { return station_color_mapping[d.data.name]; };
                     return "#f7c82d";
                 })
                 .attr("stroke", function(d)
                 {
-                    if (d.data.name === station_code) { return "darkgreen"; };
-                    if (highlighted_stations.includes(d.data.name)) { return "darkred"; }
+                    //if (d.data.name === station_code) { return "darkgreen"; };
+                    if (highlighted_stations.includes(d.data.name)) { return station_color_mapping[d.data.name]; };
                     return "#003082";
                 })
                 .attr("id", function(d) { return "dendro-node-" + d.data.name; })
                 .attr("r", function(d) 
                 {
-                    if (d.data.name === station_code) { return 5; };
+                    //if (d.data.name === station_code) { return 5; };
                     if (highlighted_stations.includes(d.data.name)) { return 5; }
                     return 3;
                 });
-        
-        
+
         // remove the previous labels
         svg.selectAll("text").remove();
         text_labels = false;
+
+        updateLegend();
         
+        
+
         
     });
+    
 }
 
 d3.select('#dendro-station-search').on('input', function() {
@@ -355,8 +418,7 @@ d3.select('#dendro-station-highlight-search').on('input', function() {
 
 });
 
-d3.select('#dendro-station-highlight-search').on('keydown', function(e)
-{
+d3.select('#dendro-station-highlight-search').on('keydown', function(e){
     if (e.key === 'Enter')
     {
         let highlght_value = this.value.toUpperCase();
@@ -374,10 +436,14 @@ d3.select('#dendro-station-highlight-search').on('keydown', function(e)
         else{
             let highlght_code = dataset.filter(d => d['Station Name'].toUpperCase() === highlght_value)[0]['Station Code'];
             highlighted_stations.push(highlght_code);
+            updateLegend();
             svg.select("#dendro-node-" + highlght_code)
                 .attr("r", 5)
-                .style("fill", "darkred")
-                .attr("stroke", "darkred")
+                .style("fill", station_color_mapping[highlght_code])
+                .attr("stroke", station_color_mapping[highlght_code])
+
+            
+
         }
 
     }
@@ -385,12 +451,16 @@ d3.select('#dendro-station-highlight-search').on('keydown', function(e)
 
 d3.select("#dendro-highlighting-clear-button").on("click", function() {
     highlighted_stations = [];
+    station_color_mapping = {};
+    available_colors = colors.slice();
+    //remove the legend
+    svg.selectAll('.legend').remove();
 
     svg.selectAll("circle")
-        .filter(function(d) {
-            // returns true if d.id contains scatter-label-
-            return this.id.includes('dendro-node-');
-        })
+        // .filter(function(d) {
+        //     // returns true if d.id contains scatter-label-
+        //     return this.id.includes('dendro-node-');
+        // })
         .attr("r", 3)
         .style("fill", "#f7c82d")
         .attr("stroke", "#003082")

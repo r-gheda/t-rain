@@ -128,8 +128,8 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
             .transition()
             .duration(1000)
             .attr("cx", d => xScale(d[currentX]))
-            .attr("cy", d => yScale(d[currentY]))
-            .style("fill", "darkred");
+            .attr("cy", d => yScale(d[currentY]));
+            //.style("fill", "darkred");
         }
         // Remove old labels
         labels.exit().remove();

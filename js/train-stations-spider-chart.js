@@ -81,7 +81,7 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
                 .transition()
                 .duration(290)
                 .attr('opacity', 1.0)
-                .style("fill", "darkred");
+                .style("fill", station_color_mapping[selectedStations[i]]);
         }
     }
 
@@ -436,7 +436,7 @@ function updateChart(){
                     .transition()
                     .duration(290)
                     .attr('opacity', 1.0)
-                    .style("fill", "darkred");
+                    .style("fill", station_color_mapping[selectedStations[i]]);
             }
         }
 
@@ -446,6 +446,7 @@ function updateChart(){
     d3.select('#clearStations').on('click', function() {
         selectedStations = [];
         available_colors = colors.slice();
+        station_color_mapping = {};
         updateChart();
 
         d3.selectAll('text')
