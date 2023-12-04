@@ -21,9 +21,10 @@ export function create_barplot(station_id){
 
         // X axis
         const x = d3.scaleBand()
-        .range([ 0, width ])
-        .domain(data.map(d => d.hopcount))
-        .padding(0.2);
+            .range([ 0, width ])
+            .domain(Array.from({length: 35}, (_, i) => i + 1))
+            .padding(0.2);
+
         svg.append("g")
         .attr("transform", `translate(0, ${height})`)
         .call(d3.axisBottom(x))
