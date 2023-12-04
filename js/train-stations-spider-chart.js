@@ -21,20 +21,16 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
         let suggestions = station_names.filter(stationName => 
             stationName.toLowerCase().startsWith(inputText.toLowerCase())
         );
-        console.log(suggestions);
         displaySuggestions(suggestions);
     }
 
     function selectStation(name) {
-        console.log(name);
         
         let searchValue = name.toUpperCase();
 
         //remove the text from the search bar
         d3.select('#stationSearch').property('value', '');
 
-        //strip searchValue of whitespace
-        console.log(searchValue);
 
         //put in a value all the rows that have station name = searchValue
         if (dataset.filter(d => d['Station Name'].toUpperCase() === searchValue).length === 0 ){
@@ -43,7 +39,6 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
         else{
         let searchCode = dataset.filter(d => d['Station Name'].toUpperCase() === searchValue)[0]['Station Code'];
         
-        console.log(searchCode);
         if (!selectedStations.includes(searchCode)) {
             selectedStations.push(searchCode);
             updateChart();
@@ -81,7 +76,7 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
                 .transition()
                 .duration(290)
                 .attr('opacity', 1.0)
-                .style("fill", "darkred");
+                .style("fill", d=> station_color_mapping[d['Station Code']]);
         }
     }
 
@@ -324,6 +319,16 @@ function updateChart(){
                 .transition()
                 .duration(300)
                 .attr('r', 8);
+
+            path_id = "#scatter-label-"  + i['Station Code'];
+
+            d3.select(path_id)
+                .transition()
+                .duration(300)
+                .attr('opacity', 1.0)
+                .attr('fill', 'black')
+                .style('font-size', '15px')
+                .attr('font-weight', 'bold');
         })
         .on('mouseout', function(_, i)
         {
@@ -342,6 +347,16 @@ function updateChart(){
                 .transition()
                 .duration(300)
                 .attr('r', 3.5);
+
+            path_id = "#scatter-label-"  + i['Station Code'];
+
+            d3.select(path_id)
+                .transition()
+                .duration(300)
+                .attr('opacity', 1.0)
+                .attr('fill', 'black')
+                .style('font-size', '11px')
+                .attr('font-weight', 'bold');
         });
 
     legendEnter.append('text')
@@ -370,7 +385,6 @@ function updateChart(){
 
     d3.select('#stationSearch').on('input', function() {
         let inputText = this.value;
-        console.log(inputText);
         if (inputText === "") {
             d3.select("#suggestion-box").selectAll("div").remove();
         } else {
@@ -389,7 +403,6 @@ function updateChart(){
             //remove all suggestionDivs
             d3.select("#suggestion-box").selectAll("div").remove();
             //strip searchValue of whitespace
-            console.log(searchValue);
 
             //put in a value all the rows that have station name = searchValue
             if (dataset.filter(d => d['Station Name'].toUpperCase() === searchValue).length === 0 ){
@@ -398,7 +411,6 @@ function updateChart(){
             else{
             let searchCode = dataset.filter(d => d['Station Name'].toUpperCase() === searchValue)[0]['Station Code'];
             
-            console.log(searchCode);
             if (!selectedStations.includes(searchCode)) {
                 selectedStations.push(searchCode);
                 updateChart();
@@ -436,7 +448,7 @@ function updateChart(){
                     .transition()
                     .duration(290)
                     .attr('opacity', 1.0)
-                    .style("fill", "darkred");
+                    .style("fill", d => station_color_mapping[d['Station Code']]);
             }
         }
 

@@ -54,11 +54,6 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
                     .selectAll("path")
                     .style("stroke-width", 2);
 
-
-           
-
-  
-
     // Update function
     function updateScatterPlot() {
         // Update scales
@@ -114,7 +109,7 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
                         
         // get all d3 elements that whose id starts with scatter-node
         let children = document.querySelectorAll("[id^='spider-legend-']");
-        console.log(children)
+
         for (let i = 0; i < children.length; i++) {
           let station_code = children[i]['id'].slice(14)
           d3.select("#scatter-label-" + station_code)
@@ -124,12 +119,14 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
             .attr("y", d => yScale(d[currentY]) - 10)
             .attr("opacity", 1);
 
+          let color = d3.select("#spider-legend-" + station_code).style("fill")
+
           d3.select("#scatter-node-" + station_code)
             .transition()
             .duration(1000)
             .attr("cx", d => xScale(d[currentX]))
             .attr("cy", d => yScale(d[currentY]))
-            .style("fill", "darkred");
+            .style("fill", color);
         }
         // Remove old labels
         labels.exit().remove();
