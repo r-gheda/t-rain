@@ -14,7 +14,7 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
 
 for (let i = 0; i < dataset.length; i++)
 {
-    station_names.push(dataset[i]['Station Name'].toLowerCase());
+    station_names.push(dataset[i]['Station Name']);
 }
 
 function searchStation(inputText, id_search, id_suggestion_box) {
