@@ -60,7 +60,7 @@ function updateLegend() {
 
 for (let i = 0; i < dataset.length; i++)
 {
-    station_names.push(dataset[i]['Station Name'].toLowerCase());
+    station_names.push(dataset[i]['Station Name']);
 }
 
 function searchStation(inputText, id_search, id_suggestion_box) {
