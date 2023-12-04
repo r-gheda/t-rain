@@ -5,6 +5,8 @@ let height = 400;
 let margin = 150;
 let selectedStations = [];
 let station_names = [];
+let station_color_mapping = {};
+
 
 // Load the specific dataset
 d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_with_names.csv").then(function(dataset) 
@@ -176,38 +178,8 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
         .domain([0, maxValue])
         .range([0, (width - margin) / 2]);
 
-    let colors = ["darkorange", "gray", "navy", "red", "green", "purple", "lightblue"];
-
-    let legend = svg.selectAll('.legend')
-    .data(legendData)
-    .enter()
-    .append('g')
-    .attr('class', 'legend')
-    .attr('transform', function(_, i) {
-        let height = legendRectSize + legendSpacing;
-        let offset = height * legendData.length / 2;
-        let horz = legendX;
-        let vert = legendY + i * height - offset;
-        return 'translate(' + horz + ',' + vert + ')';
-    });
-
-    // Create colored rectangles
-    legend.append('rect')
-        .attr('width', legendRectSize)
-        .attr('height', legendRectSize)
-        .style('fill', (_, i) => colors[i])
-        .style('stroke', (_, i) => colors[i]);
-
-    // Create text labels
-    //print the station code
-
-    legend.append('text')
-        .attr('x', legendRectSize + legendSpacing)
-        .attr('y', legendRectSize - legendSpacing)
-        .text(function(d) {
-            return d['Station Code']; // Replace 'Station Code' with the actual attribute name for station codes
-        });
-
+    let colors = ["darkorange", "gray", "blue", "red", "green", "purple", "lightblue", "pink", "brown"];
+    
     // Calculate ticks based on the maxValue
     let numberOfTicks = 5; // for example, you can change this
     let tickStep = maxValue / numberOfTicks;
@@ -278,11 +250,21 @@ svg.selectAll(".axislabel")
 let line = d3.line()
     .x(d => d.x)
     .y(d => d.y);
-    
+
+//initialize available_colors as a copy of colors
+let available_colors = colors.slice();
+
 //UPDATE CHART
 function updateChart(){
 
     let filteredData = dataset.filter(d => selectedStations.includes(d['Station Code']));
+    filteredData.forEach((d, i) => {
+        if (!station_color_mapping[d['Station Code']]){
+            station_color_mapping[d['Station Code']] = available_colors[i % colors.length];
+            //remove the color from available_colors
+            available_colors.splice(i % colors.length, 1);
+        }
+    });
 
     // Update the path (chart)
     let paths = svg.selectAll("path")
@@ -295,8 +277,8 @@ function updateChart(){
         .duration(1000) // Transition duration
         .attr("d", d => getPathCoordinates(d))
         .attr("stroke-width", 3)
-        .attr("stroke", (_, i) => colors[i])
-        .attr("fill", (_, i) => colors[i])
+        .attr("stroke", d => station_color_mapping[d['Station Code']])
+        .attr("fill", d => station_color_mapping[d['Station Code']])
         .attr("stroke-opacity", 1)
         .attr("opacity", 0.5)
         .attr('id', d => 'spider-path-' + d['Station Code'] );
@@ -315,8 +297,8 @@ function updateChart(){
         .merge(legend.select('rect'))
         .attr('width', legendRectSize)
         .attr('height', legendRectSize)
-        .style('fill', (_, i) => colors[i])
-        .style('stroke', (_, i) => colors[i])
+        .style('fill', d => station_color_mapping[d['Station Code']])
+        .style('stroke', d => station_color_mapping[d['Station Code']])
         .attr('id', d => 'spider-legend-' + d['Station Code'])
         .on('mouseover', function(event, i)
         {
@@ -463,6 +445,7 @@ function updateChart(){
 
     d3.select('#clearStations').on('click', function() {
         selectedStations = [];
+        available_colors = colors.slice();
         updateChart();
 
         d3.selectAll('text')
