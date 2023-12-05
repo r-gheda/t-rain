@@ -82,7 +82,7 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
             .attr("cx", d => xScale(d[currentX]))
             .attr("cy", d => yScale(d[currentY]))
             .attr("r", 3.5)
-            .style("fill", "#69b3a2");
+            .style("fill", "#f7c82d");
 
         // Remove old dots
         dots.exit().remove();

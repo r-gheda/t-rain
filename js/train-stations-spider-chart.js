@@ -479,7 +479,7 @@ function updateChart(){
             })
             .transition()
             .duration(300)
-            .style("fill", "#69b3a2")
+            .style("fill", "#f7c82d")
             .attr('opacity', 1.0);
     });
 
