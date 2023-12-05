@@ -78,45 +78,41 @@
 </section>
 <!-- END TITLE AND TRAIN GRAPHIC-->
 
-<!-- STACKED -->
+<!-- GROUPED BARPLOT -->
 <section id="section0" style="height: 100%;">
     <h1 style="position: relative; left: 10%; top: 15%; font-size: 50px;"
     data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000">
         Which are the most used <br> modes of transport in the Netherlands?
     </h1>
 
-    <div id="stacked" data-aos="fade-up" data-aos-delay="100"
+    <div id="grouped-barplot" data-aos="fade-up" data-aos-delay="100"
     data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000">
-        <script type='module' src="js/stacked.js" ></script>
-    </div>
-    
-    
-    
+</div>
 </section>
-<!-- END STACKED -->
+<!-- END GROUPED BARPLOT -->
 
 <!-- TRAINS USAGE IN THE WORLD COMPARISON -->
 <section id="section1">
     <h1 style="position: relative; left: 10%; top: 20%; font-size: 50px;"
-         data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-        Trains around the world!
-    </h1>
-    <h2 style="position: relative; left: 10%; top: 100%; font-size: 30px;"
-        data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-        Below you can see the train usage in the Netherlands compared <br>
-        to other countries
-    </h2>
-    
-    <div id="vis-world-trains"> 
+    data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+    Trains around the world!
+</h1>
+<h2 style="position: relative; left: 10%; top: 100%; font-size: 30px;"
+data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+Below you can see the train usage in the Netherlands compared <br>
+to other countries
+</h2>
+
+<div id="vis-world-trains"> 
     <!-- Initialize a select button -->
     <select id="country-select-button" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000" style="align-self: right;" ></select>
-
+    
     <!-- Create a div where the graph will take place -->
     <div id="train-usage-line-chart" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000" ></div>
-    </div>
-    
+</div>
 
-    
+
+
 </section>
 <!-- END TRAINS USAGE IN THE WORLD COMPARISON -->
 
@@ -135,7 +131,7 @@
         <div style="width: 40%; position: relative; margin-left: 100px;">
             <div style="height:40%; text-align: left;">
                 <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                 </p> 
                 Select a station as root: <input type="text" id="dendro-station-search" placeholder="Enter Station Code" > <br>
                 <div id="suggestion-box-root"></div>
@@ -160,17 +156,17 @@
     <h1>Disruptions</h1>
     <div style="display: flex;">
         <div style="width: 40%"
-            data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
-            In 2022, there have been 24523 disruptions.
-        </div>
-        <div style="width: 60%; position: absolute; right: 0%; top: 15%;"
-            data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-            <select id="cause-select-button"></select>
-            <div id="disruption-heatmap"></div>
-        </div>
+        data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
+        In 2022, there have been 24523 disruptions.
     </div>
+    <div style="width: 60%; position: absolute; right: 0%; top: 15%;"
+    data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+    <select id="cause-select-button"></select>
+    <div id="disruption-heatmap"></div>
+</div>
+</div>
 
-   
+
 </section>
 <!-- END DISRUPTIONS HEATMAP -->
 
@@ -178,29 +174,29 @@
 <section id="section4">
     <h1>What's the best station for you</h1>
     <p>This is the content of Section 5.</p>
-
+    
     <div style="display: flex;">
         <div style=" position: absolute; top: 30%;  width: 70%" data-aos="fade-up" data-aos-duration="1000">
             <label for="xFeature">Feature X:</label>
             <select id="xFeature"></select>
-
+            
             <label for="yFeature">Feature Y:</label>
             <select id="yFeature"></select>
             
             <div id="station-features-scatter"></div>
         </div>
         <div style="width: 30% ; position: absolute; right: 10%; top:30%;">
-
+            
             <input type="text" id="stationSearch" placeholder="Enter Station Code" >
             <div id="suggestion-box"></div>
-
+            
             <button id="clearStations">Clear</button>
             <div style="width: 60%"  
-                data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">   
+            data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">   
             <div id="stations-spider-chart" data-aos="fade-up" data-aos-duration="1000" ></div>
-            </div>
         </div>
     </div>
+</div>
 </section>
 <!-- END WHAT'S THE BEST STATION FOR YOU -->
 
@@ -208,6 +204,7 @@
     <p>© 2023 ProRails A Dutch Story</p>
 </footer>
 
+<script type='module' src="js/grouped-barplot.js" ></script>
 <script type="module" src="js/disruption-heatmap.js"></script>
 <script type="module" src="js/script-world-train-usage.js"></script> 
 <script type="module" src="js/hopcount-barplot.js"></script>
