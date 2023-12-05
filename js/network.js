@@ -29,13 +29,23 @@ d3.json("data/network.json").then( function( data) {
       .attr("r", 5)
       .style("fill", "#69b3a2")
 
+      const nodeName = svg
+      .selectAll("text")
+      .data(data.nodes)
+      .join("text")
+      .text(d => d.name)
+      .attr("dy", "0.35em")
+      .style("text-anchor", "middle")
+      .style("font-size", "30px")
+      .style("fill", "black"); // Set a fill color for the text
+
   // Let's list the force we wanna apply on the network
   const simulation = d3.forceSimulation(data.nodes)                 // Force algorithm is applied to data.nodes
       .force("link", d3.forceLink()                               // This force provides links between nodes
             .id(function(d) { return d.id; })                     // This provide  the id of a node
             .links(data.links)                                    // and this the list of links
       )
-      .force("charge", d3.forceManyBody().strength(-10))         // This adds repulsion between nodes. Play with the -400 for the repulsion strength
+      .force("charge", d3.forceManyBody().strength(-5))         // This adds repulsion between nodes. Play with the -400 for the repulsion strength
       .force("center", d3.forceCenter(width / 2, height / 2))     // This force attracts nodes to the center of the svg area
       .on("end", ticked);
 
@@ -50,6 +60,9 @@ d3.json("data/network.json").then( function( data) {
     node
          .attr("cx", function (d) { return d.x+6; })
          .attr("cy", function(d) { return d.y-6; });
+  // Update the position of node names
+  nodeName
+    .attr("transform", d => `translate(${d.x},${d.y + 12})`);
   }
 
 });
