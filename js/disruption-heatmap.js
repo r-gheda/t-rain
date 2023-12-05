@@ -6,7 +6,7 @@ let y_domain_top = 609034;
 
 // set the dimensions and margins of the graph
 let margin = {top: 0, right: 0, bottom: 0, left: 0},
-width = 550 - margin.left - margin.right,
+width = 500 - margin.left - margin.right,
 height = (width * (y_domain_top - y_domain_bottom) / (x_domain_top - x_domain_bottom)) - margin.top - margin.bottom;
 
 function normalize_coordinates_x(x)
