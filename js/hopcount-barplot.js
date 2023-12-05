@@ -106,7 +106,7 @@ export function create_barplot(station_id){
                                 .attr("font-weight",700);
                     }
 
-                    d3.select(this).style("fill", "#ff0000");
+                    d3.select(this).style("fill", "#f7c82d");
                 })
                 .on("mouseout", function(d) 
                 {
