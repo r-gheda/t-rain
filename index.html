@@ -156,13 +156,17 @@
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                 </p> 
+            
+     
                 <label for="dendro-station-search">Search for a station:</label>
-                <input type="text" id="dendro-station-search" placeholder="Enter Station Code" style="width: 140px;" > <br>
+                <input type="text" id="dendro-station-search" placeholder="Enter Station Code" > <br>
                 <div id="suggestion-box-root"></div>
 
                 <label for="dendro-station-highlight-search">Highlight a station:</label>
-                <input type="text" id="dendro-station-highlight-search" placeholder="Enter Station Code To Highlight" style="width: 140px;"> <br>
+                <input type="text" id="dendro-station-highlight-search" placeholder="Enter Station Code To Highlight"> <br>
                 <div id="suggestion-box-highlight"></div>
+
+
                 <input type="button" id="dendro-highlighting-clear-button" style="background-color: white;" value="Clear Highlighting">
             </div>
             <div style="height: 40%">
@@ -210,7 +214,7 @@
 
         <div style="position: absolute; top: 26%; width: 70%; z-index: 1" data-aos="fade-up" data-aos-duration="1000">
             <label  for ="relativeStation">Compare to:</label>
-            <input type="text" style="width: 140px;" id="relativeStation" placeholder="Enter Station Code" >
+            <input type="text" id="relativeStation" placeholder="Enter Station Code" >
             <div  id="suggestion-box-relative"></div>
 
             <button id="clearRelative" >Clear</button>
