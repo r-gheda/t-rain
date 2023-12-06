@@ -398,6 +398,7 @@ footer {
     background-color: white; /* Optional: background color */
     border: 1px solid #ddd; /* Optional: border */
     border-top: none; /* Remove top border */
+
 }
 
 #suggestion-box-root div {
@@ -405,11 +406,14 @@ footer {
     padding: 5px;
     cursor: pointer;
     border-bottom: 1px solid #ddd; /* Border between suggestions */
+
 }
 
 #suggestion-box-root div:hover {
     
     background-color: #f0f0f0;
+
+    
 }
 
 #suggestion-box-highlight {
