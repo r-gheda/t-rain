@@ -306,7 +306,6 @@ footer {
     color: #003082;
     width: 80px;
     height: 10px;
-    background-color: lightyellow;
     border: 1px solid black;
     padding: 5px;
     border-radius: 5px;
@@ -326,15 +325,20 @@ footer {
 }
 
 #clearStations{
-    font-family: Verdana, sans-serif;
-    color: #003082;
+
+    background-color: white;
     width: 70px;
     height: 20px;
-    background-color: lightyellow;
-    
-    
     border-radius: 5px;
     
+}
+
+#clearRelative{
+
+    background-color: white;
+    width: 70px;
+    height: 20px;
+    border-radius: 5px;
 }
 
 #suggestion-box {
@@ -351,6 +355,26 @@ footer {
 }
 
 #suggestion-box div {
+    padding: 5px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd; /* Border between suggestions */
+}
+
+#suggestion-box-relative {
+    font-size: 10px;
+    width: 140px;
+    box-sizing: border-box;
+    border: 1px solid #dedede;
+    position: absolute;
+    left: 38%;
+    top: 100%;
+    z-index: 1;
+    background-color: white; 
+    border: 1px solid #ddd;
+    border-top: none; /* Remove top border */
+}
+
+#suggestion-box-relative div {
     padding: 5px;
     cursor: pointer;
     border-bottom: 1px solid #ddd; /* Border between suggestions */

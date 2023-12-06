@@ -204,9 +204,19 @@
     <p>This is the content of Section 5.</p>
     
     <div style="display: flex;">
-        <div style=" position: absolute; top: 30%;  width: 70%" data-aos="fade-up" data-aos-duration="1000">
+
+        <div style="position: absolute; top: 26%; width: 70%; z-index: 1" data-aos="fade-up" data-aos-duration="1000">
+            <label style="position: absolute; left: 26%;" for ="relativeStation">Compare to:</label>
+            <input type="text" style="position: relative; left: -5%;" id="relativeStation" placeholder="Enter Station Code" >
+            <div  id="suggestion-box-relative"></div>
+
+            <button id="clearRelative" style="position: absolute; left: 53%;">Clear</button>
+        </div>
+
+        <div style=" position: absolute; top: 30%;  width: 70%; z-index: 0" data-aos="fade-up" data-aos-duration="1000">
+            
             <label for="xFeature">Feature X:</label>
-            <select id="xFeature"></select>
+            <select  id="xFeature"></select>
             
             <label for="yFeature">Feature Y:</label>
             <select id="yFeature"></select>
@@ -218,6 +228,7 @@
             <input type="text" id="stationSearch" placeholder="Enter Station Code" >
             <div id="suggestion-box"></div>
             
+
             <button id="clearStations">Clear</button>
             <div style="width: 60%"  
             data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">   

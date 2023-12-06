@@ -150,15 +150,12 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
 
 
     // Initialize variables to store the min and max values
-    let minValue = 0;
+
     let maxValue = 1;
 
     let data = [dataset[0]]
 
-    let legendX = 50; // X position of the legend
-    let legendY = 50; // Y position of the legend
     let legendRectSize = 10; // Size of the legend color boxes
-    let legendSpacing = 5; // Spacing between boxes
 
     // Select the first four rows of the dataset for the legend
    
@@ -482,6 +479,69 @@ function updateChart(){
             .style("fill", "#f7c82d")
             .attr('opacity', 1.0);
     });
+
+    function searchRelativeStation(inputText) {
+        let suggestions = station_names.filter(stationName => 
+            stationName.toLowerCase().startsWith(inputText.toLowerCase())
+        );
+        displayRelativeSuggestions(suggestions);
+    }
+
+    function selectRelativeStation(name) {
+            
+            let searchValue = name.toUpperCase();
+    
+            //remove the text from the search bar
+            d3.select('#relativeStation').property('value', '');
+
+            //put in a value all the rows that have station name = searchValue
+            if (dataset.filter(d => d['Station Name'].toUpperCase() === searchValue).length === 0 ){
+
+            }
+            else{
+                //TODO
+
+                d3.select("#suggestion-box-relative").selectAll("div").remove();
+            }
+
+        }
+    
+    function displayRelativeSuggestions(suggestions) {
+            
+            // Remove all existing suggestions
+            d3.select("#suggestion-box-relative").selectAll("div").remove();
+            // Bind the suggestions to div elements
+            let suggestionDivs = d3.select("#suggestion-box-relative")
+                .selectAll("div")
+                .data(suggestions);
+            
+            // Enter selection: Create new divs for new data
+            suggestionDivs.enter()
+                .append("div")
+                .text(d => d)
+                .on("click", function() {
+                    // Using datum() to retrieve the bound data
+                    let selectedStation = d3.select(this).datum();
+                    selectRelativeStation(selectedStation);
+                });
+            
+            // Exit selection: Remove divs for data that no longer exists
+            suggestionDivs.exit().remove();
+        }
+
+
+    d3.select('#relativeStation').on('input', function() {
+        let inputText = this.value;
+        if (inputText === "") {
+            d3.select("#suggestion-box-relative").selectAll("div").remove();
+        } else {
+            searchRelativeStation(inputText);
+        }
+
+    });
+
+
+
 
     updateChart();
 
