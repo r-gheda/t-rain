@@ -75,12 +75,12 @@ section {
     background: #e9e9e9;
 }
 
-#section0 { 
+#modes-of-transport-slide { 
     background: white;
     
 }
 
-#section1 { 
+#world-train-usage-slide { 
 
     background: white;
     
@@ -92,31 +92,21 @@ section {
     text-align: center;
  }
 
-#section2bis{
+#dendro-slide{
     background: #e9e9e9;
     text-align: center;
 }
 
-#section3 { 
+#disruption-heatmap-slide { 
     background: #e9e9e9;
     text-align: center;
  }
 
-#section4 { 
+#spider-chart-slide { 
     background: #e9e9e9;
     text-align: center;
  }
 
-#section5 { 
-    background: #e9e9e9;
-    text-align: center;
- }
-
-#section6 { 
-    background: #e9e9e9;
-    text-align: center;
-
- }
 
 /* Footer Styles */
 footer {

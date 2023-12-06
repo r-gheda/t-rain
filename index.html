@@ -21,20 +21,20 @@
     
     <div id="cd-vertical-nav" style="margin-top: 0px;">
     <ul style="color: transparent;">
-            <li>
-                <a href="#title"><span class="cd-dot"></span>
-                    <span class="cd-label">Title</span>
-                </a>
-            </li>
-            <li>
-                <a href="#section0"><span class="cd-dot"></span>
-                    <span class="cd-label">Introduction</span>
-                </a>
-            </li>
-            <li>
-                <a href="#section1"><span class="cd-dot"></span>
-                    <span class="cd-label">Trains all over the world</span>
-                </a>
+        <li>
+            <a href="#title"><span class="cd-dot"></span>
+                <span class="cd-label">Title</span>
+            </a>
+        </li>
+        <li>
+            <a href="#world-train-usage-slide"><span class="cd-dot"></span>
+                <span class="cd-label">Trains all over the world</span>
+            </a>
+        </li>
+        <li>
+            <a href="#modes-of-transport-slide"><span class="cd-dot"></span>
+                <span class="cd-label">Modes of transport</span>
+            </a>
         </li>
         <li>
             <a href="#section2"><span class="cd-dot"></span>
@@ -42,17 +42,17 @@
             </a>
         </li>
         <li>
-            <a href="#section2bis"><span class="cd-dot"></span>
+            <a href="#dendro-slide"><span class="cd-dot"></span>
                 <span class="cd-label">Dendrogram</span>
             </a>
         </li>
         <li>
-            <a href="#section3"><span class="cd-dot"></span>
+            <a href="#disruption-heatmap-slide"><span class="cd-dot"></span>
                 <span class="cd-label">Disruptions</span>
             </a>
         </li>
         <li>
-            <a href="#section4"><span class="cd-dot"></span>
+            <a href="#spider-chart-slide"><span class="cd-dot"></span>
                 <span class="cd-label">Pick Your Station!</span>
             </a>
         </li>
@@ -74,7 +74,7 @@
     <div class="slideshow">
         <div class="imgslide"></div>
     </div>
-    <a href="#section0" class="cd-scroll-down"></a>
+    <a href="#intro-slide" class="cd-scroll-down"></a>
 </section>
 <!-- END TITLE AND TRAIN GRAPHIC-->
 
@@ -82,62 +82,62 @@
     Here comes the intro slide
 </section>
 
-<!-- GROUPED BARPLOT -->
-<section id="section0" style="height: 100%;">
-    <h1 style="position: relative; left: 10%; top: 15%; font-size: 50px;"
-        data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000">
-        What are the most used <br> modes of transport in the Netherlands?
-    </h1>
-
-    <h2 style="position: relative; left: 10%; top: 15%;"
-        data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000">
-        Some text content, some text content, some text content <br>
-        Some text content, some text content, some text content <br>
-        Some text content, some text content, some text content <br>
-    </h2>   
-
-    <div style="display: flex;">
-
-        <video src="videos/ns-card.mp4" autoplay muted loop 
-        style="position: absolute; left: 0%; bottom: 5%; height: 40%; width: 40%;"></video>
-
-        <div id="grouped-barplot" style="position: absolute; left: 60%; top: 40%; height: 50%; width: 50%;"
-        data-aos="fade-up" data-aos-delay="100" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000">
-        </div> 
-    </div>
-</section>
-<!-- END GROUPED BARPLOT -->
-
 <!-- TRAINS USAGE IN THE WORLD COMPARISON -->
-<section id="section1">
+<section id="world-train-usage-slide">
     <h1 style="position: relative; left: 10%; top: 20%; font-size: 50px;"
     data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
     Trains around the world!
-    </h1>
+</h1>
     <h2 style="position: relative; left: 10%; top: 100%; font-size: 30px;"
-        data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+    data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
         Below you can see the train usage in the Netherlands compared <br>
         to other countries
     </h2>
 
     <div style="display: flex;">
-
+        
         <video src="videos/train-loop.mp4" autoplay muted loop 
         style="position: absolute; left: 0%; bottom: 5%; height: 40%; width: 40%;"></video>
-
+        
         <div id="vis-world-trains" style="height: 100%; width: 50%;"> 
             <!-- Initialize a select button -->
             <select id="country-select-button" style="position: absolute; left: 50%; top: 0%;"
-                data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000" ></select>
+            data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000" ></select>
             
             <!-- Create a div where the graph will take place -->
             <div id="train-usage-line-chart" style="position: absolute; left: 0%; top: 5%; height: 50%; width: 50%;"
                 data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000" ></div>
+            </div>
         </div>
-    </div>
-
-</section>
-<!-- END TRAINS USAGE IN THE WORLD COMPARISON -->
+        
+    </section>
+    <!-- END TRAINS USAGE IN THE WORLD COMPARISON -->
+    
+    <!-- GROUPED BARPLOT -->
+    <section id="modes-of-transport-slide" style="height: 100%;">
+        <h1 style="position: relative; left: 10%; top: 15%; font-size: 50px;"
+            data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000">
+            What are the most used <br> modes of transport in the Netherlands?
+        </h1>
+    
+        <h2 style="position: relative; left: 10%; top: 15%;"
+            data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000">
+            Some text content, some text content, some text content <br>
+            Some text content, some text content, some text content <br>
+            Some text content, some text content, some text content <br>
+        </h2>   
+    
+        <div style="display: flex;">
+    
+            <video src="videos/ns-card.mp4" autoplay muted loop 
+            style="position: absolute; left: 0%; bottom: 5%; height: 40%; width: 40%;"></video>
+    
+            <div id="grouped-barplot" style="position: absolute; left: 60%; top: 40%; height: 50%; width: 50%;"
+            data-aos="fade-up" data-aos-delay="100" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000">
+            </div> 
+        </div>
+    </section>
+    <!-- END GROUPED BARPLOT -->
 
 <!-- BAR CHART + GRAPH -->
 <section id="section2">
@@ -148,7 +148,7 @@
 <!-- END BAR CHART + GRAPH -->
 
 <!-- DENDROGRAM -->
-<section id = "section2bis">
+<section id = "dendro-slide">
     <h1>Hopcount Distribution</h1>
     <div style="display: flex;">
         <div style="width: 40%; position: relative; margin-left: 100px;">
@@ -178,7 +178,7 @@
 <!-- END DENDROGRAM -->
 
 <!-- DISRUPTIONS HEATMAP -->
-<section id="section3">
+<section id="disruption-heatmap-slide">
     <h1>Disruptions</h1>
     <div style="display: flex;">
         <div style="width: 40%"
@@ -202,7 +202,7 @@
 <!-- END DISRUPTIONS HEATMAP -->
 
 <!-- WHAT'S THE BEST STATION FOR YOU -->
-<section id="section4">
+<section id="spider-chart-slide">
     <h1>What's the best station for you</h1>
     <p>This is the content of Section 5.</p>
     
