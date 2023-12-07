@@ -59,43 +59,18 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
     // Axis setup
     const xAxis = svg.append("g")
                      .attr("transform", `translate(0,${height})`)
-                     .call(d3.axisBottom(xScale).ticks(10)) // Initial call for creation
-                     .selectAll("path")
-                     .style("stroke-width", 2);
                      
+  
     const yAxis = svg.append("g")
-                    .call(d3.axisLeft(yScale).ticks(10)) // Initial call for creation
-                    .selectAll("path")
-                    .style("stroke-width", 2);
 
     // Update function
     function updateScatterPlot() {
-      console.log(code1);
-      console.log(code2);
-      console.log(currentX);
-      console.log(currentY);
+
       d3.csv("data/relative-features/" + code1 + ".csv").then(relative_data1 => {
         d3.csv("data/relative-features/" + code2 + ".csv").then(relative_data2 => {
-        // Update scales
-        console.log(data.length);
-        console.log(relative_data1.length);
-        console.log(relative_data2.length);
 
-        //print the station codes that are in relative_data1 but not in data
-        let relative_data1_codes = relative_data1.map(d => d['Station Code']);
-        let relative_data2_codes = relative_data2.map(d => d['Station Code']);
-        let data_codes = data.map(d => d['Station Code']);
         
-        let data_codes_not_in_relative_data1 = data_codes.filter(x => !relative_data1_codes.includes(x));
-        let data_codes_not_in_relative_data2 = data_codes.filter(x => !relative_data2_codes.includes(x));
-        console.log(data_codes_not_in_relative_data1);
-        console.log(data_codes_not_in_relative_data2);
-
-
-
-
-
-
+      
         let data1;
         let data2;
         let data_merged;
@@ -149,21 +124,47 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
             data_merged = data;
         }
 
-        console.log(data_merged.slice(0,5));
 
-        xScale.domain([0, d3.max(data_merged, d => +d[currentX])]);
-        yScale.domain([0, d3.max(data_merged, d => +d[currentY])]);
+        xScale.domain(d3.extent(data_merged, d => +d[currentX]));
+        yScale.domain(d3.extent(data_merged, d => +d[currentY]));
 
-        console.log(data_merged.slice(0,5));
 
-        // Update axes
+        //Update axes
         xAxis.transition()
-             .duration(1000)
+             .duration(2000)
              .call(d3.axisBottom(xScale));
         yAxis.transition()
-             .duration(1000)
+             .duration(2000)
              .call(d3.axisLeft(yScale));
 
+        
+        let xAxisLabel = svg.select(".x-axis-label");
+        if (xAxisLabel.empty()) {
+            xAxisLabel = svg.append("text")
+                            .attr("class", "x-axis-label")
+                            .attr("text-anchor", "middle")
+                            .style("font-size", "14px")
+                            .style("fill", "#003082");
+        }
+        xAxisLabel.attr("x", width / 2)
+                  .attr("y", height + margin.bottom - 5)
+                  .text(currentX);
+        
+        // Update Y-axis label
+        let yAxisLabel = svg.select(".y-axis-label");
+        if (yAxisLabel.empty()) {
+            yAxisLabel = svg.append("text")
+                            .attr("class", "y-axis-label")
+                            .attr("text-anchor", "middle")
+                            .style("font-size", "14px")
+                            .style("fill", "#003082")
+                            .attr("transform", "rotate(-90)");
+        }
+        yAxisLabel.attr("x", -height / 2)
+                  .attr("y", -margin.left + 15)
+                  .text(currentY);
+
+  
         // Bind data to dots
         const dots = svg.selectAll("circle").data(data_merged);
 
@@ -229,7 +230,7 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
   });
 }
 
-    // Initial plot
+    // // Initial plot
     updateScatterPlot();
 
     // Dropdown event listeners

@@ -114,7 +114,6 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
 
     // Define the features to be used
     let features = ["Number of Services", "Disruption Count", "Delay Count", "Cancel Count"];
-    let relative_features = [];
 
     let features_nosc = features.filter(f => f !== "Station Code" && f !== "Station Name");
 
@@ -151,7 +150,7 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
 
 
     // Initialize variables to store the min and max values
-
+    
     let maxValue = 1;
 
     let legendRectSize = 10; // Size of the legend color boxes
