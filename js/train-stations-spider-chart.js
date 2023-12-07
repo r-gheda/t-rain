@@ -222,19 +222,36 @@ svg.selectAll("line")
         .attr("x2", d => d.line_coord.x)
         .attr("y2", d => d.line_coord.y)
         .attr("stroke","black")
-);
+        );
+        
+        // draw axis label
+        svg.selectAll(".axislabel")
+        .data(featureData)
+        .join(
+            enter => enter.append("text")
+            .attr("x", d => d.label_coord.x)
+            .attr("y", d => d.label_coord.y)
+            .text(d => d.name)
+            .attr("font-size", "12px") // Adjust font size here
+            .attr("fill", "black") // Optional: Set the font color
+            .attr("text-anchor", "middle")
+            .attr("transform", function (data, i) 
+            {
+                if (data.name == "Number of Services" || data.name == "Delay Count")
+                {
+                    return;
+                }
 
-// draw axis label
-svg.selectAll(".axislabel")
-.data(featureData)
-.join(
-    enter => enter.append("text")
-        .attr("x", d => d.label_coord.x)
-        .attr("y", d => d.label_coord.y)
-        .text(d => d.name)
-        .attr("font-size", "10px") // Adjust font size here
-        .attr("fill", "black") // Optional: Set the font color
-        .attr("text-anchor", "middle")
+                if (data.name == "Cancel Count")
+                {
+                    return "rotate(90 " + data.label_coord.x + "," + data.label_coord.y + ")";
+                }
+
+                if (data.name == "Disruption Count")
+                {
+                    return "rotate(270 " + data.label_coord.x + "," + data.label_coord.y + ")";
+                }
+            })
 );    
 
 let line = d3.line()
