@@ -255,7 +255,7 @@ footer {
 
 .cd-scroll-down-lat {
     position: absolute;
-    right: 10%;
+    right: 5%;
     /* left: 50%;
     right: auto; */
     -webkit-transform: translateX(-50%);
@@ -272,7 +272,7 @@ footer {
 }
 
 .blob {
-    -webkit-mask: url(img/cd-arrow-bottom.svg) no-repeat center;
+    mask-image: url(img/blob.svg);
     /* mask: url(logo.svg) no-repeat center; */
 }
 
