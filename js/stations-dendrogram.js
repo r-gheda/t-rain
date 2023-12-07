@@ -42,6 +42,8 @@ function updateLegend() {
         .merge(legend.select('rect'))
         .attr('width', legendRectSize)
         .attr('height', legendRectSize)
+        .attr('x', 0)
+        .attr('y', -250)
         .style('fill', d => station_color_mapping[d['Station Code']])
         .style('stroke', d => station_color_mapping[d['Station Code']])
         .attr('id', d => 'dendro-legend-' + d['Station Code']);
@@ -50,7 +52,7 @@ function updateLegend() {
     legendEnter.append('text')
         .merge(legend.select('text'))
         .attr('x', 15)
-        .attr('y', 10)
+        .attr('y', -250 + 10)
         .attr('font-size', '13px')
         .text(d => d['Station Code']);
 
