@@ -69,7 +69,7 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
                 .transition()
                 .duration(300)
                 .attr('opacity', 1.0)
-                .attr('fill', 'black')
+                .attr('fill', '#003082')
                 .attr('font-weight', 'bold');
 
             let node_id = '#scatter-node-' + selectedStations[i];
@@ -114,7 +114,6 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
 
     // Define the features to be used
     let features = ["Number of Services", "Disruption Count", "Delay Count", "Cancel Count"];
-    let relative_features = [];
 
     let features_nosc = features.filter(f => f !== "Station Code" && f !== "Station Name");
 
@@ -151,7 +150,7 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
 
 
     // Initialize variables to store the min and max values
-
+    
     let maxValue = 1;
 
     let legendRectSize = 10; // Size of the legend color boxes
@@ -222,7 +221,7 @@ svg.selectAll("line")
         .attr("y1", height / 2)
         .attr("x2", d => d.line_coord.x)
         .attr("y2", d => d.line_coord.y)
-        .attr("stroke","black")
+        .attr("stroke","#003082")
         );
         
         // draw axis label
@@ -234,7 +233,7 @@ svg.selectAll("line")
             .attr("y", d => d.label_coord.y)
             .text(d => d.name)
             .attr("font-size", "12px") // Adjust font size here
-            .attr("fill", "black") // Optional: Set the font color
+            .attr("fill", "#003082") // Optional: Set the font color
             .attr("text-anchor", "middle")
             .attr("transform", function (data, i) 
             {
@@ -339,7 +338,7 @@ function updateChart(){
                 .transition()
                 .duration(300)
                 .attr('opacity', 1.0)
-                .attr('fill', 'black')
+                .attr('fill', '#003082')
                 .style('font-size', '15px')
                 .attr('font-weight', 'bold');
         })
@@ -367,7 +366,7 @@ function updateChart(){
                 .transition()
                 .duration(300)
                 .attr('opacity', 1.0)
-                .attr('fill', 'black')
+                .attr('fill', '#003082')
                 .style('font-size', '11px')
                 .attr('font-weight', 'bold');
         });
@@ -453,7 +452,7 @@ function updateChart(){
                     .transition()
                     .duration(300)
                     .attr('opacity', 1.0)
-                    .attr('fill', 'black')
+                    .attr('fill', '#003082')
                     .attr('font-weight', 'bold');
 
                 let node_id = '#scatter-node-' + selectedStations[i];
@@ -482,7 +481,7 @@ function updateChart(){
             .transition()
             .duration(300)
             .attr('opacity', 0.0)
-            .attr('fill', 'black')
+            .attr('fill', '#003082')
             .attr('font-weight', 'normal');
 
         d3.selectAll('circle')
