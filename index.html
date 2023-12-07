@@ -181,27 +181,68 @@
 </section>
 <!-- END DENDROGRAM -->
 
-<!-- DISRUPTIONS HEATMAP -->
-<section id="disruption-heatmap-slide">
-    <h1>Disruptions</h1>
-    <div style="display: flex;">
-        <div style="width: 40%"
-        data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">
-        In 2022, there have been 24523 disruptions.
-    </div>
+<!-- DISRUPTION STORYLINE SLIDES -->
+<section id="disruption-storyline-slide">
+    
+    <p style="position: absolute; right: 10%; top: 0%; font-size: 100px;"
+        data-aos="fade-in" data-aos-delay="500" data-aos-duration="1000"> 
+        24523
+    </p>
+    <p style="position: absolute; right: 10%; top: 25%; font-size: 40px; text-align: right;"
+        data-aos="fade-left" data-aos-delay="1500" data-aos-duration="500"> 
+        The number of railway disruptions <br>
+         in the Netherlands in 2022. <br> <br>
+    </p>
+    <p style="position: absolute; right: 10%; top: 35%; font-size: 100px;"
+        data-aos="fade-in" data-aos-delay="2000" data-aos-duration="1000"> 
+        90%
+    </p>
+    <p style="position: absolute; right: 10%; top: 60%; font-size: 40px; text-align: right;"
+        data-aos="fade-left" data-aos-delay="3000" data-aos-duration="500"> 
+        The percentage of Dutch citizens <br>
+        that state disruptions have increased <br>
+        in effect in the last 5 years. <br> <br>
+    </p>
 
     <video src="videos/train-work.mp4" autoplay muted loop 
-    style="position: absolute; left: 0%; bottom: 5%; height: 40%; width: 40%;"></video>
+    style="position: absolute; left: 0%; bottom: 5%; height: 50%; width: 50%;"></video>
 
-    <select id="cause-select-button"></select>
-    <div style="width: 43%; height: 75%; position: absolute; right: 10%; top: 15%;
-        background-color: #f7c82d; border-radius: 100%;"
-        data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-        <div id="disruption-heatmap"></div>
+    <a href="#disruption-storyline-slide-2" class="cd-scroll-down" style="position:absolute; right: 5%; bottom: 5%;"></a>
+</section>
+
+<section id="disruption-storyline-slide-2">
+    
+    <div style="position:absolute; font-size: 50px; top: 40%; left: 15%; text-align: center;">
+        Let's further delve into the disruptions problem.
     </div>
-</div>
 
+    <a href="#disruption-heatmap-slide" class="cd-scroll-down" style="position:absolute; right: 5%; bottom: 5%;"></a>
+</section>
+<!-- END DISRUPTION STORYLINE SLIDES -->
 
+<!-- DISRUPTIONS HEATMAP -->
+<section id="disruption-heatmap-slide">
+    <div style="display: flex;">
+        <div style="position: absolute; top: 25%; left: 10%; width: 35%;
+        font-size: 30px; text-align: left; ">
+            <div data-aos="fade-right" data-aos-delay="0" data-aos-duration="1000">
+                Here is a heatmap of the disruptions in the Netherlands in 2022. <br> <br>
+            </div>
+            <div data-aos="fade-right" data-aos-delay="1500" data-aos-duration="1000">
+                You can filter by cause to see how they distribute over the different country regions: 
+                <select id="cause-select-button" style="height: 30px;"></select> <br> <br>
+            </div>
+            <div data-aos="fade-right" data-aos-delay="3000" data-aos-duration="1000">
+                Furthermore, you can hover over the heatmap labels to see the number of disruptions that involved a specific train station.
+            </div> 
+        </div>
+
+        <div style="width: 43%; height: 75%; position: absolute; right: 10%; top: 15%;
+            background-color: #f7c82d; border-radius: 100%;"
+            data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+            <div id="disruption-heatmap"></div>
+        </div>
+    </div>
 </section>
 <!-- END DISRUPTIONS HEATMAP -->
 
