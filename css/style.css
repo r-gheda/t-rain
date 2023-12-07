@@ -250,7 +250,7 @@ footer {
     height: 44px;
     background-color: #003082;
     -webkit-mask: url(img/cd-arrow-bottom.svg) no-repeat center;
-    mask: url(logo.svg) no-repeat center;
+    /* mask: url(logo.svg) no-repeat center; */
 }
 
 .cd-scroll-down-lat {
@@ -268,10 +268,13 @@ footer {
     height: 44px;
     background-color: #003082;
     -webkit-mask: url(img/cd-arrow-bottom.svg) no-repeat center;
-    mask: url(logo.svg) no-repeat center;
+    /* mask: url(logo.svg) no-repeat center; */
 }
 
-
+.blob {
+    -webkit-mask: url(img/cd-arrow-bottom.svg) no-repeat center;
+    /* mask: url(logo.svg) no-repeat center; */
+}
 
 .slideshow {
     position: absolute;
