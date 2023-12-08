@@ -76,7 +76,7 @@ const svg = d3.select("#train-usage-line-chart")
     .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
 // Read the data
-d3.csv("data/world-train-usage.csv").then(function(data) {
+d3.csv("data/world-train-usage-filtered.csv").then(function(data) {
     data = data.filter(function(d) { return d.Variable === "Rail passenger transport"; })
 
     // Normalize the data by population
@@ -134,7 +134,6 @@ d3.csv("data/world-train-usage.csv").then(function(data) {
       .attr("transform", `translate(0, ${height})`)
       .call(xAxis)
       .attr("color", "#003082") // Blue axis color
-      .style("stroke-width", "2px") // Thicker axis lines
       .selectAll("text")
         .style("font-family", "Verdana, sans-serif"); // Verdana font for axis labels
 
@@ -148,7 +147,6 @@ d3.csv("data/world-train-usage.csv").then(function(data) {
     svg.append("g")
       .call(yAxis)
       .attr("color", "#003082") // Blue axis color
-      .style("stroke-width", "2px") // Thicker axis lines
       .selectAll("text")
         .style("font-family", "Verdana, sans-serif"); // Verdana font for axis labels
 
@@ -162,7 +160,7 @@ d3.csv("data/world-train-usage.csv").then(function(data) {
         .y(function(d) { return y(+d.NormalizedValue) })
       )
       .attr("stroke", "#003082" ) // You can choose a color for the World Average line
-      .style("stroke-width", 4)
+      .style("stroke-width", 2)
       .style("fill", "none");
 
     // Initialize permanent line for the Netherlands
@@ -175,7 +173,7 @@ d3.csv("data/world-train-usage.csv").then(function(data) {
           .y(function(d) { return y(+d.NormalizedValue) })
         )
         .attr("stroke", "#FF6600") // Orange color for the Netherlands
-        .style("stroke-width", 4)
+        .style("stroke-width", 2)
         .style("fill", "none");
 
     // A function that updates the chart for the selected country or World Average
