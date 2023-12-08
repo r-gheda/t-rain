@@ -370,11 +370,14 @@ function create_dendro(station_code)
 
         updateLegend();
         
-        
-
-        
     });
     
+    // select html element with id="dendro-station-label"
+    let station_label = d3.select("#dendro-station-label");
+    // change its inner text with the station name
+    let station_idx = dataset.findIndex(d => d['Station Code'] === station_code);
+    console.log('here ' + station_names[station_idx]);
+    station_label.text(station_names[station_idx]);
 }
 
 d3.select('#dendro-station-search').on('input', function() {
