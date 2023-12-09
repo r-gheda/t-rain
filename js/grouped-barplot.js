@@ -9,10 +9,21 @@ const key_to_label = {
   "Walking": "Walking",
 }
 
-// set the dimensions and margins of the graph
-const margin = {top: 10, right: 150, bottom: 20, left: 50},
-    width = 600 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
+const marginPercentage = { top: 0.01, right: 0.06, bottom: 0.07, left: 0.04 };
+const container = d3.select("#modes-of-transport-slide");
+const containerWidth = container.node().getBoundingClientRect().width;
+const containerHeight = container.node().getBoundingClientRect().height;
+
+const margin = {
+    top: containerHeight * marginPercentage.top,
+    right: containerWidth * marginPercentage.right,
+    bottom: containerHeight * marginPercentage.bottom,
+    left: containerWidth * marginPercentage.left
+};
+
+// Calculate the width and height of the plot area
+const width = 0.35*containerWidth - margin.left - margin.right;
+const height = 0.5*containerHeight - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 const svg = d3.select("#grouped-barplot")
