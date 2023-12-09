@@ -1,7 +1,7 @@
 // set the dimensions and margins of the graph
-const margin_bar = { top: 30, right: 30, bottom: 70, left: 60 },
-  width_bar = 1700 - margin_bar.left - margin_bar.right,
-  height_bar = 200 - margin_bar.top - margin_bar.bottom;
+const margin = { top: 0, right: 0, bottom: 85, left: 50 },
+  width = 700 - margin.left - margin.right,
+  height = 200 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 const svg = d3
@@ -23,6 +23,8 @@ d3.csv("data/station_passengers2018_top100.csv").then(function (data_bar) {
 
   xScale.domain(data_bar.map(function (d) { return d.Station; }));
 //  yScale.domain(d3.extent(data_bar, function (d) { return d.InUit2018; }));
+
+
   yScale.domain([0,194385]);
 
   g.append("g")
