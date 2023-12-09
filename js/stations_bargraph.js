@@ -1,29 +1,32 @@
 // set the dimensions and margins of the graph
-const margin = { top: 30, right: 30, bottom: 70, left: 60 },
-  width = 1700 - margin.left - margin.right,
-  height = 200 - margin.top - margin.bottom;
+const margin_bar = { top: 30, right: 30, bottom: 70, left: 60 },
+  width_bar = 1700 - margin_bar.left - margin_bar.right,
+  height_bar = 200 - margin_bar.top - margin_bar.bottom;
 
 // append the svg object to the body of the page
 const svg = d3
   .select("#stations_bargraph")
   .append("svg")
-  .attr("width", width + margin.left + margin.right)
-  .attr("height", height + margin.top + margin.bottom);
+  .attr("width", width_bar + margin_bar.left + margin_bar.right)
+  .attr("height", height_bar + margin_bar.top + margin_bar.bottom);
 
 var g = svg
   .append("g")
-  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+  .attr("transform", "translate(" + margin_bar.left + "," + margin_bar.top + ")");
 
-var xScale = d3.scaleBand().range([0, width]).padding(0.1),
-  yScale = d3.scaleLinear().range([height, 0]);
+var xScale = d3.scaleBand().range([0, width_bar]).padding(0.1),
+  yScale = d3.scaleLinear().range([height_bar, 0]);
 
-d3.csv("data/station_passengers2018_top100.csv").then(function (data) {
-  xScale.domain(data.map(function (d) { return d.Station; }));
-//  yScale.domain(d3.extent(data, function (d) { return d.InUit2018; }));
+d3.csv("data/station_passengers2018_top100.csv").then(function (data_bar) {
+  d3.json("data/network.json").then( function( data_net){
+
+
+  xScale.domain(data_bar.map(function (d) { return d.Station; }));
+//  yScale.domain(d3.extent(data_bar, function (d) { return d.InUit2018; }));
   yScale.domain([0,194385]);
 
   g.append("g")
-    .attr("transform", "translate(0," + height + ")")
+    .attr("transform", "translate(0," + height_bar + ")")
     .call(d3.axisBottom(xScale))
     .selectAll("text")
     .style("text-anchor", "end")
@@ -48,13 +51,43 @@ d3.csv("data/station_passengers2018_top100.csv").then(function (data) {
 
 
   g.selectAll(".bar")
-    .data(data)
+    .data(data_bar)
     .enter()
     .append("rect")
     .attr("class", "bar")
     .attr("x", function (d) { return xScale(d.Station); })
     .attr("y", function (d) { return yScale(d.InUit2018); })
     .attr("width", xScale.bandwidth())
-    .attr("height", function (d) { return height - yScale(d.InUit2018); })
-    .attr("fill", "#003082");
-});
+    .attr("height", function (d) { return height_bar - yScale(d.InUit2018); })
+    .attr("fill", "#003082")
+    .on("mouseover", BarMouseOver)
+    .on("mouseout", BarMouseOut);
+
+
+    
+
+  function BarMouseOver(event, d) {
+
+    d3.select(this).attr("fill", "#f7c82d");
+    var stationName = d.Station;
+    console.log(stationName);
+    var correspondingNode = data_net.nodes.find(node => node.name_long === stationName);
+    console.log(correspondingNode.id);
+    
+    document.dispatchEvent(new CustomEvent('barMouseOver', { detail: stationName }));
+
+    }
+  
+  function BarMouseOut(event, i) {
+    d3.select(this).attr("fill", "#003082");
+    document.dispatchEvent(new CustomEvent('barMouseOut'));
+
+
+
+    }
+  })
+  
+
+    }
+
+);

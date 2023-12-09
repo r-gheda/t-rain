@@ -1,26 +1,10 @@
-// let x_domain_bottom = 30000;
-// let x_domain_top = 28000;
-// let y_domain_bottom = 30000;
-// let y_domain_top = 61000;
-
-// let x_domain_bottom = 30430;
-// let x_domain_top = 276075;
-// let y_domain_bottom = 309171;
-// let y_domain_top = 609023;
-
 let x_domain_bottom = 30429;
 let x_domain_top = 309128;
 let y_domain_bottom = 275165;
 let y_domain_top = 609034;
 
-// set the dimensions and margins of the graph
-// const margin = {top: 10, right: 30, bottom: 30, left: 40},
-//   width = 1800 - margin.left - margin.right,
-//   height = 1000 - margin.top - margin.bottom;
-
 let margin = {top: 0, right: 0, bottom: 0, left: 0},
-  width = 1800,  
-//width = 550 - margin.left - margin.right,
+  width = 1800,
   height = (width * (y_domain_top - y_domain_bottom) / (x_domain_top - x_domain_bottom)) - margin.top - margin.bottom;
 
 function normalize_coordinates_x(x)
@@ -119,7 +103,11 @@ d3.json("data/network.json").then( function( data) {
          .attr("transform", d => `translate(${d.x},${d.y + 20})`);
   }
 
-  node.on("mouseover", function(event, hoveredNode) {
+  function handleNodeMouseOver (event, hoveredNode) {
+    const selectedNode = d3.select(this);
+
+    selectedNode.style("opacity", 1);
+
     node.style("opacity", function(d) {
       return areNodesConnected(hoveredNode, d) ? 1 : 0.2;
     })
@@ -137,26 +125,56 @@ d3.json("data/network.json").then( function( data) {
       .filter(label => label === hoveredNode)
       .style("stroke-width", 6)
       .style("opacity", 1);
+  }
+
+
+
+  node.on("mouseover", function(event, hoveredNode) {
+    handleNodeMouseOver(event, hoveredNode)
   })
 
-
-  .on("mouseout", function(event, d){
+  function handleNodeMouseOut (event, d) {
     svg.selectAll(".node-label")
-      .filter(label => label === d)
-      .style("visibility", "hidden");
-    
-    svg.selectAll(".node")
-      .filter(label => label === d)
-      .style("stroke-width", 2);
+    //.filter(label => label === d)
+    .style("visibility", "hidden");
+  
+  svg.selectAll(".node")
+    //.filter(label => label === d)
+    .style("stroke-width", 2);
 
-    node.style("opacity", 1);
-    link.style("opacity", 1);
+  node.style("opacity", 1);
+  link.style("opacity", 1);
+  }
+
+  node.on("mouseout", function (event, d) {
+    handleNodeMouseOut(event, d)
   });
 
 
   function areNodesConnected(node1, node2) {
     return data.links.some(link => (link.source === node1 && link.target=== node2) || (link.source === node2 && link.target === node1));
   }
+
+  document.addEventListener('barMouseOver', function (event) {
+    const stationName = event.detail;
+    const correspondingNode = data.nodes.find(node => node.name_long === stationName);
+  
+    if (correspondingNode) {
+      handleNodeMouseOver(event, correspondingNode);
+    }
+  })
+
+  document.addEventListener('barMouseOut', function (event, d) {
+      handleNodeMouseOut(event, d);
+
+  })
+
+
+
+
+
+
+  
 
 });
 

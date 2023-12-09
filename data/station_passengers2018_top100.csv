@@ -4,9 +4,9 @@ Amsterdam Centraal,192178,184614,0.04
 Schiphol Airport,92214,85859,0.07
 Den Haag Centraal,91437,87107,0.05
 Leiden Centraal,79376,77703,0.02
-Eindhoven,65468,62919,0.04
+Eindhoven Centraal,65468,62919,0.04
 Amsterdam Zuid,60819,54706,0.11
-Hertogenbosch 's,47347,45937,0.03
+'s-Hertogenbosch,47347,45937,0.03
 Nijmegen,45403,44705,0.02
 Arnhem Centraal,43677,42987,0.02
 Delft,38423,35454,0.08
@@ -36,7 +36,7 @@ Duivendrecht,13126,13063,0
 Zutphen,11988,11936,0
 Maastricht,11854,11649,0.02
 Roermond,11378,11482,-0.01
-Alphen aan den Rijn,10759,10286,0.05
+Alphen a/d Rijn,10759,10286,0.05
 Leeuwarden,10393,9822,0.06
 Roosendaal,10317,10.4,-0.01
 Sittard,10286,10698,-0.04
@@ -94,7 +94,7 @@ Leiden Lammenschans,4591,4219,0.09
 Maarssen,4508,4452,0.01
 Almere Oostvaarders,4502,4327,0.04
 Deurne,4486,4365,0.03
-Delft Zuid,4472,4276,0.05
+Delft Campus,4472,4276,0.05
 Hilversum Media Park,4461,4328,0.03
 Bussum Zuid,4452,4363,0.02
 Veenendaal-de Klomp,4446,4.37,0.02
