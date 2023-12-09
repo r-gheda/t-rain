@@ -62,51 +62,41 @@
 </div>
 
 <!-- TITLE AND TRAIN GRAPHIC-->
-<section id="title" class="title-slide" style="margin-top: 0px; height: 100%; background-color: #f7c82d;">
+<section id="title" class="title-slide">
 
-    <img src="videos/raining-cloud.gif" 
-        style="position: absolute; left: 10%; top: 0%; height: 10%; width: 8%;"></img>
-    <h1 style="position: absolute; left: 10%; top: 8%;"
-    data-aos="fade-right" data-aos-delay="2000" data-aos-duration="3000">
-    t-Rain
-</h1>
-    <h2 style="position: absolute; left: 10%; top: 18%; font-size: 40px; "
-    data-aos="fade-right" data-aos-delay="2200" data-aos-duration="3000">
+    <img src="videos/raining-cloud.gif" class="cloud-gif"/>
+    <h1 data-aos="fade-right" data-aos-delay="2000" data-aos-duration="3000">
+        t-Rain
+    </h1>
+    <h2 data-aos="fade-right" data-aos-delay="2200" data-aos-duration="3000">
         The Dutch railway system visualized
     </h2>
     <div class="slideshow">
         <div class="imgslide"></div>
     </div>
-    <div style="position: absolute; height: 100%;" data-aos="fade-in" data-aos-delay="2200" data-aos-duration="3000">
-        <a href="#intro-slide" class="cd-scroll-down" ></a>
-    </div>
+    <a href="#intro-slide" class="cd-scroll-down" ></a>
 </section>
 <!-- END TITLE AND TRAIN GRAPHIC-->
 
-<section id="intro-slide" style="height: 100%">
-    <div style="position: absolute; width: 60%; height: 60%; left: 0%; top: -10%; 
-        background: url('css/img/blob.svg') left no-repeat;"
-        data-aos="fade-right" data-aos-delay="0" data-aos-duration="500">      
-        <p style="position: absolute; left: 20%; top: 30%; font-size: 300%; line-height: 1.25em; text-align: left;"
+<section id="intro-slide" class="intro-slide">
+    <div class="blob-div-left" data-aos="fade-right" data-aos-delay="0" data-aos-duration="500">      
+        <p style="left: 20%; text-align: left;"
             data-aos="fade-right" data-aos-delay="500" data-aos-duration="1000"> 
             The Dutch railway system is one of the most advanced in the whole Europe
         </p>
     </div>
             
-    <div style="position: absolute; width: 60%; height: 60%; right: 0%; top: 10%; 
-        background: url('css/img/blob.svg') right no-repeat;"
-        data-aos="fade-left" data-aos-delay="1500" data-aos-duration="500"> 
-            <p style="position: absolute; right: 10%; top: 30%; font-size: 300%; text-align: right;"
+    <div class="blob-div-right" data-aos="fade-left" data-aos-delay="1500" data-aos-duration="500"> 
+            <p style="text-align: right; right: 10%;"
                 data-aos="fade-left" data-aos-delay="2000" data-aos-duration="1000"> 
                 Its network is complex and requires a deep understanding of the data to be able to make sense of it
             </p>
     </div> 
-    <p style="position: absolute; right: 10%; top: 70%; font-size: 300%; text-align: right;"
+    <p style="right: 10%; top: 70%;"
         data-aos="fade-in" data-aos-delay="3000" data-aos-duration="1000"> 
         Grab a ticket and have a ride with us!
     </p>
-    <video src="videos/ns-card.mp4" autoplay muted loop 
-        style="position: absolute; left: 0%; bottom: 5%; height: 40%; width: 40%;"></video>
+    <video src="videos/ns-card.mp4" autoplay muted loop class="ns-video"></video>
 
     <a href="#world-train-usage-slide" class="cd-scroll-down"></a>
 </section>
@@ -114,37 +104,32 @@
 <!-- TRAINS USAGE IN THE WORLD COMPARISON -->
 <section id="world-train-usage-slide">
 
-    <img src="videos/raining-cloud.gif" 
-    style="position: absolute; left: 10%; top: 0%; height: 10%; width: 8%;"></img>
-    <div style="position: absolute; left: 10%; width: 100%; height: 60%; font-size: 35px; text-align: left;">
-        <h1 style="text-decoration: underline; text-decoration-color: #f7c82d; text-decoration-thickness: 10px;">
+    <img src="videos/raining-cloud.gif" class="cloud-gif"/>
+    <div class="world-train-usage-content">
+        <h1 class="underlined-title">
             Worldwide train usage
-        </h1>
-        <div style="position: absolute; width: 60%; height: 70%; left: -5%; top: 10%; 
-            background: url('css/img/blob.svg') left no-repeat;"
-            data-aos="fade-right" data-aos-delay="0" data-aos-duration="500">      
-            <p style="position: absolute; left: 15%; top: 30%; font-size: 35px; text-align: left;"
-                data-aos="fade-right" data-aos-delay="500" data-aos-duration="1000"> 
-                The Netherlands is one of the countries with the highest train usage in the world. <br>
-                But it still falls behind some other European countries.
-            </p>
-        </div>
+        </h1>  
+        <p data-aos="fade-right" data-aos-delay="500" data-aos-duration="1000"> 
+            The Netherlands is one of the countries with the highest train usage in the world. <br>
+            But it still falls behind some other European countries.
+        </p>
     </div>
 
     <div style="display: flex; width: 100%; height: 70%;">
         
-        <video src="videos/train-loop.mp4" autoplay muted loop 
-        style="position: absolute; left: 0%; bottom: 5%; height: 40%; width: 40%;"></video>
+        <video src="videos/train-loop.mp4" autoplay muted loop class="ns-video"></video>
         
         <div id="vis-world-trains" style="height: 100%; width: 50%;"> 
             <!-- Initialize a select button -->
-            <div style="position: absolute; right: 30%; bottom: 60%; font-size: 25px;"
-            data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000" >
+            <div class="country-button-div"
+                data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000" >
+
                 <label for="country-select-button"> Select a Country: </label>
                 <select id="country-select-button" style="height: 25px;"></select>
+
             </div>
             <!-- Create a div where the graph will take place -->
-            <div id="train-usage-line-chart" style="position: absolute; left: 0%; bottom: 10%; height: 50%; width: 50%;"
+            <div id="train-usage-line-chart" class="world-comparison-plot" 
                 data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000" ></div>
             </div>
         </div>
@@ -154,32 +139,26 @@
     <!-- END TRAINS USAGE IN THE WORLD COMPARISON -->
     
     <!-- GROUPED BARPLOT -->
-    <section id="modes-of-transport-slide" style="height: 100%;">
+    <section id="modes-of-transport-slide" class="modes-of-transport-slide">
 
-        <img src="videos/raining-cloud.gif" 
-        style="position: absolute; left: 10%; top: 0%; height: 10%; width: 8%;"></img>
-        <div style="position: absolute; left: 10%; width: 100%; height: 60%; font-size: 35px; text-align: left;">
-            <h1 style="text-decoration: underline; text-decoration-color: #f7c82d; text-decoration-thickness: 10px;">
-                What are the most used <br> modes of transport in the Netherlands?
+        <img src="videos/raining-cloud.gif" class="cloud-gif"/>
+        <div class="modes-of-transport-content">
+            <h1 class="underlined-title">
+                What are the most used modes of transport in the Netherlands?
             </h1>
-            <div style="position: absolute; width: 55%; height: 70%; left: -5%; top: 20%; 
-                background: url('css/img/blob.svg') left no-repeat;"
-                data-aos="fade-right" data-aos-delay="0" data-aos-duration="500">      
-                <p style="position: absolute; left: 15%; top: 30%; font-size: 32px; text-align: left;"
-                    data-aos="fade-right" data-aos-delay="500" data-aos-duration="1000"> 
-                    Trains are among the most sustainable modes of transport. 
-                    However, they are not the most used in the Netherlands. 
-                </p>
-            </div>
+               
+            <p class="modes-of-transport-slide" data-aos="fade-right" data-aos-delay="500" data-aos-duration="1000"> 
+                Trains are among the most sustainable modes of transport. 
+                However, they are not the most used in the Netherlands. 
+            </p>
         </div>
     
         <div style="display: flex; width: 100%; height: 70%;">
             
-            <video src="videos/ns-coffee.mp4" autoplay muted loop 
-            style="position: absolute; left: 0%; bottom: 5%; height: 40%; width: 40%;"></video>
+            <video src="videos/ns-coffee.mp4" autoplay muted loop class="ns-video"></video>
             
             
-            <div id="grouped-barplot" style="position: absolute; left: 60%; top: 40%; height: 100%; width: 50%;"
+            <div id="grouped-barplot" class="grouped-barplot"
                 data-aos="fade-up" data-aos-delay="100" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000">
             </div> 
         </div>
@@ -200,10 +179,9 @@
     </section>
     <!-- END GROUPED BARPLOT -->
 
-    <section id="stations-storyline-slide" style="height: 100%">
+    <section id="stations-storyline-slide" class="stations-storyline-slide">
         Here goes the intro slide for the stations storyline
-        <video src="videos/ns-station.mp4" autoplay muted loop 
-            style="position: absolute; left: 0%; bottom: 5%; height: 45%; width: 45%;"></video>
+        <video src="videos/ns-station.mp4" autoplay muted loop class="ns-video"></video>
             
 
         <a href="#section2" class="cd-scroll-down"></a>
@@ -221,11 +199,10 @@
     <!-- DENDROGRAM -->
     <section id = "dendro-slide">
 
-        <img src="videos/raining-cloud.gif" 
-        style="position: absolute; left: 10%; top: 0%; height: 10%; width: 8%;"></img>
+        <img src="videos/raining-cloud.gif" class="cloud-gif"/>
         <div style="display: flex;">
             <div style="width: 50%; position: relative; margin-left: 100px; left: 2%;">
-                <h1 style="text-decoration: underline; text-decoration-color: #f7c82d; text-decoration-thickness: 10px; text-align: left; font-size: 40px;">
+                <h1  class="underlined-title" style="text-align: left; font-size: 40px;">
                     Hopcount distribution
                 </h1>
                 <div style="height:40%; text-align: left; font-size: 27px;"
@@ -266,10 +243,9 @@
     <!-- DISRUPTION STORYLINE SLIDES -->
     <section id="disruption-storyline-slide">
 
-        <img src="videos/raining-cloud.gif" 
-        style="position: absolute; left: 10%; top: 0%; height: 10%; width: 8%;"></img>
+        <img src="videos/raining-cloud.gif" class="cloud-gif"/>
         <div style="position: absolute; left: 10%; width: 100%; height: 60%; font-size: 35px; text-align: left;">
-            <h1 style="text-decoration: underline; text-decoration-color: #f7c82d; text-decoration-thickness: 10px;">
+            <h1  class="underlined-title">
                 Disruptions in the Netherlands
             </h1>
         </div>
@@ -302,8 +278,7 @@
             </p>
         </div>
 
-        <video src="videos/train-work.mp4" autoplay muted loop 
-        style="position: absolute; left: 0%; bottom: 5%; height: 45%; width: 45%;"></video>
+        <video src="videos/train-work.mp4" autoplay muted loop class="ns-video"></video>
 
         <a href="#disruption-storyline-slide-2" class="cd-scroll-down"></a>
 
@@ -323,10 +298,9 @@
     <!-- DISRUPTIONS HEATMAP -->
     <section id="disruption-heatmap-slide">
 
-        <img src="videos/raining-cloud.gif" 
-        style="position: absolute; left: 10%; top: 0%; height: 10%; width: 8%;"></img>
+        <img src="videos/raining-cloud.gif" class="cloud-gif"/>
         <div>
-            <h1 style="position: absolute; left:10%;text-decoration: underline; text-decoration-color: #f7c82d; text-decoration-thickness: 10px; font-size: 47px;">
+            <h1 class="underlined-title" style="position: absolute; left:10%; font-size: 47px;">
                 Disruption Heatmap
             </h1>
         </div>
@@ -359,8 +333,7 @@
 
     <section id="spider-storyline-slide" style="height: 100%">
 
-        <img src="videos/raining-cloud.gif" 
-        style="position: absolute; left: 10%; top: 0%; height: 10%; width: 8%;"></img>
+        <img src="videos/raining-cloud.gif" class="cloud-gif"/>
         <div data-aos="fade-left" data-aos-delay="0" data-aos-duration="1000">
             <h1 style="position: absolute; top: 8%; left: 10%; text-decoration: underline; text-decoration-color: #f7c82d; text-decoration-thickness: 6px; font-size: 47px;">
                 Let's move to a more complicated question
@@ -393,8 +366,7 @@
         </div>
 
         
-        <video src="videos/ns-desk.mp4" autoplay muted loop 
-            style="position: absolute; left: 0%; bottom: 5%; height: 45%; width: 45%;"></video>
+        <video src="videos/ns-desk.mp4" autoplay muted loop class="ns-video"></video>
             
 
         <a href="#spider-chart-slide" class="cd-scroll-down"></a>
