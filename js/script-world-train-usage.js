@@ -61,11 +61,22 @@ const population = {
     //create a new element "average" with the average population across all countries
   
 }
+const marginPercentage = { top: 0, right: 0.0, bottom: 0.07, left: 0.04 };
+const container = d3.select("#world-train-usage-slide");
+const containerWidth = container.node().getBoundingClientRect().width;
+const containerHeight = container.node().getBoundingClientRect().height;
 
-// set the dimensions and margins of the graph
-const margin = {top: 20, right: 40, bottom: 40, left: 80},
-    width = 600 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
+const margin = {
+    top: containerHeight * marginPercentage.top,
+    right: containerWidth * marginPercentage.right,
+    bottom: containerHeight * marginPercentage.bottom,
+    left: containerWidth * marginPercentage.left
+};
+
+// Calculate the width and height of the plot area
+const width = 0.35*containerWidth - margin.left - margin.right;
+const height = 0.5*containerHeight - margin.top - margin.bottom;
+
 
 // Append the SVG object to the body of the page
 const svg = d3.select("#train-usage-line-chart")
@@ -212,7 +223,7 @@ d3.csv("data/world-train-usage-filtered.csv").then(function(data) {
     svg.append("text")
       .attr("text-anchor", "end")
       .attr("x", width)
-      .attr("y", height + margin.top + 20) // Adjust this value to position the label correctly
+      .attr("y", height + margin.bottom - 20) // Adjust this value to position the label correctly
       .text("Year")
       .style("font-size", "12px")
       .style("fill", "#003082");
@@ -220,7 +231,7 @@ d3.csv("data/world-train-usage-filtered.csv").then(function(data) {
     svg.append("text")
       .attr("text-anchor", "end")
       .attr("transform", "rotate(-90)")
-      .attr("y", -margin.left + 20) // Adjust these values to position the label correctly
+      .attr("y", -margin.left + 10) // Adjust these values to position the label correctly
       .attr("x", -margin.top)
       .text("Kilometers per Passenger (Millions)")
       .style("font-size", "12px")

@@ -586,7 +586,5 @@ footer {
 .grouped-barplot {
     position: absolute; 
     left: 60%; 
-    top: 40%; 
-    height: 100%; 
-    width: 50%;
+    top: 40%;
 }

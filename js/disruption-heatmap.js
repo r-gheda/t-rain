@@ -4,9 +4,11 @@ let x_domain_top = 309128;
 let y_domain_bottom = 275165;
 let y_domain_top = 609034;
 
+let container = d3.select("#disruption-heatmap");
+
 // set the dimensions and margins of the graph
 let margin = {top: 0, right: 0, bottom: 0, left: 0},
-width = 565 - margin.left - margin.right,
+width = container.node().getBoundingClientRect().width - margin.left - margin.right,
 height = (width * (y_domain_top - y_domain_bottom) / (x_domain_top - x_domain_bottom)) - margin.top - margin.bottom;
 
 function normalize_coordinates_x(x)
