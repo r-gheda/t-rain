@@ -7,11 +7,11 @@
 // let x_domain_top = 276075;
 // let y_domain_bottom = 309171;
 // let y_domain_top = 609023;
-
-let x_domain_bottom = 30429;
-let x_domain_top = 309128;
-let y_domain_bottom = 275165;
-let y_domain_top = 609034;
+let k = 25000
+let x_domain_bottom = 30429 - k;
+let x_domain_top = 309128 + k;
+let y_domain_bottom = 275165 - k;
+let y_domain_top = 609034 ;
 
 // set the dimensions and margins of the graph
 // const margin = {top: 10, right: 30, bottom: 30, left: 40},
@@ -19,7 +19,7 @@ let y_domain_top = 609034;
 //   height = 1000 - margin.top - margin.bottom;
 
 let margin = {top: 0, right: 0, bottom: 0, left: 0},
-  width = 1800,  
+  width = 450,  
 //width = 550 - margin.left - margin.right,
   height = (width * (y_domain_top - y_domain_bottom) / (x_domain_top - x_domain_bottom)) - margin.top - margin.bottom;
 
@@ -64,6 +64,7 @@ d3.json("data/network.json").then( function( data) {
     .selectAll("line")
     .data(data.links)
     .join("line")
+      .attr("stroke-width", 0.2)
       .style("stroke", "#003082")
 
   // Initialize the nodes
@@ -71,10 +72,10 @@ d3.json("data/network.json").then( function( data) {
     .selectAll("circle")
     .data(data.nodes)
     .join("circle")
-    .attr("r", 8)
+    .attr("r", 2)
     .style("fill", "#f7c82d")
     .style("stroke", "#003082") 
-    .style("stroke-width", 2)
+    .style("stroke-width", 1)
     .attr("class", "node")
 
   // Initialize the labels for nodes
@@ -98,7 +99,7 @@ d3.json("data/network.json").then( function( data) {
             .links(data.links)                                   // and this the list of links
             
       )
-      .force("charge", d3.forceManyBody().strength(-10))         // This adds repulsion between nodes. Play with the -400 for the repulsion strength
+      .force("charge", d3.forceManyBody().strength(-0.2))         // This adds repulsion between nodes. Play with the -400 for the repulsion strength
       .force("center", d3.forceCenter(width / 2, height / 2))     // This force attracts nodes to the center of the svg area
       .on("end", ticked);
 
@@ -135,7 +136,7 @@ d3.json("data/network.json").then( function( data) {
 
     svg.selectAll(".node")
       .filter(label => label === hoveredNode)
-      .style("stroke-width", 6)
+      .style("r", 5)
       .style("opacity", 1);
   })
 
@@ -147,7 +148,7 @@ d3.json("data/network.json").then( function( data) {
     
     svg.selectAll(".node")
       .filter(label => label === d)
-      .style("stroke-width", 2);
+      .style("r", 2)
 
     node.style("opacity", 1);
     link.style("opacity", 1);
