@@ -64,7 +64,7 @@ d3.json("data/network.json").then( function( data) {
     .selectAll("line")
     .data(data.links)
     .join("line")
-      .style("stroke", "#aaa")
+      .style("stroke", "#003082")
 
   // Initialize the nodes
   const node = svg
@@ -72,7 +72,10 @@ d3.json("data/network.json").then( function( data) {
     .data(data.nodes)
     .join("circle")
     .attr("r", 8)
-    .style("fill", "#69b3a2")
+    .style("fill", "#f7c82d")
+    .style("stroke", "#003082") 
+    .style("stroke-width", 2)
+    .attr("class", "node")
 
   // Initialize the labels for nodes
   const nodeName = svg
@@ -82,8 +85,9 @@ d3.json("data/network.json").then( function( data) {
     .text(d => d.name_long)  // Use the 'name_long' property from the JSON for the label
     .attr("dy", "0.35em")
     .style("text-anchor", "middle")
-    .style("font-size", "12px")
-    .style("fill", "black")
+    .style("font-size", "16px")
+    .style("font-weight", "bold")
+    .style("fill", "#003082")
     .style("visibility", "hidden")
     .attr("class", "node-label");  // Add a class to make the labels initially invisible
 
@@ -92,9 +96,9 @@ d3.json("data/network.json").then( function( data) {
       .force("link", d3.forceLink()                               // This force provides links between nodes
             .id(function(d) { return d.id; })                     // This provide  the id of a node
             .links(data.links)                                   // and this the list of links
-            .distance(40)
+            
       )
-      .force("charge", d3.forceManyBody().strength(-0))         // This adds repulsion between nodes. Play with the -400 for the repulsion strength
+      .force("charge", d3.forceManyBody().strength(-10))         // This adds repulsion between nodes. Play with the -400 for the repulsion strength
       .force("center", d3.forceCenter(width / 2, height / 2))     // This force attracts nodes to the center of the svg area
       .on("end", ticked);
 
@@ -108,21 +112,52 @@ d3.json("data/network.json").then( function( data) {
 
     node
          .attr("cx", function (d) { return d.x+0; })
-         .attr("cy", function(d) { return d.y-0; });
+         .attr("cy", function(d) { return d.y-0; })
+         .style("opacity", 1);
   // Update the position of node names
-  nodeName
-    .attr("transform", d => `translate(${d.x},${d.y + 15})`);
+    nodeName
+         .attr("transform", d => `translate(${d.x},${d.y + 20})`);
   }
 
-  node.on("mouseover", function(event, d) {
+  node.on("mouseover", function(event, hoveredNode) {
+    node.style("opacity", function(d) {
+      return areNodesConnected(hoveredNode, d) ? 1 : 0.2;
+    })
+
+    link.style("opacity", function(d){
+      return d.source === hoveredNode || d.target === hoveredNode ? 1 : 0.2;
+    })
+
+
     svg.selectAll(".node-label")
-      .filter(label => label === d)
+      .filter(label => label === hoveredNode)
       .style("visibility", "visible");
+
+    svg.selectAll(".node")
+      .filter(label => label === hoveredNode)
+      .style("stroke-width", 6)
+      .style("opacity", 1);
   })
+
+
   .on("mouseout", function(event, d){
     svg.selectAll(".node-label")
       .filter(label => label === d)
       .style("visibility", "hidden");
+    
+    svg.selectAll(".node")
+      .filter(label => label === d)
+      .style("stroke-width", 2);
+
+    node.style("opacity", 1);
+    link.style("opacity", 1);
   });
 
+
+  function areNodesConnected(node1, node2) {
+    return data.links.some(link => (link.source === node1 && link.target=== node2) || (link.source === node2 && link.target === node1));
+  }
+
 });
+
+
