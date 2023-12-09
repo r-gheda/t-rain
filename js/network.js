@@ -17,9 +17,9 @@ let y_domain_top = 609034 ;
 // const margin = {top: 10, right: 30, bottom: 30, left: 40},
 //   width = 1800 - margin.left - margin.right,
 //   height = 1000 - margin.top - margin.bottom;
-
+let container = d3.select("#train_network")
 let margin = {top: 0, right: 0, bottom: 0, left: 0},
-  width = 450,  
+  width = container.node().getBoundingClientRect().width, 
 //width = 550 - margin.left - margin.right,
   height = (width * (y_domain_top - y_domain_bottom) / (x_domain_top - x_domain_bottom)) - margin.top - margin.bottom;
 
@@ -96,7 +96,8 @@ d3.json("data/network.json").then( function( data) {
   const simulation = d3.forceSimulation(data.nodes)                 // Force algorithm is applied to data.nodes
       .force("link", d3.forceLink()                               // This force provides links between nodes
             .id(function(d) { return d.id; })                     // This provide  the id of a node
-            .links(data.links)                                   // and this the list of links
+            .links(data.links)
+            .distance(10)                                   // and this the list of links
             
       )
       .force("charge", d3.forceManyBody().strength(-0.2))         // This adds repulsion between nodes. Play with the -400 for the repulsion strength
@@ -152,11 +153,11 @@ d3.json("data/network.json").then( function( data) {
 
   function handleNodeMouseOut (event, d) {
     svg.selectAll(".node-label")
-      .filter(label => label === d)
+      //.filter(label => label === d)
       .style("visibility", "hidden");
     
     svg.selectAll(".node")
-      .filter(label => label === d)
+      //.filter(label => label === d)
       .style("r", 2)
 
   node.style("opacity", 1);

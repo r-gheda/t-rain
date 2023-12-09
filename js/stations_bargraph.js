@@ -1,7 +1,7 @@
 // set the dimensions and margins of the graph
-const margin = { top: 0, right: 0, bottom: 85, left: 50 },
-  width = 700 - margin.left - margin.right,
-  height = 200 - margin.top - margin.bottom;
+const margin_bar = { top: 0, right: 0, bottom: 85, left: 50 },
+  width_bar = 700 - margin_bar.left - margin_bar.right,
+  height_bar = 200 - margin_bar.top - margin_bar.bottom;
 
 // append the svg object to the body of the page
 const svg = d3
@@ -17,7 +17,7 @@ var g = svg
 var xScale = d3.scaleBand().range([0, width_bar]).padding(0.1),
   yScale = d3.scaleLinear().range([height_bar, 0]);
 
-d3.csv("data/station_passengers2018_top100.csv").then(function (data_bar) {
+d3.csv("data/station_passengers2018_top50_2.csv").then(function (data_bar) {
   d3.json("data/network.json").then( function( data_net){
 
 
