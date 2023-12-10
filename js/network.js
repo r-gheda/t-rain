@@ -62,7 +62,7 @@ d3.json("data/network.json").then( function( data) {
   const maxInUit2018 = d3.max(data.nodes, d => d.InUit2018);
   const radiusScale = d3.scaleLinear()
   .domain([0, maxInUit2018])
-  .range([4, 30]);
+  .range([5, 30]);
 
   const opacityScale = d3.scaleLinear()
   .domain([0, maxInUit2018])
@@ -75,8 +75,10 @@ d3.json("data/network.json").then( function( data) {
     .join("circle")
     .attr("r", d => radiusScale(d.InUit2018))
     .style("fill", "#f7c82d")
-    .style("opacity", d => 0.5)
+    .style("opacity", d => 0.4)
     .style("stroke", "none")
+    .attr("class", "node-circle")
+    .style('mix-blend-mode', 'multiply')
     .attr("class", "node-circle");
 
 // Append links next
@@ -182,7 +184,7 @@ const node = svg
     nodeCircle.style("opacity", 0.1);
 
     nodeCircle.style("opacity",function(d){
-      return d.id === hoveredNode.id ? 0.5 : 0.1;
+      return d.id === hoveredNode.id ? 0.7 : 0.1;
     })
 
 
@@ -199,6 +201,8 @@ const node = svg
       .filter(label => label === hoveredNode)
       .style("r", 5)
       .style("opacity", 1);
+
+
   }
 
 

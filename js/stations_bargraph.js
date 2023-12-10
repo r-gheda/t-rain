@@ -62,20 +62,37 @@ d3.csv("data/station_passengers2018_top50_3.csv").then(function (data_bar) {
     .attr("width", xScale.bandwidth())
     .attr("height", function (d) { return height_bar - yScale(d.InUit2018); })
     .attr("fill", "#003082")
+    //.on("mouseover", BarMouseOver)
+    .on("mouseout", BarMouseOut);
+
+//create invisible bars that are the full height of the graph for easier selection
+  g.selectAll(".bar-overlay")
+    .data(data_bar)
+    .enter()
+    .append("rect")
+    .attr("class", "bar-overlay")
+    .attr("x", function (d) { return xScale(d.code); })
+    .attr("y", 0)
+    .attr("width", xScale.bandwidth())
+    .attr("height", height_bar)
+    .style("opacity", 0)  // Make the overlay rectangle invisible
     .on("mouseover", BarMouseOver)
     .on("mouseout", BarMouseOut);
 
 
     
 
-  function BarMouseOver(event, d) {
+  function BarMouseOver(event, d, element) {
+    var correspondingBar = g.select(".bar:nth-child(" + (data_bar.indexOf(d) + 3) + ")");
+    correspondingBar.attr("fill", "#f7c82d");
 
-    d3.select(this).attr("fill", "#f7c82d");
+    //d3.select(this).attr("fill", "#f7c82d");
     
     var stationName = d.Station;
     var correspondingNode = data_net.nodes.find(node => node.name_long === stationName);
     console.log(correspondingNode.id);
     var passengers = d.InUit2018;
+
 
     var eventDetails = {
       stationName: stationName,
@@ -88,7 +105,7 @@ d3.csv("data/station_passengers2018_top50_3.csv").then(function (data_bar) {
     }
   
   function BarMouseOut(event, i) {
-    d3.select(this).attr("fill", "#003082");
+    g.selectAll(".bar").attr("fill", "#003082");
     document.dispatchEvent(new CustomEvent('barMouseOut'));
 
 
