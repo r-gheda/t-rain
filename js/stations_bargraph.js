@@ -1,7 +1,7 @@
 // set the dimensions and margins of the graph
-const margin_bar = { top: 0, right: 0, bottom: 85, left: 50 },
+const margin_bar = { top: 0, right: 0, bottom: 35, left: 50 },
   width_bar = 700 - margin_bar.left - margin_bar.right,
-  height_bar = 200 - margin_bar.top - margin_bar.bottom;
+  height_bar = 100 - margin_bar.top - margin_bar.bottom;
 
 // append the svg object to the body of the page
 const svg = d3
@@ -17,11 +17,11 @@ var g = svg
 var xScale = d3.scaleBand().range([0, width_bar]).padding(0.1),
   yScale = d3.scaleLinear().range([height_bar, 0]);
 
-d3.csv("data/station_passengers2018_top50_2.csv").then(function (data_bar) {
+d3.csv("data/station_passengers2018_top50_3.csv").then(function (data_bar) {
   d3.json("data/network.json").then( function( data_net){
 
 
-  xScale.domain(data_bar.map(function (d) { return d.Station; }));
+  xScale.domain(data_bar.map(function (d) { return d.code; }));
 //  yScale.domain(d3.extent(data_bar, function (d) { return d.InUit2018; }));
 
 
@@ -57,7 +57,7 @@ d3.csv("data/station_passengers2018_top50_2.csv").then(function (data_bar) {
     .enter()
     .append("rect")
     .attr("class", "bar")
-    .attr("x", function (d) { return xScale(d.Station); })
+    .attr("x", function (d) { return xScale(d.code); })
     .attr("y", function (d) { return yScale(d.InUit2018); })
     .attr("width", xScale.bandwidth())
     .attr("height", function (d) { return height_bar - yScale(d.InUit2018); })
@@ -71,12 +71,19 @@ d3.csv("data/station_passengers2018_top50_2.csv").then(function (data_bar) {
   function BarMouseOver(event, d) {
 
     d3.select(this).attr("fill", "#f7c82d");
+    
     var stationName = d.Station;
-    console.log(stationName);
     var correspondingNode = data_net.nodes.find(node => node.name_long === stationName);
     console.log(correspondingNode.id);
+    var passengers = d.InUit2018;
+
+    var eventDetails = {
+      stationName: stationName,
+      passengers: passengers
+
+    }
     
-    document.dispatchEvent(new CustomEvent('barMouseOver', { detail: stationName }));
+    document.dispatchEvent(new CustomEvent('barMouseOver', { detail: eventDetails }));
 
     }
   

@@ -92,6 +92,19 @@ d3.json("data/network.json").then( function( data) {
     .style("visibility", "hidden")
     .attr("class", "node-label");  // Add a class to make the labels initially invisible
 
+    const nodeValue = svg
+    .selectAll(".node-value")
+    .data(data.nodes)
+    .join("text")
+    //.text(d => d.name_long)  // Use the 'name_long' property from the JSON for the label
+    .attr("dy", "0.35em")
+    .style("text-anchor", "middle")
+    .style("font-size", "12px")
+    .style("font-weight", "bold")
+    .style("fill", "#003082")
+    .style("visibility", "hidden")
+    .attr("class", "node-value");  // Add a class to make the labels initially invisible
+
   // Let's list the force we wanna apply on the network
   const simulation = d3.forceSimulation(data.nodes)                 // Force algorithm is applied to data.nodes
       .force("link", d3.forceLink()                               // This force provides links between nodes
@@ -119,6 +132,9 @@ d3.json("data/network.json").then( function( data) {
   // Update the position of node names
     nodeName
          .attr("transform", d => `translate(${d.x},${d.y + 20})`);
+    
+    nodeValue
+         .attr("transform", d => `translate(${d.x},${d.y + 40})`);    
   }
 
   function handleNodeMouseOver (event, hoveredNode) {
@@ -138,6 +154,10 @@ d3.json("data/network.json").then( function( data) {
     svg.selectAll(".node-label")
       .filter(label => label === hoveredNode)
       .style("visibility", "visible");
+    
+    svg.selectAll(".node-value")
+      .filter(label => label === hoveredNode)
+      .style("visibility", "visible");
 
     svg.selectAll(".node")
       .filter(label => label === hoveredNode)
@@ -153,6 +173,10 @@ d3.json("data/network.json").then( function( data) {
 
   function handleNodeMouseOut (event, d) {
     svg.selectAll(".node-label")
+      //.filter(label => label === d)
+      .style("visibility", "hidden");
+    
+    svg.selectAll(".node-value")
       //.filter(label => label === d)
       .style("visibility", "hidden");
     
@@ -174,8 +198,15 @@ d3.json("data/network.json").then( function( data) {
   }
 
   document.addEventListener('barMouseOver', function (event) {
-    const stationName = event.detail;
+    const stationName = event.detail.stationName;
+    
     const correspondingNode = data.nodes.find(node => node.name_long === stationName);
+
+    svg.selectAll(".node-value")
+      //.filter(d => d === correspondingNode)
+      .text(event.detail.passengers + " passengers");
+
+    console.log(event.detail.passengers)
   
     if (correspondingNode) {
       handleNodeMouseOver(event, correspondingNode);
