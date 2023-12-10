@@ -168,7 +168,7 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
         .domain([0, maxValue])
         .range([0, (width - margin) / 2]);
 
-    let colors = ["darkorange", "gray", "blue", "red", "green", "purple", "lightblue", "pink", "brown"];
+    let colors = ["darkorange", "blue", "red", "green", "purple", "lightblue", "pink", "brown"];
     
     // Calculate ticks based on the maxValue
     let numberOfTicks = 5; // for example, you can change this

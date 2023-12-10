@@ -69,7 +69,8 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
       d3.csv("data/relative-features/" + code1 + ".csv").then(relative_data1 => {
         d3.csv("data/relative-features/" + code2 + ".csv").then(relative_data2 => {
 
-        
+        console.log(currentX)
+        console.log(currentY)
       
         let data1;
         let data2;
@@ -237,15 +238,17 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
     d3.select("#xFeature").on("change", function() {
         currentX = d3.select(this).property("value");
 
-        if (currentX[0] === 'd'){
-          console.log("DDD");
-          code1 = currentX.slice(9);
+        if (currentX[9] === 'f' &&  currentX[3]=== 't'){
+          code1 = currentX.replace("Distance from ", "");
+          console.log(code1);
         }
-        else if (currentX[0] === 's'){
-          code1 = currentX.slice(17);
+        else if (currentX[0] === 'S' && currentX[9] === 'f'){
+          code1 = currentX.replace("Services from/to ", "");
+          console.log(code1);
         }
-        else if (currentX[0] === 'n'){
-          code1 = currentX.slice(17);
+        else if (currentX[12] === 'o' && currentX[0] == 'D'){
+          code1 = currentX.replace("Disruptions on path to ", "");
+          console.log(code1);
         }
         else{
           code1 = 'ASD';
@@ -257,19 +260,22 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
     d3.select("#yFeature").on("change", function() {
         currentY = d3.select(this).property("value");
 
-        if (currentY[0] === 'd'){
-          console.log("DDD");
-          code2 = currentY.slice(9);
+        if (currentY[9] === 'f' &&  currentY[3]=== 't'){
+          code2 = currentY.replace("Distance from ", "");
+          console.log(code2);
         }
-        else if (currentY[0] === 's'){
-          code2 = currentY.slice(17);
+        else if (currentY[0] === 'S' && currentY[9] === 'f'){
+          code2 = currentY.replace("Services from/to ", "");
+          console.log(code2);
         }
-        else if (currentY[0] === 'n'){
-          code2 = currentY.slice(17);
+        else if (currentY[12] === 'o' && currentY[0] == 'D'){
+          code2 = currentY.replace("Disruptions on path to ", "");
+          console.log(code2);
         }
         else{
           code2 = 'ASD';
         }
+
         updateScatterPlot();
     });
 
@@ -305,9 +311,9 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
               for (let i = 0; i < compare_stations.length; i++)
               {   
                   
-                  relative_features.push("distance_" + compare_stations[i]);
-                  relative_features.push("services_per_day_" + compare_stations[i]);
-                  relative_features.push("n_of_disruptions_" + compare_stations[i]);
+                  relative_features.push("Distance from " + compare_stations[i]);
+                  relative_features.push("Services from/to " + compare_stations[i]);
+                  relative_features.push("Disruptions on path to " + compare_stations[i]);
               }
               console.log(relative_features);
 
@@ -373,9 +379,9 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
       for (let i = 0; i < compare_stations.length; i++)
       {   
           //nomi da cambiare con cose più comprensibili
-          let feature1 = "distance_" + compare_stations[i];
-          let feature2 = "services_per_day_" + compare_stations[i];
-          let feature3 = "n_of_disruptions_" + compare_stations[i];
+          let feature1 = "Distance from " + compare_stations[i];
+          let feature2 = "Services from/to " + compare_stations[i];
+          let feature3 = "Disruptions on path to " + compare_stations[i];
           d3.select("#xFeature").selectAll("option").filter(function(d) { return d === feature1 || d === feature2 || d === feature3; }).remove();
           d3.select("#yFeature").selectAll("option").filter(function(d) { return d === feature1 || d === feature2 || d === feature3; }).remove();
       }

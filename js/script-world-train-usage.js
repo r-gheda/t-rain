@@ -233,7 +233,7 @@ d3.csv("data/world-train-usage-filtered.csv").then(function(data) {
       .attr("transform", "rotate(-90)")
       .attr("y", -margin.left + 10) // Adjust these values to position the label correctly
       .attr("x", -margin.top)
-      .text("Kilometers per Passenger (Millions)")
+      .text("Kilometers per Passenger")
       .style("font-size", "12px")
       .style("fill", "#003082");
 
