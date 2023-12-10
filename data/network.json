@@ -1,2376 +1,2628 @@
 {
 	"nodes": [
-	{
-		"id" : "NML",
-		"name_long" : "Nijmegen Lent",
-		"x" : 187540,
-		"y" : 430622
-	},
-	{
-		"id" : "DV",
-		"name_long" : "Deventer",
-		"x" : 207852.397,
-		"y" : 474619.591
-	},
-	{
-		"id" : "UHZ",
-		"name_long" : "Uithuizen",
-		"x" : 240636,
-		"y" : 603360
-	},
-	{
-		"id" : "STM",
-		"name_long" : "Stedum",
-		"x" : 241707,
-		"y" : 594134
-	},
-	{
-		"id" : "AMR",
-		"name_long" : "Alkmaar",
-		"x" : 111115,
-		"y" : 516892
-	},
-	{
-		"id" : "WV",
-		"name_long" : "Wolvega",
-		"x" : 196523,
-		"y" : 543918
-	},
-	{
-		"id" : "EML",
-		"name_long" : "Ermelo",
-		"x" : 170503,
-		"y" : 479274
-	},
-	{
-		"id" : "DZW",
-		"name_long" : "Delfzijl West",
-		"x" : 256259,
-		"y" : 595023
-	},
-	{
-		"id" : "DTC",
-		"name_long" : "Doetinchem",
-		"x" : 217443,
-		"y" : 441498
-	},
-	{
-		"id" : "HT",
-		"name_long" : "'s-Hertogenbosch",
-		"x" : 148539,
-		"y" : 411325
-	},
-	{
-		"id" : "WK",
-		"name_long" : "Workum",
-		"x" : 159660,
-		"y" : 553901
-	},
-	{
-		"id" : "UTLN",
-		"name_long" : "Utrecht Lunetten",
-		"x" : 138209,
-		"y" : 453267
-	},
-	{
-		"id" : "BLL",
-		"name_long" : "Bloemendaal",
-		"x" : 103312,
-		"y" : 490990
-	},
-	{
-		"id" : "SOG",
-		"name_long" : "Schin op Geul",
-		"x" : 189113,
-		"y" : 318571
-	},
-	{
-		"id" : "TL",
-		"name_long" : "Tiel",
-		"x" : 157472,
-		"y" : 433474
-	},
-	{
-		"id" : "GVC",
-		"name_long" : "Den Haag Centraal",
-		"x" : 82156,
-		"y" : 455266
-	},
-	{
-		"id" : "GR",
-		"name_long" : "Gorinchem",
-		"x" : 126082,
-		"y" : 427331
-	},
-	{
-		"id" : "GP",
-		"name_long" : "Geldrop",
-		"x" : 166370,
-		"y" : 381220
-	},
-	{
-		"id" : "CAS",
-		"name_long" : "Castricum",
-		"x" : 105611,
-		"y" : 506659
-	},
-	{
-		"id" : "RAI",
-		"name_long" : "Amsterdam RAI",
-		"x" : 121160,
-		"y" : 483320
-	},
-	{
-		"id" : "ZDK",
-		"name_long" : "Zaandam Kogerveld",
-		"x" : 116502,
-		"y" : 496704
-	},
-	{
-		"id" : "SPTN",
-		"name_long" : "Santpoort Noord",
-		"x" : 103678,
-		"y" : 494273
-	},
-	{
-		"id" : "APN",
-		"name_long" : "Alphen a/d Rijn",
-		"x" : 105017,
-		"y" : 459854
-	},
-	{
-		"id" : "SWD",
-		"name_long" : "Sauwerd",
-		"x" : 231897,
-		"y" : 589979
-	},
-	{
-		"id" : "ZZS",
-		"name_long" : "Zaandijk Zaanse Schans",
-		"x" : 115449,
-		"y" : 498114
-	},
-	{
-		"id" : "HB",
-		"name_long" : "Hoensbroek",
-		"x" : 193309,
-		"y" : 324062
-	},
-	{
-		"id" : "UT",
-		"name_long" : "Utrecht Centraal",
-		"x" : 135929,
-		"y" : 455873
-	},
-	{
-		"id" : "MT",
-		"name_long" : "Maastricht",
-		"x" : 177484,
-		"y" : 317655
-	},
-	{
-		"id" : "ZBM",
-		"name_long" : "Zaltbommel",
-		"x" : 146462,
-		"y" : 424355
-	},
-	{
-		"id" : "VTN",
-		"name_long" : "Vleuten",
-		"x" : 129207,
-		"y" : 457232
-	},
-	{
-		"id" : "RM",
-		"name_long" : "Roermond",
-		"x" : 197441,
-		"y" : 356064
-	},
-	{
-		"id" : "LEDN",
-		"name_long" : "Leiden Centraal",
-		"x" : 93090,
-		"y" : 464648
-	},
-	{
-		"id" : "ODB",
-		"name_long" : "Oudenbosch",
-		"x" : 95834,
-		"y" : 400228
-	},
-	{
-		"id" : "ASDL",
-		"name_long" : "Amsterdam Lelylaan",
-		"x" : 117315,
-		"y" : 485698
-	},
-	{
-		"id" : "AMFS",
-		"name_long" : "Amersfoort Schothorst",
-		"x" : 156104,
-		"y" : 465144
-	},
-	{
-		"id" : "LUT",
-		"name_long" : "Geleen-Lutterade",
-		"x" : 185718,
-		"y" : 331853
-	},
-	{
-		"id" : "KZ",
-		"name_long" : "Koog aan de Zaan",
-		"x" : 115472,
-		"y" : 496969
-	},
-	{
-		"id" : "RTN",
-		"name_long" : "Rotterdam Noord",
-		"x" : 92833,
-		"y" : 439721
-	},
-	{
-		"id" : "BNN",
-		"name_long" : "Barneveld Noord",
-		"x" : 169487,
-		"y" : 463633
-	},
-	{
-		"id" : "WS",
-		"name_long" : "Winschoten",
-		"x" : 265318,
-		"y" : 573747
-	},
-	{
-		"id" : "KBD",
-		"name_long" : "Krabbendijke",
-		"x" : 66686,
-		"y" : 383457
-	},
-	{
-		"id" : "VP",
-		"name_long" : "Velp",
-		"x" : 195775,
-		"y" : 445344
-	},
-	{
-		"id" : "GND",
-		"name_long" : "Hardinxveld-Giessendam",
-		"x" : 116968,
-		"y" : 427016
-	},
-	{
-		"id" : "WL",
-		"name_long" : "Wehl",
-		"x" : 211817,
-		"y" : 441296
-	},
-	{
-		"id" : "DMN",
-		"name_long" : "Diemen",
-		"x" : 126408,
-		"y" : 484224
-	},
-	{
-		"id" : "MZ",
-		"name_long" : "Maarheeze",
-		"x" : 171917,
-		"y" : 368441
-	},
-	{
-		"id" : "WT",
-		"name_long" : "Weert",
-		"x" : 177022,
-		"y" : 362205
-	},
-	{
-		"id" : "WWW",
-		"name_long" : "Winterswijk West",
-		"x" : 245496,
-		"y" : 443715
-	},
-	{
-		"id" : "BTL",
-		"name_long" : "Boxtel",
-		"x" : 150294,
-		"y" : 399482
-	},
-	{
-		"id" : "BDPB",
-		"name_long" : "Breda-Prinsenbeek",
-		"x" : 108818,
-		"y" : 402224
-	},
-	{
-		"id" : "HLM",
-		"name_long" : "Haarlem",
-		"x" : 103992,
-		"y" : 489183
-	},
-	{
-		"id" : "HOR",
-		"name_long" : "Hollandsche Rading",
-		"x" : 140788,
-		"y" : 465590
-	},
-	{
-		"id" : "BKG",
-		"name_long" : "Bovenkarspel-Grootebroek",
-		"x" : 144874,
-		"y" : 523086
-	},
-	{
-		"id" : "GO",
-		"name_long" : "Goor",
-		"x" : 236812,
-		"y" : 472032
-	},
-	{
-		"id" : "EDC",
-		"name_long" : "Ede Centrum",
-		"x" : 174265,
-		"y" : 450583
-	},
-	{
-		"id" : "HRT",
-		"name_long" : "Horst-Sevenum",
-		"x" : 200483,
-		"y" : 382191
-	},
-	{
-		"id" : "ZVT",
-		"name_long" : "Zandvoort aan Zee",
-		"x" : 96728,
-		"y" : 487883
-	},
-	{
-		"id" : "DVC",
-		"name_long" : "Deventer Colmschate",
-		"x" : 211475,
-		"y" : 473907
-	},
-	{
-		"id" : "ASS",
-		"name_long" : "Amsterdam Sloterdijk",
-		"x" : 117571,
-		"y" : 489172
-	},
-	{
-		"id" : "DLN",
-		"name_long" : "Dalen",
-		"x" : 247674,
-		"y" : 523823
-	},
-	{
-		"id" : "KW",
-		"name_long" : "Kropswolde",
-		"x" : 244292,
-		"y" : 575826
-	},
-	{
-		"id" : "BRN",
-		"name_long" : "Baarn",
-		"x" : 147788,
-		"y" : 468892
-	},
-	{
-		"id" : "BNC",
-		"name_long" : "Barneveld Centrum",
-		"x" : 168906,
-		"y" : 461322
-	},
-	{
-		"id" : "LG",
-		"name_long" : "Landgraaf",
-		"x" : 199505,
-		"y" : 323163
-	},
-	{
-		"id" : "WH",
-		"name_long" : "Wijhe",
-		"x" : 206317,
-		"y" : 489511
-	},
-	{
-		"id" : "GDG",
-		"name_long" : "Gouda Goverwelle",
-		"x" : 110642,
-		"y" : 447611
-	},
-	{
-		"id" : "DID",
-		"name_long" : "Didam",
-		"x" : 206319,
-		"y" : 438611
-	},
-	{
-		"id" : "SM",
-		"name_long" : "Swalmen",
-		"x" : 199975,
-		"y" : 360843
-	},
-	{
-		"id" : "HM",
-		"name_long" : "Helmond",
-		"x" : 173990,
-		"y" : 387380
-	},
-	{
-		"id" : "RLB",
-		"name_long" : "Rotterdam Lombardijen",
-		"x" : 96053,
-		"y" : 432766
-	},
-	{
-		"id" : "BKF",
-		"name_long" : "Bovenkarspel Flora",
-		"x" : 146036,
-		"y" : 523205
-	},
-	{
-		"id" : "VST",
-		"name_long" : "Voorschoten",
-		"x" : 89774,
-		"y" : 460297
-	},
-	{
-		"id" : "EHV",
-		"name_long" : "Eindhoven Centraal",
-		"x" : 161440,
-		"y" : 383771
-	},
-	{
-		"id" : "DTCP",
-		"name_long" : "Delft Campus",
-		"x" : 84767,
-		"y" : 445247
-	},
-	{
-		"id" : "NVD",
-		"name_long" : "Nijverdal",
-		"x" : 228789,
-		"y" : 487003
-	},
-	{
-		"id" : "EEM",
-		"name_long" : "Eemshaven",
-		"x" : 250837,
-		"y" : 609023
-	},
-	{
-		"id" : "APD",
-		"name_long" : "Apeldoorn",
-		"x" : 194955,
-		"y" : 469175
-	},
-	{
-		"id" : "CVM",
-		"name_long" : "Chevremont",
-		"x" : 202325,
-		"y" : 320901
-	},
-	{
-		"id" : "BR",
-		"name_long" : "Blerick",
-		"x" : 208480,
-		"y" : 376183
-	},
-	{
-		"id" : "SGN",
-		"name_long" : "Schagen",
-		"x" : 115737,
-		"y" : 533299
-	},
-	{
-		"id" : "HLMS",
-		"name_long" : "Haarlem Spaarnwoude",
-		"x" : 106389,
-		"y" : 488585
-	},
-	{
-		"id" : "KLP",
-		"name_long" : "Veenendaal-De Klomp",
-		"x" : 167810,
-		"y" : 450850
-	},
-	{
-		"id" : "BNZ",
-		"name_long" : "Barneveld Zuid",
-		"x" : 169816,
-		"y" : 459986
-	},
-	{
-		"id" : "RTB",
-		"name_long" : "Rotterdam Blaak",
-		"x" : 93259,
-		"y" : 437172
-	},
-	{
-		"id" : "VSS",
-		"name_long" : "Vlissingen Souburg",
-		"x" : 30473,
-		"y" : 387711
-	},
-	{
-		"id" : "ED",
-		"name_long" : "Ede-Wageningen",
-		"x" : 174766,
-		"y" : 448804
-	},
-	{
-		"id" : "LLZM",
-		"name_long" : "Lansingerland-Zoetermeer",
-		"x" : 95412,
-		"y" : 450656
-	},
-	{
-		"id" : "DRP",
-		"name_long" : "Dronryp",
-		"x" : 171558,
-		"y" : 576812
-	},
-	{
-		"id" : "ZLSH",
-		"name_long" : "Zwolle Stadshagen",
-		"x" : 200078,
-		"y" : 504650
-	},
-	{
-		"id" : "WF",
-		"name_long" : "Wolfheze",
-		"x" : 183010,
-		"y" : 446385
-	},
-	{
-		"id" : "EMN",
-		"name_long" : "Emmen",
-		"x" : 257025,
-		"y" : 534746
-	},
-	{
-		"id" : "VHP",
-		"name_long" : "Vroomshoop",
-		"x" : 235370,
-		"y" : 497248
-	},
-	{
-		"id" : "ZVB",
-		"name_long" : "Zevenbergen",
-		"x" : 101164,
-		"y" : 406051
-	},
-	{
-		"id" : "NDB",
-		"name_long" : "Naarden-Bussum",
-		"x" : 139308,
-		"y" : 476946
-	},
-	{
-		"id" : "HVSP",
-		"name_long" : "Hilversum Sportpark",
-		"x" : 141340,
-		"y" : 469852
-	},
-	{
-		"id" : "DRON",
-		"name_long" : "Dronten",
-		"x" : 177641,
-		"y" : 505248
-	},
-	{
-		"id" : "AHP",
-		"name_long" : "Arnhem Velperpoort",
-		"x" : 191572,
-		"y" : 444222
-	},
-	{
-		"id" : "HD",
-		"name_long" : "Harderwijk",
-		"x" : 170887,
-		"y" : 483325
-	},
-	{
-		"id" : "NM",
-		"name_long" : "Nijmegen",
-		"x" : 187074,
-		"y" : 428419
-	},
-	{
-		"id" : "TBU",
-		"name_long" : "Tilburg Universiteit",
-		"x" : 131653,
-		"y" : 397411
-	},
-	{
-		"id" : "ESK",
-		"name_long" : "Enschede Kennispark",
-		"x" : 254176,
-		"y" : 473119
-	},
-	{
-		"id" : "VDL",
-		"name_long" : "Voerendaal",
-		"x" : 193153,
-		"y" : 322034
-	},
-	{
-		"id" : "WFM",
-		"name_long" : "Warffum",
-		"x" : 233468,
-		"y" : 601054
-	},
-	{
-		"id" : "CPS",
-		"name_long" : "Capelle Schollevaar",
-		"x" : 99793,
-		"y" : 440935
-	},
-	{
-		"id" : "WM",
-		"name_long" : "Wormerveer",
-		"x" : 114652,
-		"y" : 500323
-	},
-	{
-		"id" : "HRLW",
-		"name_long" : "Heerlen Woonboulevard",
-		"x" : 194878,
-		"y" : 323104
-	},
-	{
-		"id" : "DL",
-		"name_long" : "Dalfsen",
-		"x" : 214234,
-		"y" : 501526
-	},
-	{
-		"id" : "EDN",
-		"name_long" : "Eijsden",
-		"x" : 177775,
-		"y" : 309171
-	},
-	{
-		"id" : "ARN",
-		"name_long" : "Arnemuiden",
-		"x" : 35705,
-		"y" : 391680
-	},
-	{
-		"id" : "DWE",
-		"name_long" : "De Westereen",
-		"x" : 198233,
-		"y" : 584818
-	},
-	{
-		"id" : "BSK",
-		"name_long" : "Boskoop",
-		"x" : 104235,
-		"y" : 454594
-	},
-	{
-		"id" : "STZ",
-		"name_long" : "Soest Zuid",
-		"x" : 149254,
-		"y" : 464149
-	},
-	{
-		"id" : "AML",
-		"name_long" : "Almelo",
-		"x" : 241292,
-		"y" : 486320
-	},
-	{
-		"id" : "LWC",
-		"name_long" : "Leeuwarden Camminghaburen",
-		"x" : 185473,
-		"y" : 579602
-	},
-	{
-		"id" : "HDRZ",
-		"name_long" : "Den Helder Zuid",
-		"x" : 113107,
-		"y" : 549687
-	},
-	{
-		"id" : "GVM",
-		"name_long" : "Den Haag Mariahoeve",
-		"x" : 85279,
-		"y" : 456336
-	},
-	{
-		"id" : "VL",
-		"name_long" : "Venlo",
-		"x" : 209673,
-		"y" : 375284
-	},
-	{
-		"id" : "RSN",
-		"name_long" : "Rijssen",
-		"x" : 232198,
-		"y" : 481022
-	},
-	{
-		"id" : "LDM",
-		"name_long" : "Leerdam",
-		"x" : 134793,
-		"y" : 434057
-	},
-	{
-		"id" : "HWD",
-		"name_long" : "Heerhugowaard",
-		"x" : 116893,
-		"y" : 520471
-	},
-	{
-		"id" : "GNN",
-		"name_long" : "Groningen Noord",
-		"x" : 233074,
-		"y" : 583226
-	},
-	{
-		"id" : "WADN",
-		"name_long" : "Waddinxveen Noord",
-		"x" : 104328,
-		"y" : 452154
-	},
-	{
-		"id" : "ALM",
-		"name_long" : "Almere Centrum",
-		"x" : 143487,
-		"y" : 487482
-	},
-	{
-		"id" : "RV",
-		"name_long" : "Reuver",
-		"x" : 203292,
-		"y" : 366198
-	},
-	{
-		"id" : "VEM",
-		"name_long" : "Voorst-Empe",
-		"x" : 206802,
-		"y" : 463511
-	},
-	{
-		"id" : "HAD",
-		"name_long" : "Heemstede-Aerdenhout",
-		"x" : 101846,
-		"y" : 486046
-	},
-	{
-		"id" : "VZ",
-		"name_long" : "Vriezenveen",
-		"x" : 237560,
-		"y" : 491175
-	},
-	{
-		"id" : "OST",
-		"name_long" : "Olst",
-		"x" : 204500,
-		"y" : 483322
-	},
-	{
-		"id" : "RTA",
-		"name_long" : "Rotterdam Alexander",
-		"x" : 97702,
-		"y" : 440703
-	},
-	{
-		"id" : "MAS",
-		"name_long" : "Maarssen",
-		"x" : 130829,
-		"y" : 460846
-	},
-	{
-		"id" : "VNDW",
-		"name_long" : "Veenendaal West",
-		"x" : 164881,
-		"y" : 448886
-	},
-	{
-		"id" : "BDE",
-		"name_long" : "Bunde",
-		"x" : 179582,
-		"y" : 323081
-	},
-	{
-		"id" : "ZWD",
-		"name_long" : "Zwijndrecht",
-		"x" : 103521,
-		"y" : 425473
-	},
-	{
-		"id" : "EC",
-		"name_long" : "Echt",
-		"x" : 189463,
-		"y" : 345854
-	},
-	{
-		"id" : "AKM",
-		"name_long" : "Akkrum",
-		"x" : 185582,
-		"y" : 562397
-	},
-	{
-		"id" : "UST",
-		"name_long" : "Usquert",
-		"x" : 236281,
-		"y" : 602319
-	},
-	{
-		"id" : "UHM",
-		"name_long" : "Uithuizermeeden",
-		"x" : 243640,
-		"y" : 603893
-	},
-	{
-		"id" : "TBR",
-		"name_long" : "Tilburg Reeshof",
-		"x" : 127757,
-		"y" : 398365
-	},
-	{
-		"id" : "ALMO",
-		"name_long" : "Almere Oostvaarders",
-		"x" : 149105,
-		"y" : 490607
-	},
-	{
-		"id" : "GV",
-		"name_long" : "Den Haag HS",
-		"x" : 81888,
-		"y" : 453936
-	},
-	{
-		"id" : "HFD",
-		"name_long" : "Hoofddorp",
-		"x" : 108096,
-		"y" : 478570
-	},
-	{
-		"id" : "GW",
-		"name_long" : "Grou-Jirnsum",
-		"x" : 184170,
-		"y" : 567024
-	},
-	{
-		"id" : "GDM",
-		"name_long" : "Geldermalsen",
-		"x" : 147027,
-		"y" : 432692
-	},
-	{
-		"id" : "ZH",
-		"name_long" : "Zuidhorn",
-		"x" : 223024,
-		"y" : 585117
-	},
-	{
-		"id" : "SGL",
-		"name_long" : "Houthem-St. Gerlach",
-		"x" : 183810,
-		"y" : 320479
-	},
-	{
-		"id" : "HRN",
-		"name_long" : "Haren",
-		"x" : 237256,
-		"y" : 577321
-	},
-	{
-		"id" : "BGN",
-		"name_long" : "Bergen op Zoom",
-		"x" : 79238,
-		"y" : 390107
-	},
-	{
-		"id" : "TB",
-		"name_long" : "Tilburg",
-		"x" : 133933,
-		"y" : 396906
-	},
-	{
-		"id" : "DVN",
-		"name_long" : "Duiven",
-		"x" : 198117,
-		"y" : 439636
-	},
-	{
-		"id" : "AMF",
-		"name_long" : "Amersfoort Centraal",
-		"x" : 153891,
-		"y" : 462816
-	},
-	{
-		"id" : "MES",
-		"name_long" : "Meerssen",
-		"x" : 180577,
-		"y" : 321486
-	},
-	{
-		"id" : "HMN",
-		"name_long" : "Hemmen-Dodewaard",
-		"x" : 174698,
-		"y" : 437129
-	},
-	{
-		"id" : "ZP",
-		"name_long" : "Zutphen",
-		"x" : 210229,
-		"y" : 462155
-	},
-	{
-		"id" : "HNK",
-		"name_long" : "Hoorn Kersenboogerd",
-		"x" : 134519,
-		"y" : 518448
-	},
-	{
-		"id" : "GS",
-		"name_long" : "Goes",
-		"x" : 51065,
-		"y" : 390970
-	},
-	{
-		"id" : "HVL",
-		"name_long" : "Hoevelaken",
-		"x" : 159770,
-		"y" : 464263
-	},
-	{
-		"id" : "LDL",
-		"name_long" : "Leiden Lammenschans",
-		"x" : 93816,
-		"y" : 462419
-	},
-	{
-		"id" : "TBG",
-		"name_long" : "Terborg",
-		"x" : 222209,
-		"y" : 437581
-	},
-	{
-		"id" : "NMD",
-		"name_long" : "Nijmegen Dukenburg",
-		"x" : 183099,
-		"y" : 426234
-	},
-	{
-		"id" : "OTB",
-		"name_long" : "Oosterbeek",
-		"x" : 186174,
-		"y" : 445225
-	},
-	{
-		"id" : "OP",
-		"name_long" : "Opheusden",
-		"x" : 172211,
-		"y" : 437536
-	},
-	{
-		"id" : "LAA",
-		"name_long" : "Den Haag Laan v NOI",
-		"x" : 83404,
-		"y" : 455031
-	},
-	{
-		"id" : "SRN",
-		"name_long" : "Susteren",
-		"x" : 188344,
-		"y" : 341346
-	},
-	{
-		"id" : "VD",
-		"name_long" : "Vorden",
-		"x" : 218739,
-		"y" : 458081
-	},
-	{
-		"id" : "CK",
-		"name_long" : "Cuijk",
-		"x" : 188635,
-		"y" : 415478
-	},
-	{
-		"id" : "VNDC",
-		"name_long" : "Veenendaal Centrum",
-		"x" : 166093,
-		"y" : 447980
-	},
-	{
-		"id" : "GZ",
-		"name_long" : "Gilze-Rijen",
-		"x" : 123057,
-		"y" : 399520
-	},
-	{
-		"id" : "APG",
-		"name_long" : "Appingedam",
-		"x" : 253300,
-		"y" : 594276
-	},
-	{
-		"id" : "HON",
-		"name_long" : "Holten",
-		"x" : 225563,
-		"y" : 477849
-	},
-	{
-		"id" : "DR",
-		"name_long" : "Dieren",
-		"x" : 204101,
-		"y" : 450950
-	},
-	{
-		"id" : "ASA",
-		"name_long" : "Amsterdam Amstel",
-		"x" : 123002,
-		"y" : 484376
-	},
-	{
-		"id" : "PMR",
-		"name_long" : "Purmerend",
-		"x" : 125558,
-		"y" : 501792
-	},
-	{
-		"id" : "EGHM",
-		"name_long" : "Eygelshoven Markt",
-		"x" : 202156,
-		"y" : 323137
-	},
-	{
-		"id" : "DLD",
-		"name_long" : "Den Dolder",
-		"x" : 145164,
-		"y" : 461390
-	},
-	{
-		"id" : "MTH",
-		"name_long" : "Martenshoek",
-		"x" : 245608,
-		"y" : 575746
-	},
-	{
-		"id" : "DRH",
-		"name_long" : "Driehuis",
-		"x" : 104103,
-		"y" : 495254
-	},
-	{
-		"id" : "SHL",
-		"name_long" : "Schiphol Airport",
-		"x" : 112329,
-		"y" : 480299
-	},
-	{
-		"id" : "KPNZ",
-		"name_long" : "Kampen Zuid",
-		"x" : 190705,
-		"y" : 505160
-	},
-	{
-		"id" : "DDN",
-		"name_long" : "Delden",
-		"x" : 245621,
-		"y" : 475501
-	},
-	{
-		"id" : "ATN",
-		"name_long" : "Aalten",
-		"x" : 236960,
-		"y" : 437648
-	},
-	{
-		"id" : "PT",
-		"name_long" : "Putten",
-		"x" : 167862,
-		"y" : 475275
-	},
-	{
-		"id" : "HVSM",
-		"name_long" : "Hilversum Media Park",
-		"x" : 140449,
-		"y" : 472186
-	},
-	{
-		"id" : "VSV",
-		"name_long" : "Varsseveld",
-		"x" : 228693,
-		"y" : 439301
-	},
-	{
-		"id" : "BSD",
-		"name_long" : "Beesd",
-		"x" : 141841,
-		"y" : 434568
-	},
-	{
-		"id" : "ASB",
-		"name_long" : "Amsterdam Bijlmer ArenA",
-		"x" : 125052,
-		"y" : 480468
-	},
-	{
-		"id" : "ANA",
-		"name_long" : "Anna Paulowna",
-		"x" : 116214,
-		"y" : 542406
-	},
-	{
-		"id" : "MDB",
-		"name_long" : "Middelburg",
-		"x" : 32230,
-		"y" : 391090
-	},
-	{
-		"id" : "BSKS",
-		"name_long" : "Boskoop Snijdelwijk",
-		"x" : 104196,
-		"y" : 453521
-	},
-	{
-		"id" : "DDZD",
-		"name_long" : "Dordrecht Zuid",
-		"x" : 105620,
-		"y" : 422620
-	},
-	{
-		"id" : "EGH",
-		"name_long" : "Eygelshoven",
-		"x" : 201351,
-		"y" : 322446
-	},
-	{
-		"id" : "GBR",
-		"name_long" : "Glanerbrug",
-		"x" : 263512,
-		"y" : 471240
-	},
-	{
-		"id" : "ASD",
-		"name_long" : "Amsterdam Centraal",
-		"x" : 121881,
-		"y" : 488023
-	},
-	{
-		"id" : "HBZM",
-		"name_long" : "Hardinxveld Blauwe Zoom",
-		"x" : 115613,
-		"y" : 426937
-	},
-	{
-		"id" : "KMW",
-		"name_long" : "Koudum-Molkwerum",
-		"x" : 156591,
-		"y" : 546182
-	},
-	{
-		"id" : "LLS",
-		"name_long" : "Lelystad Centrum",
-		"x" : 160816,
-		"y" : 502253
-	},
-	{
-		"id" : "OVN",
-		"name_long" : "Overveen",
-		"x" : 101939,
-		"y" : 489508
-	},
-	{
-		"id" : "PMO",
-		"name_long" : "Purmerend Overwhere",
-		"x" : 126601,
-		"y" : 502748
-	},
-	{
-		"id" : "HGLO",
-		"name_long" : "Hengelo Oost",
-		"x" : 252642,
-		"y" : 476541
-	},
-	{
-		"id" : "RH",
-		"name_long" : "Rheden",
-		"x" : 199188,
-		"y" : 447046
-	},
-	{
-		"id" : "BN",
-		"name_long" : "Borne",
-		"x" : 247850,
-		"y" : 479835
-	},
-	{
-		"id" : "WDN",
-		"name_long" : "Wierden",
-		"x" : 237065,
-		"y" : 486638
-	},
-	{
-		"id" : "AMRN",
-		"name_long" : "Alkmaar Noord",
-		"x" : 112801,
-		"y" : 517534
-	},
-	{
-		"id" : "CL",
-		"name_long" : "Culemborg",
-		"x" : 143979,
-		"y" : 439819
-	},
-	{
-		"id" : "DEI",
-		"name_long" : "Deinum",
-		"x" : 177757,
-		"y" : 578056
-	},
-	{
-		"id" : "VS",
-		"name_long" : "Vlissingen",
-		"x" : 30430,
-		"y" : 385706
-	},
-	{
-		"id" : "O",
-		"name_long" : "Oss",
-		"x" : 164935,
-		"y" : 419625
-	},
-	{
-		"id" : "UTVR",
-		"name_long" : "Utrecht Vaartsche Rijn",
-		"x" : 136914,
-		"y" : 454491
-	},
-	{
-		"id" : "HDG",
-		"name_long" : "Hurdegaryp",
-		"x" : 191582,
-		"y" : 581517
-	},
-	{
-		"id" : "KBK",
-		"name_long" : "Klarenbeek",
-		"x" : 202660,
-		"y" : 465780
-	},
-	{
-		"id" : "ODZ",
-		"name_long" : "Oldenzaal",
-		"x" : 260503,
-		"y" : 480936
-	},
-	{
-		"id" : "DVNK",
-		"name_long" : "De Vink",
-		"x" : 91267,
-		"y" : 462496
-	},
-	{
-		"id" : "ALMP",
-		"name_long" : "Almere Parkwijk",
-		"x" : 145315,
-		"y" : 487664
-	},
-	{
-		"id" : "BKL",
-		"name_long" : "Breukelen",
-		"x" : 127871,
-		"y" : 464858
-	},
-	{
-		"id" : "HLGH",
-		"name_long" : "Harlingen Haven",
-		"x" : 156618,
-		"y" : 576446
-	},
-	{
-		"id" : "HDR",
-		"name_long" : "Den Helder",
-		"x" : 112922,
-		"y" : 552177
-	},
-	{
-		"id" : "KRG",
-		"name_long" : "Kruiningen-Yerseke",
-		"x" : 61145,
-		"y" : 387141
-	},
-	{
-		"id" : "KRD",
-		"name_long" : "Kerkrade Centrum",
-		"x" : 202173,
-		"y" : 319226
-	},
-	{
-		"id" : "UTT",
-		"name_long" : "Utrecht Terwijde",
-		"x" : 131324,
-		"y" : 456957
-	},
-	{
-		"id" : "ZD",
-		"name_long" : "Zaandam",
-		"x" : 116005,
-		"y" : 494695
-	},
-	{
-		"id" : "HMH",
-		"name_long" : "Helmond 't Hout",
-		"x" : 171985,
-		"y" : 386589
-	},
-	{
-		"id" : "HVS",
-		"name_long" : "Hilversum",
-		"x" : 140963,
-		"y" : 470947
-	},
-	{
-		"id" : "KTR",
-		"name_long" : "Kesteren",
-		"x" : 168513,
-		"y" : 438110
-	},
-	{
-		"id" : "UTZL",
-		"name_long" : "Utrecht Zuilen",
-		"x" : 134591,
-		"y" : 457266
-	},
-	{
-		"id" : "ZB",
-		"name_long" : "Zuidbroek",
-		"x" : 254032,
-		"y" : 575759
-	},
-	{
-		"id" : "RVS",
-		"name_long" : "Ravenstein",
-		"x" : 172208,
-		"y" : 422900
-	},
-	{
-		"id" : "DZ",
-		"name_long" : "Delfzijl",
-		"x" : 257365,
-		"y" : 595255
-	},
-	{
-		"id" : "WSM",
-		"name_long" : "Winsum",
-		"x" : 230486,
-		"y" : 594367
-	},
-	{
-		"id" : "HR",
-		"name_long" : "Heerenveen",
-		"x" : 190357,
-		"y" : 552948
-	},
-	{
-		"id" : "AVAT",
-		"name_long" : "Amersfoort Vathorst",
-		"x" : 158197,
-		"y" : 467171
-	},
-	{
-		"id" : "BP",
-		"name_long" : "Buitenpost",
-		"x" : 205643,
-		"y" : 585804
-	},
-	{
-		"id" : "HMBV",
-		"name_long" : "Helmond Brandevoort",
-		"x" : 170433,
-		"y" : 385968
-	},
-	{
-		"id" : "LW",
-		"name_long" : "Leeuwarden",
-		"x" : 181874,
-		"y" : 578863
-	},
-	{
-		"id" : "NMH",
-		"name_long" : "Nijmegen Heyendaal",
-		"x" : 188096,
-		"y" : 426617
-	},
-	{
-		"id" : "HIL",
-		"name_long" : "Hillegom",
-		"x" : 98995,
-		"y" : 479778
-	},
-	{
-		"id" : "GK",
-		"name_long" : "Grijpskerk",
-		"x" : 216639,
-		"y" : 585865
-	},
-	{
-		"id" : "AHPR",
-		"name_long" : "Arnhem Presikhaaf",
-		"x" : 193233,
-		"y" : 444547
-	},
-	{
-		"id" : "BD",
-		"name_long" : "Breda",
-		"x" : 112935,
-		"y" : 400894
-	},
-	{
-		"id" : "NWK",
-		"name_long" : "Nieuwerkerk a/d IJssel",
-		"x" : 102086,
-		"y" : 442184
-	},
-	{
-		"id" : "SWK",
-		"name_long" : "Steenwijk",
-		"x" : 203947,
-		"y" : 534079
-	},
-	{
-		"id" : "DTCH",
-		"name_long" : "Doetinchem De Huet",
-		"x" : 215052,
-		"y" : 441554
-	},
-	{
-		"id" : "RTD",
-		"name_long" : "Rotterdam Centraal",
-		"x" : 91667,
-		"y" : 437719
-	},
-	{
-		"id" : "DB",
-		"name_long" : "Driebergen-Zeist",
-		"x" : 146174,
-		"y" : 453005
-	},
-	{
-		"id" : "TWL",
-		"name_long" : "Twello",
-		"x" : 203647,
-		"y" : 472445
-	},
-	{
-		"id" : "HKS",
-		"name_long" : "Hoogkarspel",
-		"x" : 141318,
-		"y" : 522612
-	},
-	{
-		"id" : "OMN",
-		"name_long" : "Ommen",
-		"x" : 224930,
-		"y" : 502945
-	},
-	{
-		"id" : "WC",
-		"name_long" : "Wijchen",
-		"x" : 178643,
-		"y" : 424809
-	},
-	{
-		"id" : "LTV",
-		"name_long" : "Lichtenvoorde-Groenlo",
-		"x" : 238003,
-		"y" : 447760
-	},
-	{
-		"id" : "DMNZ",
-		"name_long" : "Diemen Zuid",
-		"x" : 125664,
-		"y" : 482617
-	},
-	{
-		"id" : "HDE",
-		"name_long" : "'t Harde",
-		"x" : 189402,
-		"y" : 491366
-	},
-	{
-		"id" : "NKK",
-		"name_long" : "Nijkerk",
-		"x" : 162276,
-		"y" : 470458
-	},
-	{
-		"id" : "KPN",
-		"name_long" : "Kampen",
-		"x" : 191291,
-		"y" : 508120
-	},
-	{
-		"id" : "FN",
-		"name_long" : "Franeker",
-		"x" : 165895,
-		"y" : 577316
-	},
-	{
-		"id" : "ALMM",
-		"name_long" : "Almere Muziekwijk",
-		"x" : 141614,
-		"y" : 486665
-	},
-	{
-		"id" : "RS",
-		"name_long" : "Rosmalen",
-		"x" : 153776,
-		"y" : 414042
-	},
-	{
-		"id" : "WTV",
-		"name_long" : "Westervoort",
-		"x" : 195003,
-		"y" : 441778
-	},
-	{
-		"id" : "ES",
-		"name_long" : "Enschede",
-		"x" : 257661,
-		"y" : 471555
-	},
-	{
-		"id" : "ZTMO",
-		"name_long" : "Zoetermeer Oost",
-		"x" : 93650,
-		"y" : 451274
-	},
-	{
-		"id" : "SD",
-		"name_long" : "Soestdijk",
-		"x" : 149042,
-		"y" : 466128
-	},
-	{
-		"id" : "GN",
-		"name_long" : "Groningen",
-		"x" : 233634,
-		"y" : 581088
-	},
-	{
-		"id" : "BF",
-		"name_long" : "Baflo",
-		"x" : 230338,
-		"y" : 597764
-	},
-	{
-		"id" : "GD",
-		"name_long" : "Gouda",
-		"x" : 108262,
-		"y" : 447890
-	},
-	{
-		"id" : "NVP",
-		"name_long" : "Nieuw Vennep",
-		"x" : 104339,
-		"y" : 474781
-	},
-	{
-		"id" : "WD",
-		"name_long" : "Woerden",
-		"x" : 121111,
-		"y" : 455287
-	},
-	{
-		"id" : "HGV",
-		"name_long" : "Hoogeveen",
-		"x" : 228322,
-		"y" : 527911
-	},
-	{
-		"id" : "AHZ",
-		"name_long" : "Arnhem Zuid",
-		"x" : 186945,
-		"y" : 440816
-	},
-	{
-		"id" : "MMLH",
-		"name_long" : "Mook-Molenhoek",
-		"x" : 189000,
-		"y" : 420035
-	},
-	{
-		"id" : "SN",
-		"name_long" : "Schinnen",
-		"x" : 189297,
-		"y" : 327805
-	},
-	{
-		"id" : "DA",
-		"name_long" : "Daarlerveen",
-		"x" : 235825,
-		"y" : 495493
-	},
-	{
-		"id" : "ZL",
-		"name_long" : "Zwolle",
-		"x" : 202859,
-		"y" : 502121
-	},
-	{
-		"id" : "HN",
-		"name_long" : "Hoorn",
-		"x" : 132486,
-		"y" : 517579
-	},
-	{
-		"id" : "KMA",
-		"name_long" : "Krommenie-Assendelft",
-		"x" : 112057,
-		"y" : 500999
-	},
-	{
-		"id" : "SDM",
-		"name_long" : "Schiedam Centrum",
-		"x" : 87807,
-		"y" : 437477
-	},
-	{
-		"id" : "WADT",
-		"name_long" : "Waddinxveen Triangel",
-		"x" : 104345,
-		"y" : 449027
-	},
-	{
-		"id" : "HTNC",
-		"name_long" : "Houten Castellum",
-		"x" : 140746,
-		"y" : 447619
-	},
-	{
-		"id" : "LC",
-		"name_long" : "Lochem",
-		"x" : 226146,
-		"y" : 464802
-	},
-	{
-		"id" : "WW",
-		"name_long" : "Winterswijk",
-		"x" : 246256,
-		"y" : 442993
-	},
-	{
-		"id" : "ASN",
-		"name_long" : "Assen",
-		"x" : 234502,
-		"y" : 556776
-	},
-	{
-		"id" : "GBG",
-		"name_long" : "Gramsbergen",
-		"x" : 242338,
-		"y" : 514410
-	},
-	{
-		"id" : "HLG",
-		"name_long" : "Harlingen",
-		"x" : 157526,
-		"y" : 575968
-	},
-	{
-		"id" : "BV",
-		"name_long" : "Beverwijk",
-		"x" : 105380,
-		"y" : 499245
-	},
-	{
-		"id" : "LTN",
-		"name_long" : "Lunteren",
-		"x" : 171249,
-		"y" : 455237
-	},
-	{
-		"id" : "BHV",
-		"name_long" : "Bilthoven",
-		"x" : 142504,
-		"y" : 460236
-	},
-	{
-		"id" : "EMNZ",
-		"name_long" : "Emmen Zuid",
-		"x" : 255395,
-		"y" : 530055
-	},
-	{
-		"id" : "GERP",
-		"name_long" : "Groningen Europapark",
-		"x" : 235079,
-		"y" : 580454
-	},
-	{
-		"id" : "ESE",
-		"name_long" : "Enschede De Eschmarke",
-		"x" : 261876,
-		"y" : 471501
-	},
-	{
-		"id" : "RTST",
-		"name_long" : "Rotterdam Stadion",
-		"x" : 95242,
-		"y" : 434311
-	},
-	{
-		"id" : "SK",
-		"name_long" : "Sneek",
-		"x" : 172747,
-		"y" : 560669
-	},
-	{
-		"id" : "VLB",
-		"name_long" : "Vierlingsbeek",
-		"x" : 197261,
-		"y" : 400527
-	},
-	{
-		"id" : "GVMW",
-		"name_long" : "Den Haag Moerwijk",
-		"x" : 81017,
-		"y" : 452266
-	},
-	{
-		"id" : "BHDV",
-		"name_long" : "Boven-Hardinxveld",
-		"x" : 120008,
-		"y" : 427219
-	},
-	{
-		"id" : "RAT",
-		"name_long" : "Raalte",
-		"x" : 215688,
-		"y" : 489621
-	},
-	{
-		"id" : "AMRI",
-		"name_long" : "Almelo de Riet",
-		"x" : 242197,
-		"y" : 484559
-	},
-	{
-		"id" : "ASSP",
-		"name_long" : "Amsterdam Science Park",
-		"x" : 125122,
-		"y" : 485076
-	},
-	{
-		"id" : "HWZB",
-		"name_long" : "Halfweg-Zwanenburg",
-		"x" : 111523,
-		"y" : 488833
-	},
-	{
-		"id" : "UTG",
-		"name_long" : "Uitgeest",
-		"x" : 108451,
-		"y" : 504063
-	},
-	{
-		"id" : "OBD",
-		"name_long" : "Obdam",
-		"x" : 122667,
-		"y" : 521272
-	},
-	{
-		"id" : "HDB",
-		"name_long" : "Hardenberg",
-		"x" : 239037,
-		"y" : 510001
-	},
-	{
-		"id" : "SBK",
-		"name_long" : "Spaubeek",
-		"x" : 187481,
-		"y" : 328299
-	},
-	{
-		"id" : "EHS",
-		"name_long" : "Eindhoven Strijp-S",
-		"x" : 159817,
-		"y" : 384631
-	},
-	{
-		"id" : "ST",
-		"name_long" : "Soest",
-		"x" : 149724,
-		"y" : 465031
-	},
-	{
-		"id" : "OW",
-		"name_long" : "Oss West",
-		"x" : 163257,
-		"y" : 418863
-	},
-	{
-		"id" : "DVD",
-		"name_long" : "Duivendrecht",
-		"x" : 124311,
-		"y" : 481775
-	},
-	{
-		"id" : "ZA",
-		"name_long" : "Zetten-Andelst",
-		"x" : 178091,
-		"y" : 436852
-	},
-	{
-		"id" : "FWD",
-		"name_long" : "FeanwÃ¢lden",
-		"x" : 195222,
-		"y" : 583325
-	},
-	{
-		"id" : "RSD",
-		"name_long" : "Roosendaal",
-		"x" : 90607,
-		"y" : 395039
-	},
-	{
-		"id" : "LP",
-		"name_long" : "Loppersum",
-		"x" : 245609,
-		"y" : 595119
-	},
-	{
-		"id" : "BET",
-		"name_long" : "Best",
-		"x" : 155142,
-		"y" : 391173
-	},
-	{
-		"id" : "ASDZ",
-		"name_long" : "Amsterdam Zuid",
-		"x" : 119913,
-		"y" : 483561
-	},
-	{
-		"id" : "BK",
-		"name_long" : "Beek-Elsloo",
-		"x" : 183019,
-		"y" : 328677
-	},
-	{
-		"id" : "BDG",
-		"name_long" : "Bodegraven",
-		"x" : 111053,
-		"y" : 454995
-	},
-	{
-		"id" : "MTN",
-		"name_long" : "Maastricht Noord",
-		"x" : 178229,
-		"y" : 320099
-	},
-	{
-		"id" : "ALMB",
-		"name_long" : "Almere Buiten",
-		"x" : 147575,
-		"y" : 489609
-	},
-	{
-		"id" : "BZL",
-		"name_long" : "Kapelle-Biezelinge",
-		"x" : 55556,
-		"y" : 388956
-	},
-	{
-		"id" : "HK",
-		"name_long" : "Heemskerk",
-		"x" : 107455,
-		"y" : 501086
-	},
-	{
-		"id" : "MG",
-		"name_long" : "Mantgum",
-		"x" : 176837,
-		"y" : 571528
-	},
-	{
-		"id" : "BDM",
-		"name_long" : "Bedum",
-		"x" : 235302,
-		"y" : 591814
-	},
-	{
-		"id" : "HRL",
-		"name_long" : "Heerlen",
-		"x" : 196330,
-		"y" : 322517
-	},
-	{
-		"id" : "HGZ",
-		"name_long" : "Hoogezand-Sappemeer",
-		"x" : 247596,
-		"y" : 575668
-	},
-	{
-		"id" : "CO",
-		"name_long" : "Coevorden",
-		"x" : 246214,
-		"y" : 520352
-	},
-	{
-		"id" : "NS",
-		"name_long" : "Nunspeet",
-		"x" : 182069,
-		"y" : 487073
-	},
-	{
-		"id" : "APDM",
-		"name_long" : "Apeldoorn De Maten",
-		"x" : 196909,
-		"y" : 468751
-	},
-	{
-		"id" : "HTO",
-		"name_long" : "'s-Hertogenbosch Oost",
-		"x" : 150181,
-		"y" : 412417
-	},
-	{
-		"id" : "GLN",
-		"name_long" : "Geleen Oost",
-		"x" : 187045,
-		"y" : 330946
-	},
-	{
-		"id" : "HMBH",
-		"name_long" : "Helmond Brouwhuis",
-		"x" : 176825,
-		"y" : 386888
-	},
-	{
-		"id" : "UTLR",
-		"name_long" : "Utrecht Leidsche Rijn",
-		"x" : 132979,
-		"y" : 456791
-	},
-	{
-		"id" : "ZV",
-		"name_long" : "Zevenaar",
-		"x" : 202176,
-		"y" : 437380
-	},
-	{
-		"id" : "AMPO",
-		"name_long" : "Almere Poort",
-		"x" : 138985,
-		"y" : 483897
-	},
-	{
-		"id" : "RTZ",
-		"name_long" : "Rotterdam Zuid",
-		"x" : 94645,
-		"y" : 435482
-	},
-	{
-		"id" : "DDR",
-		"name_long" : "Dordrecht",
-		"x" : 105368,
-		"y" : 424538
-	},
-	{
-		"id" : "ZLW",
-		"name_long" : "Lage Zwaluwe",
-		"x" : 104986,
-		"y" : 411475
-	},
-	{
-		"id" : "MTR",
-		"name_long" : "Maastricht Randwyck",
-		"x" : 178268,
-		"y" : 316510
-	},
-	{
-		"id" : "STD",
-		"name_long" : "Sittard",
-		"x" : 188122,
-		"y" : 334842
-	},
-	{
-		"id" : "EKZ",
-		"name_long" : "Enkhuizen",
-		"x" : 148139,
-		"y" : 523552
-	},
-	{
-		"id" : "GDR",
-		"name_long" : "Gaanderen",
-		"x" : 221163,
-		"y" : 438444
-	},
-	{
-		"id" : "SDA",
-		"name_long" : "Scheemda",
-		"x" : 261378,
-		"y" : 576591
-	},
-	{
-		"id" : "SKND",
-		"name_long" : "Sneek Noord",
-		"x" : 173475,
-		"y" : 561482
-	},
-	{
-		"id" : "ASDM",
-		"name_long" : "Amsterdam Muiderpoort",
-		"x" : 124068,
-		"y" : 485858
-	},
-	{
-		"id" : "RD",
-		"name_long" : "Roodeschool",
-		"x" : 246120,
-		"y" : 604667
-	},
-	{
-		"id" : "MRB",
-		"name_long" : "MariÃ«nberg",
-		"x" : 235588,
-		"y" : 503017
-	},
-	{
-		"id" : "TPSW",
-		"name_long" : "Tiel Passewaaij",
-		"x" : 155265,
-		"y" : 431641
-	},
-	{
-		"id" : "WZ",
-		"name_long" : "Wezep",
-		"x" : 196828,
-		"y" : 496430
-	},
-	{
-		"id" : "BMN",
-		"name_long" : "Brummen",
-		"x" : 207066,
-		"y" : 456115
-	},
-	{
-		"id" : "APDO",
-		"name_long" : "Apeldoorn Osseveld",
-		"x" : 197217,
-		"y" : 469877
-	},
-	{
-		"id" : "SDTB",
-		"name_long" : "Sliedrecht Baanhoek",
-		"x" : 110564,
-		"y" : 426878
-	},
-	{
-		"id" : "UTO",
-		"name_long" : "Utrecht Overvecht",
-		"x" : 137017,
-		"y" : 457998
-	},
-	{
-		"id" : "TG",
-		"name_long" : "Tegelen",
-		"x" : 207553,
-		"y" : 372392
-	},
-	{
-		"id" : "BSMZ",
-		"name_long" : "Bussum Zuid",
-		"x" : 139684,
-		"y" : 475350
-	},
-	{
-		"id" : "BNK",
-		"name_long" : "Bunnik",
-		"x" : 141752,
-		"y" : 452778
-	},
-	{
-		"id" : "HTN",
-		"name_long" : "Houten",
-		"x" : 139949,
-		"y" : 449588
-	},
-	{
-		"id" : "HZE",
-		"name_long" : "Heeze",
-		"x" : 167705,
-		"y" : 377319
-	},
-	{
-		"id" : "NSCH",
-		"name_long" : "Bad Nieuweschans",
-		"x" : 276075,
-		"y" : 579016
-	},
-	{
-		"id" : "STV",
-		"name_long" : "Stavoren",
-		"x" : 153195,
-		"y" : 544399
-	},
-	{
-		"id" : "HGLG",
-		"name_long" : "Hengelo Gezondheidspark",
-		"x" : 249250,
-		"y" : 475744
-	},
-	{
-		"id" : "BMR",
-		"name_long" : "Boxmeer",
-		"x" : 193215,
-		"y" : 406315
-	},
-	{
-		"id" : "NMGO",
-		"name_long" : "Nijmegen Goffert",
-		"x" : 185011,
-		"y" : 426612
-	},
-	{
-		"id" : "DT",
-		"name_long" : "Delft",
-		"x" : 84274,
-		"y" : 446977
-	},
-	{
-		"id" : "KMR",
-		"name_long" : "Klimmen-Ransdaal",
-		"x" : 190430,
-		"y" : 319742
-	},
-	{
-		"id" : "DDRS",
-		"name_long" : "Dordrecht Stadspolders",
-		"x" : 108769,
-		"y" : 423905
-	},
-	{
-		"id" : "NH",
-		"name_long" : "Nuth",
-		"x" : 190567,
-		"y" : 325648
-	},
-	{
-		"id" : "MRN",
-		"name_long" : "Maarn",
-		"x" : 153873,
-		"y" : 452863
-	},
-	{
-		"id" : "HNP",
-		"name_long" : "Hindeloopen",
-		"x" : 157418,
-		"y" : 551047
-	},
-	{
-		"id" : "RB",
-		"name_long" : "Rilland-Bath",
-		"x" : 69705,
-		"y" : 382218
-	},
-	{
-		"id" : "RHN",
-		"name_long" : "Rhenen",
-		"x" : 168152,
-		"y" : 441162
-	},
-	{
-		"id" : "IJT",
-		"name_long" : "IJlst",
-		"x" : 170337,
-		"y" : 558651
-	},
-	{
-		"id" : "RSW",
-		"name_long" : "Rijswijk",
-		"x" : 81843,
-		"y" : 450545
-	},
-	{
-		"id" : "PMW",
-		"name_long" : "Purmerend Weidevenne",
-		"x" : 124225,
-		"y" : 501022
-	},
-	{
-		"id" : "HNO",
-		"name_long" : "Heino",
-		"x" : 211697,
-		"y" : 493652
-	},
-	{
-		"id" : "SSH",
-		"name_long" : "Sassenheim",
-		"x" : 95573,
-		"y" : 470051
-	},
-	{
-		"id" : "VH",
-		"name_long" : "Voorhout",
-		"x" : 93322,
-		"y" : 471046
-	},
-	{
-		"id" : "ASHD",
-		"name_long" : "Amsterdam Holendrecht",
-		"x" : 126060,
-		"y" : 478628
-	},
-	{
-		"id" : "UTM",
-		"name_long" : "Utrecht Maliebaan",
-		"x" : 137399,
-		"y" : 455280
-	},
-	{
-		"id" : "MP",
-		"name_long" : "Meppel",
-		"x" : 209786,
-		"y" : 522914
-	},
-	{
-		"id" : "AKL",
-		"name_long" : "Arkel",
-		"x" : 127860,
-		"y" : 431589
-	},
-	{
-		"id" : "OT",
-		"name_long" : "Oisterwijk",
-		"x" : 141558,
-		"y" : 399254
-	},
-	{
-		"id" : "ETN",
-		"name_long" : "Etten-Leur",
-		"x" : 102965,
-		"y" : 398746
-	},
-	{
-		"id" : "AC",
-		"name_long" : "Abcoude",
-		"x" : 127050,
-		"y" : 476774
-	},
-	{
-		"id" : "HGL",
-		"name_long" : "Hengelo",
-		"x" : 251027,
-		"y" : 475789
-	},
-	{
-		"id" : "ZTM",
-		"name_long" : "Zoetermeer",
-		"x" : 92584,
-		"y" : 451423
-	},
-	{
-		"id" : "SDT",
-		"name_long" : "Sliedrecht",
-		"x" : 113024,
-		"y" : 426952
-	},
-	{
-		"id" : "HLO",
-		"name_long" : "Heiloo",
-		"x" : 108536,
-		"y" : 512749
-	},
-	{
-		"id" : "DN",
-		"name_long" : "Deurne",
-		"x" : 182850,
-		"y" : 385304
-	},
-	{
-		"id" : "YPB",
-		"name_long" : "Den Haag Ypenburg",
-		"x" : 87236,
-		"y" : 452165
-	},
-	{
-		"id" : "RL",
-		"name_long" : "Ruurlo",
-		"x" : 227870,
-		"y" : 455239
-	},
-	{
-		"id" : "VDM",
-		"name_long" : "Veendam",
-		"x" : 255413,
-		"y" : 569740
-	},
-	{
-		"id" : "AH",
-		"name_long" : "Arnhem Centraal",
-		"x" : 190329,
-		"y" : 444162
-	},
-	{
-		"id" : "BRD",
-		"name_long" : "Barendrecht",
-		"x" : 97484,
-		"y" : 429961
-	},
-	{
-		"id" : "VK",
-		"name_long" : "Valkenburg",
-		"x" : 186375,
-		"y" : 320036
-	},
-	{
-		"id" : "EST",
-		"name_long" : "Elst",
-		"x" : 187188,
-		"y" : 436622
-	},
-	{
-		"id" : "VB",
-		"name_long" : "Voorburg",
-		"x" : 84566,
-		"y" : 453626
-	},
-	{
-		"id" : "BL",
-		"name_long" : "Beilen",
-		"x" : 231390,
-		"y" : 541472
-	},
-	{
-		"id" : "VRY",
-		"name_long" : "Venray",
-		"x" : 198536,
-		"y" : 393243
-	},
-	{
-		"id" : "WAD",
-		"name_long" : "Waddinxveen",
-		"x" : 104418,
-		"y" : 450894
-	},
-	{
-		"id" : "VG",
-		"name_long" : "Vught",
-		"x" : 148409,
-		"y" : 407427
-	},
-	{
-		"id" : "WP",
-		"name_long" : "Weesp",
-		"x" : 131672,
-		"y" : 480458
-	},
-	{
-		"id" : "SPTZ",
-		"name_long" : "Santpoort Zuid",
-		"x" : 103581,
-		"y" : 492759
-	}
-],
+		{
+		  "id": "NML",
+		  "name_long": "Nijmegen Lent",
+		  "x": 187540,
+		  "y": 430622,
+		  "InUit2018": 1381.0
+		},
+		{
+		  "id": "DV",
+		  "name_long": "Deventer",
+		  "x": 207852.397,
+		  "y": 474619.591,
+		  "InUit2018": 20903.0
+		},
+		{
+		  "id": "UHZ",
+		  "name_long": "Uithuizen",
+		  "x": 240636,
+		  "y": 603360
+		},
+		{
+		  "id": "STM",
+		  "name_long": "Stedum",
+		  "x": 241707,
+		  "y": 594134
+		},
+		{
+		  "id": "AMR",
+		  "name_long": "Alkmaar",
+		  "x": 111115,
+		  "y": 516892,
+		  "InUit2018": 21026.0
+		},
+		{
+		  "id": "WV",
+		  "name_long": "Wolvega",
+		  "x": 196523,
+		  "y": 543918,
+		  "InUit2018": 1575.0
+		},
+		{
+		  "id": "EML",
+		  "name_long": "Ermelo",
+		  "x": 170503,
+		  "y": 479274,
+		  "InUit2018": 2877.0
+		},
+		{
+		  "id": "DZW",
+		  "name_long": "Delfzijl West",
+		  "x": 256259,
+		  "y": 595023
+		},
+		{
+		  "id": "DTC",
+		  "name_long": "Doetinchem",
+		  "x": 217443,
+		  "y": 441498
+		},
+		{
+		  "id": "HT",
+		  "name_long": "'s-Hertogenbosch",
+		  "x": 148539,
+		  "y": 411325,
+		  "InUit2018": 47347.0
+		},
+		{
+		  "id": "WK",
+		  "name_long": "Workum",
+		  "x": 159660,
+		  "y": 553901
+		},
+		{
+		  "id": "UTLN",
+		  "name_long": "Utrecht Lunetten",
+		  "x": 138209,
+		  "y": 453267,
+		  "InUit2018": 3739.0
+		},
+		{
+		  "id": "BLL",
+		  "name_long": "Bloemendaal",
+		  "x": 103312,
+		  "y": 490990,
+		  "InUit2018": 1438.0
+		},
+		{
+		  "id": "SOG",
+		  "name_long": "Schin op Geul",
+		  "x": 189113,
+		  "y": 318571
+		},
+		{
+		  "id": "TL",
+		  "name_long": "Tiel",
+		  "x": 157472,
+		  "y": 433474,
+		  "InUit2018": 3298.0
+		},
+		{
+		  "id": "GVC",
+		  "name_long": "Den Haag Centraal",
+		  "x": 82156,
+		  "y": 455266,
+		  "InUit2018": 91437.0
+		},
+		{
+		  "id": "GR",
+		  "name_long": "Gorinchem",
+		  "x": 126082,
+		  "y": 427331
+		},
+		{
+		  "id": "GP",
+		  "name_long": "Geldrop",
+		  "x": 166370,
+		  "y": 381220,
+		  "InUit2018": 1511.0
+		},
+		{
+		  "id": "CAS",
+		  "name_long": "Castricum",
+		  "x": 105611,
+		  "y": 506659,
+		  "InUit2018": 7493.0
+		},
+		{
+		  "id": "RAI",
+		  "name_long": "Amsterdam RAI",
+		  "x": 121160,
+		  "y": 483320,
+		  "InUit2018": 5993.0
+		},
+		{
+		  "id": "ZDK",
+		  "name_long": "Zaandam Kogerveld",
+		  "x": 116502,
+		  "y": 496704,
+		  "InUit2018": 1464.0
+		},
+		{
+		  "id": "SPTN",
+		  "name_long": "Santpoort Noord",
+		  "x": 103678,
+		  "y": 494273,
+		  "InUit2018": 833.0
+		},
+		{
+		  "id": "APN",
+		  "name_long": "Alphen a/d Rijn",
+		  "x": 105017,
+		  "y": 459854,
+		  "InUit2018": 10759.0
+		},
+		{
+		  "id": "SWD",
+		  "name_long": "Sauwerd",
+		  "x": 231897,
+		  "y": 589979
+		},
+		{
+		  "id": "ZZS",
+		  "name_long": "Zaandijk Zaanse Schans",
+		  "x": 115449,
+		  "y": 498114,
+		  "InUit2018": 4.19
+		},
+		{
+		  "id": "HB",
+		  "name_long": "Hoensbroek",
+		  "x": 193309,
+		  "y": 324062
+		},
+		{
+		  "id": "UT",
+		  "name_long": "Utrecht Centraal",
+		  "x": 135929,
+		  "y": 455873,
+		  "InUit2018": 194385.0
+		},
+		{
+		  "id": "MT",
+		  "name_long": "Maastricht",
+		  "x": 177484,
+		  "y": 317655,
+		  "InUit2018": 11854.0
+		},
+		{
+		  "id": "ZBM",
+		  "name_long": "Zaltbommel",
+		  "x": 146462,
+		  "y": 424355,
+		  "InUit2018": 3862.0
+		},
+		{
+		  "id": "VTN",
+		  "name_long": "Vleuten",
+		  "x": 129207,
+		  "y": 457232,
+		  "InUit2018": 4288.0
+		},
+		{
+		  "id": "RM",
+		  "name_long": "Roermond",
+		  "x": 197441,
+		  "y": 356064,
+		  "InUit2018": 11378.0
+		},
+		{
+		  "id": "LEDN",
+		  "name_long": "Leiden Centraal",
+		  "x": 93090,
+		  "y": 464648,
+		  "InUit2018": 79376.0
+		},
+		{
+		  "id": "ODB",
+		  "name_long": "Oudenbosch",
+		  "x": 95834,
+		  "y": 400228,
+		  "InUit2018": 1.12
+		},
+		{
+		  "id": "ASDL",
+		  "name_long": "Amsterdam Lelylaan",
+		  "x": 117315,
+		  "y": 485698,
+		  "InUit2018": 15836.0
+		},
+		{
+		  "id": "AMFS",
+		  "name_long": "Amersfoort Schothorst",
+		  "x": 156104,
+		  "y": 465144,
+		  "InUit2018": 7003.0
+		},
+		{
+		  "id": "LUT",
+		  "name_long": "Geleen-Lutterade",
+		  "x": 185718,
+		  "y": 331853
+		},
+		{
+		  "id": "KZ",
+		  "name_long": "Koog aan de Zaan",
+		  "x": 115472,
+		  "y": 496969,
+		  "InUit2018": 3069.0
+		},
+		{
+		  "id": "RTN",
+		  "name_long": "Rotterdam Noord",
+		  "x": 92833,
+		  "y": 439721,
+		  "InUit2018": 2431.0
+		},
+		{
+		  "id": "BNN",
+		  "name_long": "Barneveld Noord",
+		  "x": 169487,
+		  "y": 463633
+		},
+		{
+		  "id": "WS",
+		  "name_long": "Winschoten",
+		  "x": 265318,
+		  "y": 573747
+		},
+		{
+		  "id": "KBD",
+		  "name_long": "Krabbendijke",
+		  "x": 66686,
+		  "y": 383457,
+		  "InUit2018": 672.0
+		},
+		{
+		  "id": "VP",
+		  "name_long": "Velp",
+		  "x": 195775,
+		  "y": 445344,
+		  "InUit2018": 1482.0
+		},
+		{
+		  "id": "GND",
+		  "name_long": "Hardinxveld-Giessendam",
+		  "x": 116968,
+		  "y": 427016
+		},
+		{
+		  "id": "WL",
+		  "name_long": "Wehl",
+		  "x": 211817,
+		  "y": 441296
+		},
+		{
+		  "id": "DMN",
+		  "name_long": "Diemen",
+		  "x": 126408,
+		  "y": 484224,
+		  "InUit2018": 3189.0
+		},
+		{
+		  "id": "MZ",
+		  "name_long": "Maarheeze",
+		  "x": 171917,
+		  "y": 368441,
+		  "InUit2018": 1347.0
+		},
+		{
+		  "id": "WT",
+		  "name_long": "Weert",
+		  "x": 177022,
+		  "y": 362205,
+		  "InUit2018": 7.69
+		},
+		{
+		  "id": "WWW",
+		  "name_long": "Winterswijk West",
+		  "x": 245496,
+		  "y": 443715
+		},
+		{
+		  "id": "BTL",
+		  "name_long": "Boxtel",
+		  "x": 150294,
+		  "y": 399482,
+		  "InUit2018": 6428.0
+		},
+		{
+		  "id": "BDPB",
+		  "name_long": "Breda-Prinsenbeek",
+		  "x": 108818,
+		  "y": 402224,
+		  "InUit2018": 1637.0
+		},
+		{
+		  "id": "HLM",
+		  "name_long": "Haarlem",
+		  "x": 103992,
+		  "y": 489183,
+		  "InUit2018": 42.04
+		},
+		{
+		  "id": "HOR",
+		  "name_long": "Hollandsche Rading",
+		  "x": 140788,
+		  "y": 465590,
+		  "InUit2018": 938.0
+		},
+		{
+		  "id": "BKG",
+		  "name_long": "Bovenkarspel-Grootebroek",
+		  "x": 144874,
+		  "y": 523086,
+		  "InUit2018": 2216.0
+		},
+		{
+		  "id": "GO",
+		  "name_long": "Goor",
+		  "x": 236812,
+		  "y": 472032
+		},
+		{
+		  "id": "EDC",
+		  "name_long": "Ede Centrum",
+		  "x": 174265,
+		  "y": 450583
+		},
+		{
+		  "id": "HRT",
+		  "name_long": "Horst-Sevenum",
+		  "x": 200483,
+		  "y": 382191,
+		  "InUit2018": 2654.0
+		},
+		{
+		  "id": "ZVT",
+		  "name_long": "Zandvoort aan Zee",
+		  "x": 96728,
+		  "y": 487883,
+		  "InUit2018": 5704.0
+		},
+		{
+		  "id": "DVC",
+		  "name_long": "Deventer Colmschate",
+		  "x": 211475,
+		  "y": 473907,
+		  "InUit2018": 1.4
+		},
+		{
+		  "id": "ASS",
+		  "name_long": "Amsterdam Sloterdijk",
+		  "x": 117571,
+		  "y": 489172,
+		  "InUit2018": 58.8
+		},
+		{
+		  "id": "DLN",
+		  "name_long": "Dalen",
+		  "x": 247674,
+		  "y": 523823
+		},
+		{
+		  "id": "KW",
+		  "name_long": "Kropswolde",
+		  "x": 244292,
+		  "y": 575826
+		},
+		{
+		  "id": "BRN",
+		  "name_long": "Baarn",
+		  "x": 147788,
+		  "y": 468892,
+		  "InUit2018": 4621.0
+		},
+		{
+		  "id": "BNC",
+		  "name_long": "Barneveld Centrum",
+		  "x": 168906,
+		  "y": 461322
+		},
+		{
+		  "id": "LG",
+		  "name_long": "Landgraaf",
+		  "x": 199505,
+		  "y": 323163
+		},
+		{
+		  "id": "WH",
+		  "name_long": "Wijhe",
+		  "x": 206317,
+		  "y": 489511,
+		  "InUit2018": 1217.0
+		},
+		{
+		  "id": "GDG",
+		  "name_long": "Gouda Goverwelle",
+		  "x": 110642,
+		  "y": 447611,
+		  "InUit2018": 3064.0
+		},
+		{
+		  "id": "DID",
+		  "name_long": "Didam",
+		  "x": 206319,
+		  "y": 438611
+		},
+		{
+		  "id": "SM",
+		  "name_long": "Swalmen",
+		  "x": 199975,
+		  "y": 360843
+		},
+		{
+		  "id": "HM",
+		  "name_long": "Helmond",
+		  "x": 173990,
+		  "y": 387380,
+		  "InUit2018": 7419.0
+		},
+		{
+		  "id": "RLB",
+		  "name_long": "Rotterdam Lombardijen",
+		  "x": 96053,
+		  "y": 432766,
+		  "InUit2018": 6.61
+		},
+		{
+		  "id": "BKF",
+		  "name_long": "Bovenkarspel Flora",
+		  "x": 146036,
+		  "y": 523205,
+		  "InUit2018": 720.0
+		},
+		{
+		  "id": "VST",
+		  "name_long": "Voorschoten",
+		  "x": 89774,
+		  "y": 460297,
+		  "InUit2018": 3427.0
+		},
+		{
+		  "id": "EHV",
+		  "name_long": "Eindhoven Centraal",
+		  "x": 161440,
+		  "y": 383771,
+		  "InUit2018": 65468.0
+		},
+		{
+		  "id": "DTCP",
+		  "name_long": "Delft Campus",
+		  "x": 84767,
+		  "y": 445247,
+		  "InUit2018": 4472.0
+		},
+		{
+		  "id": "NVD",
+		  "name_long": "Nijverdal",
+		  "x": 228789,
+		  "y": 487003
+		},
+		{
+		  "id": "EEM",
+		  "name_long": "Eemshaven",
+		  "x": 250837,
+		  "y": 609023
+		},
+		{
+		  "id": "APD",
+		  "name_long": "Apeldoorn",
+		  "x": 194955,
+		  "y": 469175,
+		  "InUit2018": 14.84
+		},
+		{
+		  "id": "CVM",
+		  "name_long": "Chevremont",
+		  "x": 202325,
+		  "y": 320901
+		},
+		{
+		  "id": "BR",
+		  "name_long": "Blerick",
+		  "x": 208480,
+		  "y": 376183,
+		  "InUit2018": 1445.0
+		},
+		{
+		  "id": "SGN",
+		  "name_long": "Schagen",
+		  "x": 115737,
+		  "y": 533299,
+		  "InUit2018": 5325.0
+		},
+		{
+		  "id": "HLMS",
+		  "name_long": "Haarlem Spaarnwoude",
+		  "x": 106389,
+		  "y": 488585,
+		  "InUit2018": 3.99
+		},
+		{
+		  "id": "KLP",
+		  "name_long": "Veenendaal-De Klomp",
+		  "x": 167810,
+		  "y": 450850,
+		  "InUit2018": 4446.0
+		},
+		{
+		  "id": "BNZ",
+		  "name_long": "Barneveld Zuid",
+		  "x": 169816,
+		  "y": 459986
+		},
+		{
+		  "id": "RTB",
+		  "name_long": "Rotterdam Blaak",
+		  "x": 93259,
+		  "y": 437172,
+		  "InUit2018": 24006.0
+		},
+		{
+		  "id": "VSS",
+		  "name_long": "Vlissingen Souburg",
+		  "x": 30473,
+		  "y": 387711,
+		  "InUit2018": 947.0
+		},
+		{
+		  "id": "ED",
+		  "name_long": "Ede-Wageningen",
+		  "x": 174766,
+		  "y": 448804,
+		  "InUit2018": 18369.0
+		},
+		{
+		  "id": "LLZM",
+		  "name_long": "Lansingerland-Zoetermeer",
+		  "x": 95412,
+		  "y": 450656
+		},
+		{
+		  "id": "DRP",
+		  "name_long": "Dronryp",
+		  "x": 171558,
+		  "y": 576812
+		},
+		{
+		  "id": "ZLSH",
+		  "name_long": "Zwolle Stadshagen",
+		  "x": 200078,
+		  "y": 504650
+		},
+		{
+		  "id": "WF",
+		  "name_long": "Wolfheze",
+		  "x": 183010,
+		  "y": 446385,
+		  "InUit2018": 600.0
+		},
+		{
+		  "id": "EMN",
+		  "name_long": "Emmen",
+		  "x": 257025,
+		  "y": 534746
+		},
+		{
+		  "id": "VHP",
+		  "name_long": "Vroomshoop",
+		  "x": 235370,
+		  "y": 497248
+		},
+		{
+		  "id": "ZVB",
+		  "name_long": "Zevenbergen",
+		  "x": 101164,
+		  "y": 406051,
+		  "InUit2018": 1117.0
+		},
+		{
+		  "id": "NDB",
+		  "name_long": "Naarden-Bussum",
+		  "x": 139308,
+		  "y": 476946,
+		  "InUit2018": 9465.0
+		},
+		{
+		  "id": "HVSP",
+		  "name_long": "Hilversum Sportpark",
+		  "x": 141340,
+		  "y": 469852,
+		  "InUit2018": 7703.0
+		},
+		{
+		  "id": "DRON",
+		  "name_long": "Dronten",
+		  "x": 177641,
+		  "y": 505248,
+		  "InUit2018": 3478.0
+		},
+		{
+		  "id": "AHP",
+		  "name_long": "Arnhem Velperpoort",
+		  "x": 191572,
+		  "y": 444222,
+		  "InUit2018": 1.98
+		},
+		{
+		  "id": "HD",
+		  "name_long": "Harderwijk",
+		  "x": 170887,
+		  "y": 483325,
+		  "InUit2018": 5904.0
+		},
+		{
+		  "id": "NM",
+		  "name_long": "Nijmegen",
+		  "x": 187074,
+		  "y": 428419,
+		  "InUit2018": 45403.0
+		},
+		{
+		  "id": "TBU",
+		  "name_long": "Tilburg Universiteit",
+		  "x": 131653,
+		  "y": 397411,
+		  "InUit2018": 7106.0
+		},
+		{
+		  "id": "ESK",
+		  "name_long": "Enschede Kennispark",
+		  "x": 254176,
+		  "y": 473119,
+		  "InUit2018": 391.0
+		},
+		{
+		  "id": "VDL",
+		  "name_long": "Voerendaal",
+		  "x": 193153,
+		  "y": 322034
+		},
+		{
+		  "id": "WFM",
+		  "name_long": "Warffum",
+		  "x": 233468,
+		  "y": 601054
+		},
+		{
+		  "id": "CPS",
+		  "name_long": "Capelle Schollevaar",
+		  "x": 99793,
+		  "y": 440935,
+		  "InUit2018": 2305.0
+		},
+		{
+		  "id": "WM",
+		  "name_long": "Wormerveer",
+		  "x": 114652,
+		  "y": 500323,
+		  "InUit2018": 4133.0
+		},
+		{
+		  "id": "HRLW",
+		  "name_long": "Heerlen Woonboulevard",
+		  "x": 194878,
+		  "y": 323104
+		},
+		{
+		  "id": "DL",
+		  "name_long": "Dalfsen",
+		  "x": 214234,
+		  "y": 501526
+		},
+		{
+		  "id": "EDN",
+		  "name_long": "Eijsden",
+		  "x": 177775,
+		  "y": 309171,
+		  "InUit2018": 160.0
+		},
+		{
+		  "id": "ARN",
+		  "name_long": "Arnemuiden",
+		  "x": 35705,
+		  "y": 391680,
+		  "InUit2018": 517.0
+		},
+		{
+		  "id": "DWE",
+		  "name_long": "De Westereen",
+		  "x": 198233,
+		  "y": 584818
+		},
+		{
+		  "id": "BSK",
+		  "name_long": "Boskoop",
+		  "x": 104235,
+		  "y": 454594,
+		  "InUit2018": 1.37
+		},
+		{
+		  "id": "STZ",
+		  "name_long": "Soest Zuid",
+		  "x": 149254,
+		  "y": 464149,
+		  "InUit2018": 1916.0
+		},
+		{
+		  "id": "AML",
+		  "name_long": "Almelo",
+		  "x": 241292,
+		  "y": 486320,
+		  "InUit2018": 8092.0
+		},
+		{
+		  "id": "LWC",
+		  "name_long": "Leeuwarden Camminghaburen",
+		  "x": 185473,
+		  "y": 579602
+		},
+		{
+		  "id": "HDRZ",
+		  "name_long": "Den Helder Zuid",
+		  "x": 113107,
+		  "y": 549687,
+		  "InUit2018": 2146.0
+		},
+		{
+		  "id": "GVM",
+		  "name_long": "Den Haag Mariahoeve",
+		  "x": 85279,
+		  "y": 456336,
+		  "InUit2018": 3148.0
+		},
+		{
+		  "id": "VL",
+		  "name_long": "Venlo",
+		  "x": 209673,
+		  "y": 375284,
+		  "InUit2018": 4966.0
+		},
+		{
+		  "id": "RSN",
+		  "name_long": "Rijssen",
+		  "x": 232198,
+		  "y": 481022,
+		  "InUit2018": 2514.0
+		},
+		{
+		  "id": "LDM",
+		  "name_long": "Leerdam",
+		  "x": 134793,
+		  "y": 434057
+		},
+		{
+		  "id": "HWD",
+		  "name_long": "Heerhugowaard",
+		  "x": 116893,
+		  "y": 520471,
+		  "InUit2018": 7434.0
+		},
+		{
+		  "id": "GNN",
+		  "name_long": "Groningen Noord",
+		  "x": 233074,
+		  "y": 583226
+		},
+		{
+		  "id": "WADN",
+		  "name_long": "Waddinxveen Noord",
+		  "x": 104328,
+		  "y": 452154,
+		  "InUit2018": 929.0
+		},
+		{
+		  "id": "ALM",
+		  "name_long": "Almere Centrum",
+		  "x": 143487,
+		  "y": 487482,
+		  "InUit2018": 27124.0
+		},
+		{
+		  "id": "RV",
+		  "name_long": "Reuver",
+		  "x": 203292,
+		  "y": 366198
+		},
+		{
+		  "id": "VEM",
+		  "name_long": "Voorst-Empe",
+		  "x": 206802,
+		  "y": 463511
+		},
+		{
+		  "id": "HAD",
+		  "name_long": "Heemstede-Aerdenhout",
+		  "x": 101846,
+		  "y": 486046,
+		  "InUit2018": 7118.0
+		},
+		{
+		  "id": "VZ",
+		  "name_long": "Vriezenveen",
+		  "x": 237560,
+		  "y": 491175
+		},
+		{
+		  "id": "OST",
+		  "name_long": "Olst",
+		  "x": 204500,
+		  "y": 483322,
+		  "InUit2018": 1319.0
+		},
+		{
+		  "id": "RTA",
+		  "name_long": "Rotterdam Alexander",
+		  "x": 97702,
+		  "y": 440703,
+		  "InUit2018": 18.31
+		},
+		{
+		  "id": "MAS",
+		  "name_long": "Maarssen",
+		  "x": 130829,
+		  "y": 460846,
+		  "InUit2018": 4508.0
+		},
+		{
+		  "id": "VNDW",
+		  "name_long": "Veenendaal West",
+		  "x": 164881,
+		  "y": 448886,
+		  "InUit2018": 1.53
+		},
+		{
+		  "id": "BDE",
+		  "name_long": "Bunde",
+		  "x": 179582,
+		  "y": 323081
+		},
+		{
+		  "id": "ZWD",
+		  "name_long": "Zwijndrecht",
+		  "x": 103521,
+		  "y": 425473,
+		  "InUit2018": 5427.0
+		},
+		{
+		  "id": "EC",
+		  "name_long": "Echt",
+		  "x": 189463,
+		  "y": 345854
+		},
+		{
+		  "id": "AKM",
+		  "name_long": "Akkrum",
+		  "x": 185582,
+		  "y": 562397,
+		  "InUit2018": 762.0
+		},
+		{
+		  "id": "UST",
+		  "name_long": "Usquert",
+		  "x": 236281,
+		  "y": 602319
+		},
+		{
+		  "id": "UHM",
+		  "name_long": "Uithuizermeeden",
+		  "x": 243640,
+		  "y": 603893
+		},
+		{
+		  "id": "TBR",
+		  "name_long": "Tilburg Reeshof",
+		  "x": 127757,
+		  "y": 398365,
+		  "InUit2018": 2996.0
+		},
+		{
+		  "id": "ALMO",
+		  "name_long": "Almere Oostvaarders",
+		  "x": 149105,
+		  "y": 490607,
+		  "InUit2018": 4502.0
+		},
+		{
+		  "id": "GV",
+		  "name_long": "Den Haag HS",
+		  "x": 81888,
+		  "y": 453936,
+		  "InUit2018": 33612.0
+		},
+		{
+		  "id": "HFD",
+		  "name_long": "Hoofddorp",
+		  "x": 108096,
+		  "y": 478570,
+		  "InUit2018": 18884.0
+		},
+		{
+		  "id": "GW",
+		  "name_long": "Grou-Jirnsum",
+		  "x": 184170,
+		  "y": 567024,
+		  "InUit2018": 870.0
+		},
+		{
+		  "id": "GDM",
+		  "name_long": "Geldermalsen",
+		  "x": 147027,
+		  "y": 432692,
+		  "InUit2018": 6495.0
+		},
+		{
+		  "id": "ZH",
+		  "name_long": "Zuidhorn",
+		  "x": 223024,
+		  "y": 585117
+		},
+		{
+		  "id": "SGL",
+		  "name_long": "Houthem-St. Gerlach",
+		  "x": 183810,
+		  "y": 320479
+		},
+		{
+		  "id": "HRN",
+		  "name_long": "Haren",
+		  "x": 237256,
+		  "y": 577321,
+		  "InUit2018": 1162.0
+		},
+		{
+		  "id": "BGN",
+		  "name_long": "Bergen op Zoom",
+		  "x": 79238,
+		  "y": 390107,
+		  "InUit2018": 6979.0
+		},
+		{
+		  "id": "TB",
+		  "name_long": "Tilburg",
+		  "x": 133933,
+		  "y": 396906,
+		  "InUit2018": 34503.0
+		},
+		{
+		  "id": "DVN",
+		  "name_long": "Duiven",
+		  "x": 198117,
+		  "y": 439636
+		},
+		{
+		  "id": "AMF",
+		  "name_long": "Amersfoort Centraal",
+		  "x": 153891,
+		  "y": 462816,
+		  "InUit2018": 43.71
+		},
+		{
+		  "id": "MES",
+		  "name_long": "Meerssen",
+		  "x": 180577,
+		  "y": 321486
+		},
+		{
+		  "id": "HMN",
+		  "name_long": "Hemmen-Dodewaard",
+		  "x": 174698,
+		  "y": 437129
+		},
+		{
+		  "id": "ZP",
+		  "name_long": "Zutphen",
+		  "x": 210229,
+		  "y": 462155,
+		  "InUit2018": 11988.0
+		},
+		{
+		  "id": "HNK",
+		  "name_long": "Hoorn Kersenboogerd",
+		  "x": 134519,
+		  "y": 518448,
+		  "InUit2018": 5117.0
+		},
+		{
+		  "id": "GS",
+		  "name_long": "Goes",
+		  "x": 51065,
+		  "y": 390970,
+		  "InUit2018": 7148.0
+		},
+		{
+		  "id": "HVL",
+		  "name_long": "Hoevelaken",
+		  "x": 159770,
+		  "y": 464263
+		},
+		{
+		  "id": "LDL",
+		  "name_long": "Leiden Lammenschans",
+		  "x": 93816,
+		  "y": 462419,
+		  "InUit2018": 4591.0
+		},
+		{
+		  "id": "TBG",
+		  "name_long": "Terborg",
+		  "x": 222209,
+		  "y": 437581
+		},
+		{
+		  "id": "NMD",
+		  "name_long": "Nijmegen Dukenburg",
+		  "x": 183099,
+		  "y": 426234,
+		  "InUit2018": 2.46
+		},
+		{
+		  "id": "OTB",
+		  "name_long": "Oosterbeek",
+		  "x": 186174,
+		  "y": 445225,
+		  "InUit2018": 478.0
+		},
+		{
+		  "id": "OP",
+		  "name_long": "Opheusden",
+		  "x": 172211,
+		  "y": 437536
+		},
+		{
+		  "id": "LAA",
+		  "name_long": "Den Haag Laan v NOI",
+		  "x": 83404,
+		  "y": 455031,
+		  "InUit2018": 16.66
+		},
+		{
+		  "id": "SRN",
+		  "name_long": "Susteren",
+		  "x": 188344,
+		  "y": 341346
+		},
+		{
+		  "id": "VD",
+		  "name_long": "Vorden",
+		  "x": 218739,
+		  "y": 458081
+		},
+		{
+		  "id": "CK",
+		  "name_long": "Cuijk",
+		  "x": 188635,
+		  "y": 415478
+		},
+		{
+		  "id": "VNDC",
+		  "name_long": "Veenendaal Centrum",
+		  "x": 166093,
+		  "y": 447980,
+		  "InUit2018": 2236.0
+		},
+		{
+		  "id": "GZ",
+		  "name_long": "Gilze-Rijen",
+		  "x": 123057,
+		  "y": 399520,
+		  "InUit2018": 2806.0
+		},
+		{
+		  "id": "APG",
+		  "name_long": "Appingedam",
+		  "x": 253300,
+		  "y": 594276
+		},
+		{
+		  "id": "HON",
+		  "name_long": "Holten",
+		  "x": 225563,
+		  "y": 477849,
+		  "InUit2018": 1382.0
+		},
+		{
+		  "id": "DR",
+		  "name_long": "Dieren",
+		  "x": 204101,
+		  "y": 450950,
+		  "InUit2018": 3607.0
+		},
+		{
+		  "id": "ASA",
+		  "name_long": "Amsterdam Amstel",
+		  "x": 123002,
+		  "y": 484376,
+		  "InUit2018": 33717.0
+		},
+		{
+		  "id": "PMR",
+		  "name_long": "Purmerend",
+		  "x": 125558,
+		  "y": 501792,
+		  "InUit2018": 2482.0
+		},
+		{
+		  "id": "EGHM",
+		  "name_long": "Eygelshoven Markt",
+		  "x": 202156,
+		  "y": 323137
+		},
+		{
+		  "id": "DLD",
+		  "name_long": "Den Dolder",
+		  "x": 145164,
+		  "y": 461390,
+		  "InUit2018": 1898.0
+		},
+		{
+		  "id": "MTH",
+		  "name_long": "Martenshoek",
+		  "x": 245608,
+		  "y": 575746
+		},
+		{
+		  "id": "DRH",
+		  "name_long": "Driehuis",
+		  "x": 104103,
+		  "y": 495254,
+		  "InUit2018": 1072.0
+		},
+		{
+		  "id": "SHL",
+		  "name_long": "Schiphol Airport",
+		  "x": 112329,
+		  "y": 480299,
+		  "InUit2018": 92214.0
+		},
+		{
+		  "id": "KPNZ",
+		  "name_long": "Kampen Zuid",
+		  "x": 190705,
+		  "y": 505160,
+		  "InUit2018": 1899.0
+		},
+		{
+		  "id": "DDN",
+		  "name_long": "Delden",
+		  "x": 245621,
+		  "y": 475501
+		},
+		{
+		  "id": "ATN",
+		  "name_long": "Aalten",
+		  "x": 236960,
+		  "y": 437648
+		},
+		{
+		  "id": "PT",
+		  "name_long": "Putten",
+		  "x": 167862,
+		  "y": 475275,
+		  "InUit2018": 1904.0
+		},
+		{
+		  "id": "HVSM",
+		  "name_long": "Hilversum Media Park",
+		  "x": 140449,
+		  "y": 472186,
+		  "InUit2018": 4461.0
+		},
+		{
+		  "id": "VSV",
+		  "name_long": "Varsseveld",
+		  "x": 228693,
+		  "y": 439301
+		},
+		{
+		  "id": "BSD",
+		  "name_long": "Beesd",
+		  "x": 141841,
+		  "y": 434568
+		},
+		{
+		  "id": "ASB",
+		  "name_long": "Amsterdam Bijlmer ArenA",
+		  "x": 125052,
+		  "y": 480468,
+		  "InUit2018": 28111.0
+		},
+		{
+		  "id": "ANA",
+		  "name_long": "Anna Paulowna",
+		  "x": 116214,
+		  "y": 542406,
+		  "InUit2018": 2066.0
+		},
+		{
+		  "id": "MDB",
+		  "name_long": "Middelburg",
+		  "x": 32230,
+		  "y": 391090,
+		  "InUit2018": 4666.0
+		},
+		{
+		  "id": "BSKS",
+		  "name_long": "Boskoop Snijdelwijk",
+		  "x": 104196,
+		  "y": 453521,
+		  "InUit2018": 583.0
+		},
+		{
+		  "id": "DDZD",
+		  "name_long": "Dordrecht Zuid",
+		  "x": 105620,
+		  "y": 422620,
+		  "InUit2018": 1111.0
+		},
+		{
+		  "id": "EGH",
+		  "name_long": "Eygelshoven",
+		  "x": 201351,
+		  "y": 322446
+		},
+		{
+		  "id": "GBR",
+		  "name_long": "Glanerbrug",
+		  "x": 263512,
+		  "y": 471240
+		},
+		{
+		  "id": "ASD",
+		  "name_long": "Amsterdam Centraal",
+		  "x": 121881,
+		  "y": 488023,
+		  "InUit2018": 192178.0
+		},
+		{
+		  "id": "HBZM",
+		  "name_long": "Hardinxveld Blauwe Zoom",
+		  "x": 115613,
+		  "y": 426937
+		},
+		{
+		  "id": "KMW",
+		  "name_long": "Koudum-Molkwerum",
+		  "x": 156591,
+		  "y": 546182
+		},
+		{
+		  "id": "LLS",
+		  "name_long": "Lelystad Centrum",
+		  "x": 160816,
+		  "y": 502253,
+		  "InUit2018": 14531.0
+		},
+		{
+		  "id": "OVN",
+		  "name_long": "Overveen",
+		  "x": 101939,
+		  "y": 489508,
+		  "InUit2018": 2391.0
+		},
+		{
+		  "id": "PMO",
+		  "name_long": "Purmerend Overwhere",
+		  "x": 126601,
+		  "y": 502748,
+		  "InUit2018": 2041.0
+		},
+		{
+		  "id": "HGLO",
+		  "name_long": "Hengelo Oost",
+		  "x": 252642,
+		  "y": 476541
+		},
+		{
+		  "id": "RH",
+		  "name_long": "Rheden",
+		  "x": 199188,
+		  "y": 447046,
+		  "InUit2018": 831.0
+		},
+		{
+		  "id": "BN",
+		  "name_long": "Borne",
+		  "x": 247850,
+		  "y": 479835,
+		  "InUit2018": 338.0
+		},
+		{
+		  "id": "WDN",
+		  "name_long": "Wierden",
+		  "x": 237065,
+		  "y": 486638,
+		  "InUit2018": 1.25
+		},
+		{
+		  "id": "AMRN",
+		  "name_long": "Alkmaar Noord",
+		  "x": 112801,
+		  "y": 517534,
+		  "InUit2018": 4792.0
+		},
+		{
+		  "id": "CL",
+		  "name_long": "Culemborg",
+		  "x": 143979,
+		  "y": 439819,
+		  "InUit2018": 8935.0
+		},
+		{
+		  "id": "DEI",
+		  "name_long": "Deinum",
+		  "x": 177757,
+		  "y": 578056
+		},
+		{
+		  "id": "VS",
+		  "name_long": "Vlissingen",
+		  "x": 30430,
+		  "y": 385706,
+		  "InUit2018": 2728.0
+		},
+		{
+		  "id": "O",
+		  "name_long": "Oss",
+		  "x": 164935,
+		  "y": 419625,
+		  "InUit2018": 8.27
+		},
+		{
+		  "id": "UTVR",
+		  "name_long": "Utrecht Vaartsche Rijn",
+		  "x": 136914,
+		  "y": 454491,
+		  "InUit2018": 7752.0
+		},
+		{
+		  "id": "HDG",
+		  "name_long": "Hurdegaryp",
+		  "x": 191582,
+		  "y": 581517
+		},
+		{
+		  "id": "KBK",
+		  "name_long": "Klarenbeek",
+		  "x": 202660,
+		  "y": 465780
+		},
+		{
+		  "id": "ODZ",
+		  "name_long": "Oldenzaal",
+		  "x": 260503,
+		  "y": 480936
+		},
+		{
+		  "id": "DVNK",
+		  "name_long": "De Vink",
+		  "x": 91267,
+		  "y": 462496,
+		  "InUit2018": 3267.0
+		},
+		{
+		  "id": "ALMP",
+		  "name_long": "Almere Parkwijk",
+		  "x": 145315,
+		  "y": 487664,
+		  "InUit2018": 3624.0
+		},
+		{
+		  "id": "BKL",
+		  "name_long": "Breukelen",
+		  "x": 127871,
+		  "y": 464858,
+		  "InUit2018": 5666.0
+		},
+		{
+		  "id": "HLGH",
+		  "name_long": "Harlingen Haven",
+		  "x": 156618,
+		  "y": 576446
+		},
+		{
+		  "id": "HDR",
+		  "name_long": "Den Helder",
+		  "x": 112922,
+		  "y": 552177,
+		  "InUit2018": 4143.0
+		},
+		{
+		  "id": "KRG",
+		  "name_long": "Kruiningen-Yerseke",
+		  "x": 61145,
+		  "y": 387141,
+		  "InUit2018": 872.0
+		},
+		{
+		  "id": "KRD",
+		  "name_long": "Kerkrade Centrum",
+		  "x": 202173,
+		  "y": 319226
+		},
+		{
+		  "id": "UTT",
+		  "name_long": "Utrecht Terwijde",
+		  "x": 131324,
+		  "y": 456957,
+		  "InUit2018": 3907.0
+		},
+		{
+		  "id": "ZD",
+		  "name_long": "Zaandam",
+		  "x": 116005,
+		  "y": 494695,
+		  "InUit2018": 22765.0
+		},
+		{
+		  "id": "HMH",
+		  "name_long": "Helmond 't Hout",
+		  "x": 171985,
+		  "y": 386589,
+		  "InUit2018": 1344.0
+		},
+		{
+		  "id": "HVS",
+		  "name_long": "Hilversum",
+		  "x": 140963,
+		  "y": 470947,
+		  "InUit2018": 26697.0
+		},
+		{
+		  "id": "KTR",
+		  "name_long": "Kesteren",
+		  "x": 168513,
+		  "y": 438110
+		},
+		{
+		  "id": "UTZL",
+		  "name_long": "Utrecht Zuilen",
+		  "x": 134591,
+		  "y": 457266,
+		  "InUit2018": 2094.0
+		},
+		{
+		  "id": "ZB",
+		  "name_long": "Zuidbroek",
+		  "x": 254032,
+		  "y": 575759
+		},
+		{
+		  "id": "RVS",
+		  "name_long": "Ravenstein",
+		  "x": 172208,
+		  "y": 422900,
+		  "InUit2018": 1463.0
+		},
+		{
+		  "id": "DZ",
+		  "name_long": "Delfzijl",
+		  "x": 257365,
+		  "y": 595255
+		},
+		{
+		  "id": "WSM",
+		  "name_long": "Winsum",
+		  "x": 230486,
+		  "y": 594367
+		},
+		{
+		  "id": "HR",
+		  "name_long": "Heerenveen",
+		  "x": 190357,
+		  "y": 552948,
+		  "InUit2018": 6236.0
+		},
+		{
+		  "id": "AVAT",
+		  "name_long": "Amersfoort Vathorst",
+		  "x": 158197,
+		  "y": 467171,
+		  "InUit2018": 3402.0
+		},
+		{
+		  "id": "BP",
+		  "name_long": "Buitenpost",
+		  "x": 205643,
+		  "y": 585804
+		},
+		{
+		  "id": "HMBV",
+		  "name_long": "Helmond Brandevoort",
+		  "x": 170433,
+		  "y": 385968,
+		  "InUit2018": 1493.0
+		},
+		{
+		  "id": "LW",
+		  "name_long": "Leeuwarden",
+		  "x": 181874,
+		  "y": 578863,
+		  "InUit2018": 10393.0
+		},
+		{
+		  "id": "NMH",
+		  "name_long": "Nijmegen Heyendaal",
+		  "x": 188096,
+		  "y": 426617
+		},
+		{
+		  "id": "HIL",
+		  "name_long": "Hillegom",
+		  "x": 98995,
+		  "y": 479778,
+		  "InUit2018": 2576.0
+		},
+		{
+		  "id": "GK",
+		  "name_long": "Grijpskerk",
+		  "x": 216639,
+		  "y": 585865
+		},
+		{
+		  "id": "AHPR",
+		  "name_long": "Arnhem Presikhaaf",
+		  "x": 193233,
+		  "y": 444547,
+		  "InUit2018": 2795.0
+		},
+		{
+		  "id": "BD",
+		  "name_long": "Breda",
+		  "x": 112935,
+		  "y": 400894,
+		  "InUit2018": 35863.0
+		},
+		{
+		  "id": "NWK",
+		  "name_long": "Nieuwerkerk a/d IJssel",
+		  "x": 102086,
+		  "y": 442184,
+		  "InUit2018": 3422.0
+		},
+		{
+		  "id": "SWK",
+		  "name_long": "Steenwijk",
+		  "x": 203947,
+		  "y": 534079,
+		  "InUit2018": 3825.0
+		},
+		{
+		  "id": "DTCH",
+		  "name_long": "Doetinchem De Huet",
+		  "x": 215052,
+		  "y": 441554
+		},
+		{
+		  "id": "RTD",
+		  "name_long": "Rotterdam Centraal",
+		  "x": 91667,
+		  "y": 437719,
+		  "InUit2018": 96.69
+		},
+		{
+		  "id": "DB",
+		  "name_long": "Driebergen-Zeist",
+		  "x": 146174,
+		  "y": 453005,
+		  "InUit2018": 8787.0
+		},
+		{
+		  "id": "TWL",
+		  "name_long": "Twello",
+		  "x": 203647,
+		  "y": 472445,
+		  "InUit2018": 1518.0
+		},
+		{
+		  "id": "HKS",
+		  "name_long": "Hoogkarspel",
+		  "x": 141318,
+		  "y": 522612,
+		  "InUit2018": 2197.0
+		},
+		{
+		  "id": "OMN",
+		  "name_long": "Ommen",
+		  "x": 224930,
+		  "y": 502945
+		},
+		{
+		  "id": "WC",
+		  "name_long": "Wijchen",
+		  "x": 178643,
+		  "y": 424809,
+		  "InUit2018": 4446.0
+		},
+		{
+		  "id": "LTV",
+		  "name_long": "Lichtenvoorde-Groenlo",
+		  "x": 238003,
+		  "y": 447760
+		},
+		{
+		  "id": "DMNZ",
+		  "name_long": "Diemen Zuid",
+		  "x": 125664,
+		  "y": 482617,
+		  "InUit2018": 3357.0
+		},
+		{
+		  "id": "HDE",
+		  "name_long": "'t Harde",
+		  "x": 189402,
+		  "y": 491366,
+		  "InUit2018": 1525.0
+		},
+		{
+		  "id": "NKK",
+		  "name_long": "Nijkerk",
+		  "x": 162276,
+		  "y": 470458,
+		  "InUit2018": 3597.0
+		},
+		{
+		  "id": "KPN",
+		  "name_long": "Kampen",
+		  "x": 191291,
+		  "y": 508120
+		},
+		{
+		  "id": "FN",
+		  "name_long": "Franeker",
+		  "x": 165895,
+		  "y": 577316
+		},
+		{
+		  "id": "ALMM",
+		  "name_long": "Almere Muziekwijk",
+		  "x": 141614,
+		  "y": 486665,
+		  "InUit2018": 6.42
+		},
+		{
+		  "id": "RS",
+		  "name_long": "Rosmalen",
+		  "x": 153776,
+		  "y": 414042,
+		  "InUit2018": 2528.0
+		},
+		{
+		  "id": "WTV",
+		  "name_long": "Westervoort",
+		  "x": 195003,
+		  "y": 441778
+		},
+		{
+		  "id": "ES",
+		  "name_long": "Enschede",
+		  "x": 257661,
+		  "y": 471555,
+		  "InUit2018": 9792.0
+		},
+		{
+		  "id": "ZTMO",
+		  "name_long": "Zoetermeer Oost",
+		  "x": 93650,
+		  "y": 451274,
+		  "InUit2018": 3177.0
+		},
+		{
+		  "id": "SD",
+		  "name_long": "Soestdijk",
+		  "x": 149042,
+		  "y": 466128,
+		  "InUit2018": 785.0
+		},
+		{
+		  "id": "GN",
+		  "name_long": "Groningen",
+		  "x": 233634,
+		  "y": 581088,
+		  "InUit2018": 17768.0
+		},
+		{
+		  "id": "BF",
+		  "name_long": "Baflo",
+		  "x": 230338,
+		  "y": 597764
+		},
+		{
+		  "id": "GD",
+		  "name_long": "Gouda",
+		  "x": 108262,
+		  "y": 447890,
+		  "InUit2018": 23696.0
+		},
+		{
+		  "id": "NVP",
+		  "name_long": "Nieuw Vennep",
+		  "x": 104339,
+		  "y": 474781,
+		  "InUit2018": 3517.0
+		},
+		{
+		  "id": "WD",
+		  "name_long": "Woerden",
+		  "x": 121111,
+		  "y": 455287,
+		  "InUit2018": 13358.0
+		},
+		{
+		  "id": "HGV",
+		  "name_long": "Hoogeveen",
+		  "x": 228322,
+		  "y": 527911,
+		  "InUit2018": 4667.0
+		},
+		{
+		  "id": "AHZ",
+		  "name_long": "Arnhem Zuid",
+		  "x": 186945,
+		  "y": 440816,
+		  "InUit2018": 3222.0
+		},
+		{
+		  "id": "MMLH",
+		  "name_long": "Mook-Molenhoek",
+		  "x": 189000,
+		  "y": 420035
+		},
+		{
+		  "id": "SN",
+		  "name_long": "Schinnen",
+		  "x": 189297,
+		  "y": 327805
+		},
+		{
+		  "id": "DA",
+		  "name_long": "Daarlerveen",
+		  "x": 235825,
+		  "y": 495493
+		},
+		{
+		  "id": "ZL",
+		  "name_long": "Zwolle",
+		  "x": 202859,
+		  "y": 502121,
+		  "InUit2018": 41.1
+		},
+		{
+		  "id": "HN",
+		  "name_long": "Hoorn",
+		  "x": 132486,
+		  "y": 517579,
+		  "InUit2018": 14306.0
+		},
+		{
+		  "id": "KMA",
+		  "name_long": "Krommenie-Assendelft",
+		  "x": 112057,
+		  "y": 500999,
+		  "InUit2018": 5567.0
+		},
+		{
+		  "id": "SDM",
+		  "name_long": "Schiedam Centrum",
+		  "x": 87807,
+		  "y": 437477,
+		  "InUit2018": 23164.0
+		},
+		{
+		  "id": "WADT",
+		  "name_long": "Waddinxveen Triangel",
+		  "x": 104345,
+		  "y": 449027,
+		  "InUit2018": 462.0
+		},
+		{
+		  "id": "HTNC",
+		  "name_long": "Houten Castellum",
+		  "x": 140746,
+		  "y": 447619,
+		  "InUit2018": 4986.0
+		},
+		{
+		  "id": "LC",
+		  "name_long": "Lochem",
+		  "x": 226146,
+		  "y": 464802
+		},
+		{
+		  "id": "WW",
+		  "name_long": "Winterswijk",
+		  "x": 246256,
+		  "y": 442993
+		},
+		{
+		  "id": "ASN",
+		  "name_long": "Assen",
+		  "x": 234502,
+		  "y": 556776,
+		  "InUit2018": 8569.0
+		},
+		{
+		  "id": "GBG",
+		  "name_long": "Gramsbergen",
+		  "x": 242338,
+		  "y": 514410
+		},
+		{
+		  "id": "HLG",
+		  "name_long": "Harlingen",
+		  "x": 157526,
+		  "y": 575968
+		},
+		{
+		  "id": "BV",
+		  "name_long": "Beverwijk",
+		  "x": 105380,
+		  "y": 499245,
+		  "InUit2018": 5239.0
+		},
+		{
+		  "id": "LTN",
+		  "name_long": "Lunteren",
+		  "x": 171249,
+		  "y": 455237
+		},
+		{
+		  "id": "BHV",
+		  "name_long": "Bilthoven",
+		  "x": 142504,
+		  "y": 460236,
+		  "InUit2018": 5376.0
+		},
+		{
+		  "id": "EMNZ",
+		  "name_long": "Emmen Zuid",
+		  "x": 255395,
+		  "y": 530055
+		},
+		{
+		  "id": "GERP",
+		  "name_long": "Groningen Europapark",
+		  "x": 235079,
+		  "y": 580454,
+		  "InUit2018": 1592.0
+		},
+		{
+		  "id": "ESE",
+		  "name_long": "Enschede De Eschmarke",
+		  "x": 261876,
+		  "y": 471501
+		},
+		{
+		  "id": "RTST",
+		  "name_long": "Rotterdam Stadion",
+		  "x": 95242,
+		  "y": 434311
+		},
+		{
+		  "id": "SK",
+		  "name_long": "Sneek",
+		  "x": 172747,
+		  "y": 560669
+		},
+		{
+		  "id": "VLB",
+		  "name_long": "Vierlingsbeek",
+		  "x": 197261,
+		  "y": 400527
+		},
+		{
+		  "id": "GVMW",
+		  "name_long": "Den Haag Moerwijk",
+		  "x": 81017,
+		  "y": 452266,
+		  "InUit2018": 3307.0
+		},
+		{
+		  "id": "BHDV",
+		  "name_long": "Boven-Hardinxveld",
+		  "x": 120008,
+		  "y": 427219
+		},
+		{
+		  "id": "RAT",
+		  "name_long": "Raalte",
+		  "x": 215688,
+		  "y": 489621
+		},
+		{
+		  "id": "AMRI",
+		  "name_long": "Almelo de Riet",
+		  "x": 242197,
+		  "y": 484559,
+		  "InUit2018": 225.0
+		},
+		{
+		  "id": "ASSP",
+		  "name_long": "Amsterdam Science Park",
+		  "x": 125122,
+		  "y": 485076,
+		  "InUit2018": 4649.0
+		},
+		{
+		  "id": "HWZB",
+		  "name_long": "Halfweg-Zwanenburg",
+		  "x": 111523,
+		  "y": 488833,
+		  "InUit2018": 2.73
+		},
+		{
+		  "id": "UTG",
+		  "name_long": "Uitgeest",
+		  "x": 108451,
+		  "y": 504063,
+		  "InUit2018": 4987.0
+		},
+		{
+		  "id": "OBD",
+		  "name_long": "Obdam",
+		  "x": 122667,
+		  "y": 521272,
+		  "InUit2018": 1414.0
+		},
+		{
+		  "id": "HDB",
+		  "name_long": "Hardenberg",
+		  "x": 239037,
+		  "y": 510001
+		},
+		{
+		  "id": "SBK",
+		  "name_long": "Spaubeek",
+		  "x": 187481,
+		  "y": 328299
+		},
+		{
+		  "id": "EHS",
+		  "name_long": "Eindhoven Strijp-S",
+		  "x": 159817,
+		  "y": 384631,
+		  "InUit2018": 3184.0
+		},
+		{
+		  "id": "ST",
+		  "name_long": "Soest",
+		  "x": 149724,
+		  "y": 465031,
+		  "InUit2018": 218.0
+		},
+		{
+		  "id": "OW",
+		  "name_long": "Oss West",
+		  "x": 163257,
+		  "y": 418863,
+		  "InUit2018": 2061.0
+		},
+		{
+		  "id": "DVD",
+		  "name_long": "Duivendrecht",
+		  "x": 124311,
+		  "y": 481775,
+		  "InUit2018": 13126.0
+		},
+		{
+		  "id": "ZA",
+		  "name_long": "Zetten-Andelst",
+		  "x": 178091,
+		  "y": 436852
+		},
+		{
+		  "id": "FWD",
+		  "name_long": "Feanw\u00c3\u0192\u00c2\u00a2lden",
+		  "x": 195222,
+		  "y": 583325
+		},
+		{
+		  "id": "RSD",
+		  "name_long": "Roosendaal",
+		  "x": 90607,
+		  "y": 395039,
+		  "InUit2018": 10317.0
+		},
+		{
+		  "id": "LP",
+		  "name_long": "Loppersum",
+		  "x": 245609,
+		  "y": 595119
+		},
+		{
+		  "id": "BET",
+		  "name_long": "Best",
+		  "x": 155142,
+		  "y": 391173,
+		  "InUit2018": 6027.0
+		},
+		{
+		  "id": "ASDZ",
+		  "name_long": "Amsterdam Zuid",
+		  "x": 119913,
+		  "y": 483561,
+		  "InUit2018": 60819.0
+		},
+		{
+		  "id": "BK",
+		  "name_long": "Beek-Elsloo",
+		  "x": 183019,
+		  "y": 328677
+		},
+		{
+		  "id": "BDG",
+		  "name_long": "Bodegraven",
+		  "x": 111053,
+		  "y": 454995,
+		  "InUit2018": 3232.0
+		},
+		{
+		  "id": "MTN",
+		  "name_long": "Maastricht Noord",
+		  "x": 178229,
+		  "y": 320099
+		},
+		{
+		  "id": "ALMB",
+		  "name_long": "Almere Buiten",
+		  "x": 147575,
+		  "y": 489609,
+		  "InUit2018": 7532.0
+		},
+		{
+		  "id": "BZL",
+		  "name_long": "Kapelle-Biezelinge",
+		  "x": 55556,
+		  "y": 388956,
+		  "InUit2018": 1277.0
+		},
+		{
+		  "id": "HK",
+		  "name_long": "Heemskerk",
+		  "x": 107455,
+		  "y": 501086,
+		  "InUit2018": 2664.0
+		},
+		{
+		  "id": "MG",
+		  "name_long": "Mantgum",
+		  "x": 176837,
+		  "y": 571528
+		},
+		{
+		  "id": "BDM",
+		  "name_long": "Bedum",
+		  "x": 235302,
+		  "y": 591814
+		},
+		{
+		  "id": "HRL",
+		  "name_long": "Heerlen",
+		  "x": 196330,
+		  "y": 322517,
+		  "InUit2018": 4864.0
+		},
+		{
+		  "id": "HGZ",
+		  "name_long": "Hoogezand-Sappemeer",
+		  "x": 247596,
+		  "y": 575668
+		},
+		{
+		  "id": "CO",
+		  "name_long": "Coevorden",
+		  "x": 246214,
+		  "y": 520352
+		},
+		{
+		  "id": "NS",
+		  "name_long": "Nunspeet",
+		  "x": 182069,
+		  "y": 487073,
+		  "InUit2018": 2.66
+		},
+		{
+		  "id": "APDM",
+		  "name_long": "Apeldoorn De Maten",
+		  "x": 196909,
+		  "y": 468751
+		},
+		{
+		  "id": "HTO",
+		  "name_long": "'s-Hertogenbosch Oost",
+		  "x": 150181,
+		  "y": 412417,
+		  "InUit2018": 1271.0
+		},
+		{
+		  "id": "GLN",
+		  "name_long": "Geleen Oost",
+		  "x": 187045,
+		  "y": 330946
+		},
+		{
+		  "id": "HMBH",
+		  "name_long": "Helmond Brouwhuis",
+		  "x": 176825,
+		  "y": 386888,
+		  "InUit2018": 1766.0
+		},
+		{
+		  "id": "UTLR",
+		  "name_long": "Utrecht Leidsche Rijn",
+		  "x": 132979,
+		  "y": 456791,
+		  "InUit2018": 2766.0
+		},
+		{
+		  "id": "ZV",
+		  "name_long": "Zevenaar",
+		  "x": 202176,
+		  "y": 437380
+		},
+		{
+		  "id": "AMPO",
+		  "name_long": "Almere Poort",
+		  "x": 138985,
+		  "y": 483897,
+		  "InUit2018": 5243.0
+		},
+		{
+		  "id": "RTZ",
+		  "name_long": "Rotterdam Zuid",
+		  "x": 94645,
+		  "y": 435482,
+		  "InUit2018": 3549.0
+		},
+		{
+		  "id": "DDR",
+		  "name_long": "Dordrecht",
+		  "x": 105368,
+		  "y": 424538,
+		  "InUit2018": 24483.0
+		},
+		{
+		  "id": "ZLW",
+		  "name_long": "Lage Zwaluwe",
+		  "x": 104986,
+		  "y": 411475,
+		  "InUit2018": 832.0
+		},
+		{
+		  "id": "MTR",
+		  "name_long": "Maastricht Randwyck",
+		  "x": 178268,
+		  "y": 316510,
+		  "InUit2018": 142.0
+		},
+		{
+		  "id": "STD",
+		  "name_long": "Sittard",
+		  "x": 188122,
+		  "y": 334842,
+		  "InUit2018": 10286.0
+		},
+		{
+		  "id": "EKZ",
+		  "name_long": "Enkhuizen",
+		  "x": 148139,
+		  "y": 523552,
+		  "InUit2018": 2326.0
+		},
+		{
+		  "id": "GDR",
+		  "name_long": "Gaanderen",
+		  "x": 221163,
+		  "y": 438444
+		},
+		{
+		  "id": "SDA",
+		  "name_long": "Scheemda",
+		  "x": 261378,
+		  "y": 576591
+		},
+		{
+		  "id": "SKND",
+		  "name_long": "Sneek Noord",
+		  "x": 173475,
+		  "y": 561482
+		},
+		{
+		  "id": "ASDM",
+		  "name_long": "Amsterdam Muiderpoort",
+		  "x": 124068,
+		  "y": 485858,
+		  "InUit2018": 14148.0
+		},
+		{
+		  "id": "RD",
+		  "name_long": "Roodeschool",
+		  "x": 246120,
+		  "y": 604667
+		},
+		{
+		  "id": "MRB",
+		  "name_long": "Mari\u00c3\u0192\u00c2\u00abnberg",
+		  "x": 235588,
+		  "y": 503017
+		},
+		{
+		  "id": "TPSW",
+		  "name_long": "Tiel Passewaaij",
+		  "x": 155265,
+		  "y": 431641,
+		  "InUit2018": 1494.0
+		},
+		{
+		  "id": "WZ",
+		  "name_long": "Wezep",
+		  "x": 196828,
+		  "y": 496430,
+		  "InUit2018": 1054.0
+		},
+		{
+		  "id": "BMN",
+		  "name_long": "Brummen",
+		  "x": 207066,
+		  "y": 456115,
+		  "InUit2018": 1068.0
+		},
+		{
+		  "id": "APDO",
+		  "name_long": "Apeldoorn Osseveld",
+		  "x": 197217,
+		  "y": 469877,
+		  "InUit2018": 1267.0
+		},
+		{
+		  "id": "SDTB",
+		  "name_long": "Sliedrecht Baanhoek",
+		  "x": 110564,
+		  "y": 426878
+		},
+		{
+		  "id": "UTO",
+		  "name_long": "Utrecht Overvecht",
+		  "x": 137017,
+		  "y": 457998,
+		  "InUit2018": 8677.0
+		},
+		{
+		  "id": "TG",
+		  "name_long": "Tegelen",
+		  "x": 207553,
+		  "y": 372392
+		},
+		{
+		  "id": "BSMZ",
+		  "name_long": "Bussum Zuid",
+		  "x": 139684,
+		  "y": 475350,
+		  "InUit2018": 4452.0
+		},
+		{
+		  "id": "BNK",
+		  "name_long": "Bunnik",
+		  "x": 141752,
+		  "y": 452778,
+		  "InUit2018": 2428.0
+		},
+		{
+		  "id": "HTN",
+		  "name_long": "Houten",
+		  "x": 139949,
+		  "y": 449588,
+		  "InUit2018": 7864.0
+		},
+		{
+		  "id": "HZE",
+		  "name_long": "Heeze",
+		  "x": 167705,
+		  "y": 377319,
+		  "InUit2018": 1628.0
+		},
+		{
+		  "id": "NSCH",
+		  "name_long": "Bad Nieuweschans",
+		  "x": 276075,
+		  "y": 579016
+		},
+		{
+		  "id": "STV",
+		  "name_long": "Stavoren",
+		  "x": 153195,
+		  "y": 544399
+		},
+		{
+		  "id": "HGLG",
+		  "name_long": "Hengelo Gezondheidspark",
+		  "x": 249250,
+		  "y": 475744
+		},
+		{
+		  "id": "BMR",
+		  "name_long": "Boxmeer",
+		  "x": 193215,
+		  "y": 406315
+		},
+		{
+		  "id": "NMGO",
+		  "name_long": "Nijmegen Goffert",
+		  "x": 185011,
+		  "y": 426612,
+		  "InUit2018": 1514.0
+		},
+		{
+		  "id": "DT",
+		  "name_long": "Delft",
+		  "x": 84274,
+		  "y": 446977,
+		  "InUit2018": 38423.0
+		},
+		{
+		  "id": "KMR",
+		  "name_long": "Klimmen-Ransdaal",
+		  "x": 190430,
+		  "y": 319742
+		},
+		{
+		  "id": "DDRS",
+		  "name_long": "Dordrecht Stadspolders",
+		  "x": 108769,
+		  "y": 423905
+		},
+		{
+		  "id": "NH",
+		  "name_long": "Nuth",
+		  "x": 190567,
+		  "y": 325648
+		},
+		{
+		  "id": "MRN",
+		  "name_long": "Maarn",
+		  "x": 153873,
+		  "y": 452863,
+		  "InUit2018": 1659.0
+		},
+		{
+		  "id": "HNP",
+		  "name_long": "Hindeloopen",
+		  "x": 157418,
+		  "y": 551047
+		},
+		{
+		  "id": "RB",
+		  "name_long": "Rilland-Bath",
+		  "x": 69705,
+		  "y": 382218,
+		  "InUit2018": 465.0
+		},
+		{
+		  "id": "RHN",
+		  "name_long": "Rhenen",
+		  "x": 168152,
+		  "y": 441162,
+		  "InUit2018": 1407.0
+		},
+		{
+		  "id": "IJT",
+		  "name_long": "IJlst",
+		  "x": 170337,
+		  "y": 558651
+		},
+		{
+		  "id": "RSW",
+		  "name_long": "Rijswijk",
+		  "x": 81843,
+		  "y": 450545,
+		  "InUit2018": 6873.0
+		},
+		{
+		  "id": "PMW",
+		  "name_long": "Purmerend Weidevenne",
+		  "x": 124225,
+		  "y": 501022,
+		  "InUit2018": 1627.0
+		},
+		{
+		  "id": "HNO",
+		  "name_long": "Heino",
+		  "x": 211697,
+		  "y": 493652
+		},
+		{
+		  "id": "SSH",
+		  "name_long": "Sassenheim",
+		  "x": 95573,
+		  "y": 470051,
+		  "InUit2018": 4808.0
+		},
+		{
+		  "id": "VH",
+		  "name_long": "Voorhout",
+		  "x": 93322,
+		  "y": 471046,
+		  "InUit2018": 3424.0
+		},
+		{
+		  "id": "ASHD",
+		  "name_long": "Amsterdam Holendrecht",
+		  "x": 126060,
+		  "y": 478628,
+		  "InUit2018": 4175.0
+		},
+		{
+		  "id": "UTM",
+		  "name_long": "Utrecht Maliebaan",
+		  "x": 137399,
+		  "y": 455280
+		},
+		{
+		  "id": "MP",
+		  "name_long": "Meppel",
+		  "x": 209786,
+		  "y": 522914,
+		  "InUit2018": 6342.0
+		},
+		{
+		  "id": "AKL",
+		  "name_long": "Arkel",
+		  "x": 127860,
+		  "y": 431589
+		},
+		{
+		  "id": "OT",
+		  "name_long": "Oisterwijk",
+		  "x": 141558,
+		  "y": 399254,
+		  "InUit2018": 2658.0
+		},
+		{
+		  "id": "ETN",
+		  "name_long": "Etten-Leur",
+		  "x": 102965,
+		  "y": 398746,
+		  "InUit2018": 3459.0
+		},
+		{
+		  "id": "AC",
+		  "name_long": "Abcoude",
+		  "x": 127050,
+		  "y": 476774,
+		  "InUit2018": 2035.0
+		},
+		{
+		  "id": "HGL",
+		  "name_long": "Hengelo",
+		  "x": 251027,
+		  "y": 475789,
+		  "InUit2018": 6951.0
+		},
+		{
+		  "id": "ZTM",
+		  "name_long": "Zoetermeer",
+		  "x": 92584,
+		  "y": 451423,
+		  "InUit2018": 5044.0
+		},
+		{
+		  "id": "SDT",
+		  "name_long": "Sliedrecht",
+		  "x": 113024,
+		  "y": 426952
+		},
+		{
+		  "id": "HLO",
+		  "name_long": "Heiloo",
+		  "x": 108536,
+		  "y": 512749,
+		  "InUit2018": 4762.0
+		},
+		{
+		  "id": "DN",
+		  "name_long": "Deurne",
+		  "x": 182850,
+		  "y": 385304,
+		  "InUit2018": 4486.0
+		},
+		{
+		  "id": "YPB",
+		  "name_long": "Den Haag Ypenburg",
+		  "x": 87236,
+		  "y": 452165,
+		  "InUit2018": 2526.0
+		},
+		{
+		  "id": "RL",
+		  "name_long": "Ruurlo",
+		  "x": 227870,
+		  "y": 455239
+		},
+		{
+		  "id": "VDM",
+		  "name_long": "Veendam",
+		  "x": 255413,
+		  "y": 569740
+		},
+		{
+		  "id": "AH",
+		  "name_long": "Arnhem Centraal",
+		  "x": 190329,
+		  "y": 444162,
+		  "InUit2018": 43677.0
+		},
+		{
+		  "id": "BRD",
+		  "name_long": "Barendrecht",
+		  "x": 97484,
+		  "y": 429961,
+		  "InUit2018": 5709.0
+		},
+		{
+		  "id": "VK",
+		  "name_long": "Valkenburg",
+		  "x": 186375,
+		  "y": 320036
+		},
+		{
+		  "id": "EST",
+		  "name_long": "Elst",
+		  "x": 187188,
+		  "y": 436622,
+		  "InUit2018": 4196.0
+		},
+		{
+		  "id": "VB",
+		  "name_long": "Voorburg",
+		  "x": 84566,
+		  "y": 453626,
+		  "InUit2018": 1885.0
+		},
+		{
+		  "id": "BL",
+		  "name_long": "Beilen",
+		  "x": 231390,
+		  "y": 541472,
+		  "InUit2018": 2121.0
+		},
+		{
+		  "id": "VRY",
+		  "name_long": "Venray",
+		  "x": 198536,
+		  "y": 393243
+		},
+		{
+		  "id": "WAD",
+		  "name_long": "Waddinxveen",
+		  "x": 104418,
+		  "y": 450894,
+		  "InUit2018": 1847.0
+		},
+		{
+		  "id": "VG",
+		  "name_long": "Vught",
+		  "x": 148409,
+		  "y": 407427,
+		  "InUit2018": 1852.0
+		},
+		{
+		  "id": "WP",
+		  "name_long": "Weesp",
+		  "x": 131672,
+		  "y": 480458,
+		  "InUit2018": 9.93
+		},
+		{
+		  "id": "SPTZ",
+		  "name_long": "Santpoort Zuid",
+		  "x": 103581,
+		  "y": 492759,
+		  "InUit2018": 901.0
+		}
+	  ],
 	"links" : [
 	{
 		"source" : "HTO",

@@ -59,24 +59,44 @@ d3.json("data/network.json").then( function( data) {
     node.y = normalizedCoords.y;
   });
 
-  // Initialize the links
-  const link = svg
+  const maxInUit2018 = d3.max(data.nodes, d => d.InUit2018);
+  const radiusScale = d3.scaleLinear()
+  .domain([0, maxInUit2018])
+  .range([4, 30]);
+
+  const opacityScale = d3.scaleLinear()
+  .domain([0, maxInUit2018])
+  .range([0.2, 0.9]);
+
+  
+  const nodeCircle = svg
+    .selectAll(".node-circle")
+    .data(data.nodes)
+    .join("circle")
+    .attr("r", d => radiusScale(d.InUit2018))
+    .style("fill", "#f7c82d")
+    .style("opacity", d => 0.5)
+    .style("stroke", "none")
+    .attr("class", "node-circle");
+
+// Append links next
+const link = svg
     .selectAll("line")
     .data(data.links)
     .join("line")
-      .attr("stroke-width", 0.2)
-      .style("stroke", "#003082")
+    .attr("stroke-width", 0.2)
+    .style("stroke", "#003082");
 
-  // Initialize the nodes
-  const node = svg
-    .selectAll("circle")
+// Append nodes last
+const node = svg
+    .selectAll(".node")
     .data(data.nodes)
     .join("circle")
     .attr("r", 2)
     .style("fill", "#f7c82d")
-    .style("stroke", "#003082") 
+    .style("stroke", "#003082")
     .style("stroke-width", 1)
-    .attr("class", "node")
+    .attr("class", "node");
 
   // Initialize the labels for nodes
   const nodeName = svg
@@ -92,11 +112,11 @@ d3.json("data/network.json").then( function( data) {
     .style("visibility", "hidden")
     .attr("class", "node-label");  // Add a class to make the labels initially invisible
 
-    const nodeValue = svg
+  const nodeValue = svg
     .selectAll(".node-value")
     .data(data.nodes)
     .join("text")
-    //.text(d => d.name_long)  // Use the 'name_long' property from the JSON for the label
+    .text(d => d.InUit2018 + " daily passengers")  // Use the 'InUit2018' property from the JSON for the label
     .attr("dy", "0.35em")
     .style("text-anchor", "middle")
     .style("font-size", "12px")
@@ -104,6 +124,9 @@ d3.json("data/network.json").then( function( data) {
     .style("fill", "#003082")
     .style("visibility", "hidden")
     .attr("class", "node-value");  // Add a class to make the labels initially invisible
+
+
+
 
   // Let's list the force we wanna apply on the network
   const simulation = d3.forceSimulation(data.nodes)                 // Force algorithm is applied to data.nodes
@@ -129,8 +152,14 @@ d3.json("data/network.json").then( function( data) {
          .attr("cx", function (d) { return d.x+0; })
          .attr("cy", function(d) { return d.y-0; })
          .style("opacity", 1);
-  // Update the position of node names
-    nodeName
+
+    nodeCircle
+         .attr("cx", function (d) { return d.x+0; })
+         .attr("cy", function(d) { return d.y-0; })
+         .style("opacity", 0.5)
+
+
+         nodeName
          .attr("transform", d => `translate(${d.x},${d.y + 20})`);
     
     nodeValue
@@ -149,6 +178,13 @@ d3.json("data/network.json").then( function( data) {
     link.style("opacity", function(d){
       return d.source === hoveredNode || d.target === hoveredNode ? 1 : 0.2;
     })
+    
+    nodeCircle.style("opacity", 0.1);
+
+    nodeCircle.style("opacity",function(d){
+      return d.id === hoveredNode.id ? 0.5 : 0.1;
+    })
+
 
 
     svg.selectAll(".node-label")
@@ -186,6 +222,7 @@ d3.json("data/network.json").then( function( data) {
 
   node.style("opacity", 1);
   link.style("opacity", 1);
+  nodeCircle.style("opacity", 0.5)
   }
 
   node.on("mouseout", function (event, d) {
@@ -202,11 +239,11 @@ d3.json("data/network.json").then( function( data) {
     
     const correspondingNode = data.nodes.find(node => node.name_long === stationName);
 
-    svg.selectAll(".node-value")
+    //svg.selectAll(".node-value")
       //.filter(d => d === correspondingNode)
-      .text(event.detail.passengers + " passengers");
+      //.text(event.detail.passengers + " daily passengers");
 
-    console.log(event.detail.passengers)
+    //console.log(event.detail.passengers)
   
     if (correspondingNode) {
       handleNodeMouseOver(event, correspondingNode);
