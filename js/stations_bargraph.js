@@ -90,7 +90,6 @@ d3.csv("data/station_passengers2018_top50_3.csv").then(function (data_bar) {
     
     var stationName = d.Station;
     var correspondingNode = data_net.nodes.find(node => node.name_long === stationName);
-    console.log(correspondingNode.id);
     var passengers = d.InUit2018;
 
 
@@ -111,9 +110,30 @@ d3.csv("data/station_passengers2018_top50_3.csv").then(function (data_bar) {
 
 
     }
-  })
-  
 
+    
+    function BarMouseOverByNodeID(nodeID) {
+  // Use xScale to find the corresponding x-coordinate for the nodeID
+  var xCoordinate = xScale(nodeID);
+
+  // Select the corresponding bar using the x-coordinate
+  var correspondingBar = g.select(".bar").filter(function (d) {
+    return xScale(d.code) === xCoordinate;
+  });
+
+  correspondingBar.attr("fill", "#f7c82d");
     }
+    
+  document.addEventListener('nodeMouseOver', function (event) {
+      const nodeID = event.detail;
+      BarMouseOverByNodeID(nodeID);
+    });
+
+  document.addEventListener('nodeMouseOut', function (event) {
+    g.selectAll(".bar").attr("fill", "#003082");
+    });
+
+  })
+  }
 
 );

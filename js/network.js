@@ -75,7 +75,7 @@ d3.json("data/network.json").then( function( data) {
     .join("circle")
     .attr("r", d => radiusScale(d.InUit2018))
     .style("fill", "#f7c82d")
-    .style("opacity", d => 0.4)
+    .style("opacity", 0.4)
     .style("stroke", "none")
     .attr("class", "node-circle")
     .style('mix-blend-mode', 'multiply')
@@ -158,7 +158,7 @@ const node = svg
     nodeCircle
          .attr("cx", function (d) { return d.x+0; })
          .attr("cy", function(d) { return d.y-0; })
-         .style("opacity", 0.5)
+         .style("opacity", 0.4)
 
 
          nodeName
@@ -202,6 +202,10 @@ const node = svg
       .style("r", 5)
       .style("opacity", 1);
 
+    var selectedNodeId = hoveredNode.id;
+    document.dispatchEvent(new CustomEvent('nodeMouseOver', { detail: selectedNodeId }));
+
+
 
   }
 
@@ -226,7 +230,10 @@ const node = svg
 
   node.style("opacity", 1);
   link.style("opacity", 1);
-  nodeCircle.style("opacity", 0.5)
+  nodeCircle.style("opacity", 0.4)
+
+  document.dispatchEvent(new CustomEvent('nodeMouseOut'));
+
   }
 
   node.on("mouseout", function (event, d) {
