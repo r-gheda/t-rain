@@ -179,9 +179,39 @@
     </section>
     <!-- END GROUPED BARPLOT -->
 
-    <section id="stations-storyline-slide" class="stations-storyline-slide">
-        Here goes the intro slide for the stations storyline
-        <video src="videos/ns-station.mp4" autoplay muted loop class="ns-video"></video>
+    <section id="stations-storyline-slide" style="height: 100%">
+
+        <video src="videos/ns-station.mp4" autoplay muted loop 
+            style="position: absolute; left: 0%; bottom: 5%; height: 45%; width: 45%;"></video>
+
+            <div style="position: absolute; width: 60%; height: 60%; right: 0%; top: 0%; 
+            background: url('css/img/blob.svg') right no-repeat;"
+            data-aos="fade-left" data-aos-delay="0" data-aos-duration="500">
+                <p style="position: absolute; right: 10%; top: 0%; font-size: 110px;"
+                data-aos="fade-in" data-aos-delay="500" data-aos-duration="1000"> 
+                3223 km
+                </p>
+                <p style="position: absolute; right: 10%; top: 40%; font-size: 45px; text-align: right;"
+                    data-aos="fade-left" data-aos-delay="1500" data-aos-duration="500"> 
+                    The length of the<br>
+                    Dutch railway network<br> <br>
+                </p>
+        </div> 
+
+        <div style="position: absolute; width: 60%; height: 60%; right: 0%; top: 40%; 
+            background: url('css/img/blob.svg') right no-repeat;"
+            data-aos="fade-left" data-aos-delay="1500" data-aos-duration="500">
+            <p style="position: absolute; right: 10%; top: 0%; font-size: 110px;"
+                data-aos="fade-in" data-aos-delay="2000" data-aos-duration="1000"> 
+                5.3 km
+            </p>
+            <p style="position: absolute; right: 10%; top: 40%; font-size: 45px; text-align: right;"
+                data-aos="fade-left" data-aos-delay="3000" data-aos-duration="500"> 
+                The average distance of <br>
+                a neighborhood to its cloest train station<br> <br>
+                
+            </p>
+        </div>
             
 
         <a href="#section2" class="cd-scroll-down"></a>
@@ -190,9 +220,30 @@
 
     <!-- BAR CHART + GRAPH -->
     <section id="section2">
-        <h1>Busiest train stations in the Netherlands</h1>
-        <p>This is the content of Section 2.</p>
-        
+        <div style="display: flex;">
+            <div style="width: 50%; position: relative; margin-left: 100px;">
+                <h1 style="text-decoration: underline; text-decoration-color: #f7c82d; text-decoration-thickness: 10px; text-align: left; font-size: 40px;">
+                    Busiest train stations
+                </h1>
+                <div style="height:40%; text-align: left; font-size: 27px;"
+                    data-aos="fade-right" data-aos-delay="500" data-aos-duration="1000">   
+
+                    
+                    <div data-aos="fade-right" data-aos-delay="1500" data-aos-duration="1000">
+                        The Netherlands has a dense railway network, connecting most of its major cities and towns. <br><br>
+                        Most passangers travel is concentrated in small subset of them. Most noteably Utrecht Centraal and Amsterdam Centraal act as railway hubs for the entire nation. <br>
+                    </div>
+                </div>
+                <div style="position: absolute; height: 50%; bottom: 0%;">
+                    <div id="hopcount-barplot"></div>
+                </div>
+            </div>
+            <div style="width: 50%; position: relative;">
+                <div id="stations_bargraph" style="width: 100%; height: 10%; position: absolute; top: 0; left: 0; z-index: 2;"></div>
+                <div id="train_network" style="width: 105%; height: 100%; position: relative; z-index: 1;"></div>
+            </div>
+        </div> 
+        <a href="#dendro-slide" class="cd-scroll-down"></a>
     </section>
     <!-- END BAR CHART + GRAPH -->
 
@@ -236,7 +287,7 @@
                 style="height: 70%; width:  100%;"></div>
             </div>
         </div> 
-            <a href="#disruption-storyline-slide" class="cd-scroll-down"></a>
+        <a href="#disruption-storyline-slide" class="cd-scroll-down"></a>
     </section>
     <!-- END DENDROGRAM -->
 
@@ -437,6 +488,8 @@
     <script type="module" src="js/stations-dendrogram.js"></script>
     <script type="module" src="js/train-stations-spider-chart.js"></script>
     <script type="module" src="js/script-features-comparison.js"></script>
+    <script type="module" src="js/network.js"></script>
+    <script type="module" src="js/stations_bargraph.js"></script>
 
 </body>
 </html>
