@@ -18,7 +18,7 @@ let y_domain_top = 609034 ;
 //   width = 1800 - margin.left - margin.right,
 //   height = 1000 - margin.top - margin.bottom;
 let container = d3.select("#train_network")
-let margin = {top: 0, right: 0, bottom: 0, left: 0},
+let margin = {top: -100, right: 0, bottom: 0, left: 0},
   width = container.node().getBoundingClientRect().width, 
 //width = 550 - margin.left - margin.right,
   height = (width * (y_domain_top - y_domain_bottom) / (x_domain_top - x_domain_bottom)) - margin.top - margin.bottom;
@@ -95,8 +95,8 @@ const node = svg
     .data(data.nodes)
     .join("circle")
     .attr("r", 2)
-    .style("fill", "#f7c82d")
-    .style("stroke", "#003082")
+    .style("fill", d => (d.InUit2018 !== undefined) ? "#f7c82d" : "#D0D0D0")
+    .style("stroke", d => (d.InUit2018 !== undefined) ? "#003082" : "#838383")
     .style("stroke-width", 1)
     .attr("class", "node");
 
@@ -118,12 +118,12 @@ const node = svg
     .selectAll(".node-value")
     .data(data.nodes)
     .join("text")
-    .text(d => d.InUit2018 + " daily passengers")  // Use the 'InUit2018' property from the JSON for the label
+    .text(d => (d.InUit2018 !== undefined) ? `${d.InUit2018} daily passengers` : "No NS data available for this station")
     .attr("dy", "0.35em")
     .style("text-anchor", "middle")
     .style("font-size", "12px")
-    .style("font-weight", "bold")
-    .style("fill", "#003082")
+    .style("font-weight", d => (d.InUit2018 !== undefined) ? "bold" : "")
+    .style("fill", d => (d.InUit2018 !== undefined) ? "#003082" : "#838383")
     .style("visibility", "hidden")
     .attr("class", "node-value");  // Add a class to make the labels initially invisible
 
@@ -165,7 +165,7 @@ const node = svg
          .attr("transform", d => `translate(${d.x},${d.y + 20})`);
     
     nodeValue
-         .attr("transform", d => `translate(${d.x},${d.y + 40})`);    
+         .attr("transform", d => `translate(${d.x},${d.y + 37})`);    
   }
 
   function handleNodeMouseOver (event, hoveredNode) {
@@ -266,6 +266,34 @@ const node = svg
 
   })
 
+  var ASD = document.getElementById('ASDHighlight');
+  var UT = document.getElementById('UTHighlight');
+
+  ASD.addEventListener("mouseover", function(){
+    ASD.style.color = '#f7c82d';
+    var eventDetails = {
+      stationName: "Amsterdam Centraal",
+    }
+    document.dispatchEvent(new CustomEvent('barMouseOver', { detail: eventDetails }));
+    
+  })
+  ASD.addEventListener("mouseout", function(event){
+    ASD.style.color = "#003082";
+    document.dispatchEvent(new CustomEvent('barMouseOut'));
+  })
+
+  UT.addEventListener("mouseover", function(){
+    UT.style.color = '#f7c82d';
+    var eventDetails = {
+      stationName: "Utrecht Centraal",
+    }
+    document.dispatchEvent(new CustomEvent('barMouseOver', { detail: eventDetails }));
+    
+  })
+  UT.addEventListener("mouseout", function(event){
+    UT.style.color = "#003082";
+    document.dispatchEvent(new CustomEvent('barMouseOut'));
+  })
 
 
 

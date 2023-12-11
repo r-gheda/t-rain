@@ -165,7 +165,7 @@
 		  "name_long": "Zaandijk Zaanse Schans",
 		  "x": 115449,
 		  "y": 498114,
-		  "InUit2018": 4.19
+		  "InUit2018": 4190.0
 		},
 		{
 		  "id": "HB",
@@ -220,7 +220,7 @@
 		  "name_long": "Oudenbosch",
 		  "x": 95834,
 		  "y": 400228,
-		  "InUit2018": 1.12
+		  "InUit2018": 1120.0
 		},
 		{
 		  "id": "ASDL",
@@ -313,7 +313,7 @@
 		  "name_long": "Weert",
 		  "x": 177022,
 		  "y": 362205,
-		  "InUit2018": 7.69
+		  "InUit2018": 7690.0
 		},
 		{
 		  "id": "WWW",
@@ -340,7 +340,7 @@
 		  "name_long": "Haarlem",
 		  "x": 103992,
 		  "y": 489183,
-		  "InUit2018": 42.04
+		  "InUit2018": 42040.0
 		},
 		{
 		  "id": "HOR",
@@ -387,14 +387,14 @@
 		  "name_long": "Deventer Colmschate",
 		  "x": 211475,
 		  "y": 473907,
-		  "InUit2018": 1.4
+		  "InUit2018": 1400.0
 		},
 		{
 		  "id": "ASS",
 		  "name_long": "Amsterdam Sloterdijk",
 		  "x": 117571,
 		  "y": 489172,
-		  "InUit2018": 58.8
+		  "InUit2018": 58800.0
 		},
 		{
 		  "id": "DLN",
@@ -465,7 +465,7 @@
 		  "name_long": "Rotterdam Lombardijen",
 		  "x": 96053,
 		  "y": 432766,
-		  "InUit2018": 6.61
+		  "InUit2018": 6610.0
 		},
 		{
 		  "id": "BKF",
@@ -512,7 +512,7 @@
 		  "name_long": "Apeldoorn",
 		  "x": 194955,
 		  "y": 469175,
-		  "InUit2018": 14.84
+		  "InUit2018": 14840.0
 		},
 		{
 		  "id": "CVM",
@@ -539,7 +539,7 @@
 		  "name_long": "Haarlem Spaarnwoude",
 		  "x": 106389,
 		  "y": 488585,
-		  "InUit2018": 3.99
+		  "InUit2018": 3990.0
 		},
 		{
 		  "id": "KLP",
@@ -645,7 +645,7 @@
 		  "name_long": "Arnhem Velperpoort",
 		  "x": 191572,
 		  "y": 444222,
-		  "InUit2018": 1.98
+		  "InUit2018": 1980.0
 		},
 		{
 		  "id": "HD",
@@ -738,7 +738,7 @@
 		  "name_long": "Boskoop",
 		  "x": 104235,
 		  "y": 454594,
-		  "InUit2018": 1.37
+		  "InUit2018": 1370.0
 		},
 		{
 		  "id": "STZ",
@@ -858,7 +858,7 @@
 		  "name_long": "Rotterdam Alexander",
 		  "x": 97702,
 		  "y": 440703,
-		  "InUit2018": 18.31
+		  "InUit2018": 18310.0
 		},
 		{
 		  "id": "MAS",
@@ -872,7 +872,7 @@
 		  "name_long": "Veenendaal West",
 		  "x": 164881,
 		  "y": 448886,
-		  "InUit2018": 1.53
+		  "InUit2018": 1530.0
 		},
 		{
 		  "id": "BDE",
@@ -998,7 +998,7 @@
 		  "name_long": "Amersfoort Centraal",
 		  "x": 153891,
 		  "y": 462816,
-		  "InUit2018": 43.71
+		  "InUit2018": 43710.0
 		},
 		{
 		  "id": "MES",
@@ -1057,7 +1057,7 @@
 		  "name_long": "Nijmegen Dukenburg",
 		  "x": 183099,
 		  "y": 426234,
-		  "InUit2018": 2.46
+		  "InUit2018": 2460.0
 		},
 		{
 		  "id": "OTB",
@@ -1077,7 +1077,7 @@
 		  "name_long": "Den Haag Laan v NOI",
 		  "x": 83404,
 		  "y": 455031,
-		  "InUit2018": 16.66
+		  "InUit2018": 16660.0
 		},
 		{
 		  "id": "SRN",
@@ -1335,7 +1335,7 @@
 		  "name_long": "Wierden",
 		  "x": 237065,
 		  "y": 486638,
-		  "InUit2018": 1.25
+		  "InUit2018": 1250.0
 		},
 		{
 		  "id": "AMRN",
@@ -1369,7 +1369,7 @@
 		  "name_long": "Oss",
 		  "x": 164935,
 		  "y": 419625,
-		  "InUit2018": 8.27
+		  "InUit2018": 8270.0
 		},
 		{
 		  "id": "UTVR",
@@ -1681,7 +1681,7 @@
 		  "name_long": "Almere Muziekwijk",
 		  "x": 141614,
 		  "y": 486665,
-		  "InUit2018": 6.42
+		  "InUit2018": 6420.0
 		},
 		{
 		  "id": "RS",
@@ -1788,7 +1788,7 @@
 		  "name_long": "Zwolle",
 		  "x": 202859,
 		  "y": 502121,
-		  "InUit2018": 41.1
+		  "InUit2018": 41100.0
 		},
 		{
 		  "id": "HN",
@@ -1951,7 +1951,7 @@
 		  "name_long": "Halfweg-Zwanenburg",
 		  "x": 111523,
 		  "y": 488833,
-		  "InUit2018": 2.73
+		  "InUit2018": 2730.0
 		},
 		{
 		  "id": "UTG",
@@ -2122,7 +2122,7 @@
 		  "name_long": "Nunspeet",
 		  "x": 182069,
 		  "y": 487073,
-		  "InUit2018": 2.66
+		  "InUit2018": 2660.0
 		},
 		{
 		  "id": "APDM",
@@ -2613,7 +2613,7 @@
 		  "name_long": "Weesp",
 		  "x": 131672,
 		  "y": 480458,
-		  "InUit2018": 9.93
+		  "InUit2018": 9930.0
 		},
 		{
 		  "id": "SPTZ",

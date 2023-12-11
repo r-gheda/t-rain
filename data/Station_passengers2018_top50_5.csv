@@ -1,15 +1,19 @@
 ﻿Station,InUit2018,code,name_short
 Utrecht Centraal,194385,UT,Utrecht C
 Amsterdam Centraal,192178,ASD,Amsterdm C
-Rotterdam Centraal, 96690, RTD, Rotterdam C
+Rotterdam Centraal,96690,RTD,Rotterdm C
 Schiphol Airport,92214,SHL,Schiphol
 Den Haag Centraal,91437,GVC,Den Haag C
 Leiden Centraal,79376,LEDN,Leiden C
 Eindhoven Centraal,65468,EHV,Eindhovn C
 Amsterdam Zuid,60819,ASDZ,Amsterdm Z
+Amsterdam Sloterdijk,58800,ASS,Sloterdijk
 's-Hertogenbosch,47347,HT,Den Bosch
 Nijmegen,45403,NM,Nijmegen
+Amersfoort Centraal,43710,AMF,Amersfrt C
 Arnhem Centraal,43677,AH,Arnhem C
+Haarlem,42040,HLM,Haarlem
+Zwolle,41100,ZL,Zwolle
 Delft,38423,DT,Delft
 Breda,35863,BD,Breda
 Tilburg,34503,TB,Tilburg
@@ -27,8 +31,11 @@ Alkmaar,21026,AMR,Alkmaar
 Deventer,20903,DV,Deventer
 Hoofddorp,18884,HFD,Hoofddorp
 Ede-Wageningen,18369,ED,Ede-Wag
+Rotterdam Alexander,18310,RTA,Alexander
 Groningen,17768,GN,Groningen
+Den Haag Laan v NOI,16660,LAA,Laan v NOI
 Amsterdam Lelylaan,15836,ASDL,Lelylaan
+Apeldoorn,14840,APD,Apeldoorn
 Lelystad Centrum,14531,LLS,Lelystad C
 Hoorn,14306,HN,Hoorn
 Amsterdam Muiderpoort,14148,ASDM,Muiderprt
@@ -41,11 +48,4 @@ Alphen a/d Rijn,10759,APN,Alphen
 Leeuwarden,10393,LW,Leeuwarden
 Roosendaal,10317,RSD,Roosendaal
 Sittard,10286,STD,Sittard
-Enschede,9792,ES,Enschede
-Naarden-Bussum,9465,NDB,Naarden-Bu
-Culemborg,8935,CL,Culemborg
-Driebergen-Zeist,8787,DB,Driebergen
-Utrecht Overvecht,8677,UTO,Overvecht
-Assen,8569,ASN,Assen
-Almelo,8092,AML,Almelo
-Houten,7864,HTN,Houten
+Weesp,9930,WP,Weesp

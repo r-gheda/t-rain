@@ -588,3 +588,15 @@ footer {
     left: 60%; 
     top: 40%;
 }
+
+#ASDHighlight {
+    font-weight: bold;
+    /*color: #f7c82d; /* Yellow color */
+    /*cursor: pointer; /* Add a pointer cursor on hover */
+}
+
+#UTHighlight {
+    font-weight: bold;
+    /*color: #f7c82d; /* Yellow color */
+    /*cursor: pointer; /* Add a pointer cursor on hover */
+}

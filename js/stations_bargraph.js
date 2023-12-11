@@ -1,7 +1,7 @@
 // set the dimensions and margins of the graph
-const margin_bar = { top: 0, right: 0, bottom: 35, left: 50 },
+const margin_bar = { top: 10, right: 0, bottom: 35, left: 70 },
   width_bar = 700 - margin_bar.left - margin_bar.right,
-  height_bar = 100 - margin_bar.top - margin_bar.bottom;
+  height_bar = 400 - margin_bar.top - margin_bar.bottom;
 
 // append the svg object to the body of the page
 const svg = d3
@@ -17,7 +17,7 @@ var g = svg
 var xScale = d3.scaleBand().range([0, width_bar]).padding(0.1),
   yScale = d3.scaleLinear().range([height_bar, 0]);
 
-d3.csv("data/station_passengers2018_top50_3.csv").then(function (data_bar) {
+d3.csv("data/Station_passengers2018_top50_5.csv").then(function (data_bar) {
   d3.json("data/network.json").then( function( data_net){
 
 
@@ -43,7 +43,8 @@ d3.csv("data/station_passengers2018_top50_3.csv").then(function (data_bar) {
         .tickFormat(function (d) {
           return d;
         })
-        .ticks(5)
+        .ticks(10)
+        .tickSizeOuter(1)
     )
     .append("text")
     .attr("y", 6)
@@ -64,6 +65,25 @@ d3.csv("data/station_passengers2018_top50_3.csv").then(function (data_bar) {
     .attr("fill", "#003082")
     //.on("mouseover", BarMouseOver)
     .on("mouseout", BarMouseOut);
+  
+  g.append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("y", 0 - margin_bar.left)
+    .attr("x", 0 - height_bar / 2)
+    .attr("dy", "1em")
+    .style("text-anchor", "middle")
+    .style("font-size", "12px")
+    .style("fill", "#003082")
+    .text("Daily passengers");
+  
+  svg.append("text")
+    .attr("x", (width_bar + margin_bar.left + margin_bar.right) / 2)
+    .attr("y",  margin_bar.top +5)  // Adjust the y-coordinate based on your design
+    .attr("text-anchor", "middle")
+    .style("font-size", "16px")
+    .style("fill", "#003082")
+    .text("2Busiest Stations in the Netherlands in 2018");
+    
 
 //create invisible bars that are the full height of the graph for easier selection
   g.selectAll(".bar-overlay")
