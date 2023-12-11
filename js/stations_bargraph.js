@@ -100,7 +100,7 @@ d3.csv("data/Station_passengers2018_top50_5.csv").then(function (data_bar) {
     .attr("text-anchor", "middle")
     .style("font-size", "16px")
     .style("fill", "#003082")
-    .text("Busiest Stations in the Netherlands in 2018");
+    .text("50 busiest train stations in the Netherlands in 2018");
     
 
 //create invisible bars that are the full height of the graph for easier selection
