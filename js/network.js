@@ -1,12 +1,4 @@
-// let x_domain_bottom = 30000;
-// let x_domain_top = 28000;
-// let y_domain_bottom = 30000;
-// let y_domain_top = 61000;
 
-// let x_domain_bottom = 30430;
-// let x_domain_top = 276075;
-// let y_domain_bottom = 309171;
-// let y_domain_top = 609023;
 let k = 25000
 let x_domain_bottom = 30429 - k;
 let x_domain_top = 309128 + k;
@@ -14,14 +6,13 @@ let y_domain_bottom = 275165 - k;
 let y_domain_top = 609034 ;
 
 // set the dimensions and margins of the graph
-// const margin = {top: 10, right: 30, bottom: 30, left: 40},
-//   width = 1800 - margin.left - margin.right,
-//   height = 1000 - margin.top - margin.bottom;
-let container = d3.select("#train_network")
+
+
+let container = d3.select("#network-slide")
 let margin = {top: -100, right: 0, bottom: 0, left: 0},
-  width = container.node().getBoundingClientRect().width, 
-//width = 550 - margin.left - margin.right,
-  height = (width * (y_domain_top - y_domain_bottom) / (x_domain_top - x_domain_bottom)) - margin.top - margin.bottom;
+  width = 0.5*container.node().getBoundingClientRect().width, 
+  height = 0.9*container.node().getBoundingClientRect().height;
+  // height = (width * (y_domain_top - y_domain_bottom) / (x_domain_top - x_domain_bottom)) - margin.top - margin.bottom;
 
 function normalize_coordinates_x(x)
 {
@@ -37,8 +28,6 @@ function normalize_coordinates(x, y, name_var)
 {
     return { x: normalize_coordinates_x(x), y: normalize_coordinates_y(y), name: name_var };
 }
-
-
 
 
 // append the svg object to the body of the page
@@ -74,7 +63,7 @@ d3.json("data/network.json").then( function( data) {
     .data(data.nodes)
     .join("circle")
     .attr("r", d => radiusScale(d.InUit2018))
-    .style("fill", "#f7c82d")
+    .style("fill", "#FFC917")
     .style("opacity", 0.4)
     .style("stroke", "none")
     .attr("class", "node-circle")

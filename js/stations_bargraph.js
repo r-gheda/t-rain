@@ -1,7 +1,25 @@
+
+const marginPercentage = { top: 0.03, right: 0.06, bottom: 0.07, left: 0.04 };
+const container = d3.select("#network-slide");
+const containerWidth = container.node().getBoundingClientRect().width;
+const containerHeight = container.node().getBoundingClientRect().height;
+
+const margin_bar = {
+    top: containerHeight * marginPercentage.top,
+    right: containerWidth * marginPercentage.right,
+    bottom: containerHeight * marginPercentage.bottom,
+    left: containerWidth * marginPercentage.left
+};
+
+// Calculate the width and height of the plot area
+const width_bar = 0.5*containerWidth - margin_bar.left - margin_bar.right;
+const height_bar = 0.4*containerHeight - margin_bar.top - margin_bar.bottom;
+
+
 // set the dimensions and margins of the graph
-const margin_bar = { top: 10, right: 0, bottom: 35, left: 70 },
-  width_bar = 700 - margin_bar.left - margin_bar.right,
-  height_bar = 400 - margin_bar.top - margin_bar.bottom;
+// const margin_bar = { top: 10, right: 0, bottom: 35, left: 70 },
+//   width_bar = 700 - margin_bar.left - margin_bar.right,
+//   height_bar = 400 - margin_bar.top - margin_bar.bottom;
 
 // append the svg object to the body of the page
 const svg = d3
@@ -82,7 +100,7 @@ d3.csv("data/Station_passengers2018_top50_5.csv").then(function (data_bar) {
     .attr("text-anchor", "middle")
     .style("font-size", "16px")
     .style("fill", "#003082")
-    .text("2Busiest Stations in the Netherlands in 2018");
+    .text("Busiest Stations in the Netherlands in 2018");
     
 
 //create invisible bars that are the full height of the graph for easier selection
