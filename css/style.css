@@ -56,7 +56,7 @@ nav a {
 
 
 .title-slide h1 {
-    font-size: 80px;
+    font-size: 500%;
     font-weight: bold;
     margin: 0;
     position: absolute; 
@@ -69,7 +69,7 @@ nav a {
     position: absolute; 
     left: 10%; 
     top: 18%; 
-    font-size: 40px; 
+    font-size: 250%; 
 }
 
 /* Section Styles */
@@ -103,12 +103,12 @@ section {
     left: 10%; 
     width: 70%; 
     height: 60%; 
-    font-size: 35px; 
+    font-size: 200%; 
     text-align: left;
 }
 
 .modes-of-transport-slide p {
-    font-size: 35px;
+    font-size: 120%;
     width: 70%;
 }
 
@@ -120,7 +120,7 @@ section {
 }
 
 .world-train-usage-slide p {
-    font-size: 35px;
+    font-size: 150%;
 }
 
 .world-train-usage-content {
@@ -128,7 +128,7 @@ section {
     left: 10%; 
     width: 50%; 
     height: 60%; 
-    font-size: 35px; 
+    font-size: 200%; 
     text-align: left;
 }
 
@@ -156,7 +156,7 @@ section {
 
 #disruption-storyline-slide-2 {
     background: white;
-    font-size: 40px;
+    font-size: 320%;
     text-align: center;
 }
 
