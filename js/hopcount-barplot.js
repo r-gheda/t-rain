@@ -1,5 +1,5 @@
 
-const marginPercentage = { top: 0.03, right: 0.06, bottom: 0.07, left: 0.04 };
+const marginPercentage = { top: 0.05, right: 0.06, bottom: 0.07, left: 0.04 };
 const container = d3.select("#dendro-slide");
 const containerWidth = container.node().getBoundingClientRect().width;
 const containerHeight = container.node().getBoundingClientRect().height;

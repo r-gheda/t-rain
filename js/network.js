@@ -84,7 +84,7 @@ const node = svg
     .data(data.nodes)
     .join("circle")
     .attr("r", 2)
-    .style("fill", d => (d.InUit2018 !== undefined) ? "#f7c82d" : "#D0D0D0")
+    .style("fill", d => (d.InUit2018 !== undefined) ? "#003082" : "#D0D0D0")
     .style("stroke", d => (d.InUit2018 !== undefined) ? "#003082" : "#838383")
     .style("stroke-width", 1)
     .attr("class", "node");
@@ -194,11 +194,7 @@ const node = svg
     var selectedNodeId = hoveredNode.id;
     document.dispatchEvent(new CustomEvent('nodeMouseOver', { detail: selectedNodeId }));
 
-
-
   }
-
-
 
   node.on("mouseover", function(event, hoveredNode) {
     handleNodeMouseOver(event, hoveredNode)
@@ -284,12 +280,4 @@ const node = svg
     document.dispatchEvent(new CustomEvent('barMouseOut'));
   })
 
-
-
-
-
-  
-
 });
-
-
