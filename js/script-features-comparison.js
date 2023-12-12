@@ -246,7 +246,7 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
           code1 = currentX.replace("Services from/to ", "");
           console.log(code1);
         }
-        else if (currentX[12] === 'o' && currentX[0] == 'D'){
+        else if (currentX[13] === 'n' && currentX[0] == 'D'){
           code1 = currentX.replace("Disruptions on path to ", "");
           console.log(code1);
         }
@@ -268,7 +268,7 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
           code2 = currentY.replace("Services from/to ", "");
           console.log(code2);
         }
-        else if (currentY[12] === 'o' && currentY[0] == 'D'){
+        else if (currentY[13] === 'n' && currentY[0] == 'D'){
           code2 = currentY.replace("Disruptions on path to ", "");
           console.log(code2);
         }

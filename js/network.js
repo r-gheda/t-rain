@@ -251,33 +251,4 @@ const node = svg
 
   })
 
-  var ASD = document.getElementById('ASDHighlight');
-  var UT = document.getElementById('UTHighlight');
-
-  ASD.addEventListener("mouseover", function(){
-    ASD.style.color = '#f7c82d';
-    var eventDetails = {
-      stationName: "Amsterdam Centraal",
-    }
-    document.dispatchEvent(new CustomEvent('barMouseOver', { detail: eventDetails }));
-    
-  })
-  ASD.addEventListener("mouseout", function(event){
-    ASD.style.color = "#003082";
-    document.dispatchEvent(new CustomEvent('barMouseOut'));
-  })
-
-  UT.addEventListener("mouseover", function(){
-    UT.style.color = '#f7c82d';
-    var eventDetails = {
-      stationName: "Utrecht Centraal",
-    }
-    document.dispatchEvent(new CustomEvent('barMouseOver', { detail: eventDetails }));
-    
-  })
-  UT.addEventListener("mouseout", function(event){
-    UT.style.color = "#003082";
-    document.dispatchEvent(new CustomEvent('barMouseOut'));
-  })
-
 });
