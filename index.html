@@ -17,7 +17,7 @@
     <script>
         AOS.init();
         AOS.refresh();
-        </script>
+    </script>
 
 
 <div id="cd-vertical-nav" style="margin-top: 0px;">
@@ -39,12 +39,12 @@
         </li>
         <li>
             <a href="#network-slide"><span class="cd-dot"></span>
-                <span class="cd-label">Most trafficated stations</span>
+                <span class="cd-label">Busiest stations</span>
             </a>
         </li>
         <li>
             <a href="#dendro-slide"><span class="cd-dot"></span>
-                <span class="cd-label">Dendrogram</span>
+                <span class="cd-label">Node centrality</span>
             </a>
         </li>
         <li>
@@ -529,6 +529,9 @@
     <script type="module" src="js/script-features-comparison.js"></script>
     <script type="module" src="js/network.js"></script>
     <script type="module" src="js/stations_bargraph.js"></script>
+    <script>
+        window.onresize = function(){ location.reload(); }
+    </script>
 
 </body>
 </html>
