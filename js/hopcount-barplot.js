@@ -42,13 +42,33 @@ export function create_barplot(station_id){
         .selectAll("text")
             .attr("transform", "translate(-10,0)rotate(-45)")
             .style("text-anchor", "end");
+        
+        // add a label to x axis
+        svg.append("text")
+            .attr("text-anchor", "end")
+            // .attr("transform", "rotate(-90)")
+            .attr("y", height + 40) // Adjust these values to position the label correctly
+            .attr("x", width - 50)
+            .text("Hopcount distance")
+            .style("font-size", "14px")
+            .style("fill", "#003082");
 
         // Add Y axis
         const y = d3.scaleLinear()
-        .domain([0, 70])
-        .range([ height, 0]);
-        svg.append("g")
-        .call(d3.axisLeft(y));
+            .domain([0, 70])
+            .range([ height, 0]);
+            svg.append("g")
+            .call(d3.axisLeft(y));
+
+        // add a label to y axis
+        svg.append("text")
+            .attr("text-anchor", "end")
+            .attr("transform", "rotate(-90)")
+            .attr("y", -margin.left + 20) // Adjust these values to position the label correctly
+            .attr("x", -margin.top)
+            .text("Number of stations")
+            .style("font-size", "14px")
+            .style("fill", "#003082");
 
         // Bars
         svg.selectAll("mybar")
