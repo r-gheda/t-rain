@@ -138,7 +138,6 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
              .duration(2000)
              .call(d3.axisLeft(yScale));
 
-        
         let xAxisLabel = svg.select(".x-axis-label");
         if (xAxisLabel.empty()) {
             xAxisLabel = svg.append("text")
@@ -223,7 +222,7 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
             .duration(1000)
             .attr("cx", d => xScale(d[currentX]))
             .attr("cy", d => yScale(d[currentY]));
-
+          
         }
         // Remove old labels
         labels.exit().remove();

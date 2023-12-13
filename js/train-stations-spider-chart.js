@@ -42,43 +42,34 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
         
         if (!selectedStations.includes(searchCode)) {
             selectedStations.push(searchCode);
+            
             updateChart();
-        }
-        d3.selectAll('text')
-        .filter(function(d) {
-            // returns true if d.id contains scatter-label-
-            return this.id.includes('scatter-label-');
-        })
-        .transition()
-        .duration(300)
-        .attr('opacity', 0.0);
-    
-        d3.selectAll('circle')
-        .filter(function(d) {
-            // returns true if d.id contains station-
-            return this.id.includes('scatter-node-');
-        })
-        .transition()
-        .duration(300)
-        .attr('opacity', 0.05);
-    
-        for (let i = 0; i < selectedStations.length; i++)
-        {
-            let label_id = '#scatter-label-' + selectedStations[i];
+
+            d3.selectAll('circle').filter(function(d) {
+                // returns true if d.id contains station-
+                return this.id.includes('scatter-node-') && !selectedStations.includes(d['Station Code']);
+            }
+            ).transition()
+            .duration(300)
+            .attr('opacity', 0.1);
+
+            let label_id = '#scatter-label-' + searchCode;
             d3.select(label_id)
                 .transition()
                 .duration(300)
                 .attr('opacity', 1.0)
                 .attr('fill', '#003082')
-                .attr('font-weight', 'bold');
-
-            let node_id = '#scatter-node-' + selectedStations[i];
+                .attr('font-weight', 'bold')
+                
+            let node_id = '#scatter-node-' + searchCode;
             d3.select(node_id)
                 .transition()
                 .duration(290)
                 .attr('opacity', 1.0)
-                .style("fill", station_color_mapping[selectedStations[i]]);
+                .style("fill", station_color_mapping[searchCode])
+            
         }
+
     }
 
 
@@ -287,7 +278,6 @@ function updateChart(){
         .attr("stroke", d => station_color_mapping[d['Station Code']])
         .attr("fill", d => station_color_mapping[d['Station Code']])
         .attr("stroke-opacity", 1)
-        .attr("opacity", 0.5)
         .attr('id', d => 'spider-path-' + d['Station Code'] );
 
     paths.exit().remove();
@@ -359,6 +349,9 @@ function updateChart(){
                 .transition()
                 .duration(300)
                 .attr('r', 3.5);
+            
+            console.log(i['Station Code']);
+            
 
             path_id = "#scatter-label-"  + i['Station Code'];
 
@@ -447,6 +440,7 @@ function updateChart(){
         
             for (let i = 0; i < selectedStations.length; i++)
             {
+
                 let label_id = '#scatter-label-' + selectedStations[i];
                 d3.select(label_id)
                     .transition()
@@ -462,6 +456,8 @@ function updateChart(){
                     .attr('opacity', 1.0)
                     .style("fill", station_color_mapping[selectedStations[i]]);
             }
+
+            
         }
 
         }
