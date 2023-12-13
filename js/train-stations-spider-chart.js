@@ -51,7 +51,6 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
             }
             )
             .attr('opacity', 1.0)
-            .lower();
 
 
             let label_id = '#scatter-label-' + searchCode;
@@ -64,10 +63,9 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
                 
             let node_id = '#scatter-node-' + searchCode;
             d3.select(node_id)
-                .transition()
-                .duration(290)
                 .attr('opacity', 1.0)
                 .style("fill", station_color_mapping[searchCode])
+                .raise();
             
         }
 
