@@ -74,13 +74,9 @@ function searchStation(inputText, id_search, id_suggestion_box) {
 }
 
 function selectStation(name, id_search, id_suggestion_box) {
-    console.log(name);
     
     if (id_search === 'dendro-station-search'){
         let searchValue = name.toUpperCase();
-
-        console.log(searchValue);
-
         //put in a value all the rows that have station name = searchValue
         if (dataset.filter(d => d['Station Name'].toUpperCase() === searchValue).length === 0 ){
         }
@@ -99,7 +95,6 @@ function selectStation(name, id_search, id_suggestion_box) {
 
     if (id_search === 'dendro-station-highlight-search'){
         let highlght_value = name.toUpperCase();
-        console.log(highlght_value);
 
         //put in a value all the rows that have station name = searchValue
         if (dataset.filter(d => d['Station Name'].toUpperCase() === highlght_value).length === 0 ){
@@ -376,7 +371,6 @@ function create_dendro(station_code)
     let station_label = d3.select("#dendro-station-label");
     // change its inner text with the station name
     let station_idx = dataset.findIndex(d => d['Station Code'] === station_code);
-    console.log('here ' + station_names[station_idx]);
     station_label.text(station_names[station_idx]);
 }
 
@@ -399,7 +393,6 @@ d3.select('#dendro-station-search').on('keydown', function(e) {
         //remove the suggestions
         d3.select("#suggestion-box-root").selectAll("div").remove();
 
-        console.log(searchValue);
 
         //put in a value all the rows that have station name = searchValue
         if (dataset.filter(d => d['Station Name'].toUpperCase() === searchValue).length === 0 ){
@@ -431,8 +424,6 @@ d3.select('#dendro-station-highlight-search').on('keydown', function(e){
         d3.select("#dendro-station-highlight-search").property("value", '');
         //remove the suggestions
         d3.select("#suggestion-box-highlight").selectAll("div").remove();
-
-        console.log(highlght_value);
 
         //put in a value all the rows that have station name = searchValue
         if (dataset.filter(d => d['Station Name'].toUpperCase() === highlght_value).length === 0 ){

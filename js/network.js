@@ -61,7 +61,6 @@ function handleZoom(e) {
 function initZoom() {
 	d3.select('#train_network')
 		.call(zoom);
-  console.log('init')
 }
 
 // append the svg object to the body of the page
@@ -79,7 +78,6 @@ d3.json("data/network.json").then( function( data) {
   data.nodes.forEach(function (node) {
     const normalizedCoords = normalize_coordinates(node.x, node.y, node.name);
     node.x = normalizedCoords.x;
-    console.log(node.x)
     node.y = normalizedCoords.y;
   });
 
@@ -274,7 +272,6 @@ const node = svg
       //.filter(d => d === correspondingNode)
       //.text(event.detail.passengers + " daily passengers");
 
-    //console.log(event.detail.passengers)
   
     if (correspondingNode) {
       handleNodeMouseOver(event, correspondingNode);

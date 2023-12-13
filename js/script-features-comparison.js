@@ -25,7 +25,6 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
     {
         station_names.push(data[i]['Station Name']);
     }
-    console.log(station_names.length);
 
 
     // Populate dropdown menus
@@ -68,9 +67,6 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
 
       d3.csv("data/relative-features/" + code1 + ".csv").then(relative_data1 => {
         d3.csv("data/relative-features/" + code2 + ".csv").then(relative_data2 => {
-
-        console.log(currentX)
-        console.log(currentY)
       
         let data1;
         let data2;
@@ -79,7 +75,6 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
         //if currentX or currentY is in relative_features
         if (currentX == currentY && relative_features.includes(currentX))
         {
-          console.log("sono qui");
           data_merged = relative_data1;
         }
         else if (relative_features.includes(currentX) || relative_features.includes(currentY))
@@ -112,11 +107,7 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
             });
 
             // Filter out any undefined entries (if there's no match in data2)
-            data_merged = data_merged.filter(item => item !== undefined);
-            console.log(data_merged.slice(0,5));
-
-            
-
+            data_merged = data_merged.filter(item => item !== undefined);        
         }
         else
         {
@@ -224,8 +215,25 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
             d3.select("#scatter-node-" + row['Station Code'])
               .transition()
               .duration(1000)
-              .attr("cx", xScale(row[currentX]))
-              .attr("cy", yScale(row[currentY]));
+              .attr("cx", function(d)
+              {
+                if (relative_features.includes(currentX))
+                {
+                  // get idx in relative_data1 given station code
+                  let idx = relative_data1.findIndex(x => x['Station Code'] === row['Station Code']);
+                  return xScale(relative_data1[idx][currentX]);
+                }
+                return xScale(row[currentX]);
+              })
+              .attr("cy", function(d)
+              {
+                if (relative_features.includes(currentY))
+                {
+                  let idx = relative_data2.findIndex(x => x['Station Code'] === row['Station Code']);
+                  return yScale(relative_data2[idx][currentY]);
+                }
+                return yScale(row[currentY]);
+              });
           });
 
 
@@ -245,15 +253,12 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
 
         if (currentX[9] === 'f' &&  currentX[3]=== 't'){
           code1 = currentX.replace("Distance from ", "");
-          console.log(code1);
         }
         else if (currentX[0] === 'S' && currentX[9] === 'f'){
           code1 = currentX.replace("Services from/to ", "");
-          console.log(code1);
         }
         else if (currentX[13] === 'n' && currentX[0] == 'D'){
           code1 = currentX.replace("Disruptions on path to ", "");
-          console.log(code1);
         }
         else{
           code1 = 'ASD';
@@ -267,15 +272,12 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
 
         if (currentY[9] === 'f' &&  currentY[3]=== 't'){
           code2 = currentY.replace("Distance from ", "");
-          console.log(code2);
         }
         else if (currentY[0] === 'S' && currentY[9] === 'f'){
           code2 = currentY.replace("Services from/to ", "");
-          console.log(code2);
         }
         else if (currentY[13] === 'n' && currentY[0] == 'D'){
           code2 = currentY.replace("Disruptions on path to ", "");
-          console.log(code2);
         }
         else{
           code2 = 'ASD';
@@ -320,7 +322,6 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
                   relative_features.push("Services from/to " + compare_stations[i]);
                   relative_features.push("Disruptions on path to " + compare_stations[i]);
               }
-              console.log(relative_features);
 
               //add the new features to the dropdowns of the axes of the scatter plot
               d3.select("#xFeature")

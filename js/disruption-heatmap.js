@@ -190,7 +190,6 @@ d3.csv("data/disruptions-2022-geo.csv").then( function(data)
         {
             if (locations[i].x === x && locations[i].y === y)
             {
-                console.log(i);
                 return i;
             }
         }

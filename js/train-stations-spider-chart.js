@@ -350,10 +350,7 @@ function updateChart(){
             d3.select(path_id)
                 .transition()
                 .duration(300)
-                .attr('r', 3.5);
-            
-            console.log(i['Station Code']);
-            
+                .attr('r', 3.5);            
 
             path_id = "#scatter-label-"  + i['Station Code'];
 
