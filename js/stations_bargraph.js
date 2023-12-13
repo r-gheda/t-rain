@@ -150,24 +150,26 @@ d3.csv("data/Station_passengers2018_top50_5.csv").then(function (data_bar) {
     }
 
     
-    function BarMouseOverByNodeID(nodeID) {
+  function BarMouseOverByNodeID(nodeID) {
   // Use xScale to find the corresponding x-coordinate for the nodeID
-  var xCoordinate = xScale(nodeID);
+    var xCoordinate = xScale(nodeID);
 
-  // Select the corresponding bar using the x-coordinate
-  var correspondingBar = g.select(".bar").filter(function (d) {
-    return xScale(d.code) === xCoordinate;
-  });
+    // Select the corresponding bar using the x-coordinate
+    var correspondingBar = g.selectAll(".bar").filter(function (d) {
+      return xScale(d.code) === xCoordinate;
+    });
 
-  correspondingBar.attr("fill", "#f7c82d");
-    }
+    correspondingBar.attr("fill", "#f7c82d");
+  }
     
   document.addEventListener('nodeMouseOver', function (event) {
       const nodeID = event.detail;
+      console.log(nodeID);
       BarMouseOverByNodeID(nodeID);
     });
 
   document.addEventListener('nodeMouseOut', function (event) {
+    console.log('nodeMouseOut');
     g.selectAll(".bar").attr("fill", "#003082");
     });
 
