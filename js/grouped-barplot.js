@@ -133,7 +133,6 @@ const highlight = function(event,d){
   d3.selectAll("rect")
     .filter(function(e)
       { 
-        console.log(d);
         return this.id.includes("grouped-barplot") && !this.id.includes(d);
       })
     .transition().duration(200)

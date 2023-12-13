@@ -49,9 +49,9 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
                 // returns true if d.id contains station-
                 return this.id.includes('scatter-node-') && !selectedStations.includes(d['Station Code']);
             }
-            ).transition()
-            .duration(300)
-            .attr('opacity', 0.1);
+            )
+            .attr('opacity', 1.0)
+
 
             let label_id = '#scatter-label-' + searchCode;
             d3.select(label_id)
@@ -63,10 +63,9 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
                 
             let node_id = '#scatter-node-' + searchCode;
             d3.select(node_id)
-                .transition()
-                .duration(290)
                 .attr('opacity', 1.0)
                 .style("fill", station_color_mapping[searchCode])
+                .raise();
             
         }
 
@@ -278,6 +277,7 @@ function updateChart(){
         .attr("stroke", d => station_color_mapping[d['Station Code']])
         .attr("fill", d => station_color_mapping[d['Station Code']])
         .attr("stroke-opacity", 1)
+        .attr('opacity', 0.4)
         .attr('id', d => 'spider-path-' + d['Station Code'] );
 
     paths.exit().remove();
@@ -341,17 +341,14 @@ function updateChart(){
                 })
                 .transition()
                 .duration(300)
-                .attr('opacity', 0.5);
+                .attr('opacity', 0.4);
 
             let path_id = "#scatter-node-"  + i['Station Code'];
 
             d3.select(path_id)
                 .transition()
                 .duration(300)
-                .attr('r', 3.5);
-            
-            console.log(i['Station Code']);
-            
+                .attr('r', 3.5);            
 
             path_id = "#scatter-label-"  + i['Station Code'];
 
