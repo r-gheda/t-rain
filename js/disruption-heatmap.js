@@ -1,3 +1,4 @@
+const epsilon = 0.000001
 
 let x_domain_bottom = 30429;
 let x_domain_top = 309128;
@@ -34,6 +35,12 @@ function denormalize_coordinates_y(y)
 function normalize_coordinates(x, y, name_var)
 {
     return { x: normalize_coordinates_x(x), y: normalize_coordinates_y(y), name: name_var };
+}
+
+function similar_to(a, b)
+{
+    // return the absolute difference
+    return Math.abs(a - b) <= epsilon;
 }
 
 const locations = [
@@ -243,9 +250,9 @@ d3.csv("data/disruptions-2022-geo.csv").then( function(data)
             let filteredData = data.filter(function(e) {
                 if (selectedGroup === "All")
                 {
-                    return denormalize_coordinates_x(d.x) === Number(e.x) && denormalize_coordinates_y(d.y) === Number(e.y);
+                    return similar_to(denormalize_coordinates_x(d.x), Number(e.x)) && similar_to(denormalize_coordinates_y(d.y), Number(e.y));
                 }
-                return denormalize_coordinates_x(d.x) === Number(e.x) && denormalize_coordinates_y(d.y) === Number(e.y) && e.group === selectedGroup; 
+                return similar_to(denormalize_coordinates_x(d.x), Number(e.x)) && similar_to(denormalize_coordinates_y(d.y), Number(e.y)) && e.group === selectedGroup; 
             });
             let numDisruptions = filteredData.length / 4;
             
