@@ -217,12 +217,18 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
 
           //let color = d3.select("#spider-legend-" + station_code).style("fill")
 
-          d3.select("#scatter-node-" + station_code)
-            .transition()
-            .duration(1000)
-            .attr("cx", d => xScale(d[currentX]))
-            .attr("cy", d => yScale(d[currentY]));
+          // for each scatter node, associate it with row with same station code
           
+          data.forEach(function(row)
+          {
+            d3.select("#scatter-node-" + row['Station Code'])
+              .transition()
+              .duration(1000)
+              .attr("cx", xScale(row[currentX]))
+              .attr("cy", yScale(row[currentY]));
+          });
+
+
         }
         // Remove old labels
         labels.exit().remove();
