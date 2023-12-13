@@ -14,7 +14,7 @@ let margin = {top: 0, right: 200, bottom: 100, left: 0},
   height = 0.9*container.node().getBoundingClientRect().height - (margin.top + margin.bottom);
   // height = (width * (y_domain_top - y_domain_bottom) / (x_domain_top - x_domain_bottom)) - margin.top - margin.bottom;
 
-let node_radius = 2.0;
+let node_radius = 3.0;
 let label_font_size = 16;
 let value_font_size = 12;
 
@@ -38,10 +38,11 @@ let zoom = d3.zoom()
 
 function handleZoom(e) {
 	svg.attr('transform', e.transform);
-  node_radius = 2.0 / e.transform.k;
+  node_radius = Math.max(3.0 / e.transform.k, 1.0);
   svg.selectAll(".node")
       //.filter(label => label === d)
-      .style("r", node_radius);
+      .style("r", node_radius)
+      .style("stroke-width", 1 / e.transform.k);
     
   label_font_size = 16 / e.transform.k;
   value_font_size = 12 / e.transform.k;
@@ -49,12 +50,12 @@ function handleZoom(e) {
   svg.selectAll(".node-label")
       //.filter(label => label === d)
       .style("font-size", label_font_size + "px")
-      .attr("transform", d => `translate(${d.x},${d.y + (20 / e.transform.k)})`);
+      .attr("transform", d => `translate(${d.x},${d.y + Math.max((20 / e.transform.k), (20 / 25.0))})`);
 
   svg.selectAll(".node-value")
     //.filter(label => label === d)
     .style("font-size", value_font_size + "px")
-    .attr("transform", d => `translate(${d.x},${d.y + (37 / e.transform.k)})`);    
+    .attr("transform", d => `translate(${d.x},${d.y +Math.max((37 / e.transform.k), (37 / 25.0))})`);    
 }
 
 function initZoom() {
@@ -118,8 +119,8 @@ const node = svg
     .data(data.nodes)
     .join("circle")
     .attr("r", node_radius)
-    .style("fill", d => (d.InUit2018 !== undefined) ? "#003082" : "#D0D0D0")
-    .style("stroke", d => (d.InUit2018 !== undefined) ? "#003082" : "#838383")
+    .style("fill", d => (d.InUit2018 !== undefined) ? "#0063D3" : "#D0D0D0")
+    .style("stroke", d => (d.InUit2018 !== undefined) ? "#E6E6E9" : "#838383")
     .style("stroke-width", 1)
     .attr("class", "node");
 
@@ -222,7 +223,7 @@ const node = svg
 
     svg.selectAll(".node")
       .filter(label => label === hoveredNode)
-      .style("r", node_radius * 2.5)
+      .style("r", node_radius * 5 / 3)
       .style("opacity", 1);
 
     var selectedNodeId = hoveredNode.id;
