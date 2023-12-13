@@ -14,6 +14,10 @@ let margin = {top: -100, right: 0, bottom: 0, left: 0},
   height = 0.9*container.node().getBoundingClientRect().height;
   // height = (width * (y_domain_top - y_domain_bottom) / (x_domain_top - x_domain_bottom)) - margin.top - margin.bottom;
 
+let node_radius = 2.0;
+let label_font_size = 16;
+let value_font_size = 12;
+
 function normalize_coordinates_x(x)
 {
     return width * (x - x_domain_bottom) / (x_domain_top - x_domain_bottom);
@@ -29,6 +33,35 @@ function normalize_coordinates(x, y, name_var)
     return { x: normalize_coordinates_x(x), y: normalize_coordinates_y(y), name: name_var };
 }
 
+let zoom = d3.zoom()
+	.on('zoom', handleZoom);
+
+function handleZoom(e) {
+	svg.attr('transform', e.transform);
+  node_radius = 2.0 / e.transform.k;
+  svg.selectAll(".node")
+      //.filter(label => label === d)
+      .style("r", node_radius);
+    
+  label_font_size = 16 / e.transform.k;
+  value_font_size = 12 / e.transform.k;
+
+  svg.selectAll(".node-label")
+      //.filter(label => label === d)
+      .style("font-size", label_font_size + "px")
+      .attr("transform", d => `translate(${d.x},${d.y + (20 / e.transform.k)})`);
+
+  svg.selectAll(".node-value")
+    //.filter(label => label === d)
+    .style("font-size", value_font_size + "px")
+    .attr("transform", d => `translate(${d.x},${d.y + (37 / e.transform.k)})`);    
+}
+
+function initZoom() {
+	d3.select('#train_network')
+		.call(zoom);
+  console.log('init')
+}
 
 // append the svg object to the body of the page
 const svg = d3.select("#train_network")
@@ -83,7 +116,7 @@ const node = svg
     .selectAll(".node")
     .data(data.nodes)
     .join("circle")
-    .attr("r", 2)
+    .attr("r", node_radius)
     .style("fill", d => (d.InUit2018 !== undefined) ? "#003082" : "#D0D0D0")
     .style("stroke", d => (d.InUit2018 !== undefined) ? "#003082" : "#838383")
     .style("stroke-width", 1)
@@ -97,7 +130,7 @@ const node = svg
     .text(d => d.name_long)  // Use the 'name_long' property from the JSON for the label
     .attr("dy", "0.35em")
     .style("text-anchor", "middle")
-    .style("font-size", "16px")
+    .style("font-size", label_font_size  + "px")
     .style("font-weight", "bold")
     .style("fill", "#003082")
     .style("visibility", "hidden")
@@ -110,7 +143,7 @@ const node = svg
     .text(d => (d.InUit2018 !== undefined) ? `${d.InUit2018} daily passengers` : "No NS data available for this station")
     .attr("dy", "0.35em")
     .style("text-anchor", "middle")
-    .style("font-size", "12px")
+    .style("font-size", value_font_size + "px")
     .style("font-weight", d => (d.InUit2018 !== undefined) ? "bold" : "")
     .style("fill", d => (d.InUit2018 !== undefined) ? "#003082" : "#838383")
     .style("visibility", "hidden")
@@ -134,27 +167,27 @@ const node = svg
   // This function is run at each iteration of the force algorithm, updating the nodes position.
   function ticked() {
     link
-        .attr("x1", function(d) { return d.source.x; })
-        .attr("y1", function(d) { return d.source.y; })
-        .attr("x2", function(d) { return d.target.x; })
-        .attr("y2", function(d) { return d.target.y; });
+      .attr("x1", function(d) { return d.source.x; })
+      .attr("y1", function(d) { return d.source.y; })
+      .attr("x2", function(d) { return d.target.x; })
+      .attr("y2", function(d) { return d.target.y; });
 
     node
-         .attr("cx", function (d) { return d.x+0; })
-         .attr("cy", function(d) { return d.y-0; })
-         .style("opacity", 1);
+        .attr("cx", function (d) { return d.x+0; })
+        .attr("cy", function(d) { return d.y-0; })
+        .style("opacity", 1);
 
     nodeCircle
-         .attr("cx", function (d) { return d.x+0; })
-         .attr("cy", function(d) { return d.y-0; })
-         .style("opacity", 0.4)
+        .attr("cx", function (d) { return d.x+0; })
+        .attr("cy", function(d) { return d.y-0; })
+        .style("opacity", 0.4)
 
 
-         nodeName
-         .attr("transform", d => `translate(${d.x},${d.y + 20})`);
+    nodeName
+        .attr("transform", d => `translate(${d.x},${d.y + 20})`);
     
     nodeValue
-         .attr("transform", d => `translate(${d.x},${d.y + 37})`);    
+        .attr("transform", d => `translate(${d.x},${d.y + 37})`);    
   }
 
   function handleNodeMouseOver (event, hoveredNode) {
@@ -188,7 +221,7 @@ const node = svg
 
     svg.selectAll(".node")
       .filter(label => label === hoveredNode)
-      .style("r", 5)
+      .style("r", node_radius * 2.5)
       .style("opacity", 1);
 
     var selectedNodeId = hoveredNode.id;
@@ -211,7 +244,7 @@ const node = svg
     
     svg.selectAll(".node")
       //.filter(label => label === d)
-      .style("r", 2)
+      .style("r", node_radius)
 
   node.style("opacity", 1);
   link.style("opacity", 1);
@@ -250,34 +283,7 @@ const node = svg
       handleNodeMouseOut(event, d);
 
   })
-
-  var ASD = document.getElementById('ASDHighlight');
-  var UT = document.getElementById('UTHighlight');
-
-  ASD.addEventListener("mouseover", function(){
-    ASD.style.color = '#f7c82d';
-    var eventDetails = {
-      stationName: "Amsterdam Centraal",
-    }
-    document.dispatchEvent(new CustomEvent('barMouseOver', { detail: eventDetails }));
-    
-  })
-  ASD.addEventListener("mouseout", function(event){
-    ASD.style.color = "#003082";
-    document.dispatchEvent(new CustomEvent('barMouseOut'));
-  })
-
-  UT.addEventListener("mouseover", function(){
-    UT.style.color = '#f7c82d';
-    var eventDetails = {
-      stationName: "Utrecht Centraal",
-    }
-    document.dispatchEvent(new CustomEvent('barMouseOver', { detail: eventDetails }));
-    
-  })
-  UT.addEventListener("mouseout", function(event){
-    UT.style.color = "#003082";
-    document.dispatchEvent(new CustomEvent('barMouseOut'));
-  })
-
 });
+
+initZoom();
+
