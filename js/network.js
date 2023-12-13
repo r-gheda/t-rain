@@ -1,17 +1,17 @@
 
-let k = 25000
-let x_domain_bottom = 30429 - k;
-let x_domain_top = 309128 + k;
-let y_domain_bottom = 275165 - k;
-let y_domain_top = 609034 ;
+let k = 10
+let x_domain_bottom = 30473;
+let x_domain_top = 263512 * 1.04;
+let y_domain_bottom = 321486 / 1.04;
+let y_domain_top = 609023 * 1.04;
 
 // set the dimensions and margins of the graph
 
 
 let container = d3.select("#network-slide")
-let margin = {top: -100, right: 0, bottom: 0, left: 0},
-  width = 0.5*container.node().getBoundingClientRect().width, 
-  height = 0.9*container.node().getBoundingClientRect().height;
+let margin = {top: 0, right: 200, bottom: 100, left: 0},
+  width = 0.5*container.node().getBoundingClientRect().width - (margin.right + margin.left), 
+  height = 0.9*container.node().getBoundingClientRect().height - (margin.top + margin.bottom);
   // height = (width * (y_domain_top - y_domain_bottom) / (x_domain_top - x_domain_bottom)) - margin.top - margin.bottom;
 
 let node_radius = 2.0;
@@ -78,6 +78,7 @@ d3.json("data/network.json").then( function( data) {
   data.nodes.forEach(function (node) {
     const normalizedCoords = normalize_coordinates(node.x, node.y, node.name);
     node.x = normalizedCoords.x;
+    console.log(node.x)
     node.y = normalizedCoords.y;
   });
 
