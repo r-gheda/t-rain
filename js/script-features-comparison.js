@@ -123,10 +123,10 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
 
         //Update axes
         xAxis.transition()
-             .duration(2000)
+             .duration(1000)
              .call(d3.axisBottom(xScale));
         yAxis.transition()
-             .duration(2000)
+             .duration(1000)
              .call(d3.axisLeft(yScale));
 
         let xAxisLabel = svg.select(".x-axis-label");
@@ -154,15 +154,20 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
         yAxisLabel.attr("x", -height / 2)
                   .attr("y", -margin.left + 15)
                   .text(currentY);
-
-  
+        
+        
+        
+      
         // Bind data to dots
         const dots = svg.selectAll("circle").data(data_merged);
 
         // Enter new dots
         dots.enter()
+            
             .append("circle")
+            .attr("class", "nodes")
             .attr("id", d => "scatter-node-" + d["Station Code"])
+            .attr("value", d => d["Station Code"])
             .merge(dots) // Apply changes to all circles
             .transition()
             .duration(1000)
@@ -174,26 +179,23 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
         // Remove old dots
         dots.exit().remove();
 
-        // Bind data to labels
-        const labels = svg.selectAll(".label")
-                          .data(data_merged);
+        const labels = svg.selectAll(".label").data(data_merged);
 
-
-        // Enter new labels
         labels.enter()
-          .append("text")
-          .attr("class", "label")
-          .merge(labels)
-          .transition()
-          .duration(1000)
-          .attr("opacity", 0.0)
-          .attr("x", d => xScale(d[currentX]))
-          .attr("y", d => yScale(d[currentY]) - 10)
-          .text(d => d["Station Code"])
-          .attr("text-anchor", "middle")
-          .style("font-size", "11px")
-          .attr("id", d => "scatter-label-" + d["Station Code"]);
-                        
+        .append("text")
+        .attr("class", "label")
+        .attr("id", d => "scatter-label-" + d["Station Code"])
+        .merge(labels)
+        .transition()
+        .duration(1000)
+        .attr("opacity", 0.0)
+        .attr("x", d => xScale(d[currentX]))
+        .attr("y", d => yScale(d[currentY]) - 10)
+        .text(d => d["Station Code"])
+        .attr("text-anchor", "middle")
+        .style("font-size", "11px")
+        .style("pointer-events", "none")
+                   
         // get all d3 elements whose id starts with scatter-node
         let children = document.querySelectorAll("[id^='spider-legend-']");
 
@@ -213,6 +215,7 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
           data.forEach(function(row)
           {
             d3.select("#scatter-node-" + row['Station Code'])
+              .attr("value", row['Station Code'])
               .transition()
               .duration(1000)
               .attr("cx", function(d)
@@ -234,12 +237,46 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
                 }
                 return yScale(row[currentY]);
               });
+
+
           });
 
 
         }
         // Remove old labels
         labels.exit().remove();
+
+
+        d3.selectAll('.nodes').on("mouseover", function(event,d) {
+
+          console.log(d3.select(this).attr("id")); 
+          if (d3.select(this).style("fill") === "rgb(247, 200, 45)")
+          {
+            d3.select(this).style("fill", "#003082");
+          }
+          
+          d3.select(this).transition().duration(300).attr("r", 8);
+          d3.select("#scatter-label-" + d3.select(this).attr("value")).transition().duration(300).attr("opacity", 1).attr("font-weight", "bold").style('font-size', '15px');
+        });
+
+        d3.selectAll('.nodes').on("mouseout", function(event,d) {
+
+          if (d3.select(this).style("fill") === "rgb(0, 48, 130)")
+          {
+          d3.select(this).style("fill", "#f7c82d");
+          }
+          d3.select(this).transition().duration(300).attr("r", 3.5);
+
+          if (d3.select(this).style("fill") === "rgb(247, 200, 45)"){
+          d3.select("#scatter-label-" + d3.select(this).attr("value")).transition().duration(300).attr("opacity", 0);
+          }
+          else{
+            d3.select("#scatter-label-" + d3.select(this).attr("value")).transition().duration(300).attr("opacity", 1).style('font-size', '11px');
+          }
+
+        });
+        
+        
     });
   });
 }
@@ -305,7 +342,7 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
 
           }
           else{
-              //TODO
+              
 
               d3.select("#suggestion-box-relative").selectAll("div").remove();
               let searchCode = data.filter(d => d['Station Name'].toUpperCase() === searchValue)[0]['Station Code'];

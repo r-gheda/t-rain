@@ -55,11 +55,12 @@ d3.csv("data/station_features/station_service_disruption_delays_cancel_counts_wi
 
             let label_id = '#scatter-label-' + searchCode;
             d3.select(label_id)
-                .transition()
-                .duration(300)
+                // .transition()
+                // .duration(300)
                 .attr('opacity', 1.0)
                 .attr('fill', '#003082')
                 .attr('font-weight', 'bold')
+                
                 
             let node_id = '#scatter-node-' + searchCode;
             d3.select(node_id)
