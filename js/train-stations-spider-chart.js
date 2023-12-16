@@ -278,7 +278,7 @@ function updateChart(){
         .attr("stroke", d => station_color_mapping[d['Station Code']])
         .attr("fill", d => station_color_mapping[d['Station Code']])
         .attr("stroke-opacity", 1)
-        .attr('opacity', 0.4)
+        .attr('opacity', 0.6)
         .attr('id', d => 'spider-path-' + d['Station Code'] );
 
     paths.exit().remove();
